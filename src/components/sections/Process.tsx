@@ -8,7 +8,7 @@ import { ButtonGold } from "@/components/ui/ButtonGold";
 import { TrustBadges } from "@/components/ui/TrustBadges";
 import { FlyingBee } from "@/components/ui/FlyingBee";
 
-const EASE = [0.16, 1, 0.3, 1];
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const STEP_IMAGES = [
   "/assets/man-by-truck.jpg",

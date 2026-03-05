@@ -6,7 +6,7 @@ import { DIFFERENCE_CARDS, BOOKING_URL } from "@/lib/constants";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { TrustBadges } from "@/components/ui/TrustBadges";
 
-const EASE = [0.16, 1, 0.3, 1];
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 /* ── Highly Detailed "Actual Bug" SVG ── */
 function DetailedAnt({ delay = 0, scale = 1 }: { delay?: number, scale?: number }) {

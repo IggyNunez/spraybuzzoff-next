@@ -7,7 +7,7 @@ import { ButtonGold } from "@/components/ui/ButtonGold";
 import { NonToxicSign } from "@/components/ui/NonToxicSign";
 import { TrustBadges } from "@/components/ui/TrustBadges";
 
-const EASE = [0.16, 1, 0.3, 1];
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 /* ── Realistic Ant Component (Matches the successful "Difference" style) ── */
 function RealisticAnt({ delay = 0, scale = 1 }: { delay?: number, scale?: number }) {
