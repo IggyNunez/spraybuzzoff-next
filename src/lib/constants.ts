@@ -4,23 +4,22 @@ import type {
   ServiceFeatured,
   ServiceSmall,
   ProcessStep,
-  DiffCard,
   Plan,
-  Pest,
   Testimonial,
   FAQ,
   CTAStat,
+  ComparisonRow,
 } from "@/types";
 
 export const BOOKING_URL =
   "https://portal.gorilladesk.com/spraybuzzoff";
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Services", href: "#services" },
-  { label: "Plans", href: "#plans" },
-  { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Plans", href: "/#plans" },
+  { label: "About", href: "/about-us" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const SOCIAL_LINKS = [
@@ -28,28 +27,6 @@ export const SOCIAL_LINKS = [
   { label: "Facebook", href: "https://facebook.com/spraybuzzoff", icon: "facebook" },
 ] as const;
 
-export const INTRO_CARDS: DiffCard[] = [
-  {
-    icon: "\u2753",
-    title: "The Question",
-    desc: "If you\u2019ve ever paused and wondered, \u201CWhat exactly are they spraying around my home?\u201D \u2014 you\u2019re not alone.",
-  },
-  {
-    icon: "\u26A0\uFE0F",
-    title: "Same Old Playbook",
-    desc: "For decades, pest control hasn\u2019t really changed. Same synthetic chemicals. Just rebranded as \u201Cnormal.\u201D",
-  },
-  {
-    icon: "\u{1F3E1}",
-    title: "Families Changed",
-    desc: "Modern families live differently now. We read labels. We question ingredients. And we expect better options.",
-  },
-  {
-    icon: "\u{1F33F}",
-    title: "A Better Way",
-    desc: "That\u2019s why Buzz Off was built \u2014 pest prevention that aligns with the way families actually live today.",
-  },
-];
 
 export const HERO_STATS: HeroStat[] = [
   { label: "Zero Synthetics", sub: "100% Plant-Based Formulas" },
@@ -135,23 +112,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
   },
 ];
 
-export const DIFFERENCE_CARDS: DiffCard[] = [
-  {
-    icon: "\u26A1",
-    title: "Stops Pests on Contact",
-    desc: "Plant-based formulas that work fast against ants, spiders, and roaches. No harsh chemicals needed. It works. Period.",
-  },
-  {
-    icon: "\u{1F6E1}\uFE0F",
-    title: "Keeps Them From Coming Back",
-    desc: "Natural oils create a scent barrier that pests avoid. Intentional protection, not excessive chemicals. Prevention over poison.",
-  },
-  {
-    icon: "\u{1F49A}",
-    title: "Safe for Kids, Pets & Peace of Mind",
-    desc: "FIFRA 25(b) exempt ingredients that meet the non-toxic standards many families already choose at home. Non-toxic shouldn't be a luxury.",
-  },
-];
 
 export const SERVICE_AREAS = [
   "Rancho Cucamonga",
@@ -162,120 +122,151 @@ export const SERVICE_AREAS = [
   "San Dimas",
   "Fontana",
   "Pomona",
+  "La Verne",
+  "Arcadia",
+  "Monrovia",
+  "Azusa",
 ];
 
 export const PLANS: Plan[] = [
   {
-    tier: "Starter",
-    name: "The Basics",
-    price: "$79",
-    freq: "Per Treatment / Quarterly",
+    tier: "Mosquito Control",
+    name: "Natural Mosquito Shield",
+    price: "",
+    freq: "",
     featured: false,
     ctaStyle: "green",
-    ctaText: "Get Started",
+    ctaText: "Call the Team",
     features: [
-      { text: "Exterior Perimeter Treatment", included: true },
-      { text: "Eave & Entry Point Treatment", included: true },
-      { text: "Plant-Based Formulas Only", included: true },
-      { text: "Mosquito Yard Treatment", included: false },
-      { text: "Interior Treatment", included: false },
+      { text: "Mosquito fogging of foliage & harborage areas", included: true },
+      { text: "Granular treatment in turf, planter beds & shrubs", included: true },
+      { text: "Mosquito bait stations for continuous control", included: true },
+      { text: "Standing water & breeding zone inspection", included: true },
+      { text: "Recurring bi-weekly service (March–November)", included: true },
     ],
   },
   {
-    tier: "Complete",
-    name: "The Full Shield",
-    price: "$119",
-    freq: "Per Treatment / Monthly",
+    tier: "Most Popular",
+    name: "Natural Perimeter Protection",
+    price: "",
+    freq: "",
     featured: true,
     ctaStyle: "gold",
-    ctaText: "Get Protected",
+    ctaText: "Call the Team",
     features: [
-      { text: "Everything in The Basics", included: true },
-      { text: "Mosquito Yard Prevention", included: true },
-      { text: "Interior Treatment (As Needed)", included: true },
-      { text: "Priority Scheduling", included: true },
-      { text: "Free Re-Treatments", included: true },
+      { text: "Full exterior de-webbing of eaves, windows & doorways", included: true },
+      { text: "Targeted crack & crevice dust application", included: true },
+      { text: "Exterior foundation & entry-point treatment", included: true },
+      { text: "Plant-based formulas only", included: true },
+      { text: "No contracts — cancel anytime", included: true },
     ],
   },
   {
-    tier: "Premium",
-    name: "The Fortress",
-    price: "$179",
-    freq: "Per Treatment / Monthly",
+    tier: "Complete Protection",
+    name: "Natural Whole Home Protection",
+    price: "",
+    freq: "",
     featured: false,
     ctaStyle: "green",
-    ctaText: "Go Premium",
+    ctaText: "Call the Team",
     features: [
-      { text: "Everything in Full Shield", included: true },
-      { text: "Bi-Weekly Mosquito Treatment", included: true },
-      { text: "Flea & Tick Yard Treatment", included: true },
-      { text: "Unlimited Re-Treatments", included: true },
-      { text: "Emergency Same-Day Service", included: true },
+      { text: "Everything in Natural Perimeter Protection", included: true },
+      { text: "Interior treatment as needed", included: true },
+      { text: "Interior crack & crevice dust for long-term prevention", included: true },
+      { text: "Plant-based formulas only", included: true },
+      { text: "No contracts — cancel anytime", included: true },
     ],
   },
 ];
 
-export const PESTS: Pest[] = [
-  { icon: "\u{1F99F}", name: "Mosquitoes", desc: "Yard & perimeter" },
-  { icon: "\u{1FAB3}", name: "Roaches", desc: "Interior & exterior" },
-  { icon: "\u{1F41C}", name: "Ants", desc: "Trails & colonies" },
-  { icon: "\u{1F577}\uFE0F", name: "Spiders", desc: "Webs & nests" },
-  { icon: "\u{1FAB2}", name: "Earwigs", desc: "Garden & entry" },
-  { icon: "\u{1F415}", name: "Fleas & Ticks", desc: "Yard treatment" },
-];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    text: "Finally a pest company I don't have to worry about with my toddler running barefoot in the backyard. They actually use safe products and it WORKS.",
-    name: "Rachel M.",
-    location: "Rancho Cucamonga, CA \u00B7 Verified",
-    avatar: "\u{1F469}",
+    text: "I was very impressed with the products they use. They are very natural products that are safe for my two girls. Hayley came out to do the mosquito hedge treatment and she did an amazing job!",
+    name: "Julie S.",
+    location: "La Puente, CA \u00B7 Yelp",
+    avatar: "",
   },
   {
-    text: "We switched from a traditional pest company and haven't looked back. No chemical smell, no worrying about the dogs. The mosquitoes are GONE.",
-    name: "Marcus T.",
-    location: "Upland, CA \u00B7 Verified",
-    avatar: "\u{1F468}",
+    text: "We've been dealing with ants and spiders for a while now, and these ladies came in and got the job done efficiently and professionally. They are pet-safe products which was very important to me since I have two dogs.",
+    name: "Terranzo M.",
+    location: "City of Industry, CA \u00B7 Yelp",
+    avatar: "",
   },
   {
-    text: "As a mom of three, finding a truly non-toxic pest service was a game changer. Hayley and Veronnica really understand what families need. Highly recommend!",
-    name: "Jessica L.",
-    location: "Claremont, CA \u00B7 Verified",
-    avatar: "\u{1F469}",
+    text: "I love that they use natural and pet-friendly treatments. They are a local family-owned business and their customer service is great! Highly recommend!",
+    name: "Ashlyn C.",
+    location: "Rancho Cucamonga, CA \u00B7 Yelp",
+    avatar: "",
+  },
+  {
+    text: "They use a natural pet-safe spray and it smells amazing! The bugs are gone and I feel so much better knowing the products used around my home are safe.",
+    name: "Katherine B.",
+    location: "CA \u00B7 Yelp",
+    avatar: "",
   },
 ];
 
 export const FAQS: FAQ[] = [
   {
-    question: "Is it really safe for kids and pets?",
+    question: "What's actually in your treatments?",
     answer:
-      "Absolutely. We use only FIFRA 25(b) exempt, plant-based ingredients. These are the same types of natural oils many families already use at home. Your kids can play in the yard right after treatment.",
+      "Active ingredients include cedarwood oil, cinnamon oil, thyme oil, rosemary oil, clove oil, citronella oil, lemongrass oil, cornmint oil, and geraniol. Every product used is FIFRA 25(b) exempt. No synthetic pyrethroids, no organophosphates, no harsh chemicals.",
   },
   {
-    question: "Does natural pest control actually work?",
+    question: "Are your treatments safe for kids and pets?",
     answer:
-      "Yes. Our plant-based formulas stop pests on contact and create a natural scent barrier that keeps them from coming back. We stand behind our results with free re-treatments if needed.",
+      "Yes. Keep kids and pets off treated areas until dry — typically 30 to 45 minutes. That's it.",
   },
   {
-    question: "What areas do you serve?",
+    question: "Why do your treatments smell the way they do?",
     answer:
-      "We serve families across the Inland Empire and San Gabriel Valley, including Rancho Cucamonga, Upland, Ontario, Claremont, Glendora, San Dimas, Fontana, Pomona, La Verne, Arcadia, Monrovia, and more.",
+      "The scent is the botanical oils working — cedarwood, cinnamon, thyme, citronella, lemongrass. The aroma dissipates as the product dries, usually within an hour.",
   },
   {
-    question: "How often should I get treated?",
+    question: "How often do you treat?",
     answer:
-      "For best results, we recommend monthly or quarterly treatments depending on your plan. Consistent prevention is the key to keeping pests away long-term without harsh chemicals.",
+      "Bi-weekly during mosquito season, which runs March through November in Southern California. Perimeter and whole home plans are on monthly or quarterly schedules depending on your plan.",
   },
   {
-    question:
-      "What's the difference between you and traditional pest control?",
+    question: "Do I have to sign a contract?",
     answer:
-      "Traditional pest companies use synthetic pesticides that can leave residues and strong chemical smells. We use zero synthetic pesticides. Every product we use is plant-based, FIFRA 25(b) exempt, and designed for homes with families.",
+      "No contracts, ever. Pause or cancel anytime.",
   },
   {
-    question: "Do you offer one-time treatments?",
+    question: "How is Buzz Off different from traditional pest control?",
     answer:
-      "Yes! While our protection plans offer the best ongoing value, we also offer one-time treatments. Contact us for a custom quote based on your property and needs.",
+      "Botanical formulas instead of synthetic pyrethroids — cedarwood, rosemary, thyme, citronella, and other plant oils. Synthetic chemicals for 50 years. We use plant-based. There's a difference.",
+  },
+  {
+    question: "What pests do you treat for?",
+    answer:
+      "Natural Mosquito Shield is for mosquitoes. Perimeter and Whole Home plans address ants, spiders, roaches, earwigs, fleas, ticks, silverfish, and other common household invaders.",
+  },
+  {
+    question: "Will rain affect my treatment?",
+    answer:
+      "Treatments are designed to bind after application and hold up to light rain once dry. Significant rainfall immediately after service will be made right — we come back, no questions asked.",
+  },
+  {
+    question: "Do I need to be home during the service?",
+    answer:
+      "Not for exterior-only services — just access to the yard. Interior treatments require scheduling.",
+  },
+  {
+    question: "How soon will I see results?",
+    answer:
+      "Significant reduction in activity within the first one to two visits. Populations continue to decline over time on the recurring schedule.",
+  },
+  {
+    question: "Are your products safe for gardens and pollinators?",
+    answer:
+      "Treatments are applied strategically to harborage areas rather than broadcast across flowering plants. The plant oils do not bioaccumulate. Dedicated gardens and pollinator-friendly plantings can be worked around on request.",
+  },
+  {
+    question: "Are your products safe near water features or pools?",
+    answer:
+      "No aquatic toxicity restrictions. We recommend removing or covering outdoor pet water bowls during treatment. Pools are treated around appropriately.",
   },
 ];
 
@@ -283,4 +274,30 @@ export const CTA_STATS: CTAStat[] = [
   { value: "500+", label: "Families Protected" },
   { value: "5.0\u2605", label: "Average Rating" },
   { value: "100%", label: "Plant-Based" },
+];
+
+export const STATS_BAR = [
+  { icon: "leaf", label: "100% Plant-Based" },
+  { icon: "family", label: "Made for Families" },
+  { icon: "star", label: "5\u2605 Average" },
+];
+
+export const TICKER_ITEMS = [
+  "FIFRA 25(b) Exempt",
+  "Zero Synthetics",
+  "Mom-Founded",
+  "Safe for Kids & Pets",
+  "No Contracts",
+  "100% Plant-Based",
+  "Family Owned",
+  "Inland Empire Local",
+];
+
+export const COMPARISON_ROWS: ComparisonRow[] = [
+  { feature: "Ingredients", buzzoff: "Plant-based essential oils", traditional: "Synthetic pyrethroids" },
+  { feature: "Safe for Kids & Pets", buzzoff: "Yes \u2014 FIFRA 25(b) exempt", traditional: "Requires evacuation" },
+  { feature: "Environmental Impact", buzzoff: "No bioaccumulation", traditional: "Soil & water contamination" },
+  { feature: "Contracts Required", buzzoff: "Never \u2014 cancel anytime", traditional: "12-month lock-in typical" },
+  { feature: "Scent", buzzoff: "Pleasant botanical aroma", traditional: "Chemical odor" },
+  { feature: "Effectiveness", buzzoff: "Proven pest prevention", traditional: "Kills on contact, pests return" },
 ];

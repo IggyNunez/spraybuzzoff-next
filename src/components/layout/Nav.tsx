@@ -74,13 +74,13 @@ export function Nav() {
         style={{ height: 140 }}
       >
         <motion.div
-          className="flex items-center h-full max-w-[1400px] mx-auto px-[clamp(20px,4vw,48px)]"
+          className="flex items-center h-full max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)]"
           initial={false}
           animate={{ justifyContent: scrolled ? "center" : "space-between" }}
           transition={{ duration: DURATION, ease: EASE }}
         >
           <motion.a
-            href="#"
+            href="/"
             className="shrink-0 block"
             initial={false}
             animate={{
@@ -105,7 +105,7 @@ export function Nav() {
           {/* Pill — outer = green border frame, inner = white content */}
           <div
             style={{
-              background: "#016d30",
+              background: "#1A5C32",
               borderRadius: 9999,
               padding: "3px",
               boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
@@ -125,7 +125,7 @@ export function Nav() {
               transition={{ duration: DURATION, ease: EASE }}
             >
               <motion.a
-                href="#"
+                href="/"
                 className="shrink-0 flex items-center justify-center overflow-hidden"
                 initial={false}
                 animate={{
@@ -174,8 +174,7 @@ export function Nav() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-[0.68rem] font-extrabold tracking-[0.08em] uppercase text-white bg-red-500 hover:bg-red-600 px-5 py-2 rounded-full transition-colors duration-200 ml-1 whitespace-nowrap"
-                style={{ border: "2px solid #016d30" }}
+                className="font-body text-[0.68rem] font-extrabold tracking-[0.08em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] px-5 py-2 rounded-full transition-colors duration-200 ml-1 whitespace-nowrap"
               >
                 Book Now
               </a>
@@ -188,7 +187,7 @@ export function Nav() {
       <nav className="md:hidden fixed top-0 left-0 right-0 z-[100] px-4 pt-3 flex items-start justify-between">
         {/* Big logo — visible at top, collapses on scroll */}
         <motion.a
-          href="#"
+          href="/"
           className="shrink-0 block"
           initial={false}
           animate={{
@@ -213,7 +212,7 @@ export function Nav() {
         {/* Pill — right side */}
         <div
           style={{
-            background: "#016d30",
+            background: "#1A5C32",
             borderRadius: 9999,
             padding: "3px",
             boxShadow: "0 4px 18px rgba(0,0,0,0.12)",
@@ -230,7 +229,7 @@ export function Nav() {
           >
             {/* Small logo inside pill — appears on scroll */}
             <motion.a
-              href="#"
+              href="/"
               className="shrink-0 flex items-center justify-center overflow-hidden"
               initial={false}
               animate={{
@@ -298,7 +297,7 @@ export function Nav() {
             <motion.div
               className="md:hidden fixed top-1/2 right-3 -translate-y-1/2 z-[201] w-[270px]"
               style={{
-                background: "#016d30",
+                background: "#1A5C32",
                 clipPath: CARD_CLIP,
                 padding: "3px",
                 boxShadow: "0 8px 40px rgba(0,0,0,0.15)",
@@ -318,7 +317,7 @@ export function Nav() {
               >
                 {/* Header */}
                 <div className="flex items-center justify-between px-5 pt-3 pb-2">
-                  <a href="#" onClick={closeMobile}>
+                  <a href="/" onClick={closeMobile}>
                     <Image
                       src="/assets/spraybuzzoffLogo.png"
                       alt="Buzz Off"
@@ -332,7 +331,7 @@ export function Nav() {
                     onClick={closeMobile}
                     aria-label="Close menu"
                   >
-                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#016d30" strokeWidth="1.5" strokeLinecap="round">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#1A5C32" strokeWidth="1.5" strokeLinecap="round">
                       <line x1="1" y1="1" x2="11" y2="11" />
                       <line x1="11" y1="1" x2="1" y2="11" />
                     </svg>
@@ -371,8 +370,7 @@ export function Nav() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={closeMobile}
-                    className="block font-body text-[0.7rem] font-extrabold tracking-[0.08em] uppercase text-white bg-red-500 hover:bg-red-600 py-2.5 rounded-full transition-colors text-center"
-                    style={{ border: "2px solid #016d30" }}
+                    className="block font-body text-[0.7rem] font-extrabold tracking-[0.08em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] py-2.5 rounded-full transition-colors text-center"
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, ease: EASE }}

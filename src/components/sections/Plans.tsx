@@ -3,207 +3,151 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
-import { PLANS, BOOKING_URL } from "@/lib/constants";
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+import { PLANS } from "@/lib/constants";
+import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
 
 export function Plans() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -80px 0px" });
 
   return (
-    <section
-      id="plans"
-      className="relative py-28 md:py-36 overflow-hidden"
-      style={{ background: "#f7f4ef" }}
-      ref={ref}
-    >
-      {/* Grain */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.03]">
-        <filter id="plans-noise">
-          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#plans-noise)" />
-      </svg>
-
-      <div className="relative z-[1] max-w-[1400px] mx-auto px-[clamp(20px,4vw,48px)]">
-
+    <section id="plans" className="relative py-24 md:py-32 bg-white" ref={ref}>
+      <div className="max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)]">
         {/* Header */}
-        <div className="text-center mb-20">
-          <motion.p
-            className="font-body text-[0.85rem] font-bold tracking-[0.2em] uppercase mb-4 flex items-center justify-center gap-3"
-            style={{ color: "#016d30" }}
+        <div className="text-center mb-16">
+          <motion.div
+            className="mb-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+          >
+            <ArchedEyebrow>Protection Plans</ArchedEyebrow>
+          </motion.div>
+          <motion.h2
+            className="section-title mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: EASE }}
+            transition={{ delay: 0.1 }}
           >
-            <span className="w-10 h-[2px]" style={{ background: "#016d30" }} />
-            Protection Plans
-            <span className="w-10 h-[2px]" style={{ background: "#016d30" }} />
-          </motion.p>
-          <motion.h2
-            className="font-display text-[clamp(2rem,5vw,3.4rem)] font-bold uppercase leading-[1.05]"
-            style={{ color: "#016d30" }}
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
-          >
-            Choose Your{" "}
-            <span style={{ color: "#F12E04" }}>Peace of Mind</span>
+            Protection Built for Your Family
           </motion.h2>
+          <motion.div
+            className="gold-divider mx-auto mb-6"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          />
           <motion.p
-            className="font-body text-[1rem] text-gray-500 mt-3"
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
+            className="font-body text-[0.95rem] text-[#1C2B1E]/60 mt-2"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.3 }}
           >
-            Ongoing protection tailored to your family&apos;s needs.
+            100% plant-based. No contracts. Call the team for pricing.
           </motion.p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-[480px] lg:max-w-none mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-[520px] lg:max-w-none mx-auto items-start">
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.name}
-              className="relative overflow-hidden rounded-[28px]"
-              style={{
-                padding: plan.featured ? 2 : 0,
-                background: plan.featured ? undefined : "transparent",
-              }}
-              initial={{ opacity: 0, y: 60 }}
+              className={`relative rounded-2xl overflow-hidden ${plan.featured ? "lg:-mt-4 lg:mb-4 shadow-[0_12px_40px_rgba(26,92,50,0.25)]" : "shadow-[0_4px_20px_rgba(0,0,0,0.06)]"}`}
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 + i * 0.12, ease: EASE }}
-              whileHover={{ y: -8 }}
+              transition={{ delay: 0.2 + i * 0.12, duration: 0.6 }}
             >
-              {/* Spinning gold border for featured */}
+              {/* Urgency banner for featured */}
               {plan.featured && (
-                <motion.div
-                  style={{
-                    position: "absolute",
-                    inset: "-100%",
-                    background: "conic-gradient(from 0deg, transparent 0deg, #F5CC05 40deg, #fff7a0 60deg, #F5CC05 80deg, transparent 120deg, transparent 360deg)",
-                  }}
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                />
+                <div className="bg-[#E05A2B] text-white text-center py-2">
+                  <span className="font-body text-[0.7rem] font-bold tracking-[0.12em] uppercase">
+                    Most Popular
+                  </span>
+                </div>
               )}
 
               <div
-                className="relative flex flex-col h-full"
-                style={{
-                  background: plan.featured ? "#012810" : "#016d30",
-                  borderRadius: plan.featured ? 26 : 28,
-                  border: plan.featured ? undefined : "1px solid rgba(255,255,255,0.1)",
-                }}
+                className={`flex flex-col h-full p-8 ${plan.featured ? "bg-[#1A5C32] text-white" : "bg-white border-t-[3px] border-[#1A5C32]"}`}
               >
-                {/* Most Popular badge */}
-                {plan.featured && (
-                  <div
-                    className="absolute -top-[1px] left-1/2 -translate-x-1/2 font-body text-[0.72rem] font-extrabold tracking-[0.12em] uppercase px-6 py-1.5 rounded-b-xl"
-                    style={{ background: "#F5CC05", color: "#012810" }}
-                  >
-                    Most Popular
-                  </div>
-                )}
+                {/* Tier label */}
+                <p
+                  className={`font-body text-[0.65rem] font-bold tracking-[0.2em] uppercase mb-2 ${plan.featured ? "text-[#F0C060]" : "text-[#E05A2B]"}`}
+                >
+                  {plan.tier}
+                </p>
 
-                <div className="p-8 pt-10 flex flex-col flex-1">
-                  {/* Tier */}
-                  <p
-                    className="font-body text-[0.75rem] font-bold tracking-[0.18em] uppercase mb-1"
-                    style={{ color: plan.featured ? "#F5CC05" : "rgba(255,255,255,0.5)" }}
-                  >
-                    {plan.tier}
-                  </p>
+                {/* Plan name */}
+                <h3
+                  className={`font-display text-[clamp(1.35rem,2.2vw,1.6rem)] font-bold uppercase mb-5 leading-[1.15] tracking-[0.08em] ${plan.featured ? "text-white" : "text-[#1A5C32]"}`}
+                >
+                  {plan.name}
+                </h3>
 
-                  {/* Plan name */}
-                  <h3 className="font-display text-[1.5rem] font-bold uppercase text-white mb-4 leading-tight">
-                    {plan.name}
-                  </h3>
+                {/* Divider */}
+                <div
+                  className="h-[1px] mb-7"
+                  style={{
+                    background: plan.featured
+                      ? "linear-gradient(90deg, #C8973A 0%, rgba(200,151,58,0.1) 100%)"
+                      : "rgba(26,92,50,0.1)",
+                  }}
+                />
 
-                  {/* Price */}
-                  <div className="mb-1">
-                    <span
-                      className="font-display text-[3.2rem] font-bold leading-none"
-                      style={{ color: plan.featured ? "#F5CC05" : "white" }}
-                    >
-                      {plan.price}
-                    </span>
-                  </div>
-                  <p className="font-body text-[0.82rem] text-white/50 mb-8">
-                    {plan.freq}
-                  </p>
-
-                  {/* Divider */}
-                  <div
-                    className="h-px mb-8"
-                    style={{ background: plan.featured ? "rgba(245,204,5,0.2)" : "rgba(255,255,255,0.1)" }}
-                  />
-
-                  {/* Features */}
-                  <div className="space-y-3 mb-10 flex-1">
-                    {plan.features.map((feat) => (
-                      <div
-                        key={feat.text}
-                        className="flex items-center gap-3"
+                {/* Features */}
+                <div className="space-y-3 mb-8 flex-1">
+                  {plan.features.map((feat) => (
+                    <div key={feat.text} className="flex items-start gap-3">
+                      {feat.included ? (
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5">
+                          <circle cx="8" cy="8" r="8" fill={plan.featured ? "#F0C060" : "#1A5C32"} />
+                          <path d="M5 8l2 2 4-4" stroke={plan.featured ? "#1A5C32" : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      ) : (
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5 opacity-30">
+                          <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1" />
+                          <path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                        </svg>
+                      )}
+                      <span
+                        className={`font-body text-[0.84rem] leading-snug ${feat.included ? (plan.featured ? "text-white/90" : "text-[#1C2B1E]") : (plan.featured ? "text-white/30" : "text-[#1C2B1E]/30")}`}
                       >
-                        <span
-                          className="text-[0.9rem] shrink-0"
-                          style={{ color: feat.included ? (plan.featured ? "#F5CC05" : "#86efac") : "rgba(255,255,255,0.2)" }}
-                        >
-                          {feat.included ? "✓" : "✗"}
-                        </span>
-                        <span
-                          className="font-body text-[0.88rem]"
-                          style={{ color: feat.included ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.3)" }}
-                        >
-                          {feat.text}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group w-full inline-flex items-center justify-center gap-2 font-body text-[0.85rem] font-extrabold tracking-[0.06em] uppercase px-6 py-4 rounded-full transition-all duration-200"
-                    style={{
-                      background: plan.featured ? "#F5CC05" : "rgba(255,255,255,0.12)",
-                      color: plan.featured ? "#012810" : "white",
-                      border: plan.featured ? "none" : "1px solid rgba(255,255,255,0.2)",
-                    }}
-                  >
-                    {plan.ctaText}
-                    <ArrowIcon className="group-hover:translate-x-1" />
-                  </a>
+                        {feat.text}
+                      </span>
+                    </div>
+                  ))}
                 </div>
+
+                {/* CTA */}
+                <a
+                  href="tel:9098988955"
+                  className={`group w-full inline-flex items-center justify-center gap-2 font-body text-[0.78rem] font-bold tracking-[0.1em] uppercase px-6 py-4 rounded-full transition-all duration-200 ${
+                    plan.featured
+                      ? "bg-white text-[#1A5C32] hover:bg-white/90"
+                      : "border-2 border-[#1A5C32] text-[#1A5C32] hover:bg-[#1A5C32] hover:text-white"
+                  }`}
+                >
+                  {plan.ctaText}
+                  <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* One-time note */}
+        {/* Bottom nudge */}
         <motion.div
           className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.55, ease: EASE }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.6 }}
         >
-          <p className="font-body text-[0.95rem] text-gray-500 mb-4">
-            Need a one-time treatment instead? We&apos;ve got you covered.
+          <p className="font-body text-[0.9rem] text-[#1C2B1E]/50 mb-2">
+            Not sure which plan is right for you?
           </p>
           <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 font-body text-[0.85rem] font-extrabold tracking-[0.08em] uppercase text-white bg-red-500 hover:bg-red-600 px-8 py-3.5 rounded-full transition-colors duration-200"
-            style={{ border: "2px solid #016d30" }}
+            href="tel:9098988955"
+            className="font-body text-[0.95rem] font-bold text-[#1A5C32] hover:text-[#0F3D20] transition-colors"
           >
-            Request One-Time Quote
-            <ArrowIcon className="group-hover:translate-x-1" />
+            Call the Team &mdash; 909.898.8955
           </a>
         </motion.div>
       </div>

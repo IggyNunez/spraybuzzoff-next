@@ -29,11 +29,6 @@ export interface ProcessStep {
   desc: string;
 }
 
-export interface DiffCard {
-  icon: string;
-  title: string;
-  desc: string;
-}
 
 export interface PlanFeature {
   text: string;
@@ -51,11 +46,6 @@ export interface Plan {
   features: PlanFeature[];
 }
 
-export interface Pest {
-  icon: string;
-  name: string;
-  desc: string;
-}
 
 export interface Testimonial {
   text: string;
@@ -72,4 +62,10 @@ export interface FAQ {
 export interface CTAStat {
   value: string;
   label: string;
+}
+
+export interface ComparisonRow {
+  feature: string;
+  buzzoff: string;
+  traditional: string;
 }

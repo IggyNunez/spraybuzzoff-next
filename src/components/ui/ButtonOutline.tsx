@@ -12,22 +12,9 @@ interface ButtonOutlineProps {
 }
 
 const BASE =
-  "group flex items-center gap-2 font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-white rounded-full cursor-pointer";
+  "group inline-flex items-center justify-center gap-2 font-body text-[13px] font-bold tracking-[0.12em] uppercase text-[#1A5C32] rounded-full cursor-pointer border-2 border-[#1A5C32] bg-transparent hover:bg-[#1A5C32] hover:text-white px-10 py-4 transition-colors duration-200";
 
-const FROSTED = {
-  background: "rgba(255,255,255,0.12)",
-  backdropFilter: "blur(12px)",
-  WebkitBackdropFilter: "blur(12px)",
-  border: "1.5px solid rgba(255,255,255,0.22)",
-  padding: "18px 36px",
-};
-
-const HOVER = {
-  y: -2,
-  background: "rgba(255,255,255,0.2)",
-  borderColor: "rgba(255,255,255,0.38)",
-};
-
+const HOVER = { y: -2 };
 const TRANSITION = { duration: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] };
 
 export function ButtonOutline({
@@ -44,7 +31,6 @@ export function ButtonOutline({
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
         className={`${BASE} ${className}`}
-        style={FROSTED}
         whileHover={HOVER}
         transition={TRANSITION}
       >
@@ -58,7 +44,6 @@ export function ButtonOutline({
     <motion.button
       onClick={onClick}
       className={`${BASE} ${className}`}
-      style={FROSTED}
       whileHover={HOVER}
       transition={TRANSITION}
     >

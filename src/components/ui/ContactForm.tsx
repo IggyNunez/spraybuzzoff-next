@@ -14,7 +14,7 @@ const REFERRAL_OPTIONS = [
 ];
 
 const inputClasses =
-  "w-full bg-white/[0.06] border border-white/[0.12] rounded-xl px-4 py-3 font-body text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-gold-500 transition-colors duration-200";
+  "w-full bg-white/[0.06] border border-white/[0.12] rounded-[10px] px-4 py-3 font-body text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-gold-500 transition-colors duration-200";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -47,7 +47,7 @@ export function ContactForm() {
   if (submitted) {
     return (
       <motion.div
-        className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-3xl p-10 text-center"
+        className="frost-dark rounded-[20px] p-10 text-center shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -57,16 +57,16 @@ export function ContactForm() {
           Thank You!
         </h3>
         <p className="font-body text-[0.95rem] text-white">
-          We&apos;ll be in touch soon with your free estimate.
+          You&apos;re in. We&apos;ll be in touch shortly to confirm your first visit.
         </p>
       </motion.div>
     );
   }
 
   return (
-    <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-3xl p-10">
+    <div className="frost-dark rounded-[20px] p-10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
       <h3 className="font-display text-xl font-bold text-white uppercase mb-6">
-        Request a Free Estimate
+        Book Your First Service
       </h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -172,7 +172,7 @@ export function ContactForm() {
         </div>
 
         <ButtonGold type="submit" className="w-full justify-center">
-          Send My Free Quote
+          Book Now
         </ButtonGold>
       </form>
     </div>

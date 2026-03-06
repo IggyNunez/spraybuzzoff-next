@@ -3,7 +3,12 @@
     "allow": [
       "mcp__Claude_Preview__preview_start",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python -c \"import docx; doc = docx.Document\\(r''C:\\\\Users\\\\iggyn\\\\Downloads\\\\BuzzOff_Service_Guide_v3.docx''\\); [print\\(p.text\\) for p in doc.paragraphs]\")",
+      "Bash(pip install python-docx)",
+      "Bash(python -c \":*)"
     ]
   }
 }

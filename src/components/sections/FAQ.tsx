@@ -1,12 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { PestFloat } from "@/components/ui/PestFloat";
-import { SpiderSVG } from "@/components/ui/pests/SpiderSVG";
 import { FAQS } from "@/lib/constants";
-import { fadeUpDelayed } from "@/lib/animation-variants";
+import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
 
 export function FAQ() {
   const ref = useRef(null);
@@ -14,50 +11,53 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section
-      id="faq"
-      className="relative py-28 md:py-36 bg-canvas-warm overflow-hidden"
-      ref={ref}
-    >
-      {/* Floating spider */}
-      <PestFloat
-        size={32}
-        style={{ top: "10%", right: "8%" }}
-        driftVariant={3}
-      >
-        <SpiderSVG />
-      </PestFloat>
+    <section id="faq" className="relative py-24 md:py-32 bg-white" ref={ref}>
+      <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,80px)]">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <motion.div
+            className="mb-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+          >
+            <ArchedEyebrow>Got Questions?</ArchedEyebrow>
+          </motion.div>
+          <motion.h2
+            className="section-title mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.1 }}
+          >
+            Questions We Actually Get
+          </motion.h2>
+          <motion.div
+            className="gold-divider mx-auto mb-6"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          />
+        </div>
 
-      <div className="max-w-[1100px] mx-auto px-[clamp(20px,4vw,48px)]">
-        <SectionHeader
-          eyebrow="Got Questions?"
-          title="Questions We Actually Get"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Accordion */}
+        <div className="divide-y divide-[#1A5C32]/10 border-t border-b border-[#1A5C32]/10">
           {FAQS.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <motion.div
                 key={i}
-                className={`rounded-2xl border-2 transition-colors duration-300 overflow-hidden ${
-                  isOpen
-                    ? "border-red-500 bg-white"
-                    : "border-gray-200 bg-white"
-                }`}
-                variants={fadeUpDelayed(i * 0.08)}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
+                initial={{ opacity: 0, y: 16 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.15 + i * 0.05, duration: 0.4 }}
               >
                 <button
-                  className="w-full flex items-center justify-between p-6 text-left cursor-pointer"
+                  className="w-full flex items-center justify-between py-5 px-2 text-left cursor-pointer transition-colors hover:bg-[#EAF2EC] rounded-lg"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                 >
-                  <span className="font-body text-[0.82rem] font-bold text-gray-900 pr-4">
+                  <span className="font-body text-[0.9rem] font-bold text-[#1C2B1E] pr-4 leading-snug">
                     {faq.question}
                   </span>
                   <motion.span
-                    className="text-red-500 text-xl font-light shrink-0"
+                    className="shrink-0 text-[1.2rem] font-light text-[#E05A2B]"
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -77,7 +77,7 @@ export function FAQ() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="font-body text-[0.82rem] leading-relaxed text-gray-700 px-6 pb-6">
+                      <p className="font-body text-[0.85rem] leading-relaxed text-[#1C2B1E]/70 px-2 pb-5">
                         {faq.answer}
                       </p>
                     </motion.div>
@@ -87,6 +87,24 @@ export function FAQ() {
             );
           })}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          className="text-center mt-10"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.6 }}
+        >
+          <p className="font-body text-[0.9rem] text-[#1C2B1E]/50 mb-2">
+            Still have questions?
+          </p>
+          <a
+            href="tel:9098988955"
+            className="font-body text-[0.95rem] font-bold text-[#1A5C32] hover:text-[#0F3D20] transition-colors"
+          >
+            Call the Team &mdash; 909.898.8955
+          </a>
+        </motion.div>
       </div>
     </section>
   );
