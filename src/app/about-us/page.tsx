@@ -71,7 +71,7 @@ export default function AboutPage() {
         >
           {/* Full background photo */}
           <Image
-            src="/assets/BUZZ OFF PHOTO DUMP/DSC03963.JPG"
+            src="/assets/about-hero.jpg"
             alt="Buzz Off technician treating a residential yard"
             fill
             className="object-cover object-center"

@@ -126,7 +126,7 @@ export default function ServicesPage() {
         >
           {/* Photo background */}
           <Image
-            src="/assets/BUZZ OFF PHOTO DUMP/DSC04490.JPG"
+            src="/assets/services-hero.jpg"
             alt="Buzz Off technician treating a residential yard"
             fill
             className="object-cover object-center"

@@ -101,7 +101,7 @@ export default function ContactPage() {
         >
           {/* Photo background */}
           <Image
-            src="/assets/BUZZ OFF PHOTO DUMP/DSC04430.JPG"
+            src="/assets/contact-hero.jpg"
             alt="Buzz Off truck in the Inland Empire at dusk"
             fill
             className="object-cover object-center"
