@@ -33,7 +33,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[100svh] overflow-hidden bg-[#1A5C32]"
+      className="relative min-h-[70svh] md:h-[100svh] overflow-hidden bg-[#1A5C32]"
     >
       {/* Video Background */}
       <motion.div
@@ -58,13 +58,13 @@ export function Hero() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 flex flex-col justify-center h-full max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)] pt-[100px] pb-[80px] md:pt-[120px] md:pb-[120px]"
+        className="relative z-10 flex flex-col justify-center h-full max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)] pt-[110px] pb-[80px] md:pt-[clamp(100px,18svh,180px)] md:pb-[clamp(60px,10svh,120px)]"
         style={{ y: textY }}
       >
         <div className="max-w-[1000px]">
           {/* Line 1: Welcome to the Non-Toxic Era. */}
           <motion.h1
-            className="font-display text-[clamp(42px,8vw,110px)] font-[900] uppercase leading-[0.95] text-white mb-4 md:mb-6 tracking-[0.03em]"
+            className="font-display text-[clamp(42px,8vw,110px)] md:text-[clamp(48px,10svh,110px)] font-[900] uppercase leading-[0.95] text-white mb-4 md:mb-[clamp(12px,1.5svh,24px)] tracking-[0.03em]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
@@ -74,7 +74,7 @@ export function Hero() {
 
           {/* Line 2: Live Outside Again, Naturally. */}
           <motion.p
-            className="font-quote italic text-[clamp(1.3rem,3.5vw,2.6rem)] text-[#F0C060] mb-4 md:mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
+            className="font-quote italic text-[clamp(1.3rem,3.5vw,2.6rem)] md:text-[clamp(1.3rem,3.5svh,2.6rem)] text-[#F0C060] mb-4 md:mb-[clamp(12px,2svh,32px)] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
@@ -84,7 +84,7 @@ export function Hero() {
 
           {/* Line 3: Description */}
           <motion.p
-            className="font-body text-[0.9rem] md:text-[1.15rem] leading-[1.6] text-white/90 max-w-[560px] mb-6 md:mb-12"
+            className="font-body text-[0.9rem] md:text-[clamp(0.85rem,1.5svh,1.15rem)] leading-[1.6] text-white/90 max-w-[560px] mb-6 md:mb-[clamp(16px,3svh,48px)]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.9 }}

@@ -42,7 +42,7 @@ const SERVICES = [
     title: "Your Bite-Free Backyard Starts Here",
     headline: "Stop Mosquitoes at Every Stage",
     body: "Mosquitoes don't just ruin outdoor time — they breed fast and return every season. Our Natural Mosquito Shield targets mosquitoes at every stage of their lifecycle. We combine fogging of foliage and harborage areas with granular treatment in turf, planter beds, and shrubs.",
-    image: "/assets/BUZZ OFF PHOTO DUMP/DSC04520.JPG",
+    image: "/assets/your-bite-free-backyard-starts-here.JPG",
     bullets: [
       "Mosquito fogging of foliage and harborage areas",
       "Granular treatment in turf, planter beds, and shrubs",
@@ -59,7 +59,7 @@ const SERVICES = [
     title: "Stop Pests Before They Get Inside — Naturally",
     headline: "A Plant-Based Barrier Around Your Home",
     body: "The best pest control happens before pests ever reach your door. Our Natural Perimeter Protection creates a plant-based barrier around the exterior of your home, treating the foundation, entry points, and common pest pathways with targeted eco-conscious applications.",
-    image: "/assets/BUZZ OFF PHOTO DUMP/DSC04500.JPG",
+    image: "/assets/mosquito-barrier-around-home.JPG",
     bullets: [
       "Full exterior de-webbing of eaves, windows, and doorways",
       "Targeted crack and crevice dust application",
@@ -75,7 +75,7 @@ const SERVICES = [
     title: "Complete Protection Inside & Out — The Natural Way",
     headline: "Total Peace of Mind, Every Corner",
     body: "For homeowners who want total peace of mind, our Whole Home Protection plan covers every corner — inside and out. Everything in the Natural Perimeter Protection plan is included, plus interior treatment as needed and crack and crevice dust application for long-term prevention inside the home.",
-    image: "/assets/BUZZ OFF PHOTO DUMP/DSC04484.JPG",
+    image: "/assets/interior-full-service.JPG",
     bullets: [
       "Everything in the Natural Perimeter Protection Plan",
       "Interior treatment as needed",
@@ -294,8 +294,20 @@ export default function ServicesPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-[clamp(64px,8vw,100px)]" style={{ background: "#0F3D20" }}>
-          <div className="max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
+        <section className="relative py-[clamp(64px,8vw,100px)] overflow-hidden">
+          {/* Background image */}
+          <Image
+            src="/assets/bottom-bar-petprevention.JPG"
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+          {/* Green overlay */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.88), rgba(26,92,50,0.72))" }}
+          />
+          <div className="relative z-10 max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
             <FadeIn>
               <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-none uppercase text-white mb-4">
                 Ready to Live<br />

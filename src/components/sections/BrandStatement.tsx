@@ -101,7 +101,7 @@ export function BrandStatement() {
         </div>
 
         <div className="px-6 pb-16 -mt-8">
-          <h2 className="section-title text-[clamp(28px,8vw,40px)] mb-4">
+          <h2 className="section-title mb-4 pt-2" style={{ fontSize: 'clamp(28px, 7vw, 36px)', lineHeight: 1.15 }}>
             <span className="section-eyebrow block mb-3">The Difference</span>
             Built Because Families Deserve Better.
           </h2>

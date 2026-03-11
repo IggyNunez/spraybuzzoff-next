@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { LeafDecor } from "@/components/ui/LeafDecor";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { SERVICES_FEATURED, SERVICES_SMALL, BOOKING_URL } from "@/lib/constants";
@@ -385,6 +386,7 @@ export function Services() {
 
   return (
     <section id="services" className="relative py-24 md:py-32 bg-white" ref={ref}>
+      <LeafDecor variant="mosquito-left" top="10%" size={180} opacity={0.25} className="hidden md:block" />
       <div className="max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)]">
         {/* Header */}
         <div className="text-center mb-16">

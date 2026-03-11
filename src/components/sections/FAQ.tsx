@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { LeafDecor } from "@/components/ui/LeafDecor";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { FAQS } from "@/lib/constants";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
@@ -12,6 +13,7 @@ export function FAQ() {
 
   return (
     <section id="faq" className="relative py-24 md:py-32 bg-white" ref={ref}>
+      <LeafDecor variant="mosquito-right" top="15%" size={160} opacity={0.22} className="hidden md:block" />
       <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,80px)]">
         {/* Header */}
         <div className="text-center mb-14">

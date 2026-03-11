@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { PLANS } from "@/lib/constants";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
+import { LeafDecor } from "@/components/ui/LeafDecor";
 
 export function Plans() {
   const ref = useRef(null);
@@ -12,6 +13,7 @@ export function Plans() {
 
   return (
     <section id="plans" className="relative py-24 md:py-32 bg-white" ref={ref}>
+      <LeafDecor variant="branch" top="8%" size={200} opacity={0.25} className="hidden md:block" />
       <div className="max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)]">
         {/* Header */}
         <div className="text-center mb-16">
