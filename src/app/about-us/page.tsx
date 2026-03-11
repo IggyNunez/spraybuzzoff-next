@@ -260,8 +260,20 @@ export default function AboutPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-[clamp(64px,8vw,100px)] relative overflow-hidden" style={{ background: "#1A5C32" }}>
-          <div className="max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center relative z-10">
+        <section className="relative py-[clamp(64px,8vw,100px)] overflow-hidden">
+          {/* Background image */}
+          <Image
+            src="/assets/bottom-bar-petprevention.JPG"
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+          {/* Green overlay */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.88), rgba(26,92,50,0.72))" }}
+          />
+          <div className="relative z-10 max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
             <FadeIn>
               <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-none uppercase text-white mb-4">
                 Made for Families,<br />
