@@ -111,11 +111,13 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
               <FadeIn delay={0.1}>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5]">
-                  <Image
-                    src="/assets/girls-with-truck.avif"
-                    alt="Hayley & Veronnica — Moms and Founders of Buzz Off"
-                    fill
-                    className="object-cover object-top"
+                  <video
+                    src="/assets/family-about-us.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,61,32,0.6) 0%, transparent 60%)" }} />
                   <div className="absolute bottom-6 left-6 right-6">
