@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { ButtonGold } from "./ButtonGold";
+import type { LeadApiResponse } from "@/types";
 
 const REFERRAL_OPTIONS = [
   "Google Search",
@@ -18,6 +19,8 @@ const inputClasses =
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -38,10 +41,31 @@ export function ContactForm() {
       setForm((prev) => ({ ...prev, [field]: e.target.value }));
     };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    setSubmitted(true);
+    setError("");
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data: LeadApiResponse = await res.json();
+
+      if (!res.ok || !data.success) {
+        setError(data.message || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -171,8 +195,18 @@ export function ContactForm() {
           />
         </div>
 
-        <ButtonGold type="submit" className="w-full justify-center">
-          Book Now
+        {error && (
+          <p className="font-body text-sm text-red-400 bg-red-400/10 rounded-lg px-4 py-2">
+            {error}
+          </p>
+        )}
+
+        <ButtonGold
+          type="submit"
+          className="w-full justify-center"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Book Now"}
         </ButtonGold>
       </form>
     </div>

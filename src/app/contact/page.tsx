@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import type { LeadApiResponse } from "@/types";
 import { motion, useInView } from "framer-motion";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -70,6 +71,8 @@ const CONTACT_INFO = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -83,11 +86,44 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirect to GorillaDeck booking portal
-    window.open(BOOKING_URL, "_blank");
-    setSubmitted(true);
+    setError("");
+    setIsSubmitting(true);
+
+    try {
+      // Split name into firstName / lastName for the API
+      const nameParts = form.name.trim().split(/\s+/);
+      const firstName = nameParts[0] || "";
+      const lastName = nameParts.slice(1).join(" ") || firstName; // fallback to first name
+
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email: form.email,
+          phone: form.phone,
+          address: form.address,
+          service: form.service,
+          message: form.message,
+        }),
+      });
+
+      const data: LeadApiResponse = await res.json();
+
+      if (!res.ok || !data.success) {
+        setError(data.message || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -232,7 +268,7 @@ export default function ContactPage() {
                         You're In.
                       </h3>
                       <p className="font-body text-[0.95rem] leading-relaxed mb-6" style={{ color: "#6B7B6E" }}>
-                        We'll be in touch shortly to confirm your first visit. Opening our booking portal now.
+                        Your info has been received! We'll be in touch shortly to confirm your first visit.
                       </p>
                       <a
                         href={BOOKING_URL}
@@ -374,14 +410,22 @@ export default function ContactPage() {
                           />
                         </div>
 
+                        {/* Error message */}
+                        {error && (
+                          <p className="font-body text-[0.85rem] text-red-600 bg-red-50 rounded-xl px-4 py-3 border border-red-200">
+                            {error}
+                          </p>
+                        )}
+
                         {/* Submit */}
                         <button
                           type="submit"
-                          className="group w-full inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-white px-8 py-4 rounded-full transition-all hover:opacity-90 mt-2"
+                          disabled={isSubmitting}
+                          className={`group w-full inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-white px-8 py-4 rounded-full transition-all mt-2 ${isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"}`}
                           style={{ background: "#E05A2B" }}
                         >
-                          Book Now
-                          <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
+                          {isSubmitting ? "Sending..." : "Book Now"}
+                          {!isSubmitting && <ArrowIcon className="group-hover:translate-x-1 transition-transform" />}
                         </button>
 
                         <p className="font-body text-[0.75rem] text-center leading-relaxed" style={{ color: "#9BA89D" }}>

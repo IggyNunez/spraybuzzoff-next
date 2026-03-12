@@ -69,3 +69,59 @@ export interface ComparisonRow {
   buzzoff: string;
   traditional: string;
 }
+
+
+/* ── GorillaDesk API integration types ── */
+
+/** Form data sent from the client to /api/lead */
+export interface LeadFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  address?: string;
+  referral?: string;
+  service?: string;
+  message?: string;
+}
+
+/** Response returned from /api/lead to the client */
+export interface LeadApiResponse {
+  success: boolean;
+  message: string;
+  customerId?: number;
+}
+
+/** Payload for POST /customers */
+export interface GDCustomerCreatePayload {
+  first_name: string;
+  last_name: string;
+  email: string;
+  status: "lead" | "active" | "inactive";
+  phones?: GDPhoneEntry[];
+  address?: string;
+  city?: string;
+  state?: string;
+  zip_code?: string;
+}
+
+/** A single phone entry for GorillaDesk */
+export interface GDPhoneEntry {
+  number: string;
+  type: string;
+  is_primary: boolean;
+}
+
+/** Shape of a customer returned by GorillaDesk */
+export interface GDCustomerResponse {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  status: string;
+}
+
+/** Payload for POST /customers/:id/notes */
+export interface GDNoteCreatePayload {
+  content: string;
+}

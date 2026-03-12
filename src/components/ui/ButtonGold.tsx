@@ -10,6 +10,7 @@ interface ButtonGoldProps {
   className?: string;
   showArrow?: boolean;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 const BASE =
@@ -25,15 +26,18 @@ export function ButtonGold({
   className = "",
   showArrow = true,
   type = "button",
+  disabled = false,
 }: ButtonGoldProps) {
+  const disabledCls = disabled ? "opacity-50 cursor-not-allowed" : "";
+
   if (href) {
     return (
       <motion.a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${BASE} ${className}`}
-        whileHover={HOVER}
+        className={`${BASE} ${disabledCls} ${className}`}
+        whileHover={disabled ? undefined : HOVER}
         transition={TRANSITION}
       >
         {children}
@@ -46,8 +50,9 @@ export function ButtonGold({
     <motion.button
       type={type}
       onClick={onClick}
-      className={`${BASE} ${className}`}
-      whileHover={HOVER}
+      disabled={disabled}
+      className={`${BASE} ${disabledCls} ${className}`}
+      whileHover={disabled ? undefined : HOVER}
       transition={TRANSITION}
     >
       {children}
