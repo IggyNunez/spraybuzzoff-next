@@ -4,6 +4,8 @@ import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { ButtonGold } from "./ButtonGold";
 import type { LeadApiResponse } from "@/types";
+import { BOOKING_URL } from "@/lib/constants";
+import { ArrowIcon } from "./ArrowIcon";
 
 const REFERRAL_OPTIONS = [
   "Google Search",
@@ -87,11 +89,27 @@ export function ContactForm() {
         transition={{ duration: 0.5 }}
       >
         <div className="text-5xl mb-4">✅</div>
+        <p className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#C8973A" }}>
+          Step 1 Complete
+        </p>
         <h3 className="font-display text-2xl font-bold text-white mb-3">
-          Thank You!
+          You&apos;re In!
         </h3>
-        <p className="font-body text-[0.95rem] text-white">
-          You&apos;re in. We&apos;ll be in touch shortly to confirm your first visit.
+        <p className="font-body text-[0.95rem] text-white/75 mb-6">
+          Your info has been received. Now pick your preferred date &amp; time to lock in your first visit.
+        </p>
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-[#1A5C32] px-8 py-3.5 rounded-full transition-colors duration-200 hover:opacity-90"
+          style={{ background: "#C8973A" }}
+        >
+          Pick Your Date &amp; Time
+          <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
+        </a>
+        <p className="font-body text-[0.78rem] text-white/40 mt-4">
+          Or we&apos;ll call you within 1 business day to schedule.
         </p>
       </motion.div>
     );

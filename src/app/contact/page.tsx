@@ -264,22 +264,28 @@ export default function ContactPage() {
                           <polyline points="20 6 9 17 4 12"/>
                         </svg>
                       </div>
+                      <p className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#E05A2B" }}>
+                        Step 1 Complete
+                      </p>
                       <h3 className="font-display text-[2rem] uppercase leading-none mb-3" style={{ color: "#1A5C32" }}>
-                        You're In.
+                        You're In!
                       </h3>
                       <p className="font-body text-[0.95rem] leading-relaxed mb-6" style={{ color: "#6B7B6E" }}>
-                        Your info has been received! We'll be in touch shortly to confirm your first visit.
+                        Your info has been received. Now pick your preferred date &amp; time to lock in your first visit.
                       </p>
                       <a
                         href={BOOKING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-8 py-3.5 rounded-full"
-                        style={{ background: "#1A5C32" }}
+                        className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-white w-full px-8 py-4 rounded-full transition-all hover:opacity-90"
+                        style={{ background: "#E05A2B" }}
                       >
-                        Open Booking Portal
+                        Pick Your Date &amp; Time
                         <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
                       </a>
+                      <p className="font-body text-[0.78rem] mt-4" style={{ color: "#9BA89D" }}>
+                        Or we&apos;ll call you within 1 business day to schedule.
+                      </p>
                     </div>
                   ) : (
                     <>
