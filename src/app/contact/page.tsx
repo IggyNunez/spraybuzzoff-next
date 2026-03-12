@@ -384,10 +384,11 @@ export default function ContactPage() {
                             onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
                           >
                             <option value="" disabled>Select a service...</option>
-                            <option>Natural Mosquito Shield</option>
-                            <option>Natural Perimeter Protection</option>
-                            <option>Natural Whole Home Protection</option>
-                            <option>One-Time Treatment</option>
+                            <option>The Perimeter — $99</option>
+                            <option>The Whole House — $129</option>
+                            <option>Mosquito Shield — $85</option>
+                            <option>Perimeter + Mosquito — $218</option>
+                            <option>Whole House + Mosquito — $178</option>
                             <option>Not sure — help me choose</option>
                           </select>
                         </div>

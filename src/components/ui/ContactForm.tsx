@@ -14,6 +14,15 @@ const REFERRAL_OPTIONS = [
   "Other",
 ];
 
+const SERVICE_OPTIONS = [
+  "The Perimeter — $99",
+  "The Whole House — $129",
+  "Mosquito Shield — $85",
+  "Perimeter + Mosquito — $218",
+  "Whole House + Mosquito — $178",
+  "Not sure — help me choose",
+];
+
 const inputClasses =
   "w-full bg-white/[0.06] border border-white/[0.12] rounded-[10px] px-4 py-3 font-body text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-gold-500 transition-colors duration-200";
 
@@ -28,6 +37,7 @@ export function ContactForm() {
     phone: "",
     address: "",
     referral: "",
+    service: "",
     message: "",
   });
 
@@ -161,6 +171,26 @@ export function ContactForm() {
             value={form.address}
             onChange={handleChange("address")}
           />
+        </div>
+
+        <div>
+          <label className="font-body text-[0.82rem] font-bold uppercase tracking-wider text-white mb-1.5 block">
+            Service Interested In
+          </label>
+          <select
+            className={`${inputClasses} appearance-none`}
+            value={form.service}
+            onChange={handleChange("service")}
+          >
+            <option value="" disabled>
+              Select a service...
+            </option>
+            {SERVICE_OPTIONS.map((opt) => (
+              <option key={opt} value={opt} className="text-gray-900">
+                {opt}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div>
