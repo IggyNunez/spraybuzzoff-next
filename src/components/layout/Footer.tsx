@@ -264,6 +264,24 @@ export function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Designer credit */}
+        <div className="text-center pt-4">
+          <p className="font-body text-[0.68rem] text-white/30">
+            Site designed by{" "}
+            <a href="https://plaintalk.dev" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white/60 transition-colors">
+              Ignacio Nunez
+            </a>
+            {" | "}
+            <a href="mailto:dev@ignacio.com" className="text-white/40 hover:text-white/60 transition-colors">
+              dev@ignacio.com
+            </a>
+            {" | "}
+            <a href="https://plaintalk.dev" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white/60 transition-colors">
+              plaintalk.dev
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
