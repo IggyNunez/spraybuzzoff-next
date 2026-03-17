@@ -89,7 +89,16 @@ export interface LeadFormData {
 export interface LeadApiResponse {
   success: boolean;
   message: string;
-  customerId?: number;
+  customerId?: string;
+}
+
+/** GorillaDesk location object (required for customer creation) */
+export interface GDLocation {
+  address_line_1: string;
+  address_line_2?: string;
+  city: string;
+  state: string;
+  zip: string;
 }
 
 /** Payload for POST /customers */
@@ -99,26 +108,19 @@ export interface GDCustomerCreatePayload {
   email: string;
   status: "lead" | "active" | "inactive";
   phones?: GDPhoneEntry[];
-  address?: string;
-  city?: string;
-  state?: string;
-  zip_code?: string;
+  location: GDLocation;
 }
 
 /** A single phone entry for GorillaDesk */
 export interface GDPhoneEntry {
-  number: string;
+  phone: string;
   type: string;
   is_primary: boolean;
 }
 
 /** Shape of a customer returned by GorillaDesk */
 export interface GDCustomerResponse {
-  id: number;
-  first_name: string;
-  last_name: string;
-  email: string;
-  status: string;
+  data: { id: string };
 }
 
 /** Payload for POST /customers/:id/notes */

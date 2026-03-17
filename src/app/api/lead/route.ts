@@ -57,23 +57,57 @@ export async function POST(req: NextRequest) {
     /* Build GorillaDesk customer payload */
     const gd = getGorillaDesk();
 
+    // Parse address into structured location (required by GorillaDesk)
+    // Default to service area if user didn't provide an address
+    let location = {
+      address_line_1: "TBD",
+      city: "Rancho Cucamonga",
+      state: "CA",
+      zip: "91730",
+    };
+
+    if (sanitized.address) {
+      // Try to parse "123 Main St, City, ST 91730" format
+      const parts = sanitized.address.split(",").map((p: string) => p.trim());
+      if (parts.length >= 2) {
+        const lastPart = parts[parts.length - 1];
+        // Try to extract state and zip from last part (e.g. "CA 91730" or "CA")
+        const stateZipMatch = lastPart.match(/^([A-Z]{2})\s*(\d{5})?$/i);
+        if (stateZipMatch) {
+          location = {
+            address_line_1: parts[0],
+            city: parts.length >= 3 ? parts[parts.length - 2] : "Rancho Cucamonga",
+            state: stateZipMatch[1].toUpperCase(),
+            zip: stateZipMatch[2] || "91730",
+          };
+        } else {
+          // Couldn't parse state/zip — use street + city from parts
+          location = {
+            address_line_1: parts[0],
+            city: parts[1] || "Rancho Cucamonga",
+            state: "CA",
+            zip: "91730",
+          };
+        }
+      } else {
+        // Single value — treat as street address
+        location.address_line_1 = sanitized.address;
+      }
+    }
+
     const customerPayload: GDCustomerCreatePayload = {
       first_name: sanitized.firstName,
       last_name: sanitized.lastName,
       email: sanitized.email,
       status: "lead",
+      location,
     };
 
-    // Attach phone if provided
+    // Attach phone if provided (type ID "5G4m9Mm1OL" = Mobile in GorillaDesk)
     if (sanitized.phone) {
       customerPayload.phones = [
-        { number: sanitized.phone, type: "1", is_primary: true },
+        { phone: sanitized.phone, type: "5G4m9Mm1OL", is_primary: true },
       ];
-    }
-
-    // Parse address into components if it looks like "street, city, state zip"
-    if (sanitized.address) {
-      customerPayload.address = sanitized.address;
     }
 
     /* Create customer */
@@ -89,12 +123,14 @@ export async function POST(req: NextRequest) {
     if (sanitized.address) noteLines.push(`Address: ${sanitized.address}`);
     if (sanitized.message) noteLines.push(`Message: ${sanitized.message}`);
 
-    await gd.addNote(customer.id, { content: noteLines.join("\n") });
+    const customerId = customer.data.id;
+
+    await gd.addNote(customerId, { content: noteLines.join("\n") });
 
     return NextResponse.json<LeadApiResponse>({
       success: true,
       message: "Your info has been received! We'll be in touch shortly.",
-      customerId: customer.id,
+      customerId,
     });
   } catch (err) {
     console.error("[/api/lead] Error:", err);

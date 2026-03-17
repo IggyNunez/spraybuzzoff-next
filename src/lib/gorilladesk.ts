@@ -67,7 +67,7 @@ class GorillaDesk {
   }
 
   /** Attach a note to an existing customer */
-  async addNote(customerId: number, payload: GDNoteCreatePayload): Promise<unknown> {
+  async addNote(customerId: string, payload: GDNoteCreatePayload): Promise<unknown> {
     return this.request(`/customers/${customerId}/notes`, {
       method: "POST",
       body: JSON.stringify(payload),
