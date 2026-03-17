@@ -29,7 +29,7 @@ export function ComparisonChart() {
           >
             <img
               src="/assets/spraybuzzoffLogo.png"
-              alt="Buzz Off"
+              alt="Buzz Off plant-based pest control"
               className="h-[clamp(90px,14vw,160px)] w-auto object-contain"
             />
             <span>vs Traditional</span>

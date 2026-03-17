@@ -73,7 +73,7 @@ export default function AboutPage() {
           {/* Full background photo */}
           <Image
             src="/assets/about-hero.jpg"
-            alt="Buzz Off technician treating a residential yard"
+            alt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
             fill
             className="object-cover object-center"
             priority
@@ -221,7 +221,7 @@ export default function AboutPage() {
               <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-none uppercase mb-1 flex items-center justify-center gap-4 flex-wrap" style={{ color: "#1A5C32" }}>
                 <img
                   src="/assets/spraybuzzoffLogo.png"
-                  alt="Buzz Off"
+                  alt="Buzz Off plant-based pest control"
                   className="h-[clamp(90px,14vw,160px)] w-auto object-contain"
                 />
                 <span>vs Traditional</span>
@@ -265,7 +265,7 @@ export default function AboutPage() {
           {/* Background image */}
           <Image
             src="/assets/bottom-bar-petprevention.JPG"
-            alt=""
+            alt="Buzz Off family-owned plant-based pest control serving the Inland Empire and San Gabriel Valley"
             fill
             className="object-cover object-center"
           />

@@ -140,7 +140,7 @@ export default function ContactPage() {
           {/* Photo background */}
           <Image
             src="/assets/contact-hero.jpg"
-            alt="Buzz Off truck in the Inland Empire at dusk"
+            alt="Buzz Off natural pest control service truck ready for eco-friendly treatments in the Inland Empire at dusk"
             fill
             className="object-cover object-center"
             priority

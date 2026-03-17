@@ -70,7 +70,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
                 <div className="flex items-center gap-3">
                   <Image
                     src="/assets/spraybuzzoffLogo.png"
-                    alt="Buzz Off"
+                    alt="Buzz Off natural pest control"
                     width={36}
                     height={36}
                     className="object-contain"

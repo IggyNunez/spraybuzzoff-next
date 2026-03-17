@@ -96,7 +96,7 @@ export function Footer() {
         <div className="flex flex-col items-center text-center mb-14">
           <Image
             src="/assets/spraybuzzoffLogo.png"
-            alt="Buzz Off"
+            alt="Buzz Off plant-based pest control logo"
             width={200}
             height={200}
             className="h-52 w-auto mb-5"

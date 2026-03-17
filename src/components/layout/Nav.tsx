@@ -96,7 +96,7 @@ export function Nav() {
           >
             <Image
               src="/assets/spraybuzzoffLogo.png"
-              alt="Buzz Off Pest Prevention"
+              alt="Buzz Off Plant-Based Pest Control"
               width={170}
               height={170}
               className="w-[170px] h-[170px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
@@ -141,7 +141,7 @@ export function Nav() {
               >
                 <Image
                   src="/assets/spraybuzzoffLogo.png"
-                  alt="Buzz Off"
+                  alt="Buzz Off natural pest control logo"
                   width={36}
                   height={36}
                   className="w-9 h-9 min-w-[36px] drop-shadow-[0_1px_4px_rgba(0,0,0,0.2)]"
@@ -201,7 +201,7 @@ export function Nav() {
         >
           <Image
             src="/assets/spraybuzzoffLogo.png"
-            alt="Buzz Off Pest Prevention"
+            alt="Buzz Off Plant-Based Pest Control"
             width={100}
             height={100}
             className="w-[100px] h-[100px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
@@ -243,7 +243,7 @@ export function Nav() {
             >
               <Image
                 src="/assets/spraybuzzoffLogo.png"
-                alt="Buzz Off"
+                alt="Buzz Off natural pest control logo"
                 width={44}
                 height={44}
                 className="w-[44px] h-[44px] min-w-[44px] drop-shadow-[0_1px_4px_rgba(0,0,0,0.2)]"
@@ -320,7 +320,7 @@ export function Nav() {
                   <a href="/" onClick={closeMobile}>
                     <Image
                       src="/assets/spraybuzzoffLogo.png"
-                      alt="Buzz Off"
+                      alt="Buzz Off natural pest control logo"
                       width={64}
                       height={64}
                       className="w-16 h-16"

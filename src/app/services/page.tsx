@@ -43,6 +43,7 @@ const SERVICES = [
     headline: "Stop Mosquitoes at Every Stage",
     body: "Mosquitoes don't just ruin outdoor time — they breed fast and return every season. Our Natural Mosquito Shield targets mosquitoes at every stage of their lifecycle. We combine fogging of foliage and harborage areas with granular treatment in turf, planter beds, and shrubs.",
     image: "/assets/your-bite-free-backyard-starts-here.JPG",
+    imageAlt: "Natural mosquito prevention treatment being applied to residential backyard in the Inland Empire, California",
     bullets: [
       "Mosquito fogging of foliage and harborage areas",
       "Granular treatment in turf, planter beds, and shrubs",
@@ -60,6 +61,7 @@ const SERVICES = [
     headline: "A Plant-Based Barrier Around Your Home",
     body: "The best pest control happens before pests ever reach your door. Our Natural Perimeter Protection creates a plant-based barrier around the exterior of your home, treating the foundation, entry points, and common pest pathways with targeted eco-conscious applications.",
     image: "/assets/mosquito-barrier-around-home.JPG",
+    imageAlt: "Buzz Off technician creating a plant-based pest barrier around a family home exterior",
     bullets: [
       "Full exterior de-webbing of eaves, windows, and doorways",
       "Targeted crack and crevice dust application",
@@ -76,6 +78,7 @@ const SERVICES = [
     headline: "Total Peace of Mind, Every Corner",
     body: "For homeowners who want total peace of mind, our Whole Home Protection plan covers every corner — inside and out. Everything in the Natural Perimeter Protection plan is included, plus interior treatment as needed and crack and crevice dust application for long-term prevention inside the home.",
     image: "/assets/interior-full-service.JPG",
+    imageAlt: "Eco-friendly interior pest control treatment applied to home baseboards with botanical formula",
     bullets: [
       "Everything in the Natural Perimeter Protection Plan",
       "Interior treatment as needed",
@@ -128,7 +131,7 @@ export default function ServicesPage() {
           {/* Photo background */}
           <Image
             src="/assets/services-hero.jpg"
-            alt="Buzz Off technician treating a residential yard"
+            alt="Buzz Off plant-based pest control technician treating a residential yard in the Inland Empire"
             fill
             className="object-cover object-center"
             priority
@@ -169,7 +172,7 @@ export default function ServicesPage() {
                   <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
                     <Image
                       src={svc.image}
-                      alt={svc.title}
+                      alt={svc.imageAlt || svc.title}
                       fill
                       className="object-cover"
                     />
@@ -297,7 +300,7 @@ export default function ServicesPage() {
           {/* Background image */}
           <Image
             src="/assets/bottom-bar-petprevention.JPG"
-            alt=""
+            alt="Family-safe pet-friendly pest prevention by Buzz Off natural pest control"
             fill
             className="object-cover object-center"
           />

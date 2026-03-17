@@ -47,6 +47,7 @@ export function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover"
+          aria-label="Buzz Off plant-based pest control technicians treating a family home in the Inland Empire"
         >
           <source src="/assets/hero-video.mp4" type="video/mp4" />
         </video>

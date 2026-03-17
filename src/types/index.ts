@@ -12,6 +12,7 @@ export interface ServiceFeatured {
   label: string;
   title: string;
   image: string;
+  imageAlt?: string;
   description: string;
   bullets: string[];
 }
@@ -20,6 +21,7 @@ export interface ServiceSmall {
   label: string;
   title: string;
   image: string;
+  imageAlt?: string;
 }
 
 export interface ProcessStep {

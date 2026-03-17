@@ -40,6 +40,7 @@ export const SERVICES_FEATURED: ServiceFeatured[] = [
     label: "Prevention",
     title: "Mosquito Prevention",
     image: "/assets/spraying-bugs.jpg",
+    imageAlt: "Plant-based mosquito prevention treatment being applied to backyard foliage in the Inland Empire",
     description:
       "Reclaim your backyard for playtime, without synthetic chemicals on your kids' skin. We create a natural shield around your outdoor living spaces so your kids can run barefoot and bite-free.",
     bullets: [
@@ -52,6 +53,7 @@ export const SERVICES_FEATURED: ServiceFeatured[] = [
     label: "Exterior",
     title: "General Pest Prevention",
     image: "/assets/spraying-exterior.jpg",
+    imageAlt: "Buzz Off technician applying natural pest barrier to home exterior in Rancho Cucamonga",
     description:
       'Keep the "uninvited guests" outside where they belong. Our exterior-first approach creates a botanical perimeter that stops pests before they step foot in your kitchen.',
     bullets: [
@@ -67,21 +69,25 @@ export const SERVICES_SMALL: ServiceSmall[] = [
     label: "Interior",
     title: "Interior Treatment",
     image: "/assets/spraying-hallway.jpg",
+    imageAlt: "Eco-friendly interior pest treatment applied along baseboards with plant-based formula",
   },
   {
     label: "Protection",
     title: "Eave & Entry Points",
     image: "/assets/spraying-underneath-roof.jpg",
+    imageAlt: "Natural pest control treatment applied to eaves and entry points to prevent household pests",
   },
   {
     label: "Outdoor",
     title: "Yard Perimeter",
     image: "/assets/man-getting-spray-ready.jpg",
+    imageAlt: "Buzz Off technician preparing botanical perimeter spray for family-safe yard pest control",
   },
   {
     label: "Flexible",
     title: "One-Time Treatment",
     image: "/assets/man-by-truck.jpg",
+    imageAlt: "Buzz Off pest control service truck ready for one-time natural pest treatment in Southern California",
   },
 ];
 

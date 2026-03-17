@@ -43,7 +43,7 @@ function FeaturedCardDesktop({
       {/* Full image */}
       <Image
         src={service.image}
-        alt={service.title}
+        alt={service.imageAlt || service.title}
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
@@ -150,7 +150,7 @@ function FeaturedCardMobile({
           >
             <Image
               src={service.image}
-              alt={service.title}
+              alt={service.imageAlt || service.title}
               fill
               className="object-cover"
             />
@@ -246,7 +246,7 @@ function SmallCardDesktop({
     >
       <Image
         src={service.image}
-        alt={service.title}
+        alt={service.imageAlt || service.title}
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
@@ -322,7 +322,7 @@ function SmallCardMobile({
           >
             <Image
               src={service.image}
-              alt={service.title}
+              alt={service.imageAlt || service.title}
               fill
               className="object-cover"
             />
