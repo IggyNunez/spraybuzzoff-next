@@ -17,11 +17,11 @@ const REFERRAL_OPTIONS = [
 ];
 
 const SERVICE_OPTIONS = [
-  "The Perimeter — $99",
-  "The Whole House — $129",
-  "Mosquito Shield — $85",
-  "Perimeter + Mosquito — $218",
-  "Whole House + Mosquito — $178",
+  "The Perimeter",
+  "The Whole House",
+  "Mosquito Shield",
+  "Perimeter + Mosquito",
+  "Whole House + Mosquito",
   "Not sure — help me choose",
 ];
 

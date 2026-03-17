@@ -97,7 +97,7 @@ export default function AboutPage() {
               </p>
               <p className="font-body font-semibold text-white mt-6 text-[0.95rem]">
                 — Hayley &amp; Veronnica
-                <span className="font-normal text-white/50 ml-2 text-[0.78rem] tracking-widest uppercase">Moms &amp; Founders</span>
+                <span className="font-normal text-white/50 ml-2 text-[0.78rem] tracking-widest uppercase">Moms of Buzz Off</span>
               </p>
             </FadeIn>
           </div>
@@ -126,7 +126,7 @@ export default function AboutPage() {
                       Hayley &amp; Veronnica
                     </p>
                     <p className="font-body text-[0.78rem] tracking-widest uppercase text-white/70 mt-1">
-                      Moms &amp; Founders · Buzz Off Pest Prevention
+                      Moms of Buzz Off
                     </p>
                   </div>
                 </div>

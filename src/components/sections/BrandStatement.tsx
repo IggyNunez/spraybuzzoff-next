@@ -83,7 +83,7 @@ export function BrandStatement() {
               Hayley &amp; Veronnica
             </p>
             <p className="font-body text-[0.65rem] font-bold tracking-[0.2em] text-[#1C2B1E]/40 uppercase">
-              Moms &amp; Founders of Buzz Off
+              Moms of Buzz Off
             </p>
           </motion.div>
         </div>
@@ -116,7 +116,7 @@ export function BrandStatement() {
             Hayley &amp; Veronnica
           </p>
           <p className="font-body text-[0.55rem] font-bold tracking-[0.2em] text-[#1C2B1E]/40 uppercase">
-            Moms &amp; Founders of Buzz Off
+            Moms of Buzz Off
           </p>
         </div>
       </div>

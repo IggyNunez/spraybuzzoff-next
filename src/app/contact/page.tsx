@@ -32,7 +32,7 @@ const TRUST_ITEMS = [
   { icon: "🌿", label: "100% Plant-Based", sub: "Zero synthetic pesticides" },
   { icon: "✅", label: "No Contracts", sub: "Cancel anytime" },
   { icon: "⭐", label: "5.0 Rating", sub: "500+ families protected" },
-  { icon: "🏡", label: "Family-Owned", sub: "Founded by moms" },
+  { icon: "🏡", label: "Family-Owned", sub: "Family owned & operated" },
 ];
 
 const CONTACT_INFO = [
@@ -390,11 +390,11 @@ export default function ContactPage() {
                             onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
                           >
                             <option value="" disabled>Select a service...</option>
-                            <option>The Perimeter — $99</option>
-                            <option>The Whole House — $129</option>
-                            <option>Mosquito Shield — $85</option>
-                            <option>Perimeter + Mosquito — $218</option>
-                            <option>Whole House + Mosquito — $178</option>
+                            <option>The Perimeter</option>
+                            <option>The Whole House</option>
+                            <option>Mosquito Shield</option>
+                            <option>Perimeter + Mosquito</option>
+                            <option>Whole House + Mosquito</option>
                             <option>Not sure — help me choose</option>
                           </select>
                         </div>

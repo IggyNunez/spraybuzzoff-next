@@ -32,7 +32,7 @@ export const HERO_STATS: HeroStat[] = [
   { label: "Zero Synthetics", sub: "100% Plant-Based Formulas" },
   { label: "Safe for Families", sub: "Kids, Pets & Playgrounds" },
   { label: "FIFRA Exempt", sub: "25(b) Registered Ingredients" },
-  { label: "Mom-Founded", sub: "Family Owned & Operated" },
+  { label: "Family First", sub: "Family Owned & Operated" },
 ];
 
 export const SERVICES_FEATURED: ServiceFeatured[] = [
@@ -285,7 +285,7 @@ export const STATS_BAR = [
 export const TICKER_ITEMS = [
   "FIFRA 25(b) Exempt",
   "Zero Synthetics",
-  "Mom-Founded",
+  "Family First",
   "Safe for Kids & Pets",
   "No Contracts",
   "100% Plant-Based",
