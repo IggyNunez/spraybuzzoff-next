@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const IFRAME_SRC =
   "https://portal-embed-v3.gorilladesk.com/?screen=booking&account_id=84081210";
@@ -65,13 +66,22 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
             >
               {/* header */}
-              <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
-                <span className="font-body font-bold text-sm uppercase tracking-wider text-gray-700">
-                  Book a Service
-                </span>
+              <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200 bg-[#1A5C32]">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/assets/spraybuzzoffLogo.png"
+                    alt="Buzz Off"
+                    width={36}
+                    height={36}
+                    className="object-contain"
+                  />
+                  <span className="font-body font-bold text-sm uppercase tracking-wider text-white">
+                    Book a Service
+                  </span>
+                </div>
                 <button
                   onClick={close}
-                  className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors"
                   aria-label="Close booking"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
