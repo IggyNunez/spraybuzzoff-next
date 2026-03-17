@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { BOOKING_URL } from "@/lib/constants";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { useBooking } from "@/components/ui/BookingDrawer";
 
 export function Footer() {
+  const { open: openBooking } = useBooking();
   return (
     <footer className="relative text-white pt-16 pb-8 overflow-hidden bg-[#1A5C32]">
       {/* Botanical leaf pattern overlay */}
@@ -233,15 +234,13 @@ export function Footer() {
                 Inland Empire, CA
               </span>
               <div className="pt-2">
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={openBooking}
                   className="group inline-flex items-center gap-2 font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-[#1A5C32] bg-white hover:bg-white/90 px-5 py-2.5 rounded-full transition-all hover:scale-105"
                 >
                   Book Now
                   <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </button>
               </div>
             </div>
           </div>

@@ -4,13 +4,14 @@ import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ButtonGold } from "@/components/ui/ButtonGold";
 import { StatsBar } from "@/components/sections/StatsBar";
-import { BOOKING_URL } from "@/lib/constants";
+import { useBooking } from "@/components/ui/BookingDrawer";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function Hero() {
   const sectionRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { open: openBooking } = useBooking();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -99,7 +100,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease: EASE }}
           >
-            <ButtonGold href={BOOKING_URL} className="w-full sm:w-auto justify-center">
+            <ButtonGold onClick={openBooking} className="w-full sm:w-auto justify-center">
               Book Your First Service
             </ButtonGold>
             <a

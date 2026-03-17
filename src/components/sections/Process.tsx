@@ -2,13 +2,15 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { PROCESS_STEPS, BOOKING_URL } from "@/lib/constants";
+import { PROCESS_STEPS } from "@/lib/constants";
+import { useBooking } from "@/components/ui/BookingDrawer";
 import { ButtonGold } from "@/components/ui/ButtonGold";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
 
 export function Process() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+  const { open: openBooking } = useBooking();
 
   return (
     <section ref={ref} className="relative py-24 md:py-32 bg-[#EDEADE]">
@@ -88,7 +90,7 @@ export function Process() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}
         >
-          <ButtonGold href={BOOKING_URL}>
+          <ButtonGold onClick={openBooking}>
             Book Your First Service
           </ButtonGold>
         </motion.div>

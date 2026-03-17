@@ -4,7 +4,8 @@ import { useRef, useState } from "react";
 import { LeafDecor } from "@/components/ui/LeafDecor";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { SERVICES_FEATURED, SERVICES_SMALL, BOOKING_URL } from "@/lib/constants";
+import { SERVICES_FEATURED, SERVICES_SMALL } from "@/lib/constants";
+import { useBooking } from "@/components/ui/BookingDrawer";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -30,6 +31,7 @@ function FeaturedCardDesktop({
   delay: number;
   isInView: boolean;
 }) {
+  const { open: openBooking } = useBooking();
   return (
     <motion.div
       className="hidden md:block relative rounded-2xl overflow-hidden group cursor-pointer"
@@ -93,15 +95,13 @@ function FeaturedCardDesktop({
                 ))}
               </ul>
             )}
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={openBooking}
               className="inline-flex items-center gap-2 font-body text-[0.75rem] font-bold tracking-[0.1em] uppercase text-[#C8973A] hover:text-white transition-colors"
             >
               Book Now
               <Arrow />
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -121,6 +121,7 @@ function FeaturedCardMobile({
   delay: number;
   isInView: boolean;
 }) {
+  const { open: openBooking } = useBooking();
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -206,15 +207,12 @@ function FeaturedCardMobile({
                 ))}
               </ul>
             )}
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={(e) => { e.stopPropagation(); openBooking(); }}
               className="inline-flex items-center gap-2 font-body text-[0.75rem] font-bold tracking-[0.1em] uppercase text-[#C8973A]"
-              onClick={(e) => e.stopPropagation()}
             >
               Book Now <Arrow />
-            </a>
+            </button>
             <p className="font-body text-[0.6rem] tracking-[0.15em] uppercase text-white/30 mt-4">
               Tap to flip back
             </p>
@@ -237,6 +235,7 @@ function SmallCardDesktop({
   delay: number;
   isInView: boolean;
 }) {
+  const { open: openBooking } = useBooking();
   return (
     <motion.div
       className="hidden md:block relative rounded-xl overflow-hidden group cursor-pointer"
@@ -270,14 +269,12 @@ function SmallCardDesktop({
 
         {/* Hover reveal — Book Now link */}
         <div className="max-h-0 group-hover:max-h-[60px] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={openBooking}
             className="inline-flex items-center gap-2 font-body text-[0.7rem] font-bold tracking-[0.1em] uppercase text-[#C8973A] hover:text-white transition-colors mt-3"
           >
             Book Now <Arrow />
-          </a>
+          </button>
         </div>
       </div>
     </motion.div>
@@ -296,6 +293,7 @@ function SmallCardMobile({
   delay: number;
   isInView: boolean;
 }) {
+  const { open: openBooking } = useBooking();
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -361,15 +359,12 @@ function SmallCardMobile({
               {service.title}
             </h4>
             <div className="h-[2px] w-8 bg-[#C8973A] mb-3" />
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={(e) => { e.stopPropagation(); openBooking(); }}
               className="inline-flex items-center gap-2 font-body text-[0.7rem] font-bold tracking-[0.1em] uppercase text-[#C8973A]"
-              onClick={(e) => e.stopPropagation()}
             >
               Book Now <Arrow />
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>

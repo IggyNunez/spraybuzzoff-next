@@ -6,7 +6,8 @@ import { motion, useInView } from "framer-motion";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
-import { BOOKING_URL, SERVICE_AREAS } from "@/lib/constants";
+import { SERVICE_AREAS } from "@/lib/constants";
+import { useBooking } from "@/components/ui/BookingDrawer";
 import Image from "next/image";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -73,6 +74,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const { open: openBooking } = useBooking();
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -273,16 +275,14 @@ export default function ContactPage() {
                       <p className="font-body text-[0.95rem] leading-relaxed mb-6" style={{ color: "#6B7B6E" }}>
                         Your info has been received. Now pick your preferred date &amp; time to lock in your first visit.
                       </p>
-                      <a
-                        href={BOOKING_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        onClick={openBooking}
                         className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-white w-full px-8 py-4 rounded-full transition-all hover:opacity-90"
                         style={{ background: "#E05A2B" }}
                       >
                         Pick Your Date &amp; Time
                         <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
-                      </a>
+                      </button>
                       <p className="font-body text-[0.78rem] mt-4" style={{ color: "#9BA89D" }}>
                         Or we&apos;ll call you within 1 business day to schedule.
                       </p>
@@ -459,16 +459,14 @@ export default function ContactPage() {
               </p>
             </FadeIn>
             <FadeIn delay={0.1} className="shrink-0">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openBooking}
                 className="group inline-flex items-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-10 py-4 rounded-full transition-all hover:opacity-90 whitespace-nowrap"
                 style={{ background: "#E05A2B" }}
               >
                 Open Booking Portal
                 <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
             </FadeIn>
           </div>
         </section>

@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
-import { BOOKING_URL } from "@/lib/constants";
+import { useBooking } from "@/components/ui/BookingDrawer";
 import Image from "next/image";
 import Link from "next/link";
 import { MosquitoSVG } from "@/components/ui/pests/MosquitoSVG";
@@ -115,6 +115,7 @@ const PESTS_WE_TREAT: PestEntry[] = [
 ];
 
 export default function ServicesPage() {
+  const { open: openBooking } = useBooking();
   return (
     <>
       <Nav />
@@ -202,16 +203,14 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={openBooking}
                     className="group inline-flex items-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-8 py-4 rounded-full transition-all hover:opacity-90"
                     style={{ background: "#1A5C32" }}
                   >
                     {svc.cta}
                     <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
                 </FadeIn>
               </div>
             </div>
@@ -317,16 +316,14 @@ export default function ServicesPage() {
                 Book your first service in minutes. No contracts. No harsh chemicals. Just safer pest control for your family.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={openBooking}
                   className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-10 py-4 rounded-full transition-all hover:opacity-90"
                   style={{ background: "#E05A2B" }}
                 >
                   Book Your First Service
                   <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </button>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase px-10 py-4 rounded-full transition-all hover:bg-white/10"

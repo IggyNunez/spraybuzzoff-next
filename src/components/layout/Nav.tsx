@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { NAV_LINKS, BOOKING_URL, SOCIAL_LINKS } from "@/lib/constants";
+import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+import { useBooking } from "@/components/ui/BookingDrawer";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const DURATION = 0.6;
@@ -39,6 +40,7 @@ function SocialIcon({ icon, className = "" }: { icon: string; className?: string
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { open: openBooking } = useBooking();
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
@@ -170,14 +172,12 @@ export function Nav() {
                 </a>
               ))}
 
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openBooking}
                 className="font-body text-[0.68rem] font-extrabold tracking-[0.08em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] px-5 py-2 rounded-full transition-colors duration-200 ml-1 whitespace-nowrap"
               >
                 Book Now
-              </a>
+              </button>
             </motion.div>
           </div>
         </motion.div>
@@ -365,18 +365,15 @@ export function Nav() {
                   <div className="h-px bg-green-900/10 mb-3" />
 
                   {/* Book Now */}
-                  <motion.a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={closeMobile}
-                    className="block font-body text-[0.7rem] font-extrabold tracking-[0.08em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] py-2.5 rounded-full transition-colors text-center"
+                  <motion.button
+                    onClick={() => { closeMobile(); openBooking(); }}
+                    className="block w-full font-body text-[0.7rem] font-extrabold tracking-[0.08em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] py-2.5 rounded-full transition-colors text-center"
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, ease: EASE }}
                   >
                     Book Now
-                  </motion.a>
+                  </motion.button>
 
                   {/* Phone */}
                   <motion.a

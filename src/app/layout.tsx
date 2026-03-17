@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans, Playfair_Display } from "next/font/google";
-import Script from "next/script";
+import { BookingProvider } from "@/components/ui/BookingDrawer";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -39,21 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${dmSans.variable} ${playfair.variable}`}>
       <body className="antialiased">
-        {children}
-        <Script id="gorilladesk-portal" strategy="lazyOnload">{`
-          var _gorilla = _gorilla || {};
-          _gorilla.account_id = '6ec9a648e09a4e84586a1f4b425472e3';
-          var _gorillaInitPortal = function () {
-            var a = document.createElement('script');
-            a.type = 'text/javascript';
-            a.async = true;
-            a.defer = true;
-            a.src = 'https://portal-embed-v3.gorilladesk.com/js/booking/booking.js';
-            var b = document.getElementsByTagName('script')[0];
-            b.parentNode.insertBefore(a, b);
-          };
-          _gorillaInitPortal();
-        `}</Script>
+        <BookingProvider>
+          {children}
+        </BookingProvider>
       </body>
     </html>
   );
