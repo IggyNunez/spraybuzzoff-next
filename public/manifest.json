@@ -1,0 +1,16 @@
+{
+  "name": "Buzz Off | Plant-Based Pest Control",
+  "short_name": "Buzz Off",
+  "description": "100% plant-based pest control. Safe for kids, pets, and the people you love. Serving the Inland Empire & San Gabriel Valley.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A5C32",
+  "theme_color": "#1A5C32",
+  "icons": [
+    {
+      "src": "/assets/spraybuzzoffLogo.png",
+      "sizes": "400x400",
+      "type": "image/png"
+    }
+  ]
+}
