@@ -71,7 +71,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
           >
-            Welcome to the<br />Non-Toxic Era.
+            Pest Control for the<br />Non-Toxic Era.
           </motion.h1>
 
           {/* Line 2: Live Outside Again, Naturally. */}

@@ -66,10 +66,7 @@ export function BrandStatement() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Synthetic chemicals for 50 years. We use plant-based.{" "}
-            <span className="text-[#1A5C32] font-bold">There&apos;s a difference.</span>{" "}
-            Buzz Off started as a personal decision for our own families. We&apos;re
-            in our non-toxic era, paying attention to what surrounds our kids.
+            We didn&apos;t set out to start a pest control company. We just started asking a simple question: what exactly are we spraying around our kids? Buzz Off started as a personal decision for our own families, and that&apos;s still why we do it. We&apos;re not just getting rid of pests. We&apos;re changing what gets used to do it.
           </motion.p>
 
           {/* Signature */}
@@ -80,10 +77,7 @@ export function BrandStatement() {
           >
             <div className="w-16 h-[2px] bg-[#C8973A] mb-5" />
             <p className="font-quote italic text-[1.3rem] text-[#1A5C32] mb-1">
-              Hayley &amp; Veronnica
-            </p>
-            <p className="font-body text-[0.65rem] font-bold tracking-[0.2em] text-[#1C2B1E]/40 uppercase">
-              Moms of Buzz Off
+              — The Buzz Off Family
             </p>
           </motion.div>
         </div>
@@ -107,16 +101,11 @@ export function BrandStatement() {
           </h2>
           <div className="gold-divider mb-6" />
           <p className="font-body text-[0.9rem] leading-[1.8] text-[#1C2B1E]/70 mb-8">
-            Synthetic chemicals for 50 years. We use plant-based.{" "}
-            <span className="text-[#1A5C32] font-bold">There&apos;s a difference.</span>{" "}
-            Buzz Off started as a personal decision for our own families.
+            We didn&apos;t set out to start a pest control company. We just started asking a simple question: what exactly are we spraying around our kids? Buzz Off started as a personal decision for our own families, and that&apos;s still why we do it.
           </p>
           <div className="w-12 h-[2px] bg-[#C8973A] mb-4" />
           <p className="font-quote italic text-[1.1rem] text-[#1A5C32] mb-1">
-            Hayley &amp; Veronnica
-          </p>
-          <p className="font-body text-[0.55rem] font-bold tracking-[0.2em] text-[#1C2B1E]/40 uppercase">
-            Moms of Buzz Off
+            — The Buzz Off Family
           </p>
         </div>
       </div>

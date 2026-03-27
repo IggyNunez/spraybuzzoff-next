@@ -137,9 +137,33 @@ export function LocalBusinessJsonLd() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
-      reviewCount: "25",
+      reviewCount: "26",
       bestRating: "5",
+      worstRating: "1",
     },
+    review: [
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Nate Tate" },
+        datePublished: "2026-03-15",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+        reviewBody: "One of the main reasons I chose Buzz Off Pest Prevention was because they use a non-toxic, chemical-free solution, which was really important to me since I have a little one at home who loves to play outside.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Andrew V." },
+        datePublished: "2026-01-19",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+        reviewBody: "I highly recommend Moe and his pest control service. What really sold us was that he uses organic, family- and pet-friendly products.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Megan Stillman" },
+        datePublished: "2026-03-25",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+        reviewBody: "The mosquito service has saved my sanity and legs from bites! My kids love to play outside all afternoon and now we can enjoy our backyard worry free.",
+      },
+    ],
   };
 
   return (

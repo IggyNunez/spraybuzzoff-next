@@ -42,7 +42,7 @@ const SERVICES = [
     title: "Your Bite-Free Backyard Starts Here",
     headline: "Stop Mosquitoes at Every Stage",
     body: "Mosquitoes don't just ruin outdoor time — they breed fast and return every season. Our Natural Mosquito Shield targets mosquitoes at every stage of their lifecycle. We combine fogging of foliage and harborage areas with granular treatment in turf, planter beds, and shrubs.",
-    image: "/assets/your-bite-free-backyard-starts-here.JPG",
+    image: "/assets/natural-mosquito-shield.jpg",
     imageAlt: "Natural mosquito prevention treatment being applied to residential backyard in the Inland Empire, California",
     bullets: [
       "Mosquito fogging of foliage and harborage areas",
@@ -60,7 +60,7 @@ const SERVICES = [
     title: "Stop Pests Before They Get Inside — Naturally",
     headline: "A Plant-Based Barrier Around Your Home",
     body: "The best pest control happens before pests ever reach your door. Our Natural Perimeter Protection creates a plant-based barrier around the exterior of your home, treating the foundation, entry points, and common pest pathways with targeted eco-conscious applications.",
-    image: "/assets/mosquito-barrier-around-home.JPG",
+    image: "/assets/natural-perimeter-protection.jpg",
     imageAlt: "Buzz Off technician creating a plant-based pest barrier around a family home exterior",
     bullets: [
       "Full exterior de-webbing of eaves, windows, and doorways",
@@ -232,7 +232,7 @@ export default function ServicesPage() {
               </h2>
               <div className="h-[2px] w-16 mx-auto mb-5" style={{ background: "#C8973A" }} />
               <p className="font-body text-white/75 text-[1rem] max-w-xl mx-auto leading-relaxed">
-                Every product is FIFRA 25(b) exempt. No synthetic pyrethroids. No organophosphates. No harsh chemicals. Just botanicals.
+                No synthetic pyrethroids. No organophosphates. No harsh chemicals. Just botanicals.
               </p>
             </FadeIn>
 

@@ -72,7 +72,7 @@ export default function AboutPage() {
         >
           {/* Full background photo */}
           <Image
-            src="/assets/about-hero.jpg"
+            src="/assets/about-hero-new.jpg"
             alt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
             fill
             className="object-cover object-center"
@@ -96,8 +96,7 @@ export default function AboutPage() {
                 when it comes to your home.
               </p>
               <p className="font-body font-semibold text-white mt-6 text-[0.95rem]">
-                — Hayley &amp; Veronnica
-                <span className="font-normal text-white/50 ml-2 text-[0.78rem] tracking-widest uppercase">Moms of Buzz Off</span>
+                — The Buzz Off Family
               </p>
             </FadeIn>
           </div>
@@ -123,10 +122,7 @@ export default function AboutPage() {
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,61,32,0.6) 0%, transparent 60%)" }} />
                   <div className="absolute bottom-6 left-6 right-6">
                     <p className="font-display text-[1.6rem] uppercase text-white leading-tight">
-                      Hayley &amp; Veronnica
-                    </p>
-                    <p className="font-body text-[0.78rem] tracking-widest uppercase text-white/70 mt-1">
-                      Moms of Buzz Off
+                      The Buzz Off Family
                     </p>
                   </div>
                 </div>
@@ -149,7 +145,7 @@ export default function AboutPage() {
                     Traditional pest control hasn't really changed in 50 years. Same synthetic chemicals. Just rebranded as "normal." We questioned it. We read the labels. And we decided to build something better.
                   </p>
                   <p>
-                    Every product we use is FIFRA 25(b) exempt — plant-based botanicals that work without the chemical residues. Because modern families deserve better options.
+                    Every product we use is plant-based botanicals that work without the chemical residues. Because modern families deserve better options.
                   </p>
                 </div>
 

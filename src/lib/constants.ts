@@ -17,6 +17,7 @@ export const BOOKING_URL =
 export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Plans", href: "/#plans" },
+  { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about-us" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },
@@ -39,7 +40,7 @@ export const SERVICES_FEATURED: ServiceFeatured[] = [
   {
     label: "Prevention",
     title: "Mosquito Prevention",
-    image: "/assets/spraying-bugs.jpg",
+    image: "/assets/mosquito-protection.jpg",
     imageAlt: "Plant-based mosquito prevention treatment being applied to backyard foliage in the Inland Empire",
     description:
       "Reclaim your backyard for playtime, without synthetic chemicals on your kids' skin. We create a natural shield around your outdoor living spaces so your kids can run barefoot and bite-free.",
@@ -52,7 +53,7 @@ export const SERVICES_FEATURED: ServiceFeatured[] = [
   {
     label: "Exterior",
     title: "General Pest Prevention",
-    image: "/assets/spraying-exterior.jpg",
+    image: "/assets/general-pest-prevention.jpg",
     imageAlt: "Buzz Off technician applying natural pest barrier to home exterior in Rancho Cucamonga",
     description:
       'Keep the "uninvited guests" outside where they belong. Our exterior-first approach creates a botanical perimeter that stops pests before they step foot in your kitchen.',
@@ -68,25 +69,25 @@ export const SERVICES_SMALL: ServiceSmall[] = [
   {
     label: "Interior",
     title: "Interior Treatment",
-    image: "/assets/spraying-hallway.jpg",
+    image: "/assets/interior-treatment-new.jpg",
     imageAlt: "Eco-friendly interior pest treatment applied along baseboards with plant-based formula",
   },
   {
     label: "Protection",
     title: "Eave & Entry Points",
-    image: "/assets/spraying-underneath-roof.jpg",
+    image: "/assets/eave-entry-v2.jpg",
     imageAlt: "Natural pest control treatment applied to eaves and entry points to prevent household pests",
   },
   {
     label: "Outdoor",
     title: "Yard Perimeter",
-    image: "/assets/man-getting-spray-ready.jpg",
+    image: "/assets/yard-perimeter-new.jpg",
     imageAlt: "Buzz Off technician preparing botanical perimeter spray for family-safe yard pest control",
   },
   {
     label: "Flexible",
     title: "One-Time Treatment",
-    image: "/assets/man-by-truck.jpg",
+    image: "/assets/one-time-v2.jpg",
     imageAlt: "Buzz Off pest control service truck ready for one-time natural pest treatment in Southern California",
   },
 ];
@@ -136,28 +137,12 @@ export const SERVICE_AREAS = [
 
 export const PLANS: Plan[] = [
   {
-    tier: "Mosquito Control",
-    name: "Natural Mosquito Shield",
+    tier: "Perimeter Control",
+    name: "Natural Perimeter Protection",
     price: "",
     freq: "",
     featured: false,
     ctaStyle: "green",
-    ctaText: "Call the Team",
-    features: [
-      { text: "Mosquito fogging of foliage & harborage areas", included: true },
-      { text: "Granular treatment in turf, planter beds & shrubs", included: true },
-      { text: "Mosquito bait stations for continuous control", included: true },
-      { text: "Standing water & breeding zone inspection", included: true },
-      { text: "Recurring bi-weekly service (March–November)", included: true },
-    ],
-  },
-  {
-    tier: "Most Popular",
-    name: "Natural Perimeter Protection",
-    price: "",
-    freq: "",
-    featured: true,
-    ctaStyle: "gold",
     ctaText: "Call the Team",
     features: [
       { text: "Full exterior de-webbing of eaves, windows & doorways", included: true },
@@ -165,6 +150,22 @@ export const PLANS: Plan[] = [
       { text: "Exterior foundation & entry-point treatment", included: true },
       { text: "Plant-based formulas only", included: true },
       { text: "No contracts — cancel anytime", included: true },
+    ],
+  },
+  {
+    tier: "Most Popular",
+    name: "Natural Mosquito Shield",
+    price: "",
+    freq: "",
+    featured: true,
+    ctaStyle: "gold",
+    ctaText: "Call the Team",
+    features: [
+      { text: "Mosquito fogging of foliage & harborage areas", included: true },
+      { text: "Granular treatment in turf, planter beds & shrubs", included: true },
+      { text: "Mosquito bait stations for continuous control", included: true },
+      { text: "Standing water & breeding zone inspection", included: true },
+      { text: "Recurring bi-weekly service (March–November)", included: true },
     ],
   },
   {
