@@ -6,6 +6,7 @@ import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { PLANS } from "@/lib/constants";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
 import { LeafDecor } from "@/components/ui/LeafDecor";
+import { trackContact } from "@/lib/fbpixel";
 
 export function Plans() {
   const ref = useRef(null);
@@ -121,6 +122,7 @@ export function Plans() {
                 {/* CTA */}
                 <a
                   href="tel:9098988955"
+                  onClick={() => trackContact()}
                   className={`group w-full inline-flex items-center justify-center gap-2 font-body text-[0.78rem] font-bold tracking-[0.1em] uppercase px-6 py-4 rounded-full transition-all duration-200 ${
                     plan.featured
                       ? "bg-white text-[#1A5C32] hover:bg-white/90"
@@ -147,6 +149,7 @@ export function Plans() {
           </p>
           <a
             href="tel:9098988955"
+            onClick={() => trackContact()}
             className="font-body text-[0.95rem] font-bold text-[#1A5C32] hover:text-[#0F3D20] transition-colors"
           >
             Call the Team &mdash; 909.898.8955

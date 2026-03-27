@@ -6,6 +6,7 @@ import { ButtonGold } from "./ButtonGold";
 import type { LeadApiResponse } from "@/types";
 import { ArrowIcon } from "./ArrowIcon";
 import { useBooking } from "./BookingDrawer";
+import { trackLead } from "@/lib/fbpixel";
 
 const REFERRAL_OPTIONS = [
   "Google Search",
@@ -74,6 +75,7 @@ export function ContactForm() {
       }
 
       setSubmitted(true);
+      trackLead({ content_name: form.service || "Contact Form" });
     } catch {
       setError("Network error. Please check your connection and try again.");
     } finally {

@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { trackSchedule } from "@/lib/fbpixel";
 
 const IFRAME_SRC =
   "https://portal-embed-v3.gorilladesk.com/?screen=booking&account_id=84081210";
@@ -17,7 +18,7 @@ export const useBooking = () => useContext(Ctx);
 /* ── Provider (wraps app) ── */
 export function BookingProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
-  const open = useCallback(() => setIsOpen(true), []);
+  const open = useCallback(() => { trackSchedule(); setIsOpen(true); }, []);
   const close = useCallback(() => setIsOpen(false), []);
 
   // lock body scroll when open

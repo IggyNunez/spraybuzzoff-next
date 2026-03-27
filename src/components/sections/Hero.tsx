@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ButtonGold } from "@/components/ui/ButtonGold";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { trackContact } from "@/lib/fbpixel";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -106,6 +107,7 @@ export function Hero() {
             </ButtonGold>
             <a
               href="tel:9098988955"
+              onClick={() => trackContact()}
               className="inline-flex items-center justify-center font-body text-[0.78rem] font-bold tracking-[0.08em] uppercase text-white border border-white/20 bg-white/[0.08] backdrop-blur-md hover:bg-white/[0.15] hover:border-white/40 px-8 py-4 rounded-full transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
             >
               Call the Team

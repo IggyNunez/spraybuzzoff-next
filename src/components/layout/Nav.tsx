@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { trackContact } from "@/lib/fbpixel";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const DURATION = 0.6;
@@ -378,6 +379,7 @@ export function Nav() {
                   {/* Phone */}
                   <motion.a
                     href="tel:9098988955"
+                    onClick={() => trackContact()}
                     className="block font-body text-[0.9rem] font-extrabold tracking-[0.04em] text-green-900 text-center mt-2 hover:text-green-700 transition-colors"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

@@ -5,6 +5,7 @@ import { LeafDecor } from "@/components/ui/LeafDecor";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { FAQS } from "@/lib/constants";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
+import { trackContact } from "@/lib/fbpixel";
 
 export function FAQ() {
   const ref = useRef(null);
@@ -102,6 +103,7 @@ export function FAQ() {
           </p>
           <a
             href="tel:9098988955"
+            onClick={() => trackContact()}
             className="font-body text-[0.95rem] font-bold text-[#1A5C32] hover:text-[#0F3D20] transition-colors"
           >
             Call the Team &mdash; 909.898.8955

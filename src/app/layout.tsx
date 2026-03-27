@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans, Playfair_Display } from "next/font/google";
 import { BookingProvider } from "@/components/ui/BookingDrawer";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
+import MetaPixel from "@/components/tracking/MetaPixel";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -114,6 +115,7 @@ export default function RootLayout({
         <meta name="geo.placename" content="Rancho Cucamonga" />
       </head>
       <body className="antialiased">
+        <MetaPixel />
         <LocalBusinessJsonLd />
         <BookingProvider>
           {children}

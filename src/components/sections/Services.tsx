@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { LeafDecor } from "@/components/ui/LeafDecor";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { SERVICES_FEATURED, SERVICES_SMALL } from "@/lib/constants";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
+import { trackViewContent } from "@/lib/fbpixel";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -378,6 +379,10 @@ function SmallCardMobile({
 export function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+
+  useEffect(() => {
+    if (isInView) trackViewContent({ content_name: "Services", content_category: "services" });
+  }, [isInView]);
 
   return (
     <section id="services" className="relative py-24 md:py-32 bg-white" ref={ref}>

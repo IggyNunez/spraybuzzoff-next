@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { SERVICE_AREAS } from "@/lib/constants";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { trackLead, trackContact } from "@/lib/fbpixel";
 import Image from "next/image";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -121,6 +122,7 @@ export default function ContactPage() {
       }
 
       setSubmitted(true);
+      trackLead({ content_name: form.service || "Contact Page Form" });
     } catch {
       setError("Network error. Please check your connection and try again.");
     } finally {
@@ -199,7 +201,7 @@ export default function ContactPage() {
                             {c.label}
                           </p>
                           {c.href ? (
-                            <a href={c.href} className="font-body font-semibold text-[1rem] hover:underline" style={{ color: "#1A5C32" }}>
+                            <a href={c.href} onClick={c.href.startsWith("tel:") ? () => trackContact() : undefined} className="font-body font-semibold text-[1rem] hover:underline" style={{ color: "#1A5C32" }}>
                               {c.value}
                             </a>
                           ) : (
