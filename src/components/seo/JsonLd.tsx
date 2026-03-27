@@ -1,7 +1,7 @@
 export function LocalBusinessJsonLd() {
   const data = {
     "@context": "https://schema.org",
-    "@type": "PestControlService",
+    "@type": ["LocalBusiness", "PestControlService"],
     "@id": "https://spraybuzzoff.com/#organization",
     name: "Buzz Off",
     alternateName: "Spray Buzz Off",
