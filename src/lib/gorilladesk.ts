@@ -80,7 +80,7 @@ class GorillaDesk {
   }
 }
 
-/* Singleton — reused across requests in the same server process */
+/* Singleton - reused across requests in the same server process */
 let _instance: GorillaDesk | null = null;
 
 export function getGorillaDesk(): GorillaDesk {

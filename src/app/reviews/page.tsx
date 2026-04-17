@@ -48,7 +48,7 @@ const REVIEWS: Review[] = [
     name: "Julie C.",
     rating: 5,
     date: "March 2026",
-    text: "Wooo, I loved my service! We\u2019ve been dealing with insane mosquitos because of our pool and all of our plants in the back & I wanted to wait a week to even write this review to see if it made a difference... Well, came here to say that I totally 10/10 would recommend! My husband and I noticed that we haven\u2019t had to smack these small mosquitos in our room because we like to leave our sliding door open from time to time. Not a single mosquito has came back! Also, Maurice noticed that we had a few spiders and he kindly offered to spray them off our patio. A few hours later I noticed about 3 dead spiders. BEST part \u2014 when they came to spray, I was babysitting my niece and nephew outside and the kids did not have to stop or go inside because the natural components are harmless to children.",
+    text: "Wooo, I loved my service! We\u2019ve been dealing with insane mosquitos because of our pool and all of our plants in the back & I wanted to wait a week to even write this review to see if it made a difference... Well, came here to say that I totally 10/10 would recommend! My husband and I noticed that we haven\u2019t had to smack these small mosquitos in our room because we like to leave our sliding door open from time to time. Not a single mosquito has came back! Also, Maurice noticed that we had a few spiders and he kindly offered to spray them off our patio. A few hours later I noticed about 3 dead spiders. BEST part - when they came to spray, I was babysitting my niece and nephew outside and the kids did not have to stop or go inside because the natural components are harmless to children.",
     source: "yelp",
   },
   {
@@ -79,7 +79,7 @@ const REVIEWS: Review[] = [
     name: "Andrew V.",
     rating: 5,
     date: "January 2026",
-    text: "I highly recommend Moe and his pest control service. We had him treat our home for mosquitoes and general bugs, and we were dealing with a roach issue as well. Ever since the service, we\u2019ve noticed a huge improvement. What really sold us was that he uses organic, family- and pet-friendly products. I have a daughter who plays outside with her toys and dogs that are always in the yard, so safety was a big priority for us. The service was professional, thorough, and the scents actually smell great \u2014 not like harsh chemicals. We were so happy with the results that we signed up for a subscription.",
+    text: "I highly recommend Moe and his pest control service. We had him treat our home for mosquitoes and general bugs, and we were dealing with a roach issue as well. Ever since the service, we\u2019ve noticed a huge improvement. What really sold us was that he uses organic, family- and pet-friendly products. I have a daughter who plays outside with her toys and dogs that are always in the yard, so safety was a big priority for us. The service was professional, thorough, and the scents actually smell great - not like harsh chemicals. We were so happy with the results that we signed up for a subscription.",
     source: "yelp",
   },
   {
@@ -101,14 +101,14 @@ const REVIEWS: Review[] = [
     name: "Terranzo M.",
     rating: 5,
     date: "January 2026",
-    text: "We called Buzz Off when we noticed ants and spiders around the house. From the first phone call to the final visit, the team was professional, friendly, and patient with all my questions \u2014 especially about being safe for our dogs. They explained what products they\u2019d use and confirmed they were designed to be pet-friendly, which gave us peace of mind. Service was affordable and thorough \u2014 highly recommend if you want effective pest control that won\u2019t put your pets at risk!",
+    text: "We called Buzz Off when we noticed ants and spiders around the house. From the first phone call to the final visit, the team was professional, friendly, and patient with all my questions - especially about being safe for our dogs. They explained what products they\u2019d use and confirmed they were designed to be pet-friendly, which gave us peace of mind. Service was affordable and thorough - highly recommend if you want effective pest control that won\u2019t put your pets at risk!",
     source: "yelp",
   },
   {
     name: "Lo U.",
     rating: 5,
     date: "March 2026",
-    text: "No more searching around, I found the one!!! Amazing work!! Great customer service, very professional and polite and caring! I wanted to try the \u201cnatural\u201d solution because I have young kids \u2014 I don\u2019t need the harsh chemicals others use. They use natural solutions for killing insects that\u2019s very effective! I am very satisfied and recommend this company!",
+    text: "No more searching around, I found the one!!! Amazing work!! Great customer service, very professional and polite and caring! I wanted to try the \u201cnatural\u201d solution because I have young kids - I don\u2019t need the harsh chemicals others use. They use natural solutions for killing insects that\u2019s very effective! I am very satisfied and recommend this company!",
     source: "yelp",
   },
   {
@@ -122,7 +122,7 @@ const REVIEWS: Review[] = [
     name: "Terrance M.",
     rating: 5,
     date: "January 2026",
-    text: "Buzz Off came out and treated my backyard and home using natural products that were extremely effective. I specifically chose a more natural option because I have a dog and didn\u2019t want harsh chemicals affecting his health. I noticed an immediate difference after their service. The treatment worked fast \u2014 I saw spiders eliminated within minutes. The team was professional, thorough, and respectful of my property. They cleaned up after themselves and even removed cobwebs. Excellent service for the price.",
+    text: "Buzz Off came out and treated my backyard and home using natural products that were extremely effective. I specifically chose a more natural option because I have a dog and didn\u2019t want harsh chemicals affecting his health. I noticed an immediate difference after their service. The treatment worked fast - I saw spiders eliminated within minutes. The team was professional, thorough, and respectful of my property. They cleaned up after themselves and even removed cobwebs. Excellent service for the price.",
     source: "yelp",
   },
   {

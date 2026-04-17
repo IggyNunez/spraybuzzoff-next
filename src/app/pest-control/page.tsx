@@ -10,7 +10,7 @@ const SITE = "https://spraybuzzoff.com";
 export const metadata: Metadata = {
   title: "Pest Control Service Areas | Inland Empire & San Gabriel Valley",
   description:
-    "Plant-based pest control across the Inland Empire and San Gabriel Valley — Rancho Cucamonga, Upland, Ontario, Claremont, Glendora, San Dimas, Fontana, Pomona. FIFRA 25(b) exempt. Safe for kids & pets.",
+    "Plant-based pest control across the Inland Empire and San Gabriel Valley - Rancho Cucamonga, Upland, Ontario, Claremont, Glendora, San Dimas, Fontana, Pomona. FIFRA 25(b) exempt. Safe for kids & pets.",
   alternates: { canonical: `${SITE}/pest-control` },
   keywords: [
     "pest control Inland Empire",

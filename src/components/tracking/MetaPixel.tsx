@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { FB_PIXEL_ID } from "@/lib/fbpixel";
 
 /**
- * Meta (Facebook) Pixel — drop once in the root layout.
+ * Meta (Facebook) Pixel - drop once in the root layout.
  *
  * • Loads the pixel script via next/script (afterInteractive).
  * • Fires `PageView` on initial load and on every client-side navigation.

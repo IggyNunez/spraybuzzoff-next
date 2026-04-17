@@ -78,15 +78,15 @@ export default async function CityPage({
     },
     {
       question: `What pests do you treat in ${data.name}?`,
-      answer: `Our ${data.name} treatments target ${data.topPests.join(", ").toLowerCase()}, plus general household pests like silverfish, earwigs, and fleas. We use FIFRA 25(b) exempt plant oils (cedarwood, cinnamon, thyme, rosemary, citronella) — no synthetic pyrethroids.`,
+      answer: `Our ${data.name} treatments target ${data.topPests.join(", ").toLowerCase()}, plus general household pests like silverfish, earwigs, and fleas. We use FIFRA 25(b) exempt plant oils (cedarwood, cinnamon, thyme, rosemary, citronella) - no synthetic pyrethroids.`,
     },
     {
       question: `Is your pest control safe for kids and pets in ${data.name}?`,
-      answer: `Yes. Every product we use in ${data.name} homes is FIFRA 25(b) exempt and made from plant-based essential oils. Kids and pets just need to stay off treated areas until dry — typically 30 to 45 minutes. No evacuation, no lingering chemical smell, no synthetic residue.`,
+      answer: `Yes. Every product we use in ${data.name} homes is FIFRA 25(b) exempt and made from plant-based essential oils. Kids and pets just need to stay off treated areas until dry - typically 30 to 45 minutes. No evacuation, no lingering chemical smell, no synthetic residue.`,
     },
     {
       question: `How much does pest control cost in ${data.name}?`,
-      answer: `Pricing in ${data.name} depends on home size and plan. We offer one-time treatments, bi-weekly mosquito shields (March–November), and monthly or quarterly perimeter plans. There are no contracts — cancel anytime. Call ${"909.898.8955"} or book online for a ${data.name} quote.`,
+      answer: `Pricing in ${data.name} depends on home size and plan. We offer one-time treatments, bi-weekly mosquito shields (March–November), and monthly or quarterly perimeter plans. There are no contracts - cancel anytime. Call ${"909.898.8955"} or book online for a ${data.name} quote.`,
     },
     {
       question: `How quickly can you service ${data.name}?`,
@@ -148,7 +148,7 @@ export default async function CityPage({
             </h1>
             <p className="max-w-[720px] text-[clamp(16px,1.4vw,19px)] leading-[1.55] text-white/85 mb-8">
               {data.pestIntro} Every Buzz Off treatment is 100% plant-based, FIFRA 25(b) exempt, and built around
-              {" "}{data.name} homes — no contracts, no synthetic chemicals, just botanical oils that work.
+              {" "}{data.name} homes - no contracts, no synthetic chemicals, just botanical oils that work.
             </p>
             <div className="flex flex-wrap gap-3">
               <BookNowButton className="bg-[#F0C060] text-[#1A5C32] hover:bg-[#E5B450] px-6 py-3 rounded-full font-body font-extrabold text-sm tracking-[0.1em] uppercase">
@@ -198,7 +198,7 @@ export default async function CityPage({
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { t: `Mosquito Prevention in ${data.name}`, d: `Bite-free backyards from March through November. Fogging, granular treatment, and bait stations — all plant-based.` },
+                { t: `Mosquito Prevention in ${data.name}`, d: `Bite-free backyards from March through November. Fogging, granular treatment, and bait stations - all plant-based.` },
                 { t: `General Pest Prevention in ${data.name}`, d: `Botanical barrier for ${data.topPests.slice(0, 3).join(", ").toLowerCase()}, and other common ${data.name} pests.` },
                 { t: `Interior Treatment in ${data.name}`, d: `Plant-based interior care for homes with kids, pets, and sensitive family members.` },
                 { t: `Perimeter Protection in ${data.name}`, d: `Natural exterior barrier that keeps ${data.name} pests outside where they belong.` },
@@ -261,7 +261,7 @@ export default async function CityPage({
               <p className="font-serif italic text-[clamp(20px,2.4vw,30px)] leading-[1.4] text-[#1A5C32] mb-6">
                 "{data.testimonial.text}"
               </p>
-              <p className="font-body text-[14px] tracking-[0.05em] text-neutral-700">— {data.testimonial.name}, {data.testimonial.location}</p>
+              <p className="font-body text-[14px] tracking-[0.05em] text-neutral-700">- {data.testimonial.name}, {data.testimonial.location}</p>
             </div>
           </section>
         )}

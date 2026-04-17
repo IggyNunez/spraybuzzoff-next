@@ -159,7 +159,7 @@ export default function ContactPage() {
                 <span style={{ color: "#C8973A" }}>First Service.</span>
               </h1>
               <p className="font-body text-white/75 text-[1.05rem] max-w-lg leading-relaxed">
-                No quote wall. Pricing is visible. Book in minutes — no contracts, no pressure. Just safer pest control for your family.
+                No quote wall. Pricing is visible. Book in minutes - no contracts, no pressure. Just safer pest control for your family.
               </p>
             </FadeIn>
           </div>
@@ -173,7 +173,7 @@ export default function ContactPage() {
           <div className="max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)]">
             <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16">
 
-              {/* Left — contact info + trust */}
+              {/* Left - contact info + trust */}
               <div>
                 <FadeIn>
                   <h2 className="font-display text-[clamp(30px,3.5vw,48px)] uppercase leading-none mb-1" style={{ color: "#1A5C32" }}>
@@ -247,12 +247,12 @@ export default function ContactPage() {
                     ))}
                   </div>
                   <p className="font-body text-[0.8rem] mt-3" style={{ color: "#6B7B6E" }}>
-                    Don&apos;t see your city? Call the team — we may still serve your area.
+                    Don&apos;t see your city? Call the team - we may still serve your area.
                   </p>
                 </FadeIn>
               </div>
 
-              {/* Right — form */}
+              {/* Right - form */}
               <FadeIn delay={0.15}>
                 <div
                   className="rounded-2xl p-8 lg:p-10"
@@ -397,7 +397,7 @@ export default function ContactPage() {
                             <option>Mosquito Shield</option>
                             <option>Perimeter + Mosquito</option>
                             <option>Whole House + Mosquito</option>
-                            <option>Not sure — help me choose</option>
+                            <option>Not sure - help me choose</option>
                           </select>
                         </div>
 
@@ -457,7 +457,7 @@ export default function ContactPage() {
                 Prefer to book online instantly?
               </p>
               <p className="font-body text-white/60 text-[0.88rem] mt-1">
-                Use our booking portal — select your service, pick a time, done.
+                Use our booking portal - select your service, pick a time, done.
               </p>
             </FadeIn>
             <FadeIn delay={0.1} className="shrink-0">

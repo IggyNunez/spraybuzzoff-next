@@ -23,7 +23,7 @@ const SERVICE_OPTIONS = [
   "Mosquito Shield",
   "Perimeter + Mosquito",
   "Whole House + Mosquito",
-  "Not sure — help me choose",
+  "Not sure - help me choose",
 ];
 
 const inputClasses =

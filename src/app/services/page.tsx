@@ -41,7 +41,7 @@ const SERVICES = [
     eyebrow: "Natural Mosquito Shield",
     title: "Your Bite-Free Backyard Starts Here",
     headline: "Stop Mosquitoes at Every Stage",
-    body: "Mosquitoes don't just ruin outdoor time — they breed fast and return every season. Our Natural Mosquito Shield targets mosquitoes at every stage of their lifecycle. We combine fogging of foliage and harborage areas with granular treatment in turf, planter beds, and shrubs.",
+    body: "Mosquitoes don't just ruin outdoor time - they breed fast and return every season. Our Natural Mosquito Shield targets mosquitoes at every stage of their lifecycle. We combine fogging of foliage and harborage areas with granular treatment in turf, planter beds, and shrubs.",
     image: "/assets/natural-mosquito-shield.jpg",
     imageAlt: "Natural mosquito prevention treatment being applied to residential backyard in the Inland Empire, California",
     bullets: [
@@ -57,7 +57,7 @@ const SERVICES = [
   {
     id: "perimeter",
     eyebrow: "Natural Perimeter Protection",
-    title: "Stop Pests Before They Get Inside — Naturally",
+    title: "Stop Pests Before They Get Inside - Naturally",
     headline: "A Plant-Based Barrier Around Your Home",
     body: "The best pest control happens before pests ever reach your door. Our Natural Perimeter Protection creates a plant-based barrier around the exterior of your home, treating the foundation, entry points, and common pest pathways with targeted eco-conscious applications.",
     image: "/assets/natural-perimeter-protection.jpg",
@@ -74,9 +74,9 @@ const SERVICES = [
   {
     id: "interior",
     eyebrow: "Natural Whole Home Protection",
-    title: "Complete Protection Inside & Out — The Natural Way",
+    title: "Complete Protection Inside & Out - The Natural Way",
     headline: "Total Peace of Mind, Every Corner",
-    body: "For homeowners who want total peace of mind, our Whole Home Protection plan covers every corner — inside and out. Everything in the Natural Perimeter Protection plan is included, plus interior treatment as needed and crack and crevice dust application for long-term prevention inside the home.",
+    body: "For homeowners who want total peace of mind, our Whole Home Protection plan covers every corner - inside and out. Everything in the Natural Perimeter Protection plan is included, plus interior treatment as needed and crack and crevice dust application for long-term prevention inside the home.",
     image: "/assets/interior-full-service.JPG",
     imageAlt: "Eco-friendly interior pest control treatment applied to home baseboards with botanical formula",
     bullets: [

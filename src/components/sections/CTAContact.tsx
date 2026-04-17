@@ -27,7 +27,7 @@ export function CTAContact() {
       />
 
       <div className="relative z-[2] max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left — text */}
+        {/* Left - text */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -57,7 +57,7 @@ export function CTAContact() {
           </div>
         </motion.div>
 
-        {/* Right — form */}
+        {/* Right - form */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

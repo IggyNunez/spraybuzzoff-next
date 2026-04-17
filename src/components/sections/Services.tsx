@@ -21,7 +21,7 @@ function Arrow({ className = "" }: { className?: string }) {
 }
 
 /* ═══════════════════════════════════════════════
-   Featured Card — Desktop: hover slide-up
+   Featured Card - Desktop: hover slide-up
    ═══════════════════════════════════════════════ */
 function FeaturedCardDesktop({
   service,
@@ -49,7 +49,7 @@ function FeaturedCardDesktop({
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
 
-      {/* Dark gradient — always visible at bottom for title legibility */}
+      {/* Dark gradient - always visible at bottom for title legibility */}
       <div
         className="absolute inset-0 transition-opacity duration-500"
         style={{
@@ -57,7 +57,7 @@ function FeaturedCardDesktop({
         }}
       />
 
-      {/* Hover overlay — darker for content legibility */}
+      {/* Hover overlay - darker for content legibility */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
@@ -65,16 +65,16 @@ function FeaturedCardDesktop({
         }}
       />
 
-      {/* Label badge — top left */}
+      {/* Label badge - top left */}
       <div className="absolute top-5 left-5 z-10">
         <span className="font-body text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white bg-[#1A5C32] px-3 py-1.5 rounded-full">
           {service.label}
         </span>
       </div>
 
-      {/* Content — slides up on hover */}
+      {/* Content - slides up on hover */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-8">
-        {/* Title — always visible */}
+        {/* Title - always visible */}
         <h3 className="font-display text-[clamp(1.5rem,2.5vw,2rem)] uppercase text-white leading-tight mb-2 tracking-wide">
           {service.title}
         </h3>
@@ -111,7 +111,7 @@ function FeaturedCardDesktop({
 }
 
 /* ═══════════════════════════════════════════════
-   Featured Card — Mobile: 3D flip
+   Featured Card - Mobile: 3D flip
    ═══════════════════════════════════════════════ */
 function FeaturedCardMobile({
   service,
@@ -144,7 +144,7 @@ function FeaturedCardMobile({
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration: 0.6, ease: EASE }}
         >
-          {/* ── FRONT — Image ── */}
+          {/* ── FRONT - Image ── */}
           <div
             className="absolute inset-0 rounded-2xl overflow-hidden"
             style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
@@ -178,7 +178,7 @@ function FeaturedCardMobile({
             </div>
           </div>
 
-          {/* ── BACK — Content ── */}
+          {/* ── BACK - Content ── */}
           <div
             className="absolute inset-0 rounded-2xl overflow-hidden flex flex-col justify-center px-6 py-8"
             style={{
@@ -225,7 +225,7 @@ function FeaturedCardMobile({
 }
 
 /* ═══════════════════════════════════════════════
-   Small Card — Desktop: hover slide-up
+   Small Card - Desktop: hover slide-up
    ═══════════════════════════════════════════════ */
 function SmallCardDesktop({
   service,
@@ -259,7 +259,7 @@ function SmallCardDesktop({
         }}
       />
 
-      {/* Content — bottom */}
+      {/* Content - bottom */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-5">
         <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-[#E05A2B] block mb-1">
           {service.label}
@@ -268,7 +268,7 @@ function SmallCardDesktop({
           {service.title}
         </h4>
 
-        {/* Hover reveal — Book Now link */}
+        {/* Hover reveal - Book Now link */}
         <div className="max-h-0 group-hover:max-h-[60px] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
           <button
             onClick={openBooking}
@@ -283,7 +283,7 @@ function SmallCardDesktop({
 }
 
 /* ═══════════════════════════════════════════════
-   Small Card — Mobile: tap to flip
+   Small Card - Mobile: tap to flip
    ═══════════════════════════════════════════════ */
 function SmallCardMobile({
   service,
@@ -421,7 +421,7 @@ export function Services() {
           </motion.p>
         </div>
 
-        {/* Featured Cards — 2 large */}
+        {/* Featured Cards - 2 large */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {SERVICES_FEATURED.map((service, i) => (
             <div key={service.title}>
@@ -431,7 +431,7 @@ export function Services() {
           ))}
         </div>
 
-        {/* Small Cards — 4 grid */}
+        {/* Small Cards - 4 grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {SERVICES_SMALL.map((service, i) => (
             <div key={service.title}>

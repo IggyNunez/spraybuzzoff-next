@@ -21,7 +21,7 @@ export function BrandStatement() {
     <section ref={sectionRef} className="relative bg-white overflow-hidden">
       {/* Desktop: Split layout */}
       <div className="hidden md:grid md:grid-cols-2 min-h-[80vh]">
-        {/* Left — Video */}
+        {/* Left - Video */}
         <div className="relative overflow-hidden">
           <motion.div className="absolute inset-0 h-[120%]" style={{ y: imgY }}>
             <video
@@ -38,7 +38,7 @@ export function BrandStatement() {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20" />
         </div>
 
-        {/* Right — Text */}
+        {/* Right - Text */}
         <div className="flex flex-col justify-center px-[clamp(40px,5vw,80px)] py-24">
           <motion.h2
             className="section-title mb-6"
@@ -77,7 +77,7 @@ export function BrandStatement() {
           >
             <div className="w-16 h-[2px] bg-[#C8973A] mb-5" />
             <p className="font-quote italic text-[1.3rem] text-[#1A5C32] mb-1">
-              — The Buzz Off Family
+              - The Buzz Off Family
             </p>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ export function BrandStatement() {
           </p>
           <div className="w-12 h-[2px] bg-[#C8973A] mb-4" />
           <p className="font-quote italic text-[1.1rem] text-[#1A5C32] mb-1">
-            — The Buzz Off Family
+            - The Buzz Off Family
           </p>
         </div>
       </div>

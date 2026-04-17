@@ -8,7 +8,7 @@ import { CITIES } from "@/lib/cities";
 export const metadata: Metadata = {
   title: "Page Not Found",
   description:
-    "The page you're looking for doesn't exist. But our plant-based pest control still does — browse our service areas or head back home.",
+    "The page you're looking for doesn't exist. But our plant-based pest control still does - browse our service areas or head back home.",
   robots: { index: false, follow: true },
 };
 
@@ -67,7 +67,7 @@ export default function NotFound() {
             </h1>
 
             <p className="max-w-[620px] mx-auto text-[clamp(16px,1.3vw,18px)] leading-[1.6] text-white/85 mb-10">
-              The page you're looking for doesn't exist — but our 100% plant-based pest control still does.
+              The page you're looking for doesn't exist - but our 100% plant-based pest control still does.
               Head back home, or find the Buzz Off service closest to you.
             </p>
 

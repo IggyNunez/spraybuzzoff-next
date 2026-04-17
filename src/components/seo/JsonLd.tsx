@@ -228,7 +228,7 @@ export function CityServiceJsonLd({
       {
         "@type": ["LocalBusiness", "PestControlService"],
         "@id": `${url}#localbusiness`,
-        name: `Buzz Off Pest Control — ${cityName}`,
+        name: `Buzz Off Pest Control - ${cityName}`,
         description,
         url,
         telephone: "+19098988955",

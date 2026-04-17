@@ -149,7 +149,7 @@ export const PLANS: Plan[] = [
       { text: "Targeted crack & crevice dust application", included: true },
       { text: "Exterior foundation & entry-point treatment", included: true },
       { text: "Plant-based formulas only", included: true },
-      { text: "No contracts — cancel anytime", included: true },
+      { text: "No contracts - cancel anytime", included: true },
     ],
   },
   {
@@ -181,7 +181,7 @@ export const PLANS: Plan[] = [
       { text: "Interior treatment as needed", included: true },
       { text: "Interior crack & crevice dust for long-term prevention", included: true },
       { text: "Plant-based formulas only", included: true },
-      { text: "No contracts — cancel anytime", included: true },
+      { text: "No contracts - cancel anytime", included: true },
     ],
   },
 ];
@@ -223,12 +223,12 @@ export const FAQS: FAQ[] = [
   {
     question: "Are your treatments safe for kids and pets?",
     answer:
-      "Yes. Keep kids and pets off treated areas until dry — typically 30 to 45 minutes. That's it.",
+      "Yes. Keep kids and pets off treated areas until dry - typically 30 to 45 minutes. That's it.",
   },
   {
     question: "Why do your treatments smell the way they do?",
     answer:
-      "The scent is the botanical oils working — cedarwood, cinnamon, thyme, citronella, lemongrass. The aroma dissipates as the product dries, usually within an hour.",
+      "The scent is the botanical oils working - cedarwood, cinnamon, thyme, citronella, lemongrass. The aroma dissipates as the product dries, usually within an hour.",
   },
   {
     question: "How often do you treat?",
@@ -243,7 +243,7 @@ export const FAQS: FAQ[] = [
   {
     question: "How is Buzz Off different from traditional pest control?",
     answer:
-      "Botanical formulas instead of synthetic pyrethroids — cedarwood, rosemary, thyme, citronella, and other plant oils. Synthetic chemicals for 50 years. We use plant-based. There's a difference.",
+      "Botanical formulas instead of synthetic pyrethroids - cedarwood, rosemary, thyme, citronella, and other plant oils. Synthetic chemicals for 50 years. We use plant-based. There's a difference.",
   },
   {
     question: "What pests do you treat for?",
@@ -253,12 +253,12 @@ export const FAQS: FAQ[] = [
   {
     question: "Will rain affect my treatment?",
     answer:
-      "Treatments are designed to bind after application and hold up to light rain once dry. Significant rainfall immediately after service will be made right — we come back, no questions asked.",
+      "Treatments are designed to bind after application and hold up to light rain once dry. Significant rainfall immediately after service will be made right - we come back, no questions asked.",
   },
   {
     question: "Do I need to be home during the service?",
     answer:
-      "Not for exterior-only services — just access to the yard. Interior treatments require scheduling.",
+      "Not for exterior-only services - just access to the yard. Interior treatments require scheduling.",
   },
   {
     question: "How soon will I see results?",
@@ -302,9 +302,9 @@ export const TICKER_ITEMS = [
 
 export const COMPARISON_ROWS: ComparisonRow[] = [
   { feature: "Ingredients", buzzoff: "Plant-based essential oils", traditional: "Synthetic pyrethroids" },
-  { feature: "Safe for Kids & Pets", buzzoff: "Yes \u2014 FIFRA 25(b) exempt", traditional: "Requires evacuation" },
+  { feature: "Safe for Kids & Pets", buzzoff: "Yes - FIFRA 25(b) exempt", traditional: "Requires evacuation" },
   { feature: "Environmental Impact", buzzoff: "No bioaccumulation", traditional: "Soil & water contamination" },
-  { feature: "Contracts Required", buzzoff: "Never \u2014 cancel anytime", traditional: "12-month lock-in typical" },
+  { feature: "Contracts Required", buzzoff: "Never - cancel anytime", traditional: "12-month lock-in typical" },
   { feature: "Scent", buzzoff: "Pleasant botanical aroma", traditional: "Chemical odor" },
   { feature: "Effectiveness", buzzoff: "Proven pest prevention", traditional: "Kills on contact, pests return" },
 ];

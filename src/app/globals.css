@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors — from Buzz Off Web Designer Guidelines 2026 */
-  --color-brand-green: #1A5C32;       /* Primary — hero, nav, CTA, card borders */
-  --color-brand-dark-green: #0F3D20;  /* Dark — hero overlays, footer, deep contrast */
-  --color-brand-mid-green: #2D7A47;   /* Mid — secondary sections, hover states */
-  --color-brand-light-green: #EAF2EC; /* Light — FAQ hover, subtle card bg */
+  /* Brand Colors - from Buzz Off Web Designer Guidelines 2026 */
+  --color-brand-green: #1A5C32;       /* Primary - hero, nav, CTA, card borders */
+  --color-brand-dark-green: #0F3D20;  /* Dark - hero overlays, footer, deep contrast */
+  --color-brand-mid-green: #2D7A47;   /* Mid - secondary sections, hover states */
+  --color-brand-light-green: #EAF2EC; /* Light - FAQ hover, subtle card bg */
   --color-brand-orange: #E05A2B;      /* Urgency banners, accent buttons, eyebrows */
   --color-brand-gold: #C8973A;        /* Pricing, stars, dividers, highlights */
   --color-brand-gold-light: #F0C060;  /* Gold on dark green backgrounds */
-  --color-brand-cream: #EDEADE;       /* Section backgrounds — use over pure white */
+  --color-brand-cream: #EDEADE;       /* Section backgrounds - use over pure white */
   --color-brand-dark: #1C2B1E;        /* Body text, dark overlays */
 
   /* Green scale */
@@ -48,10 +48,10 @@
   --color-gray-200: #D8DDD9;
   --color-gray-100: #F0F3F1;
 
-  /* Fonts — Buzz Off brand typography */
-  --font-display: var(--font-bebas), sans-serif;   /* Bebas Neue — all headings, uppercase */
-  --font-body: var(--font-dm-sans), sans-serif;    /* DM Sans — body, UI, buttons */
-  --font-quote: var(--font-playfair), serif;       /* Playfair Display Italic — quotes only */
+  /* Fonts - Buzz Off brand typography */
+  --font-display: var(--font-bebas), sans-serif;   /* Bebas Neue - all headings, uppercase */
+  --font-body: var(--font-dm-sans), sans-serif;    /* DM Sans - body, UI, buttons */
+  --font-quote: var(--font-playfair), serif;       /* Playfair Display Italic - quotes only */
 
   /* Keep legacy aliases */
   --font-candal: var(--font-bebas), sans-serif;
@@ -95,7 +95,7 @@ body {
 
 /* ── Brand Utility Classes ── */
 
-/* Section eyebrow: DM Sans 700, small, orange, wide tracking — arched on SVG path */
+/* Section eyebrow: DM Sans 700, small, orange, wide tracking - arched on SVG path */
 .section-eyebrow {
   font-family: var(--font-body);
   font-weight: 700;
@@ -105,7 +105,7 @@ body {
   letter-spacing: 0.25em;
 }
 
-/* Arched eyebrow text — old school curved label style */
+/* Arched eyebrow text - old school curved label style */
 .section-eyebrow-arch {
   display: flex;
   justify-content: center;
@@ -157,7 +157,7 @@ body {
   animation-play-state: paused;
 }
 
-/* Mosquito flight — wobble + pulse to simulate buzzing flight */
+/* Mosquito flight - wobble + pulse to simulate buzzing flight */
 @keyframes mosquito-fly {
   0%, 100% { transform: rotate(0deg) scale(1); }
   15% { transform: rotate(6deg) scale(1.05); }
@@ -177,7 +177,7 @@ body {
   animation: mosquito-fly 0.4s ease-in-out infinite, mosquito-shadow 1.5s ease-in-out infinite;
 }
 
-/* Wing buzz — too fast for Framer Motion, stays in CSS */
+/* Wing buzz - too fast for Framer Motion, stays in CSS */
 @keyframes wing-buzz {
   0%, 100% { transform: scaleX(1); }
   50% { transform: scaleX(0.6); }

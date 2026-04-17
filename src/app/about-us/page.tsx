@@ -31,7 +31,7 @@ const VALUES = [
   {
     num: "01",
     title: "100% Plant-Based",
-    body: "If it's not plant-based, it does not go in our sprayer. Cedarwood, rosemary, citronella, thyme — botanicals your family can trust.",
+    body: "If it's not plant-based, it does not go in our sprayer. Cedarwood, rosemary, citronella, thyme - botanicals your family can trust.",
   },
   {
     num: "02",
@@ -41,7 +41,7 @@ const VALUES = [
   {
     num: "03",
     title: "Transparent Treatments",
-    body: "Secrets are for chemicals — not costs. We tell you exactly what we use, where we apply it, and why it works.",
+    body: "Secrets are for chemicals - not costs. We tell you exactly what we use, where we apply it, and why it works.",
   },
   {
     num: "04",
@@ -52,11 +52,11 @@ const VALUES = [
 
 const DIFF_ROWS = [
   { feature: "Ingredients", buzzOff: "Plant-based botanicals", traditional: "Synthetic pyrethroids & organophosphates" },
-  { feature: "Safe immediately?", buzzOff: "Yes — 30–45 min dry time", traditional: "Hours to days" },
+  { feature: "Safe immediately?", buzzOff: "Yes - 30–45 min dry time", traditional: "Hours to days" },
   { feature: "Contract required?", buzzOff: "Never", traditional: "Usually 12-month minimum" },
-  { feature: "Scent after treatment", buzzOff: "Light botanical — dissipates in 1 hr", traditional: "Strong chemical smell" },
-  { feature: "FIFRA 25(b) exempt?", buzzOff: "Yes — every product", traditional: "No" },
-  { feature: "Founded by families?", buzzOff: "Yes — Hayley & Veronnica", traditional: "National chain" },
+  { feature: "Scent after treatment", buzzOff: "Light botanical - dissipates in 1 hr", traditional: "Strong chemical smell" },
+  { feature: "FIFRA 25(b) exempt?", buzzOff: "Yes - every product", traditional: "No" },
+  { feature: "Founded by families?", buzzOff: "Yes - Hayley & Veronnica", traditional: "National chain" },
 ];
 
 export default function AboutPage() {
@@ -78,7 +78,7 @@ export default function AboutPage() {
             className="object-cover object-center"
             priority
           />
-          {/* Gradient overlay — heavier on left for text legibility */}
+          {/* Gradient overlay - heavier on left for text legibility */}
           <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(15,61,32,0.92) 0%, rgba(15,61,32,0.75) 55%, rgba(15,61,32,0.4) 100%)" }} />
           <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
             <FadeIn className="max-w-[560px]">
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 when it comes to your home.
               </p>
               <p className="font-body font-semibold text-white mt-6 text-[0.95rem]">
-                — The Buzz Off Family
+                - The Buzz Off Family
               </p>
             </FadeIn>
           </div>

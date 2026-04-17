@@ -106,7 +106,7 @@ export function FAQ() {
             onClick={() => trackContact()}
             className="font-body text-[0.95rem] font-bold text-[#1A5C32] hover:text-[#0F3D20] transition-colors"
           >
-            Call the Team &mdash; 909.898.8955
+            Call the Team - 909.898.8955
           </a>
         </motion.div>
       </div>

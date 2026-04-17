@@ -105,7 +105,7 @@ export function Nav() {
             />
           </motion.a>
 
-          {/* Pill — outer = green border frame, inner = white content */}
+          {/* Pill - outer = green border frame, inner = white content */}
           <div
             style={{
               background: "#1A5C32",
@@ -186,7 +186,7 @@ export function Nav() {
 
       {/* ── Mobile Nav ── */}
       <nav className="md:hidden fixed top-0 left-0 right-0 z-[100] px-4 pt-3 flex items-start justify-between">
-        {/* Big logo — visible at top, collapses on scroll */}
+        {/* Big logo - visible at top, collapses on scroll */}
         <motion.a
           href="/"
           className="shrink-0 block"
@@ -210,7 +210,7 @@ export function Nav() {
           />
         </motion.a>
 
-        {/* Pill — right side */}
+        {/* Pill - right side */}
         <div
           style={{
             background: "#1A5C32",
@@ -228,7 +228,7 @@ export function Nav() {
             }}
             transition={{ duration: DURATION, ease: EASE }}
           >
-            {/* Small logo inside pill — appears on scroll */}
+            {/* Small logo inside pill - appears on scroll */}
             <motion.a
               href="/"
               className="shrink-0 flex items-center justify-center overflow-hidden"
@@ -280,7 +280,7 @@ export function Nav() {
         </div>
       </nav>
 
-      {/* ── Mobile Drawer — chamfered card ── */}
+      {/* ── Mobile Drawer - chamfered card ── */}
       <AnimatePresence>
         {mobileOpen && (
           <>

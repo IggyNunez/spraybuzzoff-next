@@ -48,9 +48,9 @@ export function Process() {
           </motion.p>
         </div>
 
-        {/* Steps — desktop: single row with connecting line, mobile: 2x2 */}
+        {/* Steps - desktop: single row with connecting line, mobile: 2x2 */}
         <div className="relative">
-          {/* Connecting gold line — desktop only */}
+          {/* Connecting gold line - desktop only */}
           <div className="hidden lg:block absolute top-[60px] left-[12%] right-[12%] h-[2px] bg-[#C8973A]/30 z-0" />
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">

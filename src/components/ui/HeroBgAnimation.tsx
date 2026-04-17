@@ -45,7 +45,7 @@ export function HeroBgAnimation() {
         style={{ transformOrigin: "1150px 540px", animation: "pulseGlow 15s infinite ease-in-out", animationDelay: "-4s" }}
       />
 
-      {/* Mist stream — bottom-left rising */}
+      {/* Mist stream - bottom-left rising */}
       <g fill="rgba(255,255,255,0.06)">
         <ellipse cx="90"  cy="760" rx="110" ry="55" style={{ animation: "driftMist 15s infinite linear" }} />
         <ellipse cx="240" cy="790" rx="95"  ry="48" style={{ animation: "driftMist 18s infinite linear", animationDelay: "-3s" }} />
@@ -54,7 +54,7 @@ export function HeroBgAnimation() {
         <ellipse cx="170" cy="690" rx="120" ry="60" style={{ animation: "driftMist 22s infinite linear", animationDelay: "-5s" }} />
       </g>
 
-      {/* Hexagon grid — draw-on stroke animation */}
+      {/* Hexagon grid - draw-on stroke animation */}
       <g fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="1.5" strokeDasharray="400" strokeDashoffset="400">
         <polygon points="260,150 230,202 170,202 140,150 170,98 230,98"   style={{ animation: "drawHex 8s infinite ease-in-out", animationDelay: "0s" }} />
         <polygon points="560,600 530,652 470,652 440,600 470,548 530,548"  style={{ animation: "drawHex 10s infinite ease-in-out", animationDelay: "-1.5s" }} />
@@ -70,7 +70,7 @@ export function HeroBgAnimation() {
         <polygon points="950,480 920,532 860,532 830,480 860,428 920,428"   style={{ animation: "drawHex 7.5s infinite ease-in-out", animationDelay: "-3s" }} />
       </g>
 
-      {/* Botanical particles — float up */}
+      {/* Botanical particles - float up */}
       <g fill="rgba(1,109,48,0.22)">
         <circle r="4" cx="200"  cy="850" style={{ animation: "floatUp 10s infinite linear" }} />
         <circle r="3" cx="450"  cy="850" style={{ animation: "floatUp 12s infinite linear", animationDelay: "-2s" }} />

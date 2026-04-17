@@ -71,7 +71,7 @@ export const metadata: Metadata = {
         url: "/assets/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: "Buzz Off plant-based pest control — safe for kids, pets, and the people you love",
+        alt: "Buzz Off plant-based pest control - safe for kids, pets, and the people you love",
       },
     ],
   },

@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
             zip: stateZipMatch[2] || "91730",
           };
         } else {
-          // Couldn't parse state/zip — use street + city from parts
+          // Couldn't parse state/zip - use street + city from parts
           location = {
             address_line_1: parts[0],
             city: parts[1] || "Rancho Cucamonga",
@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
           };
         }
       } else {
-        // Single value — treat as street address
+        // Single value - treat as street address
         location.address_line_1 = sanitized.address;
       }
     }

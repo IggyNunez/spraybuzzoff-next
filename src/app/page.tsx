@@ -77,7 +77,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer — rounded card */}
+      {/* Footer - rounded card */}
       <div className="section-card mt-2 mb-2">
         <Footer />
       </div>

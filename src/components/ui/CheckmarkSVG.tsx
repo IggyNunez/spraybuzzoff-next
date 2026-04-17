@@ -45,7 +45,7 @@ export function CheckmarkSVG({
         transition={{ duration: 0.5, delay: circleDelay, ease: "easeOut" }}
         style={{ transformOrigin: "20px 20px" }}
       />
-      {/* Circle stroke — gold */}
+      {/* Circle stroke - gold */}
       <motion.circle
         cx={20}
         cy={20}
@@ -57,7 +57,7 @@ export function CheckmarkSVG({
         animate={animate ? { pathLength: 1 } : { pathLength: 0 }}
         transition={{ duration: 0.7, delay: circleDelay, ease: "easeOut" }}
       />
-      {/* Bold strike check — gold, thick, confident */}
+      {/* Bold strike check - gold, thick, confident */}
       <motion.path
         d="M11 21L17.5 28L29 13"
         stroke="#F5CC05"

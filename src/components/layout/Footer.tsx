@@ -16,7 +16,7 @@ export function Footer() {
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="leafPattern" x="0" y="0" width="600" height="650" patternUnits="userSpaceOnUse">
-              {/* Hero leaf — large, sweeping, top-left area */}
+              {/* Hero leaf - large, sweeping, top-left area */}
               <g transform="translate(120, 60) rotate(30, 0, 0)">
                 <path
                   d="M0 0 C-50 35, -65 110, -25 170 C-8 195, 8 195, 25 170 C65 110, 50 35, 0 0Z"
@@ -33,7 +33,7 @@ export function Footer() {
                 <path d="M0 170 C4 190, 10 215, 8 240" fill="none" stroke="white" strokeWidth="2.5" opacity="0.35" strokeLinecap="round" />
               </g>
 
-              {/* Second large leaf — right side, opposite angle */}
+              {/* Second large leaf - right side, opposite angle */}
               <g transform="translate(440, 280) rotate(-25, 0, 0)">
                 <path
                   d="M0 0 C-40 28, -52 88, -20 136 C-6 156, 6 156, 20 136 C52 88, 40 28, 0 0Z"
@@ -48,7 +48,7 @@ export function Footer() {
                 <path d="M0 136 C-3 152, -6 170, -5 188" fill="none" stroke="white" strokeWidth="2" opacity="0.3" strokeLinecap="round" />
               </g>
 
-              {/* Medium leaf — bottom left */}
+              {/* Medium leaf - bottom left */}
               <g transform="translate(60, 420) rotate(55, 0, 0)">
                 <path
                   d="M0 0 C-30 20, -38 65, -15 100 C-5 115, 5 115, 15 100 C38 65, 30 20, 0 0Z"
@@ -61,7 +61,7 @@ export function Footer() {
                 <path d="M0 100 C2 112, 5 126, 4 138" fill="none" stroke="white" strokeWidth="1.5" opacity="0.25" strokeLinecap="round" />
               </g>
 
-              {/* Small accent leaf — top right */}
+              {/* Small accent leaf - top right */}
               <g transform="translate(480, 50) rotate(-50, 0, 0)">
                 <path
                   d="M0 0 C-22 15, -28 50, -10 75 C-3 86, 3 86, 10 75 C28 50, 22 15, 0 0Z"
@@ -72,7 +72,7 @@ export function Footer() {
                 <path d="M0 75 C-2 86, -4 98, -3 106" fill="none" stroke="white" strokeWidth="1.2" opacity="0.2" strokeLinecap="round" />
               </g>
 
-              {/* Tiny floating leaf — center area */}
+              {/* Tiny floating leaf - center area */}
               <g transform="translate(300, 180) rotate(15, 0, 0)">
                 <path
                   d="M0 0 C-16 11, -20 36, -7 54 C-2 62, 2 62, 7 54 C20 36, 16 11, 0 0Z"

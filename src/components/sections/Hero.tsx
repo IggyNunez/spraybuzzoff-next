@@ -54,7 +54,7 @@ export function Hero() {
         </video>
       </motion.div>
 
-      {/* Dark overlays — rich green tint to kill the gray sky */}
+      {/* Dark overlays - rich green tint to kill the gray sky */}
       <div className="absolute inset-0 bg-[#0F3D20]/40 z-[1]" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70 z-[1]" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-[1]" />
