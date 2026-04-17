@@ -8,7 +8,21 @@
       "Bash(git push:*)",
       "Bash(python -c \"import docx; doc = docx.Document\\(r''C:\\\\Users\\\\iggyn\\\\Downloads\\\\BuzzOff_Service_Guide_v3.docx''\\); [print\\(p.text\\) for p in doc.paragraphs]\")",
       "Bash(pip install python-docx)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(xargs grep:*)",
+      "Bash(wc -l /d/spraybuzzoff-next/src/components/**/*.tsx)",
+      "Bash(pip show:*)",
+      "Bash(python -c \"from PIL import Image; print\\(''HEIC support:'', hasattr\\(Image, ''registered_extensions''\\) and ''.heic'' in Image.registered_extensions\\(\\)\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(mv eave-entry-points-new.jpg eave-entry-v2.jpg)",
+      "Bash(mv one-time-treatment-new.jpg one-time-v2.jpg)",
+      "WebSearch",
+      "WebFetch(domain:www.yelp.com)",
+      "WebFetch(domain:www.spraybuzzoff.com)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:www.topratedlocal.com)",
+      "WebFetch(domain:www.facebook.com)"
     ]
   }
 }

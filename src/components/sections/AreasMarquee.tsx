@@ -1,22 +1,41 @@
+import Link from "next/link";
+import { CITIES } from "@/lib/cities";
 import { SERVICE_AREAS } from "@/lib/constants";
 
 export function AreasMarquee() {
-  const doubled = [...SERVICE_AREAS, ...SERVICE_AREAS];
+  const citySlugMap = new Map(CITIES.map((c) => [c.name, c.slug]));
+  const items = SERVICE_AREAS.map((name) => ({ name, slug: citySlugMap.get(name) }));
+  const doubled = [...items, ...items];
 
   return (
-    <section className="bg-[#1A5C32] py-8 overflow-hidden">
+    <section className="bg-[#1A5C32] py-8 overflow-hidden" aria-label="Cities we serve">
       <div
         className="marquee-track flex items-center gap-0 whitespace-nowrap"
         style={{ "--marquee-duration": "30s", width: "max-content" } as React.CSSProperties}
       >
-        {doubled.map((city, i) => (
-          <span key={`${city}-${i}`} className="flex items-center gap-0">
+        {doubled.map((c, i) => {
+          const label = (
             <span className="font-display text-[clamp(24px,3vw,36px)] font-bold uppercase text-white tracking-[0.04em] px-6">
-              {city}
+              {c.name}
             </span>
-            <span className="w-2 h-2 rounded-full bg-[#F0C060] shrink-0" />
-          </span>
-        ))}
+          );
+          return (
+            <span key={`${c.name}-${i}`} className="flex items-center gap-0">
+              {c.slug ? (
+                <Link
+                  href={`/pest-control/${c.slug}`}
+                  className="hover:text-[#F0C060] transition-colors"
+                  aria-label={`Pest control in ${c.name}, CA`}
+                >
+                  {label}
+                </Link>
+              ) : (
+                label
+              )}
+              <span className="w-2 h-2 rounded-full bg-[#F0C060] shrink-0" />
+            </span>
+          );
+        })}
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ export function LocalBusinessJsonLd() {
     "@type": ["LocalBusiness", "PestControlService"],
     "@id": "https://spraybuzzoff.com/#organization",
     name: "Buzz Off",
-    alternateName: "Spray Buzz Off",
+    alternateName: ["Spray Buzz Off", "Buzz Off Pest Prevention", "Buzz Off Pest Control"],
     description:
       "Buzz Off provides 100% plant-based, FIFRA 25(b) exempt pest control services across the Inland Empire and San Gabriel Valley. Safe for kids, pets, and the environment. No contracts.",
     url: "https://spraybuzzoff.com",
@@ -47,6 +47,16 @@ export function LocalBusinessJsonLd() {
       "@type": "GeoCoordinates",
       latitude: "34.1064",
       longitude: "-117.5931",
+    },
+    hasMap: "https://www.google.com/maps/search/?api=1&query=Buzz+Off+Pest+Prevention+Rancho+Cucamonga",
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: "34.1064",
+        longitude: "-117.5931",
+      },
+      geoRadius: "32000",
     },
     openingHoursSpecification: [
       {
@@ -190,6 +200,113 @@ export function FAQJsonLd({
         text: faq.answer,
       },
     })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function CityServiceJsonLd({
+  cityName,
+  citySlug,
+  geo,
+  description,
+}: {
+  cityName: string;
+  citySlug: string;
+  geo: { lat: number; lng: number };
+  description: string;
+}) {
+  const url = `https://spraybuzzoff.com/pest-control/${citySlug}`;
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "PestControlService"],
+        "@id": `${url}#localbusiness`,
+        name: `Buzz Off Pest Control — ${cityName}`,
+        description,
+        url,
+        telephone: "+19098988955",
+        email: "Buzz@spraybuzzoff.com",
+        priceRange: "$$",
+        image: "https://spraybuzzoff.com/assets/og-home.jpg",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: cityName,
+          addressRegion: "CA",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: String(geo.lat),
+          longitude: String(geo.lng),
+        },
+        areaServed: {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: String(geo.lat),
+            longitude: String(geo.lng),
+          },
+          geoRadius: "16000",
+        },
+        parentOrganization: { "@id": "https://spraybuzzoff.com/#organization" },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "08:00",
+            closes: "18:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Saturday",
+            opens: "09:00",
+            closes: "14:00",
+          },
+        ],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          reviewCount: "26",
+          bestRating: "5",
+          worstRating: "1",
+        },
+      },
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        serviceType: "Plant-Based Pest Control",
+        name: `Plant-Based Pest Control in ${cityName}, CA`,
+        description,
+        provider: { "@id": `${url}#localbusiness` },
+        areaServed: {
+          "@type": "City",
+          name: cityName,
+          containedInPlace: { "@type": "State", name: "California" },
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: `Pest Control Services in ${cityName}`,
+          itemListElement: [
+            "Mosquito Prevention",
+            "General Pest Prevention",
+            "Interior Treatment",
+            "Perimeter Protection",
+            "One-Time Treatment",
+            "Whole Home Protection",
+          ].map((n) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: `${n} in ${cityName}` },
+          })),
+        },
+      },
+    ],
   };
 
   return (

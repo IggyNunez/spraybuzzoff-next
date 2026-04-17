@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import { trackContact } from "@/lib/fbpixel";
+import { CITIES } from "@/lib/cities";
 
 export function Footer() {
   const { open: openBooking } = useBooking();
@@ -245,6 +247,33 @@ export function Footer() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Service Areas */}
+        <div className="mb-10">
+          <h4 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            Service Areas
+          </h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            {CITIES.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/pest-control/${c.slug}`}
+                  className="font-body text-[0.82rem] text-white/90 hover:text-[#F0C060] transition-colors"
+                >
+                  Pest Control in {c.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                href="/pest-control"
+                className="font-body text-[0.82rem] text-[#F0C060] hover:text-white transition-colors underline underline-offset-4"
+              >
+                View all service areas →
+              </Link>
+            </li>
+          </ul>
         </div>
 
         {/* Bottom bar */}
