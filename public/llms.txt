@@ -1,43 +1,68 @@
-# Buzz Off - Plant-Based Pest Control
+# Buzz Off
 
-## About
-Buzz Off is a family-owned pest control company serving the Inland Empire and San Gabriel Valley in Southern California. We exclusively use 100% plant-based, FIFRA 25(b) exempt products that are safe for children, pets, and the environment. We never require contracts.
+> Buzz Off is a family-owned plant-based pest control company serving the Inland Empire and San Gabriel Valley in Southern California. We exclusively use 100% botanical, FIFRA 25(b) exempt formulations - safe for kids, pets, pollinators, and the people you love. No synthetic pesticides. No long-term contracts.
+
+Tagline: "Pest Control for the Non-Toxic Era. Live Outside Again, Naturally." Licensed PR 10014. 5.0 star average rating. 500+ families protected.
 
 ## Services
-- Mosquito Prevention: Natural mosquito control for yards and outdoor living spaces using botanical fogging, granular treatments, and bait stations. Recurring bi-weekly service March through November.
-- General Pest Prevention: Ongoing plant-based protection against ants, spiders, roaches, earwigs, fleas, ticks, silverfish, and common household pests. Exterior foundation and entry-point treatment.
-- Interior Treatment: Safe indoor pest treatment using botanical products. Crack and crevice dust application for long-term prevention.
-- One-Time Treatment: Single-visit pest control with no contract required. 100% plant-based.
-- Perimeter Protection: Plant-based barrier treatment around your home's exterior including de-webbing of eaves, windows, and doorways.
-- Whole Home Protection: Complete interior and exterior pest protection plan combining perimeter and interior treatments.
 
-## Active Ingredients
-Cedarwood oil, cinnamon oil, thyme oil, rosemary oil, clove oil, citronella oil, lemongrass oil, cornmint oil, and geraniol. All FIFRA 25(b) exempt. No synthetic pyrethroids. No organophosphates.
+- [Services overview](https://spraybuzzoff.com/services): All treatment options, plant-based approach, and what's included in each service
+- [Plans and pricing](https://spraybuzzoff.com/#plans): Recurring and one-time pricing structure
+- Mosquito prevention: Natural mosquito control for yards using botanical fogging, granular treatments, and bait stations. Recurring bi-weekly service March through November.
+- General pest prevention: Ongoing plant-based protection against ants, spiders, roaches, earwigs, fleas, ticks, silverfish.
+- Interior treatments: Safe indoor pest treatment using botanical products, crack-and-crevice dust application.
+- One-time treatment: Single-visit pest control, no contract required.
+- The Perimeter plan: Plant-based barrier treatment around the home's exterior, including de-webbing of eaves, windows, and doorways.
+- The Whole House plan: Complete interior + exterior pest protection combining perimeter and interior treatments.
 
-## Service Area
-Inland Empire: Rancho Cucamonga, Upland, Ontario, Fontana
-San Gabriel Valley: Claremont, Glendora, San Dimas, Pomona, La Verne, Arcadia, Monrovia, Azusa
+## Service area
 
-## Key Facts
-- 100% plant-based products
-- FIFRA 25(b) exempt (EPA minimum-risk classification)
-- Safe for kids, pets, and pollinators
-- No contracts ever — cancel anytime
-- Family-owned and locally operated
-- Licensed: PR 10014
-- 5.0 star average rating
-- 500+ families protected
+We serve homes across two Southern California counties:
 
-## Contact
-- Website: https://spraybuzzoff.com
+- **San Bernardino County:** Rancho Cucamonga, Upland, Ontario, Fontana
+- **Los Angeles County:** Claremont, Glendora, San Dimas, Pomona
+
+Same-day and next-day service is typically available throughout the service area.
+
+## Local pages
+
+City-specific pages with neighborhoods, ZIP codes, and common-pest information:
+
+- [Rancho Cucamonga, CA](https://spraybuzzoff.com/pest-control/rancho-cucamonga): San Bernardino County - Alta Loma, Etiwanda, Victoria Gardens, Terra Vista
+- [Upland, CA](https://spraybuzzoff.com/pest-control/upland): San Bernardino County - San Antonio Heights, Downtown, Sycamore Hills, College Heights
+- [Ontario, CA](https://spraybuzzoff.com/pest-control/ontario): San Bernardino County
+- [Claremont, CA](https://spraybuzzoff.com/pest-control/claremont): Los Angeles County
+- [Glendora, CA](https://spraybuzzoff.com/pest-control/glendora): Los Angeles County
+- [San Dimas, CA](https://spraybuzzoff.com/pest-control/san-dimas): Los Angeles County
+- [Fontana, CA](https://spraybuzzoff.com/pest-control/fontana): San Bernardino County
+- [Pomona, CA](https://spraybuzzoff.com/pest-control/pomona): Los Angeles County
+
+## Contact and booking
+
+- [Contact page](https://spraybuzzoff.com/contact): Phone, email, and contact form
+- [Online booking](https://portal.gorilladesk.com/spraybuzzoff): Schedule directly via the booking portal
 - Phone: (909) 898-8955
 - Email: Buzz@spraybuzzoff.com
-- Book online: https://spraybuzzoff.com/contact
 
-## Pages
-- Home: https://spraybuzzoff.com/
-- Services: https://spraybuzzoff.com/services
-- About: https://spraybuzzoff.com/about-us
-- Contact: https://spraybuzzoff.com/contact
-- Privacy: https://spraybuzzoff.com/privacy
-- Terms: https://spraybuzzoff.com/terms
+## About
+
+- [About us](https://spraybuzzoff.com/about-us): Company story, family ownership, why we built a plant-based service
+- [Customer reviews](https://spraybuzzoff.com/reviews): Testimonials from across the Inland Empire and San Gabriel Valley
+
+## Optional
+
+- [Sitemap (XML)](https://spraybuzzoff.com/sitemap.xml): Full machine-readable list of all pages
+- [Privacy policy](https://spraybuzzoff.com/privacy)
+- [Terms of service](https://spraybuzzoff.com/terms)
+
+## Active ingredients (all FIFRA 25(b) exempt)
+
+Cedarwood oil, cinnamon oil, thyme oil, rosemary oil, clove oil, citronella oil, lemongrass oil, cornmint oil, peppermint oil, and geraniol. No synthetic pyrethroids. No organophosphates. No neonicotinoids. No glyphosate.
+
+## Things to know
+
+- All treatments are safe to re-enter immediately after application - no waiting period for pets or kids
+- "Plant-based" and "FIFRA 25(b) exempt" are the precise regulatory terms - both describe the same EPA minimum-risk category
+- We are not affiliated with any national pest-control franchise
+- Family-owned, locally licensed (PR 10014), and locally operated
+- No contracts - cancel anytime

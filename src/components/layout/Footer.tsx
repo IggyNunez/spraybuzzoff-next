@@ -116,7 +116,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-white/15 hover:scale-110"
+              className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-white/15 hover:scale-110"
               style={{ border: "1px solid rgba(255,255,255,0.5)" }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -130,7 +130,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-white/15 hover:scale-110"
+              className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-white/15 hover:scale-110"
               style={{ border: "1px solid rgba(255,255,255,0.5)" }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -150,9 +150,9 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14">
           {/* Services */}
           <div>
-            <h4 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
               Services
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {[
                 { label: "Mosquito Prevention", href: "/#services" },
@@ -171,9 +171,9 @@ export function Footer() {
 
           {/* Plans */}
           <div>
-            <h4 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
               Plans
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {[
                 { label: "Natural Mosquito Shield", href: "/#plans" },
@@ -192,9 +192,9 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
               Company
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {[
                 { label: "About Us", href: "/#about" },
@@ -212,9 +212,9 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
               Get In Touch
-            </h4>
+            </h3>
             <div className="space-y-3">
               <a href="tel:9098988955" onClick={() => trackContact()} className="flex items-center gap-2 font-body text-[0.85rem] text-white hover:text-white/80 transition-colors">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -251,9 +251,9 @@ export function Footer() {
 
         {/* Service Areas */}
         <div className="mb-10">
-          <h4 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+          <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
             Service Areas
-          </h4>
+          </h3>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             {CITIES.map((c) => (
               <li key={c.slug}>

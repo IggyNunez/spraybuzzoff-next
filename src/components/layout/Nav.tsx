@@ -101,7 +101,8 @@ export function Nav() {
               width={170}
               height={170}
               className="w-[170px] h-[170px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
-              priority
+              fetchPriority="high"
+              loading="eager"
             />
           </motion.a>
 
@@ -145,7 +146,7 @@ export function Nav() {
                   alt="Buzz Off natural pest control logo"
                   width={36}
                   height={36}
-                  className="w-9 h-9 min-w-[36px] drop-shadow-[0_1px_4px_rgba(0,0,0,0.2)]"
+                  className="w-[36px] h-[36px] min-w-[36px] object-contain drop-shadow-[0_1px_4px_rgba(0,0,0,0.2)]"
                 />
               </motion.a>
 
@@ -167,7 +168,7 @@ export function Nav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="text-green-900/50 hover:text-green-900 transition-colors"
+                  className="inline-flex items-center justify-center w-11 h-11 text-green-900/50 hover:text-green-900 transition-colors"
                 >
                   <SocialIcon icon={s.icon} className="w-4 h-4" />
                 </a>
@@ -206,7 +207,8 @@ export function Nav() {
             width={100}
             height={100}
             className="w-[100px] h-[100px] drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
-            priority
+            fetchPriority="high"
+            loading="eager"
           />
         </motion.a>
 
@@ -260,7 +262,7 @@ export function Nav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="text-green-900/50 hover:text-green-900 transition-colors"
+                  className="inline-flex items-center justify-center w-11 h-11 text-green-900/50 hover:text-green-900 transition-colors"
                 >
                   <SocialIcon icon={s.icon} className="w-[18px] h-[18px]" />
                 </a>
@@ -402,7 +404,7 @@ export function Nav() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={s.label}
-                        className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-green-900/25 text-green-900/60 hover:text-green-900 hover:border-green-900/50 transition-all"
+                        className="flex items-center justify-center w-11 h-11 rounded-full border-2 border-green-900/25 text-green-900/60 hover:text-green-900 hover:border-green-900/50 transition-all"
                       >
                         <SocialIcon icon={s.icon} className="w-4 h-4" />
                       </a>

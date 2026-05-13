@@ -145,7 +145,8 @@ export default function ContactPage() {
             alt="Buzz Off natural pest control service truck ready for eco-friendly treatments in the Inland Empire at dusk"
             fill
             className="object-cover object-center"
-            priority
+            fetchPriority="high"
+            loading="eager"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.90) 0%, rgba(26,92,50,0.70) 100%)" }} />
@@ -383,6 +384,7 @@ export default function ContactPage() {
                           </label>
                           <select
                             name="service"
+                            aria-label="Service Interested In"
                             required
                             value={form.service}
                             onChange={handleChange}

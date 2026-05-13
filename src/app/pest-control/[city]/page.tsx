@@ -124,7 +124,8 @@ export default async function CityPage({
               alt={`Plant-based pest control serving ${data.name}, ${data.county}`}
               fill
               className="object-cover"
-              priority
+              fetchPriority="high"
+              loading="eager"
             />
           </div>
           <div className="relative z-10 max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] pt-[220px] pb-24">

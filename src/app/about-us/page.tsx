@@ -76,7 +76,8 @@ export default function AboutPage() {
             alt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
             fill
             className="object-cover object-center"
-            priority
+            fetchPriority="high"
+            loading="eager"
           />
           {/* Gradient overlay - heavier on left for text legibility */}
           <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(15,61,32,0.92) 0%, rgba(15,61,32,0.75) 55%, rgba(15,61,32,0.4) 100%)" }} />

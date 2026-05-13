@@ -240,7 +240,8 @@ export default function ReviewsPage() {
             alt="Buzz Off plant-based pest control trusted by families across the Inland Empire"
             fill
             className="object-cover object-center"
-            priority
+            fetchPriority="high"
+            loading="eager"
           />
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.92) 0%, rgba(26,92,50,0.78) 100%)" }} />
           <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">

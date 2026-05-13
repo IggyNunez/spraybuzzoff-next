@@ -134,7 +134,8 @@ export default function ServicesPage() {
             alt="Buzz Off plant-based pest control technician treating a residential yard in the Inland Empire"
             fill
             className="object-cover object-center"
-            priority
+            fetchPriority="high"
+            loading="eager"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.88) 0%, rgba(26,92,50,0.72) 100%)" }} />

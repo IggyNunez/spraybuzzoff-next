@@ -197,6 +197,7 @@ export function ContactForm() {
             Service Interested In
           </label>
           <select
+            aria-label="Service Interested In"
             className={`${inputClasses} appearance-none`}
             value={form.service}
             onChange={handleChange("service")}
@@ -217,6 +218,7 @@ export function ContactForm() {
             How did you hear about us?
           </label>
           <select
+            aria-label="How did you hear about us?"
             className={`${inputClasses} appearance-none`}
             value={form.referral}
             onChange={handleChange("referral")}

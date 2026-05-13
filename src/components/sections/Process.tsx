@@ -69,9 +69,9 @@ export function Process() {
                   </span>
                 </div>
 
-                <h4 className="font-display text-[1.2rem] font-[900] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h3 className="font-display text-[1.2rem] font-[900] uppercase text-[#1A5C32] mb-3 tracking-wide">
                   {step.title}
-                </h4>
+                </h3>
 
                 <div className="gold-divider mx-auto mb-3" />
 
