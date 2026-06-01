@@ -15,8 +15,12 @@ export const SITE = {
 };
 
 export const EMAIL = {
-  // FROM must be a Resend-verified domain. Verify updates.spraybuzzoff.com.
-  from: "Buzz Off Ops <ops@updates.spraybuzzoff.com>",
+  // FROM must be a Resend-verified domain. Using the already-verified
+  // updates.standoutexterior.com so reports send without a new DNS step.
+  // Reports go to the operator inbox, so the FROM domain need not match
+  // the site. Switch to ops@updates.spraybuzzoff.com once that subdomain
+  // is verified in Resend.
+  from: "Buzz Off Ops <ops@updates.standoutexterior.com>",
   to: "dev@ignacionunez.dev",
   // Optional client CC; null = internal-only.
   cc: null,

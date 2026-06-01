@@ -19,5 +19,4 @@ jobs:
       - name: Run NAP audit
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          SITE_URL: "https://www.standoutexterior.com/"
         run: node .github/scripts/phase2/nap-audit.mjs

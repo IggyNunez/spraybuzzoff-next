@@ -22,7 +22,6 @@ jobs:
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          SC_SITE_URL: "https://www.standoutexterior.com/"
           GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
           GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
           # Optional: set this secret to CC Ridge on monthly reports.
