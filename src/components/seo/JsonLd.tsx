@@ -317,6 +317,53 @@ export function CityServiceJsonLd({
   );
 }
 
+export function BlogPostingJsonLd({
+  post,
+}: {
+  post: {
+    slug: string;
+    title: string;
+    metaDescription: string;
+    datePublished: string;
+    author: string;
+  };
+}) {
+  const url = `https://spraybuzzoff.com/blog/${post.slug}`;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: post.title,
+    description: post.metaDescription,
+    url,
+    datePublished: post.datePublished,
+    dateModified: post.datePublished,
+    author: {
+      "@type": "Organization",
+      name: post.author,
+      url: "https://spraybuzzoff.com",
+    },
+    publisher: {
+      "@id": "https://spraybuzzoff.com/#organization",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    isPartOf: {
+      "@type": "Blog",
+      "@id": "https://spraybuzzoff.com/blog",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export function BreadcrumbJsonLd({
   items,
 }: {

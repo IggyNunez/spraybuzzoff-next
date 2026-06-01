@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CITIES } from "@/lib/cities";
+import { BLOG_POSTS } from "@/content/blog";
 
 const BASE = "https://spraybuzzoff.com";
 
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
   ];
 
   const cityRoutes: MetadataRoute.Sitemap = CITIES.map((c) => ({
@@ -24,5 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...cityRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: new Date(p.datePublished),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...cityRoutes, ...blogRoutes];
 }
