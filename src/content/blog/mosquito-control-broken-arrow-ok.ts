@@ -10,6 +10,7 @@ const post: BlogPost = {
   datePublished: "2026-06-01",
   author: "Spray Buzz Off Team",
   city: "Broken Arrow",
+  region: "Oklahoma",
   internalLinks: [
     { label: "pest control services", href: "/services" },
     { label: "pest control coverage", href: "/pest-control" },

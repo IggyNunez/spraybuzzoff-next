@@ -7,6 +7,7 @@ export interface BlogPost {
   datePublished: string;
   author: string;
   city?: string;
+  region?: string;
   bodyHtml: string;
   internalLinks: { label: string; href: string }[];
 }
