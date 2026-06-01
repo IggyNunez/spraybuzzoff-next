@@ -27,7 +27,6 @@ jobs:
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          SC_SITE_URL: "https://www.standoutexterior.com/"
         run: node .github/scripts/phase2/keyword-tracker.mjs
 
       - name: Commit updated keyword-history.json
