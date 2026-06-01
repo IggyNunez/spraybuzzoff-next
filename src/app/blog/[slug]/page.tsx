@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -112,10 +113,33 @@ export default async function BlogPostPage({
         {/* Article body */}
         <section className="section-card mt-2 bg-white">
           <div className="max-w-[780px] mx-auto px-[clamp(20px,4vw,48px)] py-16">
+            {post.heroImage && (
+              <div className="mb-10 rounded-2xl overflow-hidden">
+                <Image
+                  src={post.heroImage.path}
+                  alt={post.heroImage.alt}
+                  width={1792}
+                  height={1024}
+                  className="w-full h-auto object-cover"
+                  priority={true}
+                />
+              </div>
+            )}
             <div
               className="blog-prose"
               dangerouslySetInnerHTML={{ __html: post.bodyHtml }}
             />
+            {post.diagramImage && (
+              <div className="my-10 rounded-2xl overflow-hidden border border-[#1A5C32]/10">
+                <Image
+                  src={post.diagramImage.path}
+                  alt={post.diagramImage.alt}
+                  width={1024}
+                  height={1024}
+                  className="w-full max-w-[540px] mx-auto block h-auto"
+                />
+              </div>
+            )}
           </div>
         </section>
 

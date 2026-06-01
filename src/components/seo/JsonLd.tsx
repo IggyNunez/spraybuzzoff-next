@@ -326,10 +326,11 @@ export function BlogPostingJsonLd({
     metaDescription: string;
     datePublished: string;
     author: string;
+    heroImage?: { path: string; alt: string };
   };
 }) {
   const url = `https://spraybuzzoff.com/blog/${post.slug}`;
-  const data = {
+  const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id": `${url}#article`,
@@ -338,6 +339,9 @@ export function BlogPostingJsonLd({
     url,
     datePublished: post.datePublished,
     dateModified: post.datePublished,
+    ...(post.heroImage
+      ? { image: `https://spraybuzzoff.com${post.heroImage.path}` }
+      : {}),
     author: {
       "@type": "Organization",
       name: post.author,
