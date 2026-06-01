@@ -1,0 +1,41 @@
+name: Blog Published Notification
+
+# Fires when a new/changed blog post lands on master (the weekly blog
+# routine writes + merges its own PR). Emails the live post link via
+# Resend so the operator gets a per-client notification with a URL.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "src/content/blog/**"
+
+jobs:
+  notify:
+    name: Email the live blog link
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2 # need the previous commit to diff changed files
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Identify the changed post file
+        id: post
+        run: |
+          # Newest added/modified post file in this push (exclude index).
+          FILE=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'src/content/blog/*.ts' \
+            | grep -v '/index.ts$' | head -1)
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+          echo "Changed post file: $FILE"
+
+      - name: Email live link
+        if: steps.post.outputs.file != ''
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          POST_FILE: ${{ steps.post.outputs.file }}
+        run: node .github/scripts/phase2/blog-notify.mjs
