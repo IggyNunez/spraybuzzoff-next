@@ -1,5 +1,4 @@
 import type { BlogPost } from "@/types/blog";
-import mosquitoPost from "./mosquito-control-broken-arrow-ok";
-import tickPost from "./tick-prevention-tulsa-ok";
+import ranchoCucamongaPost from "./pest-control-rancho-cucamonga";
 
-export const BLOG_POSTS: BlogPost[] = [tickPost, mosquitoPost];
+export const BLOG_POSTS: BlogPost[] = [ranchoCucamongaPost];
