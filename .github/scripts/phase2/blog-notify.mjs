@@ -85,16 +85,28 @@ async function main() {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) throw new Error("RESEND_API_KEY not set");
 
-  const file = pickFile();
-  if (!file) {
-    console.log("[blog-notify] no post file found, nothing to send");
-    return;
+  // Preferred: the Action extracts the newly-added slug/title/keyword from
+  // the commit diff and passes them explicitly. This is layout-agnostic
+  // (works whether posts are one-file-per-post or all in one data file).
+  let slug = process.env.POST_SLUG || "";
+  let title = process.env.POST_TITLE || "";
+  let desc = process.env.POST_DESC || "";
+  let kw = process.env.POST_KEYWORD || "";
+
+  // Fallback: parse from a post source file (POST_FILE or newest in blog dir).
+  if (!slug) {
+    const file = pickFile();
+    if (!file) {
+      console.log("[blog-notify] no slug and no post file, nothing to send");
+      return;
+    }
+    const src = readFileSync(file, "utf-8");
+    slug = field(src, ["slug"]) || file.split(/[\\/]/).pop().replace(/\.ts$/, "");
+    title = title || field(src, ["title", "h1"]);
+    desc = desc || field(src, ["metaDescription", "description", "excerpt"]);
+    kw = kw || field(src, ["targetKeyword", "keyword"]);
   }
-  const src = readFileSync(file, "utf-8");
-  const slug = field(src, ["slug"]) || file.split(/[\\/]/).pop().replace(/\.ts$/, "");
-  const title = field(src, ["title", "h1"]) || slug;
-  const desc = field(src, ["metaDescription", "description", "excerpt"]);
-  const kw = field(src, ["targetKeyword", "keyword"]);
+  title = title || slug;
   const url = `${SITE_URL}/blog/${slug}`;
 
   console.log("[blog-notify] post:", slug, "->", url);
