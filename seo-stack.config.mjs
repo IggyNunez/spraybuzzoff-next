@@ -15,12 +15,9 @@ export const SITE = {
 };
 
 export const EMAIL = {
-  // FROM must be a Resend-verified domain. Using the already-verified
-  // updates.standoutexterior.com so reports send without a new DNS step.
-  // Reports go to the operator inbox, so the FROM domain need not match
-  // the site. Switch to ops@updates.spraybuzzoff.com once that subdomain
-  // is verified in Resend.
-  from: "Buzz Off Ops <ops@updates.standoutexterior.com>",
+  // Sends from email.plaintalk.dev (verified in Resend) — Plain Talk is
+  // the parent company entity for this site.
+  from: "Buzz Off Ops <ops@email.plaintalk.dev>",
   to: "dev@ignacionunez.dev",
   // Optional client CC; null = internal-only.
   cc: null,
