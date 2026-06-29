@@ -6,8 +6,10 @@ import ecoFriendlyInlandEmpirePost from "./eco-friendly-pest-control-inland-empi
 import brownRecluseTulsaOk from "./brown-recluse-spider-control-tulsa-ok";
 import fleaControlTulsaOk from "./flea-control-tulsa-ok";
 import petSafeRanchoCucamongaPost from "./pet-safe-pest-control-rancho-cucamonga";
+import tickControlOwassoOk from "./tick-control-owasso-ok";
 
 export const BLOG_POSTS: BlogPost[] = [
+  tickControlOwassoOk,
   fleaControlTulsaOk,
   brownRecluseTulsaOk,
   mosquitoControlBrokenArrowOk,
