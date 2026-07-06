@@ -5,8 +5,10 @@ import ecoFriendlyInlandEmpirePost from "./eco-friendly-pest-control-inland-empi
 import petSafeRanchoCucamongaPost from "./pet-safe-pest-control-rancho-cucamonga";
 import pestControlUplandPost from "./pest-control-upland-ca";
 import antControlUplandCa from "./ant-control-upland-ca";
+import spiderControlRanchoCucamongaPost from "./spider-control-rancho-cucamonga";
 
 export const BLOG_POSTS: BlogPost[] = [
+  spiderControlRanchoCucamongaPost,
   antControlUplandCa,
   pestControlUplandPost,
   ranchoCucamongaPost,
