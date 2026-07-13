@@ -8,8 +8,10 @@ import antControlUplandCa from "./ant-control-upland-ca";
 import spiderControlRanchoCucamongaPost from "./spider-control-rancho-cucamonga";
 import antControlRanchoCucamonga from "./ant-control-rancho-cucamonga";
 import waspControlTulsaOk from "./wasp-control-tulsa-ok";
+import mosquitoControlBrokenArrowOk from "./mosquito-control-broken-arrow-ok";
 
 export const BLOG_POSTS: BlogPost[] = [
+  mosquitoControlBrokenArrowOk,
   waspControlTulsaOk,
   antControlRanchoCucamonga,
   spiderControlRanchoCucamongaPost,
