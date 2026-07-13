@@ -6,10 +6,12 @@ import petSafeRanchoCucamongaPost from "./pet-safe-pest-control-rancho-cucamonga
 import pestControlUplandPost from "./pest-control-upland-ca";
 import antControlUplandCa from "./ant-control-upland-ca";
 import spiderControlRanchoCucamongaPost from "./spider-control-rancho-cucamonga";
+import antControlRanchoCucamonga from "./ant-control-rancho-cucamonga";
 import waspControlTulsaOk from "./wasp-control-tulsa-ok";
 
 export const BLOG_POSTS: BlogPost[] = [
   waspControlTulsaOk,
+  antControlRanchoCucamonga,
   spiderControlRanchoCucamongaPost,
   antControlUplandCa,
   pestControlUplandPost,
