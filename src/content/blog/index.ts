@@ -9,8 +9,10 @@ import spiderControlRanchoCucamongaPost from "./spider-control-rancho-cucamonga"
 import antControlRanchoCucamonga from "./ant-control-rancho-cucamonga";
 import waspControlTulsaOk from "./wasp-control-tulsa-ok";
 import mosquitoControlBrokenArrowOk from "./mosquito-control-broken-arrow-ok";
+import tickControlEdmondOk from "./tick-control-edmond-ok";
 
 export const BLOG_POSTS: BlogPost[] = [
+  tickControlEdmondOk,
   mosquitoControlBrokenArrowOk,
   waspControlTulsaOk,
   antControlRanchoCucamonga,
