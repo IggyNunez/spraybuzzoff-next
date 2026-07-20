@@ -276,6 +276,29 @@ export function Footer() {
           </ul>
         </div>
 
+        {/* Trust badges */}
+        <div className="flex flex-col items-center gap-3 mb-8">
+          <a
+            href="https://www.bbb.org/us/ca/rancho-cucamonga/profile/pest-control/buzz-off-pest-prevention-1126-1000172747"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Buzz Off Pest Prevention BBB Accredited Business profile"
+            className="inline-block bg-white rounded-md p-3 transition-transform hover:scale-105"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/bbb-accredited-business-seal.svg"
+              alt="BBB Accredited Business seal"
+              width={140}
+              height={56}
+              className="h-14 w-auto"
+            />
+          </a>
+          <p className="font-body text-[0.82rem] text-white/90">
+            Buzz Off Pest Prevention is BBB Accredited.
+          </p>
+        </div>
+
         {/* Bottom bar */}
         <div
           className="border-t pt-6 flex flex-col md:flex-row justify-between items-center gap-3"
