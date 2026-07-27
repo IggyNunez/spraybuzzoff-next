@@ -11,8 +11,10 @@ import waspControlTulsaOk from "./wasp-control-tulsa-ok";
 import mosquitoControlBrokenArrowOk from "./mosquito-control-broken-arrow-ok";
 import tickControlEdmondOk from "./tick-control-edmond-ok";
 import pestControlOntarioCa from "./pest-control-ontario-ca";
+import pestControlFontanaCa from "./pest-control-fontana-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  pestControlFontanaCa,
   pestControlOntarioCa,
   tickControlEdmondOk,
   mosquitoControlBrokenArrowOk,
