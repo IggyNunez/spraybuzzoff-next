@@ -14,8 +14,10 @@ import pestControlOntarioCa from "./pest-control-ontario-ca";
 import pestControlFontanaCa from "./pest-control-fontana-ca";
 import pestControlPomonaCa from "./pest-control-pomona-ca";
 import pestControlClaremontCa from "./pest-control-claremont-ca";
+import pestControlGlendoraCa from "./pest-control-glendora-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  pestControlGlendoraCa,
   pestControlClaremontCa,
   pestControlPomonaCa,
   pestControlFontanaCa,
