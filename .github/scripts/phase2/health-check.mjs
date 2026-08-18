@@ -4,8 +4,12 @@
  * Three things, in order of cost-to-fix:
  *   1. Crawl every URL in the sitemap; flag 4xx/5xx.
  *   2. Fire a synthetic contact form submission; verify 200 response.
- *      (Actually delivering to a test inbox is out-of-scope; we trust
- *      the existing /api/lead tests + the spam filter we built.)
+ *      This runs as a DRY RUN: the request carries the x-health-check
+ *      secret, so /api/lead validates the payload and confirms the
+ *      GorillaDesk API key still works, then returns 200 without
+ *      creating a customer. Without that header the submission would
+ *      land in the client's CRM as a real lead every week — this site
+ *      has no spam filter to catch it.
  *   3. Fetch key pages and look for common regression signatures
  *      ("Application error", "500", etc. rendered in the body).
  *
@@ -15,7 +19,8 @@
  *
  * Required env:
  *   RESEND_API_KEY
- *   SITE_URL (defaults to standoutexterior.com)
+ *   HEALTH_CHECK_SECRET (must match the value set on the Vercel deployment)
+ *   SITE_URL (defaults to SITE.url in seo-stack.config.mjs)
  */
 
 import { SITE, EMAIL } from "../../../seo-stack.config.mjs";
@@ -35,6 +40,34 @@ async function fetchWithTimeout(url, opts = {}) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+/**
+ * Resolve the site's CANONICAL origin (e.g. apex → www).
+ *
+ * Vercel redirects the apex (spraybuzzoff.com) to www with a 301. A GET can
+ * follow that transparently, but a POST cannot: per the HTTP spec a client
+ * downgrades a 301'd POST to a GET and drops the body, so the follow-up lands
+ * on /api/lead as a GET → 405 Method Not Allowed. That's exactly the false
+ * "CONTACT FORM BROKEN" alert this check was firing.
+ *
+ * We do one cheap GET to the homepage, let it follow redirects, and read the
+ * final origin. The contact-form POST then targets that canonical origin
+ * directly, so it's never subjected to the method-flipping redirect.
+ * Cached after the first call.
+ */
+let _canonicalOrigin = null;
+async function getCanonicalOrigin() {
+  if (_canonicalOrigin) return _canonicalOrigin;
+  try {
+    const res = await fetchWithTimeout(`${SITE_URL}/`, { method: "GET" });
+    _canonicalOrigin = new URL(res.url).origin;
+  } catch {
+    // Fall back to the configured origin if the probe fails; worst case we're
+    // back to the original behavior for this one run.
+    _canonicalOrigin = new URL(SITE_URL).origin;
+  }
+  return _canonicalOrigin;
 }
 
 async function getSitemap() {
@@ -69,23 +102,42 @@ async function crawlUrls(urls) {
 }
 
 async function testContactForm() {
-  // POST a well-formed but obviously-synthetic submission. The form
-  // handler we built includes the honeypot + spam filter; this test
-  // lead should be rejected by the filter (`company` is optional but
-  // the name/email pattern gets scored). Success = API returns 200
-  // AND spam filter catches it. Failure = non-200 response.
+  // POST a well-formed but obviously-synthetic submission as a DRY RUN.
+  // The x-health-check header makes /api/lead validate the payload and
+  // verify its GorillaDesk credentials, then return 200 without creating
+  // a customer. Success = 200. Failure = anything else (401 means the
+  // secrets are out of sync; 502 means the GorillaDesk key is bad).
+  const secret = process.env.HEALTH_CHECK_SECRET;
+  if (!secret) {
+    // Deliberately do NOT fall back to an unheadered POST — that would
+    // create a real lead in the client's CRM. Report it as an issue instead.
+    return {
+      ok: false,
+      status: 0,
+      error:
+        "HEALTH_CHECK_SECRET not set — form check skipped to avoid writing a real lead to GorillaDesk.",
+    };
+  }
+
   try {
-    const res = await fetchWithTimeout(`${SITE_URL}/api/lead`, {
+    // POST to the canonical origin so the apex→www 301 never flips our POST
+    // into a body-less GET (which would 405). See getCanonicalOrigin().
+    const origin = await getCanonicalOrigin();
+    const res = await fetchWithTimeout(`${origin}/api/lead`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "x-health-check": secret,
+      },
       body: JSON.stringify({
         firstName: "Synthetic",
         lastName: "HealthCheck",
-        email: "healthcheck+test@mailinator.com", // disposable → spam filter flags
-        phone: "7045550100",
-        service: "House Washing",
-        source: "Google Search",
-        message: "Automated health check from .github/scripts/phase2/health-check.mjs — ignore.",
+        email: "healthcheck@example.com",
+        phone: "9095550100",
+        service: "General Pest Control",
+        referral: "Automated monitoring",
+        message:
+          "Automated health check from .github/scripts/phase2/health-check.mjs — dry run, no record created.",
       }),
     });
     return { ok: res.ok, status: res.status };

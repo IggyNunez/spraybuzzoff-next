@@ -19,4 +19,7 @@ jobs:
       - name: Run health check
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          # Must match HEALTH_CHECK_SECRET on the Vercel deployment. Without it
+          # the contact-form check is skipped rather than writing a real lead.
+          HEALTH_CHECK_SECRET: ${{ secrets.HEALTH_CHECK_SECRET }}
         run: node .github/scripts/phase2/health-check.mjs

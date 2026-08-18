@@ -1,9 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
+import { timingSafeEqual } from "node:crypto";
 import { getGorillaDesk, GorillaApiError } from "@/lib/gorilladesk";
 import { validateLeadForm } from "@/lib/validation";
 import type { LeadApiResponse, GDCustomerCreatePayload } from "@/types";
 
 const PHONE_FALLBACK = "(909) 552-1718";
+
+/* ── Health-check dry run ──
+ * The weekly monitor (.github/scripts/phase2/health-check.mjs) needs to prove
+ * the lead pipeline still works without depositing a junk customer in the
+ * client's GorillaDesk CRM every Monday. A request carrying a matching
+ * x-health-check secret runs the real validator and makes a read-only
+ * GorillaDesk call to confirm the API key is still good, then returns 200
+ * WITHOUT creating a customer or note.
+ *
+ * The header is only honoured when HEALTH_CHECK_SECRET is set on the
+ * deployment, so ordinary traffic can never reach this path.
+ */
+const HEALTH_HEADER = "x-health-check";
+
+function healthSecretMatches(provided: string): boolean {
+  const expected = process.env.HEALTH_CHECK_SECRET;
+  if (!expected) return false;
+  const a = Buffer.from(provided);
+  const b = Buffer.from(expected);
+  // timingSafeEqual throws on length mismatch, so compare lengths first.
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
 
 /* ── Simple in-memory rate limiter (3 requests / minute per IP) ── */
 const rateMap = new Map<string, number[]>();
@@ -52,6 +76,36 @@ export async function POST(req: NextRequest) {
         { success: false, message: errors.join(" ") },
         { status: 400 }
       );
+    }
+
+    /* Health-check dry run — verify the pipeline without writing to the CRM.
+     * Runs after validation so the monitor exercises the real validator, and
+     * returns before any customer is created. */
+    const healthHeader = req.headers.get(HEALTH_HEADER);
+    if (healthHeader !== null) {
+      if (!process.env.HEALTH_CHECK_SECRET) {
+        return NextResponse.json<LeadApiResponse>(
+          {
+            success: false,
+            message: "Health check is not configured on this deployment.",
+          },
+          { status: 503 }
+        );
+      }
+      if (!healthSecretMatches(healthHeader)) {
+        return NextResponse.json<LeadApiResponse>(
+          { success: false, message: "Invalid health check credentials." },
+          { status: 401 }
+        );
+      }
+      // Read-only call: proves the GorillaDesk API key is still valid. Throws
+      // GorillaApiError on a bad/expired key, which the catch below maps to 502.
+      await getGorillaDesk().getPhoneTypes();
+      return NextResponse.json<LeadApiResponse>({
+        success: true,
+        message:
+          "Health check OK — validation and GorillaDesk credentials verified. No customer created.",
+      });
     }
 
     /* Build GorillaDesk customer payload */
