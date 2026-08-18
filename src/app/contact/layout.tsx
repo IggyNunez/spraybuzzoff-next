@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Buzz Off | Get a Free Pest Control Quote",
     description:
-      "Request a free quote for plant-based pest control. Serving the Inland Empire & San Gabriel Valley. No contracts.",
+      "Request a free quote for plant-based pest control. Serving the Inland Empire, San Gabriel Valley & Orange County. No contracts.",
     url: "https://spraybuzzoff.com/contact",
   },
 };

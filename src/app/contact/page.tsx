@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
-import { SERVICE_AREAS } from "@/lib/constants";
+import { SERVICE_AREA_REGIONS } from "@/lib/constants";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import { trackLead, trackContact } from "@/lib/fbpixel";
 import Image from "next/image";
@@ -236,15 +236,24 @@ export default function ContactPage() {
                   <h3 className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-4" style={{ color: "#E05A2B" }}>
                     Service Areas
                   </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {SERVICE_AREAS.map((area) => (
-                      <span
-                        key={area}
-                        className="font-body text-[0.78rem] font-semibold px-3 py-1.5 rounded-full"
-                        style={{ background: "#EAF2EC", color: "#1A5C32", border: "1px solid rgba(26,92,50,0.15)" }}
-                      >
-                        {area}
-                      </span>
+                  <div className="flex flex-col gap-5">
+                    {SERVICE_AREA_REGIONS.map((r) => (
+                      <div key={r.region}>
+                        <p className="font-body font-bold text-[0.78rem] mb-2" style={{ color: "#1C2B1E" }}>
+                          {r.region}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {r.cities.map((area) => (
+                            <span
+                              key={area}
+                              className="font-body text-[0.78rem] font-semibold px-3 py-1.5 rounded-full"
+                              style={{ background: "#EAF2EC", color: "#1A5C32", border: "1px solid rgba(26,92,50,0.15)" }}
+                            >
+                              {area}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                   <p className="font-body text-[0.8rem] mt-3" style={{ color: "#6B7B6E" }}>

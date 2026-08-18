@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { CITIES } from "@/lib/cities";
-import { SERVICE_AREAS } from "@/lib/constants";
+import { MARQUEE_AREAS } from "@/lib/constants";
 
 export function AreasMarquee() {
   const citySlugMap = new Map(CITIES.map((c) => [c.name, c.slug]));
-  const items = SERVICE_AREAS.map((name) => ({ name, slug: citySlugMap.get(name) }));
+  const items = MARQUEE_AREAS.map((name) => ({ name, slug: citySlugMap.get(name) }));
   const doubled = [...items, ...items];
 
   return (
     <section className="bg-[#1A5C32] py-8 overflow-hidden" aria-label="Cities we serve">
       <div
         className="marquee-track flex items-center gap-0 whitespace-nowrap"
-        style={{ "--marquee-duration": "30s", width: "max-content" } as React.CSSProperties}
+        style={{ "--marquee-duration": "40s", width: "max-content" } as React.CSSProperties}
       >
         {doubled.map((c, i) => {
           const label = (

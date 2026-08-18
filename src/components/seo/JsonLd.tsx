@@ -1,3 +1,5 @@
+import { SERVICE_AREAS } from "@/lib/constants";
+
 export function LocalBusinessJsonLd() {
   const data = {
     "@context": "https://schema.org",
@@ -6,7 +8,7 @@ export function LocalBusinessJsonLd() {
     name: "Buzz Off",
     alternateName: ["Spray Buzz Off", "Buzz Off Pest Prevention", "Buzz Off Pest Control"],
     description:
-      "Buzz Off provides 100% plant-based, FIFRA 25(b) exempt pest control services across the Inland Empire and San Gabriel Valley. Safe for kids, pets, and the environment. No contracts.",
+      "Buzz Off provides 100% plant-based, FIFRA 25(b) exempt pest control services across the Inland Empire, San Gabriel Valley, and Orange County. Safe for kids, pets, and the environment. No contracts.",
     url: "https://spraybuzzoff.com",
     logo: "https://spraybuzzoff.com/assets/spraybuzzoffLogo.png",
     image: "https://spraybuzzoff.com/assets/og-home.jpg",
@@ -15,20 +17,7 @@ export function LocalBusinessJsonLd() {
     priceRange: "$$",
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card",
-    areaServed: [
-      "Rancho Cucamonga",
-      "Upland",
-      "Ontario",
-      "Claremont",
-      "Glendora",
-      "San Dimas",
-      "Fontana",
-      "Pomona",
-      "La Verne",
-      "Arcadia",
-      "Monrovia",
-      "Azusa",
-    ].map((city) => ({
+    areaServed: SERVICE_AREAS.map((city) => ({
       "@type": "City",
       name: city,
       containedInPlace: {

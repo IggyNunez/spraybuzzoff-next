@@ -43,7 +43,7 @@ export default function TermsPage() {
                   1. Services
                 </h2>
                 <p className="mb-3">
-                  Buzz Off Pest Prevention provides plant-based pest prevention services for residential properties in the Inland Empire and San Gabriel Valley regions of Southern California. All treatments use FIFRA 25(b) exempt botanical ingredients.
+                  Buzz Off Pest Prevention provides plant-based pest prevention services for residential properties in the Inland Empire, San Gabriel Valley, and Orange County regions of Southern California. All treatments use FIFRA 25(b) exempt botanical ingredients.
                 </p>
                 <p>
                   Service schedules, pricing, and availability are subject to change. We will communicate any changes that affect your scheduled services in advance.
@@ -129,7 +129,7 @@ export default function TermsPage() {
                 <ul className="mt-3 space-y-1">
                   <li><strong>Phone:</strong> <a href="tel:9098988955" className="text-[#1A5C32] underline">909.898.8955</a></li>
                   <li><strong>Email:</strong> <a href="mailto:Buzz@spraybuzzoff.com" className="text-[#1A5C32] underline">Buzz@spraybuzzoff.com</a></li>
-                  <li><strong>Service Area:</strong> Inland Empire &amp; San Gabriel Valley, CA</li>
+                  <li><strong>Service Area:</strong> Inland Empire, San Gabriel Valley &amp; Orange County, CA</li>
                   <li><strong>License:</strong> #PR 10014</li>
                 </ul>
               </div>

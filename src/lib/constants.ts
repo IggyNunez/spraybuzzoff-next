@@ -120,7 +120,74 @@ export const PROCESS_STEPS: ProcessStep[] = [
 ];
 
 
-export const SERVICE_AREAS = [
+export type ServiceRegion = {
+  region: string;
+  cities: string[];
+};
+
+export const SERVICE_AREA_REGIONS: ServiceRegion[] = [
+  {
+    region: "Inland Empire & San Gabriel Valley",
+    cities: [
+      "Rancho Cucamonga",
+      "Upland",
+      "Ontario",
+      "Claremont",
+      "Glendora",
+      "San Dimas",
+      "Fontana",
+      "Pomona",
+      "La Verne",
+      "Arcadia",
+      "Monrovia",
+      "Azusa",
+    ],
+  },
+  {
+    region: "Orange County",
+    cities: [
+      "Anaheim",
+      "Brea",
+      "Buena Park",
+      "Costa Mesa",
+      "Cypress",
+      "Dana Point",
+      "Fountain Valley",
+      "Fullerton",
+      "Garden Grove",
+      "Huntington Beach",
+      "Irvine",
+      "La Habra",
+      "La Palma",
+      "Laguna Beach",
+      "Laguna Hills",
+      "Laguna Niguel",
+      "Laguna Woods",
+      "Lake Forest",
+      "Los Alamitos",
+      "Mission Viejo",
+      "Newport Beach",
+      "Orange",
+      "Placentia",
+      "Rancho Santa Margarita",
+      "San Clemente",
+      "San Juan Capistrano",
+      "Santa Ana",
+      "Seal Beach",
+      "Stanton",
+      "Tustin",
+      "Villa Park",
+      "Westminster",
+      "Yorba Linda",
+    ],
+  },
+];
+
+export const SERVICE_AREAS = SERVICE_AREA_REGIONS.flatMap((r) => r.cities);
+
+// Shorter curated list for the scrolling marquee. The full 45-city list makes
+// the loop so long a given city only comes back around every couple minutes.
+export const MARQUEE_AREAS = [
   "Rancho Cucamonga",
   "Upland",
   "Ontario",
@@ -129,10 +196,14 @@ export const SERVICE_AREAS = [
   "San Dimas",
   "Fontana",
   "Pomona",
-  "La Verne",
-  "Arcadia",
-  "Monrovia",
-  "Azusa",
+  "Anaheim",
+  "Irvine",
+  "Huntington Beach",
+  "Newport Beach",
+  "Costa Mesa",
+  "Fullerton",
+  "Santa Ana",
+  "Mission Viejo",
 ];
 
 export const PLANS: Plan[] = [
