@@ -147,7 +147,7 @@ export default function PrivacyPage() {
                 <ul className="mt-3 space-y-1">
                   <li><strong>Phone:</strong> <a href="tel:9098988955" className="text-[#1A5C32] underline">909.898.8955</a></li>
                   <li><strong>Email:</strong> <a href="mailto:Buzz@spraybuzzoff.com" className="text-[#1A5C32] underline">Buzz@spraybuzzoff.com</a></li>
-                  <li><strong>Service Area:</strong> Inland Empire &amp; San Gabriel Valley, CA</li>
+                  <li><strong>Service Area:</strong> Inland Empire, San Gabriel Valley &amp; Orange County, CA</li>
                   <li><strong>License:</strong> #PR 10014</li>
                 </ul>
               </div>

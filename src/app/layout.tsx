@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     "eco-friendly pest control",
     "pest control Inland Empire",
     "pest control San Gabriel Valley",
+    "pest control Orange County",
     "pest control Rancho Cucamonga",
     "mosquito prevention",
     "organic pest control",
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     siteName: "Buzz Off",
     title: "Plant-Based Pest Control | Safe for Kids & Pets | Buzz Off",
     description:
-      "100% plant-based pest control serving the Inland Empire & San Gabriel Valley. FIFRA 25(b) exempt. No contracts. Family-owned.",
+      "100% plant-based pest control serving the Inland Empire, San Gabriel Valley & Orange County. FIFRA 25(b) exempt. No contracts. Family-owned.",
     images: [
       {
         url: "/assets/og-home.jpg",
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Plant-Based Pest Control | Safe for Kids & Pets | Buzz Off",
     description:
-      "100% plant-based pest control serving the Inland Empire & San Gabriel Valley. FIFRA 25(b) exempt. No contracts.",
+      "100% plant-based pest control serving the Inland Empire, San Gabriel Valley & Orange County. FIFRA 25(b) exempt. No contracts.",
     images: ["/assets/og-home.jpg"],
   },
   alternates: {
