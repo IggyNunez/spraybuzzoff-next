@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { timingSafeEqual } from "node:crypto";
 import { getGorillaDesk, GorillaApiError } from "@/lib/gorilladesk";
 import { validateLeadForm } from "@/lib/validation";
-import type { LeadApiResponse, GDCustomerCreatePayload } from "@/types";
+import { sendLeadRescueEmail } from "@/lib/lead-alert";
+import type { LeadApiResponse, GDCustomerCreatePayload, LeadFormData } from "@/types";
 
 const PHONE_FALLBACK = "(909) 552-1718";
 
@@ -44,6 +45,11 @@ function isRateLimited(ip: string): boolean {
 
 /* ── POST /api/lead ── */
 export async function POST(req: NextRequest) {
+  // Declared outside the try so the catch can rescue the submission by email
+  // when the CRM write fails. Null means we failed before validation, i.e.
+  // there is no lead worth keeping.
+  let lead: LeadFormData | null = null;
+
   try {
     /* Rate limit */
     const ip =
@@ -71,6 +77,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { valid, errors, sanitized } = validateLeadForm(body);
+    lead = sanitized;
     if (!valid) {
       return NextResponse.json<LeadApiResponse>(
         { success: false, message: errors.join(" ") },
@@ -188,6 +195,24 @@ export async function POST(req: NextRequest) {
     });
   } catch (err) {
     console.error("[/api/lead] Error:", err);
+
+    /* The CRM write failed. Mail ourselves the submission so the lead is not
+     * lost, and only fall back to "please call us" if that fails too. A
+     * rescued lead is a captured lead, so the visitor gets the normal
+     * confirmation rather than being sent away. */
+    if (lead) {
+      const reason =
+        err instanceof GorillaApiError
+          ? `GorillaDesk API error ${err.status}`
+          : `Unexpected error: ${err instanceof Error ? err.message : String(err)}`;
+
+      if (await sendLeadRescueEmail(lead, reason)) {
+        return NextResponse.json<LeadApiResponse>({
+          success: true,
+          message: "Your info has been received! We'll be in touch shortly.",
+        });
+      }
+    }
 
     if (err instanceof GorillaApiError) {
       if (err.status === 429) {
