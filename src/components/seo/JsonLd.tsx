@@ -1,4 +1,30 @@
 import { SERVICE_AREAS } from "@/lib/constants";
+import { REVIEWS, TOTAL_REVIEW_COUNT, AVERAGE_RATING } from "@/lib/reviews";
+
+/** Rating and count come straight from the fetched review data, never typed in. */
+const AGGREGATE_RATING = {
+  "@type": "AggregateRating",
+  ratingValue: AVERAGE_RATING.toFixed(1),
+  reviewCount: String(TOTAL_REVIEW_COUNT),
+  bestRating: "5",
+  worstRating: "1",
+};
+
+/** The first three reviews in display order (photo-carrying first), marked up for rich results. */
+const FEATURED_REVIEWS = REVIEWS.filter((r) => r.isoDate)
+  .slice(0, 3)
+  .map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    datePublished: r.isoDate!.slice(0, 10),
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(r.rating),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    reviewBody: r.text,
+  }));
 
 export function LocalBusinessJsonLd() {
   const data = {
@@ -133,36 +159,8 @@ export function LocalBusinessJsonLd() {
         },
       ],
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "50",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Nate Tate" },
-        datePublished: "2026-03-15",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-        reviewBody: "One of the main reasons I chose Buzz Off Pest Prevention was because they use a non-toxic, chemical-free solution, which was really important to me since I have a little one at home who loves to play outside.",
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Andrew V." },
-        datePublished: "2026-01-19",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-        reviewBody: "I highly recommend Moe and his pest control service. What really sold us was that he uses organic, family- and pet-friendly products.",
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Megan Stillman" },
-        datePublished: "2026-03-25",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-        reviewBody: "The mosquito service has saved my sanity and legs from bites! My kids love to play outside all afternoon and now we can enjoy our backyard worry free.",
-      },
-    ],
+    aggregateRating: AGGREGATE_RATING,
+    review: FEATURED_REVIEWS,
   };
 
   return (
@@ -259,13 +257,7 @@ export function CityServiceJsonLd({
             closes: "14:00",
           },
         ],
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "5.0",
-          reviewCount: "50",
-          bestRating: "5",
-          worstRating: "1",
-        },
+        aggregateRating: AGGREGATE_RATING,
       },
       {
         "@type": "Service",

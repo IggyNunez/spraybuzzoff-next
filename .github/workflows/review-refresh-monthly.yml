@@ -1,0 +1,56 @@
+name: Monthly Review Refresh
+
+# The review corpus in src/data/google-reviews.json is a snapshot. Without this
+# workflow the site's star rating, review count, and testimonial text freeze on
+# the day of the last manual fetch while the real Google listing keeps moving.
+#
+# Pulls the full listing through SerpApi, downloads every avatar and customer
+# photo into the repo (Google revokes its own review-image URLs after a few
+# days), commits the result, and emails a summary when something changed.
+#
+# Hand-entered Yelp reviews live in src/data/manual-reviews.json and are never
+# touched by this job.
+
+on:
+  schedule:
+    - cron: "0 10 1 * *" # 1st of the month at 10:00 UTC (2 AM PT)
+  workflow_dispatch:
+
+# Needs write permission to commit the refreshed corpus and images.
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    name: Fetch Google reviews + commit corpus
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Fetch reviews from SerpApi
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: node scripts/fetch-reviews.mjs
+
+      - name: Compare against last month + email the summary
+        id: diff
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: node .github/scripts/phase2/review-refresh.mjs
+
+      - name: Commit the refreshed corpus
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git add src/data/google-reviews.json public/assets/reviews
+          if git diff --cached --quiet; then
+            echo "Nothing staged; skipping commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: monthly Google review refresh (${{ steps.diff.outputs.total }} reviews, ${{ steps.diff.outputs.added }} new)"
+          git push

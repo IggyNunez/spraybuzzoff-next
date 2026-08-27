@@ -1,0 +1,162 @@
+{
+  "note": "Hand-entered reviews that do not appear in the Google Business Profile fetch (Yelp reviews, plus older Google reviews no longer on the listing). Everything else comes from scripts/fetch-reviews.mjs. Deduped against google-reviews.json on 2026-08-27.",
+  "total": 13,
+  "reviews": [
+    {
+      "name": "Julie C.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "Wooo, I loved my service! We’ve been dealing with insane mosquitos because of our pool and all of our plants in the back & I wanted to wait a week to even write this review to see if it made a difference... Well, came here to say that I totally 10/10 would recommend! My husband and I noticed that we haven’t had to smack these small mosquitos in our room because we like to leave our sliding door open from time to time. Not a single mosquito has came back! Also, Maurice noticed that we had a few spiders and he kindly offered to spray them off our patio. A few hours later I noticed about 3 dead spiders. BEST part - when they came to spray, I was babysitting my niece and nephew outside and the kids did not have to stop or go inside because the natural components are harmless to children.",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "Nate Tate",
+      "avatar": null,
+      "isLocalGuide": true,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "One of the main reasons I chose Buzz Off Pest Prevention was because they use a non-toxic, chemical-free solution, which was really important to me since I have a little one at home who loves to play outside. We went with the exterior, interior, and mosquito repellent package because we were dealing with little bugs getting into the house and relentless mosquitoes at night. Since starting service, I haven’t seen any bugs inside, and we’re finally able to enjoy being outside at night without getting eaten alive. Moe, our specialist, was also extremely professional and courteous.",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Momwalk Rancho",
+      "avatar": null,
+      "isLocalGuide": true,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "This local business came to share at my local mom walk I host and when I tell you the owners are so humble and welcoming I mean it! They are here and present in the community ready to help us with our mosquitos and bugs! No more spiders and bugs! No more million bug bites during the hot months! Their solution is all natural as well which my mom community loves! Highly recommend them to all my friends and family!",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Andrew V.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "I highly recommend Moe and his pest control service. We had him treat our home for mosquitoes and general bugs, and we were dealing with a roach issue as well. Ever since the service, we’ve noticed a huge improvement. What really sold us was that he uses organic, family- and pet-friendly products. I have a daughter who plays outside with her toys and dogs that are always in the yard, so safety was a big priority for us. The service was professional, thorough, and the scents actually smell great - not like harsh chemicals. We were so happy with the results that we signed up for a subscription.",
+      "ago": "January 2026",
+      "isoDate": "2026-01-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "Megan Stillman",
+      "avatar": null,
+      "isLocalGuide": true,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "The mosquito service has saved my sanity and legs from bites! My kids love to play outside all afternoon and now we can enjoy our backyard worry free. The owners are so personable and really want you to feel educated about the whole process. The solution really does work! Highly recommend to anyone struggling with mosquito infestation.",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Ivan A.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "I had a flea infestation from the stray animals making their way into my front yard. With the heat I’ve seen new creatures start to appear. BuzzOff is a newly started family business, and the owners have gone above and beyond to get rid of the bugs. As a family owned business you can tell they’re out here providing the best service possible, treating the problem like if it was their own. It’s affordable and they work with your schedules.",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "Terranzo M.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "We called Buzz Off when we noticed ants and spiders around the house. From the first phone call to the final visit, the team was professional, friendly, and patient with all my questions - especially about being safe for our dogs. They explained what products they’d use and confirmed they were designed to be pet-friendly, which gave us peace of mind. Service was affordable and thorough - highly recommend if you want effective pest control that won’t put your pets at risk!",
+      "ago": "January 2026",
+      "isoDate": "2026-01-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "Lo U.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "No more searching around, I found the one!!! Amazing work!! Great customer service, very professional and polite and caring! I wanted to try the “natural” solution because I have young kids - I don’t need the harsh chemicals others use. They use natural solutions for killing insects that’s very effective! I am very satisfied and recommend this company!",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "John S.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "Dorrin and his team are great to work with. I’ve always been concerned about traditional pest control because my two boys pretty much roll, land, and play in everything I tell them not to. Going to have them back for sure!! Highly recommended!!!",
+      "ago": "February 2026",
+      "isoDate": "2026-02-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "Wendy Gonzalez",
+      "avatar": null,
+      "isLocalGuide": true,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "I heard about this company from a friend. I was originally skeptical because of the low amount of reviews but honestly, I was so happy with the service and the experience, from the customer service to the quick manner they responded. Everything was so easy and they did a great job. I’m highly recommending them to my friends and family.",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Katherine B.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "Loved this pest control company!! I love that they use a natural, pet-safe spray so we can still be outside without worrying about harsh chemicals. The spray also smells amazing!! It left the house feeling fresh instead of chemical heavy. Most importantly, the bugs are gone! Would absolutely recommend!!!",
+      "ago": "January 2026",
+      "isoDate": "2026-01-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "Karina S.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "My inquiry was quickly answered and appointment was made. Maurice assessed our need, then performed treatment using all natural ingredients. Very pleased with this service.",
+      "ago": "February 2026",
+      "isoDate": "2026-02-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    },
+    {
+      "name": "Code D.",
+      "avatar": null,
+      "isLocalGuide": false,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "These guys were amazing! Efficient! Great community and they provided exactly as they said. Can’t speak highly enough about these guys.",
+      "ago": "March 2026",
+      "isoDate": "2026-03-01T00:00:00Z",
+      "photos": [],
+      "source": "yelp"
+    }
+  ]
+}

@@ -2,8 +2,13 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { TESTIMONIALS } from "@/lib/constants";
+import Image from "next/image";
+import Link from "next/link";
+import { REVIEWS, TOTAL_REVIEW_COUNT, AVERAGE_RATING, displayDate, type Review } from "@/lib/reviews";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
+
+/** How many reviews the homepage shows. The full set lives on /reviews. */
+const HOMEPAGE_REVIEW_COUNT = 12;
 
 function StarIcon() {
   return (
@@ -13,14 +18,14 @@ function StarIcon() {
   );
 }
 
-function ReviewCard({ t, className = "" }: { t: (typeof TESTIMONIALS)[number]; className?: string }) {
+function ReviewCard({ t, className = "" }: { t: Review; className?: string }) {
   return (
     <div
       className={`relative bg-[#FAFAF7] rounded-[4px] p-8 border-l-[3px] border-[#E05A2B] shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition-shadow duration-300 flex flex-col ${className}`}
     >
       {/* Stars */}
-      <div className="flex gap-1 mb-4">
-        {[...Array(5)].map((_, si) => (
+      <div className="flex gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
+        {[...Array(t.rating)].map((_, si) => (
           <StarIcon key={si} />
         ))}
       </div>
@@ -30,19 +35,54 @@ function ReviewCard({ t, className = "" }: { t: (typeof TESTIMONIALS)[number]; c
         &ldquo;{t.text}&rdquo;
       </p>
 
+      {/* Customer photos */}
+      {t.photos.length > 0 && (
+        <div className={`grid gap-2 mb-6 ${t.photos.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
+          {t.photos.slice(0, 2).map((photo) => (
+            <div
+              key={photo.src}
+              className="relative w-full overflow-hidden rounded-[4px]"
+              style={{ aspectRatio: t.photos.length === 1 ? "4 / 3" : "1 / 1" }}
+            >
+              <Image
+                src={photo.src}
+                alt={`${photo.caption} from ${t.name}, a Buzz Off pest control customer in the Inland Empire`}
+                fill
+                sizes="(max-width: 768px) 45vw, 220px"
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Attribution */}
       <div className="flex items-center gap-3 pt-5 border-t border-[#1A5C32]/10">
-        <div className="w-10 h-10 rounded-full bg-[#1A5C32] flex items-center justify-center shrink-0">
-          <span className="font-display text-[0.9rem] font-bold text-white">
-            {t.name.charAt(0)}
-          </span>
-        </div>
+        {t.avatar ? (
+          <Image
+            src={t.avatar}
+            alt=""
+            width={40}
+            height={40}
+            className="w-10 h-10 rounded-full object-cover shrink-0"
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-10 h-10 rounded-full bg-[#1A5C32] flex items-center justify-center shrink-0" aria-hidden="true">
+            <span className="font-display text-[0.9rem] font-bold text-white">
+              {t.name.charAt(0)}
+            </span>
+          </div>
+        )}
         <div>
           <strong className="font-body text-[0.85rem] font-bold text-[#1A5C32] block">
             {t.name}
           </strong>
           <span className="font-body text-[0.75rem] text-[#1C2B1E]/50">
-            {t.location}
+            {t.source === "google" ? "Google" : "Yelp"}
+            {displayDate(t) ? ` · ${displayDate(t)}` : ""}
+            {t.isLocalGuide ? " · Local Guide" : ""}
           </span>
         </div>
       </div>
@@ -53,7 +93,7 @@ function ReviewCard({ t, className = "" }: { t: (typeof TESTIMONIALS)[number]; c
 export function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -80px 0px" });
-  const reviews = TESTIMONIALS.slice(0, 3);
+  const reviews = REVIEWS.slice(0, HOMEPAGE_REVIEW_COUNT);
   const [current, setCurrent] = useState(0);
 
   return (
@@ -96,7 +136,7 @@ export function Testimonials() {
         <div className="hidden md:grid md:grid-cols-3 gap-6">
           {reviews.map((t, i) => (
             <motion.div
-              key={t.name}
+              key={`${t.name}-${i}`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
@@ -150,6 +190,16 @@ export function Testimonials() {
           </div>
         </div>
 
+        {/* Read the rest */}
+        <div className="flex justify-center mt-12">
+          <Link
+            href="/reviews"
+            className="font-body text-[0.78rem] font-bold tracking-[0.12em] uppercase text-[#1A5C32] border-b-2 border-[#C8973A] pb-1 hover:text-[#E05A2B] transition-colors"
+          >
+            Read all {TOTAL_REVIEW_COUNT} reviews
+          </Link>
+        </div>
+
         {/* Trust stats */}
         <motion.div
           className="flex flex-wrap justify-center gap-8 mt-14"
@@ -159,7 +209,8 @@ export function Testimonials() {
         >
           {[
             { val: "500+", label: "Families Protected" },
-            { val: "5.0\u2605", label: "Average Rating" },
+            { val: `${AVERAGE_RATING.toFixed(1)}★`, label: "Average Rating" },
+            { val: `${TOTAL_REVIEW_COUNT}`, label: "Verified Reviews" },
             { val: "100%", label: "Plant-Based" },
             { val: "0", label: "Synthetic Pesticides" },
           ].map((b) => (
