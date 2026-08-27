@@ -17,6 +17,14 @@ import {
   type Review,
 } from "@/lib/reviews";
 
+// Linked so a visitor can check the count against the source profile rather
+// than taking the number on this page at face value.
+const PROFILE_URLS = {
+  google:
+    "https://www.google.com/maps/search/?api=1&query=Buzz+Off+Pest+Prevention+Rancho+Cucamonga",
+  yelp: "https://www.yelp.com/biz/buzz-off-pest-prevention-rancho-cucamonga",
+} as const;
+
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -46,6 +54,22 @@ function Stars({ rating = 5 }: { rating?: number }) {
         </svg>
       ))}
     </div>
+  );
+}
+
+function ProfileLink({ source }: { source: "google" | "yelp" }) {
+  const isGoogle = source === "google";
+  return (
+    <a
+      href={PROFILE_URLS[source]}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-flex items-center gap-2 font-body font-bold text-[0.72rem] tracking-[0.12em] uppercase px-5 py-3 rounded-full transition-all hover:bg-[#1A5C32]/[0.04]"
+      style={{ border: "1px solid rgba(26,92,50,0.2)", color: "#1C2B1E" }}
+    >
+      Read them on {isGoogle ? "Google" : "Yelp"}
+      <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
+    </a>
   );
 }
 
@@ -166,6 +190,17 @@ export default function ReviewsPage() {
         {/* ── Reviews Grid ── */}
         <section className="py-[clamp(48px,6vw,80px)]" style={{ background: "#EDEADE" }}>
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,48px)]">
+            <FadeIn>
+              <p className="font-body text-[0.8rem] text-center mb-8" style={{ color: "#1C2B1E99" }}>
+                {REVIEWS.length === TOTAL_REVIEW_COUNT
+                  ? `All ${TOTAL_REVIEW_COUNT} reviews`
+                  : `${REVIEWS.length} of our ${TOTAL_REVIEW_COUNT} reviews. The other ${TOTAL_REVIEW_COUNT - REVIEWS.length} are star ratings left without a written comment.`}
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                <ProfileLink source="google" />
+                <ProfileLink source="yelp" />
+              </div>
+            </FadeIn>
             <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5">
               {REVIEWS.map((review, i) => (
                 <FadeIn key={`${review.name}-${i}`} delay={Math.min(i * 0.05, 0.4)}>
