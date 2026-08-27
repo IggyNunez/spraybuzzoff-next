@@ -1,0 +1,536 @@
+{
+  "fetchedAt": "2026-08-27T15:46:12.011Z",
+  "total": 40,
+  "reviews": [
+    {
+      "name": "Shelby Valverde",
+      "avatar": "/assets/reviews/avatars/ca454ad0f3152803.jpg",
+      "isLocalGuide": true,
+      "reviewCount": 4,
+      "rating": 5,
+      "text": "Great customer service! I love that everything is nontoxic-left our backyard smelling amazing! Will absolutely be using again",
+      "ago": "2 days ago",
+      "isoDate": "2026-08-24T21:03:52Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Anna Meier",
+      "avatar": "/assets/reviews/avatars/b01025a969954f43.jpg",
+      "isLocalGuide": true,
+      "reviewCount": 5,
+      "rating": 5,
+      "text": "The team was so friendly and the service was fast and easy. Love that it’s non-toxic for my family.",
+      "ago": "a week ago",
+      "isoDate": "2026-08-17T15:50:58Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Candelario Rael",
+      "avatar": "/assets/reviews/avatars/be589ee99b7515ab.jpg",
+      "isLocalGuide": true,
+      "reviewCount": 1,
+      "rating": 5,
+      "text": "Great price, Maurice checked around the whole house and explained everything he was going to do. Very happy with our first Buzz Off experience. Thanks",
+      "ago": "a week ago",
+      "isoDate": "2026-08-13T22:06:53Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "devyn castel",
+      "avatar": "/assets/reviews/avatars/fa45abdf1e096856.jpg",
+      "isLocalGuide": true,
+      "reviewCount": 2,
+      "rating": 5,
+      "text": "I couldn’t be happier with Buzz Off Pest Prevention as a low tox living family!! I’m sooo happy they’re in the OC area!! Knowing their method is all natural, no greenwashing,  there really is so much peace of mind as a mom and dog mom and family that loves to host! I feel confident in knowing our family and friends aren’t being harmed by harmful chemicals while also being able to enjoy our outdoor space.\n\nMaurice serviced our home, both front and backyard so thoroughly! From experience with past companies, it feels like they do a brief sweep and spray, but not with Buzz Off! Maurice took the time to get every area and used two separate methods for spider control and mosquito control which we deal A LOT with where we live. I also am a huge customer service fan and really appreciated how attentive and friendly Maurice was.\n\nI’d without a doubt recommend Buzz Off to every OC family or anyone looking for a mindful living pest control company!",
+      "ago": "2 weeks ago",
+      "isoDate": "2026-08-10T20:51:38Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "laurie Miller",
+      "avatar": "/assets/reviews/avatars/8ffa539a1b09fef0.jpg",
+      "isLocalGuide": true,
+      "reviewCount": null,
+      "rating": 5,
+      "text": "",
+      "ago": "3 weeks ago",
+      "isoDate": "2026-08-03T19:48:40Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "cory frino",
+      "avatar": "/assets/reviews/avatars/048889311f20628f.jpg",
+      "isLocalGuide": true,
+      "reviewCount": 2,
+      "rating": 5,
+      "text": "Great mosquito service from Spray Buzz Off! They showed up on time, extremely friendly and were easy to work with. We can’t wait to finally enjoy our yard. Highly recommend!",
+      "ago": "Edited 20 hours ago",
+      "isoDate": "2026-07-31T16:39:24Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Marina Topp",
+      "avatar": "/assets/reviews/avatars/07d0e50bb454f530.jpg",
+      "isLocalGuide": true,
+      "reviewCount": 1,
+      "rating": 5,
+      "text": "We just had our first treatment with Buzz Off. Scheduling and communication were easy and great! The biggest issue we’ve had with pest control in the past is receiving less than we’d hoped. Our previous company would be in and out in 15 minutes and our home would still have spider webs and eggs everywhere! Maurice with Buzz Off was at our home almost an hour and a half, and our home and yard look great! It is also so reassuring to know that the products used are clean and safe for my little boys as well as my pets!",
+      "ago": "3 weeks ago",
+      "isoDate": "2026-07-31T15:44:09Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Ariel Rae Esparza",
+      "avatar": "/assets/reviews/avatars/e1cf586eb0e83c2c.jpg",
+      "isLocalGuide": true,
+      "reviewCount": 14,
+      "rating": 5,
+      "text": "Professional work, love the attention to detail and care they provided. We were dealing with spiders and ants and have such a peace of mind after they left that the products used are non toxic.",
+      "ago": "4 weeks ago",
+      "isoDate": "2026-07-30T00:48:39Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Alexandra T.",
+      "avatar": "/assets/reviews/avatars/d75856fbdfa81ccd.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 8,
+      "rating": 5,
+      "text": "Maurice and the team are wonderful. The treatment is so effective and it leaves our yard smelling of beautiful and fresh essential oils.",
+      "ago": "a month ago",
+      "isoDate": "2026-07-22T16:15:03Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Jill Gutierrez",
+      "avatar": "/assets/reviews/avatars/638072eb9679bffd.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 7,
+      "rating": 5,
+      "text": "We were thoroughly impressed with Maurice & the job he did at our home. He took his time and was incredibly thorough. He walked us through the areas of concern so we could see what was going on. We will definitely be hiring Buzz Off Pest Prevention again.",
+      "ago": "a month ago",
+      "isoDate": "2026-07-22T01:03:25Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Scott & Ashley Mann",
+      "avatar": "/assets/reviews/avatars/cdca2171fd1a3dea.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "Maurice was awesome! Super friendly, on time and efficient. Highly recommend!",
+      "ago": "a month ago",
+      "isoDate": "2026-07-20T20:32:41Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Hailey Garcia",
+      "avatar": "/assets/reviews/avatars/d27ae15222ddadd6.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 1,
+      "rating": 5,
+      "text": "Had the best experience with buzz off pest prevention! Love that it’s natural and non toxic. The customer service was amazing",
+      "ago": "a month ago",
+      "isoDate": "2026-07-15T21:26:30Z",
+      "photos": [
+        {
+          "src": "/assets/reviews/photos/bd92a5127f7fffb6.jpg",
+          "caption": "Customer photo"
+        },
+        {
+          "src": "/assets/reviews/photos/9f71647de41bc895.jpg",
+          "caption": "Customer photo"
+        }
+      ],
+      "source": "google"
+    },
+    {
+      "name": "Delaney Buck",
+      "avatar": "/assets/reviews/avatars/4eb70e1e9a4ffb1d.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 5,
+      "rating": 5,
+      "text": "We had such an incredible and informative experience! The peace of mind knowing our mosquito problem is being handled in a safe way for our kids all while still being effective is amazing. Highly recommend!",
+      "ago": "a month ago",
+      "isoDate": "2026-07-15T17:22:32Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Sandy Janes",
+      "avatar": "/assets/reviews/avatars/a9af8bf8ffbd54ba.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 1,
+      "rating": 5,
+      "text": "Buzz Off has been a game changer!  We could not sit outside anymore without getting destroyed by bug bites! Since hiring Buzz Off we are able to enjoy being outside again!! Bonus points for being prompt, dependable, nice and friendly guys and the spray smells great! We are truly thankful for this service 😊",
+      "ago": "a month ago",
+      "isoDate": "2026-07-13T19:43:43Z",
+      "photos": [
+        {
+          "src": "/assets/reviews/photos/3950da2539d0c34c.jpg",
+          "caption": "Customer photo"
+        }
+      ],
+      "source": "google"
+    },
+    {
+      "name": "Linda Hua",
+      "avatar": "/assets/reviews/avatars/7cf5c90d42acba44.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 6,
+      "rating": 5,
+      "text": "I could not be happier with the service Buzz Off provided. Mo took the time and made the effort to really address our cricket issue. He examined our garage door, walls, and the exterior to pinpoint how to address the problem and then showed my husband everything he was doing, walking him through every step as he methodically flushed them all out of our garage wall! They came out by the droves and it was disgusting, but they were gone within two visits! He was very prompt about scheduling a follow up to make sure the issue was completely solved. Was always super communicative, on time, personable, and so knowledgeable about all things bugs. We could not recommend them more for their expertise and professionalism— and as a bonus, they’re non-toxic!",
+      "ago": "a month ago",
+      "isoDate": "2026-07-10T05:12:40Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "inspegaget",
+      "avatar": "/assets/reviews/avatars/c7e821eaeb776c5e.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 2,
+      "rating": 5,
+      "text": "Great service and on time and professional. I recommend this company for pest control to my other friends and family.",
+      "ago": "a month ago",
+      "isoDate": "2026-07-10T04:15:37Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Kristin Hall",
+      "avatar": "/assets/reviews/avatars/fa3f520e84f2c679.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 8,
+      "rating": 5,
+      "text": "Love that buzz off uses clean, quality ingredients. None of the traditional chemicals! I like to be super clean and ingredient conscious especially when its things for my kids. So knowing my kids are safe around their product is all the better! The gentleman who comes to spray is very friendly. Ive been happy with my services and definitely recommend!",
+      "ago": "a month ago",
+      "isoDate": "2026-06-29T20:08:20Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "chris kemby",
+      "avatar": "/assets/reviews/avatars/5ff1027b4fbaf4c9.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 8,
+      "rating": 5,
+      "text": "This is a new service for us, but we are happy to have it.  We have not had any issues with mosquitos since starting the service and the technician is so nice!  Would definitely recommend this service to others!",
+      "ago": "2 months ago",
+      "isoDate": "2026-06-24T01:28:13Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Maansi Kolby",
+      "avatar": "/assets/reviews/avatars/abb7dfda19e17de7.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 1,
+      "rating": 5,
+      "text": "Called them and they were able to come out same day to my house! Maurice was so friendly and so thorough! I will definitely be calling them again and have already referred them to local friends.",
+      "ago": "2 months ago",
+      "isoDate": "2026-06-11T01:12:20Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Poonam Gohil",
+      "avatar": "/assets/reviews/avatars/455d82a3611fbf05.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 15,
+      "rating": 5,
+      "text": "Maurice came out this morning and did a great job. Super professional and thorough. What I love about Buzz Off is they use 100% plant-based products — they actually smell amazing, not like harsh chemicals. As a mom that matters a lot to me. Can’t speak to results yet since it was just done today but the experience alone earns 5 stars. Will definitely be a repeat customer!",
+      "ago": "2 months ago",
+      "isoDate": "2026-06-03T16:43:08Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "teri Lyn",
+      "avatar": "/assets/reviews/avatars/9fd9324604c14f51.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 4,
+      "rating": 5,
+      "text": "",
+      "ago": "2 months ago",
+      "isoDate": "2026-06-02T04:55:21Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Robert Perez",
+      "avatar": "/assets/reviews/avatars/06b38c6c4381494d.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "We had a great experience with Buzz Off Natural Pest Prevention today. Maurice was very professional, informative, and took the time to explain everything clearly. We’ve been dealing with a lot of mosquitoes, and finding something safe to use around our dogs has been difficult. After researching different options, we found Buzz Off and really liked that they use plant based products instead of harsh chemicals. We’re excited to finally enjoy our backyard again without worrying about our pets. Highly recommend their service and appreciate the great customer care from Maurice.",
+      "ago": "3 months ago",
+      "isoDate": "2026-05-25T18:30:43Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Jon-Michael Hattabaugh",
+      "avatar": "/assets/reviews/avatars/a98669ebee2431fb.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "Awesome customer service and attention to detail.",
+      "ago": "3 months ago",
+      "isoDate": "2026-05-18T19:03:14Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "April Aleman",
+      "avatar": "/assets/reviews/avatars/733a013dcbb1b699.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 8,
+      "rating": 5,
+      "text": "Been very happy with this company. Very professional, friendly and helpful. Would highly recommend.",
+      "ago": "3 months ago",
+      "isoDate": "2026-05-16T22:37:00Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Eva Makanvand",
+      "avatar": "/assets/reviews/avatars/7a2c3fb2e052cc0c.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 6,
+      "rating": 5,
+      "text": "AMAZING!!! They are a MUST! Wow! Very impressed with their customer service, timelines, GREAT communication & service and the Non Toxic sprays and everything they do is BEYOND WORTH IT 😄. THANK YOU SO MUCH BUZZ OFF. Excited that my son can play outside same day you spray without then concern of chemicals or bugs. Thanks a MILLION 🙏😄",
+      "ago": "Edited 2 months ago",
+      "isoDate": "2026-04-28T19:29:17Z",
+      "photos": [
+        {
+          "src": "/assets/reviews/photos/01e500795d5bf007.jpg",
+          "caption": "Customer photo"
+        }
+      ],
+      "source": "google"
+    },
+    {
+      "name": "Melissa Mitchell",
+      "avatar": "/assets/reviews/avatars/bf505d17424608eb.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 2,
+      "rating": 5,
+      "text": "After the first treatment mosquitos have been gone. We’re very happy with results so far!",
+      "ago": "4 months ago",
+      "isoDate": "2026-04-24T17:43:21Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Shanelle Bennett",
+      "avatar": "/assets/reviews/avatars/5ed2fa22493bbdd6.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 9,
+      "rating": 5,
+      "text": "Very happy I found this service! They were super friendly, easy to schedule, very reasonably priced, non-toxic, and it works! I have a baby and a dog and wanted to be able to all enjoy our backyard without being hounded by mosquitos or use harmful chemicals. So far no sign of mosquitos after just one treatment! They also got rid of a hornets nest we had on the house. The treatment also smells amazing, which is not something you can normally say about bug repellent! Even my neighbors complimented the smell. Highly recommend!",
+      "ago": "4 months ago",
+      "isoDate": "2026-04-18T04:20:22Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Taylor Pairman",
+      "avatar": "/assets/reviews/avatars/367c473cad5bf7dd.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "Seriously so happy with our pest control service! They showed up on time, were super friendly, and explained everything in a way that actually made sense.\n\nThey were really thorough and made sure we felt taken care of before leaving.\n\n10/10 recommend if you want someone reliable and easy to work with!",
+      "ago": "4 months ago",
+      "isoDate": "2026-03-30T22:24:38Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Kyrstin Alexander",
+      "avatar": "/assets/reviews/avatars/e9655e280b62a2b8.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "They owners Dorrin and Maurice are so so genuine, friendly and knowledgeable. We appreciate what you’re doing and are so glad we found your company! It makes a huge difference in the biting pest presence in our yard immediately after they come for a treatment. Love the non-toxic pest control that actually works!!",
+      "ago": "4 months ago",
+      "isoDate": "2026-03-30T03:39:28Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Sam Colombo",
+      "avatar": "/assets/reviews/avatars/8fbd224f040206ea.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 1,
+      "rating": 5,
+      "text": "Great products, very safe and effective!",
+      "ago": "Edited 3 months ago",
+      "isoDate": "2026-03-29T01:53:37Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Ceci Diaz",
+      "avatar": "/assets/reviews/avatars/b8aac70e8e73681f.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 1,
+      "rating": 5,
+      "text": "I had a great experience with Buzz Off Natural Pest Prevention. From start to finish, the visit was pleasant, friendly, and very professional. He arrived right on time and took the time to explain everything clearly, which I really appreciated. It’s reassuring to know they use natural methods that are safe for my family and pets while still being effective. Their attention to detail and commitment to customer service really stood out. I would definitely recommend them to anyone looking for a reliable and eco-friendly pest control solution.",
+      "ago": "5 months ago",
+      "isoDate": "2026-03-26T00:20:52Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Gerard Vergel de Dios",
+      "avatar": "/assets/reviews/avatars/3258b10f918ddfec.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "Dorrin is awesome!! Super cool guy and very informative. Saw results immediately in our kids’ playhouse, brown widows dead in their tracks.",
+      "ago": "5 months ago",
+      "isoDate": "2026-03-25T22:52:52Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Gabby Aguilar",
+      "avatar": "/assets/reviews/avatars/98ffd1c40c229c70.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 2,
+      "rating": 5,
+      "text": "Great customer service. Detailed and thorough work. Will definitely use again!",
+      "ago": "5 months ago",
+      "isoDate": "2026-03-19T21:36:45Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Cody Deniz",
+      "avatar": "/assets/reviews/avatars/b7edaaa1aa9831bf.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 6,
+      "rating": 5,
+      "text": "Buzz off is awesome! Professional and showed up on time. Explained what they were going to do ahead of service. Disclosed the full amount the service would cost prior to service starting. Can’t speak highly enough of them.",
+      "ago": "5 months ago",
+      "isoDate": "2026-03-05T00:00:47Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Chris Mercado",
+      "avatar": "/assets/reviews/avatars/c15f269db37dd4c4.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 4,
+      "rating": 5,
+      "text": "Fantastic local service! Finally a safe alternative for my families home. Thanks Buzzoff!!",
+      "ago": "5 months ago",
+      "isoDate": "2026-03-04T01:18:02Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Vanessa P. Flach",
+      "avatar": "/assets/reviews/avatars/6685518191786613.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "As a mom, I’m extremely careful about what I bring into our home and yard, especially when it comes to pest control. There are so many toxic chemicals in them. The fact that Buzz Off is all natural and non toxic made it an easy yes. The mosquitos were relentless and I had to do something, but I wanted peace of mind knowing my kids and dog weren’t being exposed to anything questionable.\n\nI was skeptical, but it worked really well! We noticed a big difference quickly and could finally enjoy being outside again.\n\nIf you’re looking for pest control that aligns with a more conscious, non toxic lifestyle, I HIGHLY recommend them!!",
+      "ago": "5 months ago",
+      "isoDate": "2026-03-01T05:12:12Z",
+      "photos": [
+        {
+          "src": "/assets/reviews/photos/f0cdf735a161019a.jpg",
+          "caption": "Customer photo"
+        },
+        {
+          "src": "/assets/reviews/photos/54031eb4836dd66e.jpg",
+          "caption": "Customer photo"
+        }
+      ],
+      "source": "google"
+    },
+    {
+      "name": "Terrance Manderville",
+      "avatar": "/assets/reviews/avatars/fbb4012a8a2566a4.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "Buzz Off came out and treated my backyard and house using natural products. I have yet to see ANY mosquitoes in my back yard since they came by. I chose a natural product because I have a dog and didn’t want to spray anything too harsh. Great service and the natural products smell great!",
+      "ago": "5 months ago",
+      "isoDate": "2026-02-27T22:16:07Z",
+      "photos": [
+        {
+          "src": "/assets/reviews/photos/b35fc16d68e45a43.jpg",
+          "caption": "Customer photo"
+        },
+        {
+          "src": "/assets/reviews/photos/baad4f69be3ec1f8.jpg",
+          "caption": "Customer photo"
+        },
+        {
+          "src": "/assets/reviews/photos/b4d9a02f4673f2d7.jpg",
+          "caption": "Customer photo"
+        }
+      ],
+      "source": "google"
+    },
+    {
+      "name": "jose algandar",
+      "avatar": "/assets/reviews/avatars/5ca053109d7bc45a.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 3,
+      "rating": 5,
+      "text": "We used Buzzoff pest control to clear out the bugs around our house and yard.   They were responsive and super helpful.  Really easy to.deal with. I actually liked the smell of the product, you can tell they do not use chemicals.  We loved its family owned. There is nothing better than the peace of mind you get knowing you don't have to worry about chemicals around your kids, animals and home.   Highly recommended very satisfied with their service.",
+      "ago": "6 months ago",
+      "isoDate": "2026-02-25T05:20:19Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Ashlyn Canchola",
+      "avatar": "/assets/reviews/avatars/79cfe3c6a89fc3e8.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 2,
+      "rating": 5,
+      "text": "Buzz Off Pest Prevention was exactly what I was looking for. I love that they use natural, pet-friendly treatments (huge plus for me), and they are a local family owned small business. They provide great customer service!",
+      "ago": "6 months ago",
+      "isoDate": "2026-02-22T00:18:26Z",
+      "photos": [],
+      "source": "google"
+    },
+    {
+      "name": "Julie Sandoval",
+      "avatar": "/assets/reviews/avatars/6b97e6f75a0d5d9f.jpg",
+      "isLocalGuide": false,
+      "reviewCount": 4,
+      "rating": 5,
+      "text": "Super impressed with BuzzOff.  They came out and inspected my home and provided a plan. They took the time to educate me on the natural products that they use.  Made me feel at ease.  I have 2 active kiddos who love to play in the yard.  We actually had a play date scheduled immediately after they left and I was happy to know I did not need to cancel.\n\nI was most impressed with the treatment to our hedge, where the mosquitoes live.  I have never had any other pest control company offer that.\n\nExcited to continue our pest control service with BuzzOff knowing that our home will be safe from toxic chemicals and my kids can time free around the year",
+      "ago": "7 months ago",
+      "isoDate": "2026-01-20T03:13:32Z",
+      "photos": [
+        {
+          "src": "/assets/reviews/photos/9bd82b4d02b03aa2.jpg",
+          "caption": "Customer photo"
+        },
+        {
+          "src": "/assets/reviews/photos/db17c3306f80d654.jpg",
+          "caption": "Customer photo"
+        }
+      ],
+      "source": "google"
+    }
+  ]
+}

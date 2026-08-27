@@ -8,6 +8,14 @@ import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  REVIEWS,
+  TOTAL_REVIEW_COUNT,
+  AVERAGE_RATING,
+  FIVE_STAR_PERCENT,
+  displayDate,
+  type Review,
+} from "@/lib/reviews";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -27,173 +35,40 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
-type Review = {
-  name: string;
-  rating: number;
-  date: string;
-  text: string;
-  source: "google" | "yelp";
-  localGuide?: boolean;
-};
 
-const REVIEWS: Review[] = [
-  {
-    name: "Ceci Diaz",
-    rating: 5,
-    date: "March 2026",
-    text: "I had a great experience with Buzz Off Natural Pest Prevention. From start to finish, the visit was pleasant, friendly, and very professional. He arrived right on time and took the time to explain everything clearly, which I really appreciated. It\u2019s reassuring to know they use natural methods that are safe for my family and pets while still being effective. Their attention to detail and commitment to customer service really stood out. I would definitely recommend them to anyone looking for a reliable and eco-friendly pest control solution.",
-    source: "google",
-  },
-  {
-    name: "Julie C.",
-    rating: 5,
-    date: "March 2026",
-    text: "Wooo, I loved my service! We\u2019ve been dealing with insane mosquitos because of our pool and all of our plants in the back & I wanted to wait a week to even write this review to see if it made a difference... Well, came here to say that I totally 10/10 would recommend! My husband and I noticed that we haven\u2019t had to smack these small mosquitos in our room because we like to leave our sliding door open from time to time. Not a single mosquito has came back! Also, Maurice noticed that we had a few spiders and he kindly offered to spray them off our patio. A few hours later I noticed about 3 dead spiders. BEST part - when they came to spray, I was babysitting my niece and nephew outside and the kids did not have to stop or go inside because the natural components are harmless to children.",
-    source: "yelp",
-  },
-  {
-    name: "Gerard Vergel de Dios",
-    rating: 5,
-    date: "March 2026",
-    text: "Dorrin is awesome!! Super cool guy and very informative. Saw results immediately in our kids\u2019 playhouse, brown widows dead in their tracks.",
-    source: "google",
-    localGuide: true,
-  },
-  {
-    name: "Nate Tate",
-    rating: 5,
-    date: "March 2026",
-    text: "One of the main reasons I chose Buzz Off Pest Prevention was because they use a non-toxic, chemical-free solution, which was really important to me since I have a little one at home who loves to play outside. We went with the exterior, interior, and mosquito repellent package because we were dealing with little bugs getting into the house and relentless mosquitoes at night. Since starting service, I haven\u2019t seen any bugs inside, and we\u2019re finally able to enjoy being outside at night without getting eaten alive. Moe, our specialist, was also extremely professional and courteous.",
-    source: "google",
-    localGuide: true,
-  },
-  {
-    name: "Momwalk Rancho",
-    rating: 5,
-    date: "March 2026",
-    text: "This local business came to share at my local mom walk I host and when I tell you the owners are so humble and welcoming I mean it! They are here and present in the community ready to help us with our mosquitos and bugs! No more spiders and bugs! No more million bug bites during the hot months! Their solution is all natural as well which my mom community loves! Highly recommend them to all my friends and family!",
-    source: "google",
-    localGuide: true,
-  },
-  {
-    name: "Andrew V.",
-    rating: 5,
-    date: "January 2026",
-    text: "I highly recommend Moe and his pest control service. We had him treat our home for mosquitoes and general bugs, and we were dealing with a roach issue as well. Ever since the service, we\u2019ve noticed a huge improvement. What really sold us was that he uses organic, family- and pet-friendly products. I have a daughter who plays outside with her toys and dogs that are always in the yard, so safety was a big priority for us. The service was professional, thorough, and the scents actually smell great - not like harsh chemicals. We were so happy with the results that we signed up for a subscription.",
-    source: "yelp",
-  },
-  {
-    name: "Megan Stillman",
-    rating: 5,
-    date: "March 2026",
-    text: "The mosquito service has saved my sanity and legs from bites! My kids love to play outside all afternoon and now we can enjoy our backyard worry free. The owners are so personable and really want you to feel educated about the whole process. The solution really does work! Highly recommend to anyone struggling with mosquito infestation.",
-    source: "google",
-    localGuide: true,
-  },
-  {
-    name: "Ivan A.",
-    rating: 5,
-    date: "March 2026",
-    text: "I had a flea infestation from the stray animals making their way into my front yard. With the heat I\u2019ve seen new creatures start to appear. BuzzOff is a newly started family business, and the owners have gone above and beyond to get rid of the bugs. As a family owned business you can tell they\u2019re out here providing the best service possible, treating the problem like if it was their own. It\u2019s affordable and they work with your schedules.",
-    source: "yelp",
-  },
-  {
-    name: "Terranzo M.",
-    rating: 5,
-    date: "January 2026",
-    text: "We called Buzz Off when we noticed ants and spiders around the house. From the first phone call to the final visit, the team was professional, friendly, and patient with all my questions - especially about being safe for our dogs. They explained what products they\u2019d use and confirmed they were designed to be pet-friendly, which gave us peace of mind. Service was affordable and thorough - highly recommend if you want effective pest control that won\u2019t put your pets at risk!",
-    source: "yelp",
-  },
-  {
-    name: "Lo U.",
-    rating: 5,
-    date: "March 2026",
-    text: "No more searching around, I found the one!!! Amazing work!! Great customer service, very professional and polite and caring! I wanted to try the \u201cnatural\u201d solution because I have young kids - I don\u2019t need the harsh chemicals others use. They use natural solutions for killing insects that\u2019s very effective! I am very satisfied and recommend this company!",
-    source: "yelp",
-  },
-  {
-    name: "John S.",
-    rating: 5,
-    date: "February 2026",
-    text: "Dorrin and his team are great to work with. I\u2019ve always been concerned about traditional pest control because my two boys pretty much roll, land, and play in everything I tell them not to. Going to have them back for sure!! Highly recommended!!!",
-    source: "yelp",
-  },
-  {
-    name: "Terrance M.",
-    rating: 5,
-    date: "January 2026",
-    text: "Buzz Off came out and treated my backyard and home using natural products that were extremely effective. I specifically chose a more natural option because I have a dog and didn\u2019t want harsh chemicals affecting his health. I noticed an immediate difference after their service. The treatment worked fast - I saw spiders eliminated within minutes. The team was professional, thorough, and respectful of my property. They cleaned up after themselves and even removed cobwebs. Excellent service for the price.",
-    source: "yelp",
-  },
-  {
-    name: "Wendy Gonzalez",
-    rating: 5,
-    date: "March 2026",
-    text: "I heard about this company from a friend. I was originally skeptical because of the low amount of reviews but honestly, I was so happy with the service and the experience, from the customer service to the quick manner they responded. Everything was so easy and they did a great job. I\u2019m highly recommending them to my friends and family.",
-    source: "google",
-    localGuide: true,
-  },
-  {
-    name: "Gabby Aguilar",
-    rating: 5,
-    date: "March 2026",
-    text: "Great customer service. Detailed and thorough work. Will definitely use again!",
-    source: "google",
-    localGuide: true,
-  },
-  {
-    name: "Julie S.",
-    rating: 5,
-    date: "January 2026",
-    text: "Super impressed with BuzzOff. They came out and inspected my home and provided a plan. They took the time to educate me on the natural products that they use. Made me feel at ease. I have 2 active kiddos who love to play in the yard. I was most impressed with the treatment to our hedge, where the mosquitoes live. I have never had any other pest control company offer that. Excited to continue our pest control service with BuzzOff knowing that our home will be safe from toxic chemicals.",
-    source: "yelp",
-  },
-  {
-    name: "Katherine B.",
-    rating: 5,
-    date: "January 2026",
-    text: "Loved this pest control company!! I love that they use a natural, pet-safe spray so we can still be outside without worrying about harsh chemicals. The spray also smells amazing!! It left the house feeling fresh instead of chemical heavy. Most importantly, the bugs are gone! Would absolutely recommend!!!",
-    source: "yelp",
-  },
-  {
-    name: "Ashlyn C.",
-    rating: 5,
-    date: "February 2026",
-    text: "Buzz Off Pest Prevention was exactly what I was looking for. I love that they use natural, pet-friendly treatments (huge plus for me), and they are a local family owned small business. They provide great customer service!",
-    source: "yelp",
-  },
-  {
-    name: "Cody Deniz",
-    rating: 5,
-    date: "March 2026",
-    text: "Buzz Off is awesome! Professional and showed up on time. Explained what they were going to do ahead of service. Disclosed the full amount the service would cost prior to service starting. Can\u2019t speak highly enough of them.",
-    source: "google",
-    localGuide: true,
-  },
-  {
-    name: "Karina S.",
-    rating: 5,
-    date: "February 2026",
-    text: "My inquiry was quickly answered and appointment was made. Maurice assessed our need, then performed treatment using all natural ingredients. Very pleased with this service.",
-    source: "yelp",
-  },
-  {
-    name: "Code D.",
-    rating: 5,
-    date: "March 2026",
-    text: "These guys were amazing! Efficient! Great community and they provided exactly as they said. Can\u2019t speak highly enough about these guys.",
-    source: "yelp",
-  },
-];
 
-function Stars() {
+function Stars({ rating = 5 }: { rating?: number }) {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill="#F0C060">
+        <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill={i < rating ? "#F0C060" : "#D8D3C4"} aria-hidden="true">
           <path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" />
         </svg>
       ))}
+    </div>
+  );
+}
+
+function Avatar({ review }: { review: Review }) {
+  if (review.avatar) {
+    return (
+      <Image
+        src={review.avatar}
+        alt=""
+        width={36}
+        height={36}
+        className="w-9 h-9 rounded-full object-cover shrink-0"
+        loading="lazy"
+      />
+    );
+  }
+  return (
+    <div
+      className="w-9 h-9 rounded-full flex items-center justify-center font-body font-bold text-[0.75rem] text-white shrink-0"
+      style={{ background: "#1A5C32" }}
+      aria-hidden="true"
+    >
+      {review.name.charAt(0)}
     </div>
   );
 }
@@ -269,18 +144,18 @@ export default function ReviewsPage() {
             <FadeIn>
               <div className="grid grid-cols-3 gap-6 text-center">
                 <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>5.0</p>
+                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>{AVERAGE_RATING.toFixed(1)}</p>
                   <div className="flex justify-center my-1">
                     <Stars />
                   </div>
                   <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-[#1C2B1E]/50">Average Rating</p>
                 </div>
                 <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>{REVIEWS.length}+</p>
+                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>{TOTAL_REVIEW_COUNT}</p>
                   <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-[#1C2B1E]/50 mt-2">Verified Reviews</p>
                 </div>
                 <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>100%</p>
+                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>{FIVE_STAR_PERCENT}%</p>
                   <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-[#1C2B1E]/50 mt-2">5-Star Reviews</p>
                 </div>
               </div>
@@ -303,25 +178,43 @@ export default function ReviewsPage() {
                     }}
                   >
                     <div className="flex items-center justify-between">
-                      <Stars />
+                      <Stars rating={review.rating} />
                       <SourceBadge source={review.source} />
                     </div>
                     <p className="font-body text-[0.9rem] leading-relaxed" style={{ color: "#1C2B1E" }}>
                       &ldquo;{review.text}&rdquo;
                     </p>
-                    <div className="flex items-center gap-3 mt-1">
-                      <div
-                        className="w-9 h-9 rounded-full flex items-center justify-center font-body font-bold text-[0.75rem] text-white shrink-0"
-                        style={{ background: "#1A5C32" }}
-                      >
-                        {review.name.charAt(0)}
+                    {review.photos.length > 0 && (
+                      <div className={`grid gap-2 ${review.photos.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
+                        {review.photos.map((photo) => (
+                          <div
+                            key={photo.src}
+                            className="relative w-full overflow-hidden rounded-lg"
+                            style={{ aspectRatio: review.photos.length === 1 ? "4 / 3" : "1 / 1" }}
+                          >
+                            <Image
+                              src={photo.src}
+                              alt={`${photo.caption} from ${review.name}, a Buzz Off pest control customer`}
+                              fill
+                              sizes="(max-width: 768px) 50vw, 240px"
+                              className="object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
                       </div>
+                    )}
+                    <div className="flex items-center gap-3 mt-1">
+                      <Avatar review={review} />
                       <div>
                         <p className="font-body font-bold text-[0.82rem]" style={{ color: "#1C2B1E" }}>
                           {review.name}
                         </p>
                         <p className="font-body text-[0.68rem]" style={{ color: "#1C2B1E99" }}>
-                          {review.date}
+                          {displayDate(review)}
+                          {review.isLocalGuide && (
+                            <span style={{ color: "#1A5C32" }}> · Local Guide</span>
+                          )}
                         </p>
                       </div>
                     </div>
