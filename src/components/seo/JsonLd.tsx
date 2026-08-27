@@ -136,7 +136,7 @@ export function LocalBusinessJsonLd() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
-      reviewCount: "26",
+      reviewCount: "50",
       bestRating: "5",
       worstRating: "1",
     },
@@ -262,7 +262,7 @@ export function CityServiceJsonLd({
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "5.0",
-          reviewCount: "26",
+          reviewCount: "50",
           bestRating: "5",
           worstRating: "1",
         },
