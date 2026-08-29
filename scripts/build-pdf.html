@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Buzz Off — Website Care & Growth Subscription</title>
+<style>
+  /* ── Brand palette ────────────────────────────────────────────── */
+  :root{
+    --green:#1A5C32;
+    --green-dark:#0F3D20;
+    --gold:#F0C060;
+    --gold-deep:#C8973A;
+    --cream:#F7F3EA;
+    --ink:#1c1c1c;
+    --ink-soft:#3b3b3b;
+    --rule:rgba(26,92,50,0.18);
+  }
+
+  @page { size: Letter; margin: 0; }
+
+  html, body { margin:0; padding:0; }
+  body{
+    font-family: "Inter", "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--ink);
+    background:#fff;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .display{
+    font-family: "Bebas Neue", "Oswald", "Impact", sans-serif;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .serif-italic{
+    font-family: "Playfair Display", "Georgia", serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  /* ── Page wrapper (natural flow) ─────────────────────────────── */
+  .page{
+    width: 8.5in;
+    box-sizing: border-box;
+    padding: 0.45in 0.55in 0.4in;
+    position: relative;
+  }
+  /* Only protect small atomic blocks from splitting */
+  .section-head { break-after: avoid; page-break-after: avoid; }
+  ul.feat li { break-inside: avoid; page-break-inside: avoid; }
+  .hero, .billing, .callout, .not-included { break-inside: avoid; page-break-inside: avoid; }
+
+  /* ── Cover header ─────────────────────────────────────────────── */
+  .hero{
+    background: var(--green);
+    color: #fff;
+    border-radius: 14pt;
+    padding: 26pt 32pt 24pt;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16pt;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-60pt; top:-60pt;
+    width: 200pt; height: 200pt;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(240,192,96,0.20), transparent 65%);
+  }
+  .eyebrow{
+    font-family:"Inter", system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 10pt;
+  }
+  .hero h1{
+    font-size: 32pt;
+    line-height: 0.98;
+    margin: 0 0 6pt;
+  }
+  .hero h1 .accent{
+    color: var(--gold);
+  }
+  .hero .sub{
+    font-size: 11pt;
+    color: rgba(255,255,255,0.85);
+    max-width: 440pt;
+    margin: 8pt 0 18pt;
+  }
+  .price-row{
+    display: flex;
+    align-items: baseline;
+    gap: 14pt;
+    margin-top: 4pt;
+  }
+  .price{
+    font-family:"Bebas Neue","Oswald","Impact",sans-serif;
+    font-size: 44pt;
+    line-height: 1;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+  .price-meta{
+    color: #fff;
+    font-size: 10pt;
+    opacity: 0.92;
+  }
+  .price-meta b{
+    display: block;
+    font-size: 11pt;
+    margin-bottom: 2pt;
+  }
+
+  /* ── Section ─────────────────────────────────────────────────── */
+  .section{
+    margin: 0 0 14pt;
+  }
+  .section + .section { margin-top: 0; }
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap: 10pt;
+    margin: 0 0 8pt;
+  }
+  .section-head .num{
+    width: 22pt; height: 22pt;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--green);
+    font-weight: 800;
+    font-size: 10pt;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 22pt;
+  }
+  .section-head h2{
+    margin: 0;
+    font-family:"Bebas Neue","Oswald","Impact",sans-serif;
+    color: var(--green);
+    font-size: 15pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .section-head .rule{
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  ul.feat{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.feat li{
+    position: relative;
+    padding: 4pt 0 4pt 16pt;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.42;
+  }
+  ul.feat li:last-child{ border-bottom: 0; }
+  ul.feat li::before{
+    content: "";
+    position: absolute;
+    left: 0; top: 9pt;
+    width: 5pt; height: 5pt;
+    border-radius: 999px;
+    background: var(--gold);
+    box-shadow: 0 0 0 2px rgba(240,192,96,0.22);
+  }
+  ul.feat li b{
+    color: var(--green-dark);
+    font-weight: 700;
+  }
+
+  /* ── Two-col grid for compact sections ───────────────────────── */
+  .two-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 22pt;
+  }
+  .two-col ul.feat li{ break-inside: avoid; }
+
+  /* ── Highlight callout ──────────────────────────────────────── */
+  .callout{
+    background: var(--cream);
+    border-left: 3pt solid var(--gold-deep);
+    padding: 12pt 14pt;
+    border-radius: 6pt;
+    margin: 4pt 0 18pt;
+    font-size: 10pt;
+  }
+  .callout b{ color: var(--green-dark); }
+
+  /* ── Not included box ───────────────────────────────────────── */
+  .not-included{
+    background: #fafafa;
+    border: 1px solid var(--rule);
+    border-radius: 10pt;
+    padding: 14pt 18pt;
+    margin: 6pt 0 18pt;
+  }
+  .not-included h3{
+    margin: 0 0 8pt;
+    font-family:"Bebas Neue","Oswald","Impact",sans-serif;
+    color: var(--green);
+    font-size: 13pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .not-included ul{
+    margin: 0;
+    padding-left: 16pt;
+    color: var(--ink-soft);
+    font-size: 10pt;
+  }
+  .not-included li{ margin: 2pt 0; }
+
+  /* ── Billing band ───────────────────────────────────────────── */
+  .billing{
+    background: var(--green);
+    color: #fff;
+    border-radius: 12pt;
+    padding: 18pt 22pt;
+    margin-top: 8pt;
+  }
+  .billing h3{
+    margin: 0 0 6pt;
+    font-family:"Bebas Neue","Oswald","Impact",sans-serif;
+    font-size: 15pt;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .billing p{
+    margin: 4pt 0;
+    color: rgba(255,255,255,0.9);
+    font-size: 10pt;
+  }
+
+  /* ── Footer ─────────────────────────────────────────────────── */
+  .footer{
+    margin-top: 22pt;
+    padding-top: 14pt;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 9pt;
+    color: var(--ink-soft);
+  }
+  .footer .sig{
+    font-family:"Bebas Neue","Oswald","Impact",sans-serif;
+    color: var(--green);
+    font-size: 12pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── Misc ───────────────────────────────────────────────────── */
+  .for-line{
+    color: rgba(255,255,255,0.78);
+    font-size: 10pt;
+    margin: 0 0 14pt;
+  }
+
+  .quote{
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-size: 11.5pt;
+    color: var(--green);
+    margin: 0 0 10pt;
+  }
+</style>
+</head>
+<body>
+
+<section class="page">
+
+  <div class="hero">
+    <p class="eyebrow">Buzz Off Pest Prevention</p>
+    <h1 class="display">
+      Website Care &<br />
+      <span class="accent">Growth Subscription</span>
+    </h1>
+    <p class="for-line">Prepared for Hayley &amp; Veronnica</p>
+    <p class="sub">Everything you need to keep the site running, ranking on Google, and turning visitors into calls. One simple monthly subscription covering hosting, security, SEO, content, and email infrastructure.</p>
+
+    <div class="price-row">
+      <div class="price">$79<span style="font-size:18pt;color:#fff;opacity:0.7;">/mo</span></div>
+      <div class="price-meta">
+        <b>Month-to-month</b>
+        No contract · Cancel anytime
+      </div>
+    </div>
+  </div>
+
+  <p class="quote">100% plant-based pest prevention deserves a website that works just as hard as you do.</p>
+
+  <!-- ── Hosting & Site Health ── -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">1</span>
+      <h2>Hosting & Site Health</h2>
+      <span class="rule"></span>
+    </div>
+    <ul class="feat two-col">
+      <li><b>Vercel hosting</b> — fast, global, 99.99% uptime</li>
+      <li><b>SSL certificate</b> &amp; domain renewal handling</li>
+      <li><b>Next.js framework</b> &amp; dependency updates</li>
+      <li><b>Security patches</b> as they're released</li>
+      <li><b>Quarterly backup verification</b></li>
+      <li><b>PageSpeed monitoring</b> with optimizations as needed</li>
+      <li><b>Broken link monitoring</b></li>
+      <li><b>Form submission testing</b> monthly (lead form + GorillaDesk)</li>
+      <li><b>GorillaDesk uptime monitoring.</b> If your booking link goes down, I'm alerted before your customers are.</li>
+    </ul>
+  </div>
+
+  <!-- ── Email Infrastructure ── -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">2</span>
+      <h2>Email Infrastructure</h2>
+      <span class="rule"></span>
+    </div>
+    <ul class="feat">
+      <li><b>Transactional email delivery.</b> Every contact-form submission is delivered straight to your inbox through a dedicated sender (<code>leads@updates.spraybuzzoff.com</code>) with bot and spam protection already in place.</li>
+      <li><b>50,000 emails per month included.</b> Enough headroom for real campaigns (mosquito-season launch, fall tune-ups, holiday promos, follow-ups) without ever touching a Mailchimp or Constant Contact bill. Sent through the same Resend infrastructure your contact form uses.</li>
+      <li><b>Spam protection &amp; domain reputation.</b> SPF, DKIM, and DMARC records on your sender domain are monitored and kept current so emails land in the inbox, not the promotions tab.</li>
+      <li><b>Lead-form bot filtering.</b> Submissions are scored for spam (disposable email domains, cold-pitch phrases, non-local phone numbers). Real leads land in your main inbox; suspicious ones are quarantined separately.</li>
+      <li><b>Bounce &amp; unsubscribe handling.</b> Hard bounces removed automatically. CAN-SPAM-compliant unsubscribe links built into every template.</li>
+      <li><b>Branded email templates.</b> Up to 2 custom-designed templates per month in your green-and-gold botanical palette (newsletter, seasonal promo, booking confirmation, post-service thank-you, review request, etc.).</li>
+    </ul>
+  </div>
+
+
+
+  <!-- ── Local Search & Visibility ── -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">3</span>
+      <h2>Local Search & Visibility</h2>
+      <span class="rule"></span>
+    </div>
+    <ul class="feat">
+      <li><b>Google Business Profile upkeep.</b> 2 to 4 updates per month (seasonal posts, photos, service highlights, customer wins). Active listings rank higher on "pest control near me" searches — and most of your competitors don't do this.</li>
+      <li><b>Business-listing audit.</b> Every month I check your name, address, and phone number are spelled consistently across Google, Yelp, Facebook, Nextdoor, Apple Maps, Bing, Angi, and the BBB. Google penalizes inconsistent listings, and they drift over time as directories auto-update from scraped data.</li>
+      <li><b>Monthly Search Console report.</b> Traffic data pulled, summary written (what's ranking, what's slipping, which keywords are growing), delivered to you by the 5th of each month.</li>
+      <li><b>Keyword tracking.</b> I watch your position on the searches that bring in calls: "pest control Rancho Cucamonga," "mosquito control Upland," "natural pest control Inland Empire," "exterminator near me," and so on.</li>
+      <li><b>City landing page upkeep.</b> Your 8 city pages (Rancho Cucamonga, Upland, Ontario, Claremont, Glendora, San Dimas, Fontana, Pomona) get content refreshes, new local testimonials, and new neighborhood mentions each quarter.</li>
+      <li><b>On-page tune-ups.</b> Titles, descriptions, and page structure adjusted based on what's actually converting.</li>
+      <li><b>AI search optimization.</b> Your <code>llms.txt</code> file kept current so when someone asks ChatGPT or Perplexity "who does plant-based pest control in the Inland Empire," Buzz Off is one of the answers.</li>
+      <li><b>Structured data upkeep.</b> The behind-the-scenes code that tells Google about your services, service area, hours, and reviews. Always current.</li>
+      <li><b>Review snippet maintenance.</b> New 5-star Google and Yelp reviews pulled into the homepage's structured data each month so the "★★★★★ 5.0" rich result keeps reflecting reality.</li>
+    </ul>
+  </div>
+
+  <!-- ── Content & Conversions ── -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">4</span>
+      <h2>Content & Conversions</h2>
+      <span class="rule"></span>
+    </div>
+    <ul class="feat">
+      <li><b>Up to 3 new landing pages per month</b> — service-area cities, seasonal campaigns, new pest pages, new service offerings.</li>
+      <li><b>Unlimited copy and design edits to existing pages.</b></li>
+      <li><b>New before-and-after photos and reviews</b> added as you send them.</li>
+      <li><b>Seasonal banner and CTA swaps</b> — mosquito-season launch March 1st, fall pest tune-ups October, holiday gift-card pushes.</li>
+      <li><b>Blog post or local-guide article per month</b> ("When does mosquito season start in Rancho Cucamonga," "5 most common pests in Upland homes") — each targets one city + one pest combo, internally linked to the matching city page.</li>
+    </ul>
+
+    <div class="callout">
+      <b>Reasonable usage.</b> Roughly 3 to 5 hours of change work per month is well within scope. Anything beyond that I'll flag ahead of time and quote separately.
+    </div>
+  </div>
+
+  <!-- ── Support ── -->
+  <div class="section">
+    <div class="section-head">
+      <span class="num">5</span>
+      <h2>Support</h2>
+      <span class="rule"></span>
+    </div>
+    <ul class="feat two-col">
+      <li><b>Priority email and phone/text support</b> with same-day response on weekdays.</li>
+      <li><b>Direct line to me</b> — no ticket queues, no junior handoffs.</li>
+    </ul>
+  </div>
+
+  <!-- ── Not Included ── -->
+  <div class="not-included">
+    <h3>What's Not Included</h3>
+    <ul>
+      <li>Major redesigns or full rebuilds (quoted separately)</li>
+      <li>Third-party integration setup beyond what's already wired (GorillaDesk, Meta Pixel, Google Analytics)</li>
+      <li>Paid ad management (Google Ads, Meta Ads, Yelp Ads)</li>
+      <li>Custom development beyond content and SEO work</li>
+      <li>Citation submission services beyond Google Business Profile (Yelp, BBB, chamber memberships) — happy to do these as a one-time project</li>
+    </ul>
+  </div>
+
+  <!-- ── Billing ── -->
+  <div class="billing">
+    <h3>Billing</h3>
+    <p>Billing runs through <b>Stripe</b> on a recurring monthly subscription. Cancel anytime from the billing portal — no questions asked.</p>
+    <p>First month is prorated to the start of the next calendar month, so whatever you start today you'll only pay the partial month plus the next full one up front.</p>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="sig">Ignacio Nunez</div>
+      <div>dev@ignacionunez.dev · plaintalk.dev</div>
+    </div>
+    <div>
+      Buzz Off Pest Prevention · spraybuzzoff.com
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
