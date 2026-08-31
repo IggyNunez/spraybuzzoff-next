@@ -17,8 +17,10 @@ import pestControlClaremontCa from "./pest-control-claremont-ca";
 import pestControlGlendoraCa from "./pest-control-glendora-ca";
 import fleaControlRanchoCucamongaCa from "./flea-control-rancho-cucamonga-ca";
 import pestControlSanDimasCa from "./pest-control-san-dimas-ca";
+import cockroachControlRanchoCucamonga from "./cockroach-control-rancho-cucamonga";
 
 export const BLOG_POSTS: BlogPost[] = [
+  cockroachControlRanchoCucamonga,
   pestControlSanDimasCa,
   fleaControlRanchoCucamongaCa,
   pestControlGlendoraCa,
