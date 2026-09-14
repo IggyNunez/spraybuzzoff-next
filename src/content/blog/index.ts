@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import waspControlOntarioCa from "./wasp-control-ontario-ca";
 import ranchoCucamongaPost from "./pest-control-rancho-cucamonga";
 import mosquitoRanchoCucamongaPost from "./mosquito-control-rancho-cucamonga";
 import ecoFriendlyInlandEmpirePost from "./eco-friendly-pest-control-inland-empire";
@@ -22,6 +23,7 @@ import rodentControlRanchoCucamonga from "./rodent-control-rancho-cucamonga";
 import mosquitoControlSanDimasCa from "./mosquito-control-san-dimas-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  waspControlOntarioCa,
   mosquitoControlSanDimasCa,
   rodentControlRanchoCucamonga,
   cockroachControlRanchoCucamonga,
