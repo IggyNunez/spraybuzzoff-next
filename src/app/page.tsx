@@ -5,7 +5,6 @@ import { Hero } from "@/components/sections/Hero";
 import { MarqueeTicker } from "@/components/sections/MarqueeTicker";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
-import { BrandStatement } from "@/components/sections/BrandStatement";
 import { ComparisonChart } from "@/components/sections/ComparisonChart";
 import { Plans } from "@/components/sections/Plans";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -43,11 +42,6 @@ export default function Home() {
         {/* Process */}
         <div className="section-card mt-2">
           <Process />
-        </div>
-
-        {/* Brand Statement */}
-        <div className="section-card mt-2">
-          <BrandStatement />
         </div>
 
         {/* Comparison Chart */}
