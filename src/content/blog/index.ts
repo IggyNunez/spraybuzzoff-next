@@ -21,8 +21,10 @@ import cockroachControlRanchoCucamonga from "./cockroach-control-rancho-cucamong
 import rodentControlRanchoCucamonga from "./rodent-control-rancho-cucamonga";
 import mosquitoControlSanDimasCa from "./mosquito-control-san-dimas-ca";
 import pestControlLaVerneCa from "./pest-control-la-verne-ca";
+import pestControlArcadiaCa from "./pest-control-arcadia-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  pestControlArcadiaCa,
   pestControlLaVerneCa,
   mosquitoControlSanDimasCa,
   rodentControlRanchoCucamonga,
