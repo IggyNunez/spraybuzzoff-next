@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-09-29T14:08:23.678Z",
-  "total": 45,
+  "fetchedAt": "2026-10-01T16:58:25.319Z",
+  "total": 42,
   "reviews": [
     {
       "name": "Bianet Cabrera",
@@ -9,7 +9,7 @@
       "reviewCount": 1,
       "rating": 5,
       "text": "Highly recommend this pest control company! I love that they use all plant-based products that are safe for children and pets, which gives me so much peace of mind. They were professional, knowledgeable, friendly, and did a great job taking care of our pest problem. It’s wonderful to find a company that provides effective pest control without using harsh chemicals around my family and pets. Great service from start to finish!",
-      "ago": "2 days ago",
+      "ago": "4 days ago",
       "isoDate": "2026-09-27T02:31:47Z",
       "photos": [],
       "source": "google"
@@ -21,11 +21,11 @@
       "reviewCount": 2,
       "rating": 5,
       "text": "Very professional\nVery safe 👌",
-      "ago": "5 days ago",
+      "ago": "a week ago",
       "isoDate": "2026-09-24T00:19:42Z",
       "photos": [
         {
-          "src": "/assets/reviews/photos/c6c8fcf9e854db2a.jpg",
+          "src": "/assets/reviews/photos/d731943448038d42.jpg",
           "caption": "Customer photo"
         }
       ],
@@ -38,7 +38,7 @@
       "reviewCount": 4,
       "rating": 5,
       "text": "Great company. Maurice is amazing. He is very thorough and always goes above and beyond by helping put things back even when he doesn't have to. Very considerate! Overall very impressed with the nontoxic solutions and effective.",
-      "ago": "6 days ago",
+      "ago": "a week ago",
       "isoDate": "2026-09-22T20:36:06Z",
       "photos": [],
       "source": "google"
@@ -64,30 +64,6 @@
       "text": "We’re so happy to find a non toxic company to utilize in our home for all the bugs!\n\nWe’ve been dealing with crazy ant issues and mosquitoes\n\nMaurice came out the first time and addressed every concern we had inside and out of the house and went above and beyond to get rid of all those suckers lol.\n\nWe were good for about a week then they found a new way in. So he came back and we’ve been doing pretty good with keeping them at bay. We’re getting on monthly routine with them because this is so helpful for our family and kids and pets to not have the bugs and to not be sick from toxic chemicals",
       "ago": "a month ago",
       "isoDate": "2026-08-29T05:22:50Z",
-      "photos": [],
-      "source": "google"
-    },
-    {
-      "name": "Shelby Valverde",
-      "avatar": "/assets/reviews/avatars/ca454ad0f3152803.jpg",
-      "isLocalGuide": true,
-      "reviewCount": 5,
-      "rating": 5,
-      "text": "Great customer service! I love that everything is nontoxic-left our backyard smelling amazing! Will absolutely be using again",
-      "ago": "a month ago",
-      "isoDate": "2026-08-24T21:03:52Z",
-      "photos": [],
-      "source": "google"
-    },
-    {
-      "name": "Anna Meier",
-      "avatar": "/assets/reviews/avatars/b01025a969954f43.jpg",
-      "isLocalGuide": true,
-      "reviewCount": 5,
-      "rating": 5,
-      "text": "The team was so friendly and the service was fast and easy. Love that it’s non-toxic for my family.",
-      "ago": "a month ago",
-      "isoDate": "2026-08-17T15:50:58Z",
       "photos": [],
       "source": "google"
     },
@@ -128,25 +104,13 @@
       "source": "google"
     },
     {
-      "name": "cory frino",
-      "avatar": "/assets/reviews/avatars/048889311f20628f.jpg",
-      "isLocalGuide": true,
-      "reviewCount": 2,
-      "rating": 5,
-      "text": "Great mosquito service from Spray Buzz Off! They showed up on time, extremely friendly and were easy to work with. We can’t wait to finally enjoy our yard. Highly recommend!",
-      "ago": "Edited a month ago",
-      "isoDate": "2026-07-31T16:39:24Z",
-      "photos": [],
-      "source": "google"
-    },
-    {
       "name": "Marina Topp",
       "avatar": "/assets/reviews/avatars/07d0e50bb454f530.jpg",
       "isLocalGuide": false,
       "reviewCount": 1,
       "rating": 5,
       "text": "We just had our first treatment with Buzz Off. Scheduling and communication were easy and great! The biggest issue we’ve had with pest control in the past is receiving less than we’d hoped. Our previous company would be in and out in 15 minutes and our home would still have spider webs and eggs everywhere! Maurice with Buzz Off was at our home almost an hour and a half, and our home and yard look great! It is also so reassuring to know that the products used are clean and safe for my little boys as well as my pets!",
-      "ago": "a month ago",
+      "ago": "2 months ago",
       "isoDate": "2026-07-31T15:44:09Z",
       "photos": [],
       "source": "google"
@@ -158,7 +122,7 @@
       "reviewCount": 15,
       "rating": 5,
       "text": "Professional work, love the attention to detail and care they provided. We were dealing with spiders and ants and have such a peace of mind after they left that the products used are non toxic.",
-      "ago": "a month ago",
+      "ago": "2 months ago",
       "isoDate": "2026-07-30T00:48:39Z",
       "photos": [],
       "source": "google"
@@ -210,11 +174,11 @@
       "isoDate": "2026-07-15T21:26:30Z",
       "photos": [
         {
-          "src": "/assets/reviews/photos/51c9ac7d6a8cb975.jpg",
+          "src": "/assets/reviews/photos/7c1646838b3c01dd.jpg",
           "caption": "Customer photo"
         },
         {
-          "src": "/assets/reviews/photos/8a1c6802603083b0.jpg",
+          "src": "/assets/reviews/photos/fd4ac6bc07b43f8c.jpg",
           "caption": "Customer photo"
         }
       ],
@@ -243,7 +207,7 @@
       "isoDate": "2026-07-13T19:43:43Z",
       "photos": [
         {
-          "src": "/assets/reviews/photos/b12facfc3b3e9c6b.jpg",
+          "src": "/assets/reviews/photos/fe46bfad4c344b03.jpg",
           "caption": "Customer photo"
         }
       ],
@@ -280,7 +244,7 @@
       "reviewCount": 8,
       "rating": 5,
       "text": "Love that buzz off uses clean, quality ingredients. None of the traditional chemicals! I like to be super clean and ingredient conscious especially when its things for my kids. So knowing my kids are safe around their product is all the better! The gentleman who comes to spray is very friendly. Ive been happy with my services and definitely recommend!",
-      "ago": "2 months ago",
+      "ago": "3 months ago",
       "isoDate": "2026-06-29T20:08:20Z",
       "photos": [],
       "source": "google"
@@ -380,7 +344,7 @@
       "isoDate": "2026-04-28T19:29:17Z",
       "photos": [
         {
-          "src": "/assets/reviews/photos/63748169bc7224f2.jpg",
+          "src": "/assets/reviews/photos/d98919ff9ebabe2c.jpg",
           "caption": "Customer photo"
         }
       ],
@@ -417,7 +381,7 @@
       "reviewCount": 3,
       "rating": 5,
       "text": "Seriously so happy with our pest control service! They showed up on time, were super friendly, and explained everything in a way that actually made sense.\n\nThey were really thorough and made sure we felt taken care of before leaving.\n\n10/10 recommend if you want someone reliable and easy to work with!",
-      "ago": "5 months ago",
+      "ago": "6 months ago",
       "isoDate": "2026-03-30T22:24:38Z",
       "photos": [],
       "source": "google"
@@ -429,7 +393,7 @@
       "reviewCount": 3,
       "rating": 5,
       "text": "They owners Dorrin and Maurice are so so genuine, friendly and knowledgeable. We appreciate what you’re doing and are so glad we found your company! It makes a huge difference in the biting pest presence in our yard immediately after they come for a treatment. Love the non-toxic pest control that actually works!!",
-      "ago": "5 months ago",
+      "ago": "6 months ago",
       "isoDate": "2026-03-30T03:39:28Z",
       "photos": [],
       "source": "google"
@@ -513,15 +477,15 @@
       "reviewCount": 3,
       "rating": 5,
       "text": "As a mom, I’m extremely careful about what I bring into our home and yard, especially when it comes to pest control. There are so many toxic chemicals in them. The fact that Buzz Off is all natural and non toxic made it an easy yes. The mosquitos were relentless and I had to do something, but I wanted peace of mind knowing my kids and dog weren’t being exposed to anything questionable.\n\nI was skeptical, but it worked really well! We noticed a big difference quickly and could finally enjoy being outside again.\n\nIf you’re looking for pest control that aligns with a more conscious, non toxic lifestyle, I HIGHLY recommend them!!",
-      "ago": "6 months ago",
+      "ago": "7 months ago",
       "isoDate": "2026-03-01T05:12:12Z",
       "photos": [
         {
-          "src": "/assets/reviews/photos/504292722904e179.jpg",
+          "src": "/assets/reviews/photos/69bb425525237b73.jpg",
           "caption": "Customer photo"
         },
         {
-          "src": "/assets/reviews/photos/b3b2ca1b9175d74d.jpg",
+          "src": "/assets/reviews/photos/3bd48480935db83a.jpg",
           "caption": "Customer photo"
         }
       ],
@@ -538,15 +502,15 @@
       "isoDate": "2026-02-27T22:16:07Z",
       "photos": [
         {
-          "src": "/assets/reviews/photos/256543eb4fdd3296.jpg",
+          "src": "/assets/reviews/photos/c186ddd4f6ba60c2.jpg",
           "caption": "Customer photo"
         },
         {
-          "src": "/assets/reviews/photos/c728471322cfe0f5.jpg",
+          "src": "/assets/reviews/photos/c47996816ccf22d6.jpg",
           "caption": "Customer photo"
         },
         {
-          "src": "/assets/reviews/photos/6be32e44a5ff83e3.jpg",
+          "src": "/assets/reviews/photos/e34363eae9b1bf73.jpg",
           "caption": "Customer photo"
         }
       ],
@@ -587,11 +551,11 @@
       "isoDate": "2026-01-20T03:13:32Z",
       "photos": [
         {
-          "src": "/assets/reviews/photos/d7266ffa45f41122.jpg",
+          "src": "/assets/reviews/photos/b6b0a49d27603803.jpg",
           "caption": "Customer photo"
         },
         {
-          "src": "/assets/reviews/photos/8892126bfa5cf39e.jpg",
+          "src": "/assets/reviews/photos/9e3fb4523f5752e4.jpg",
           "caption": "Customer photo"
         }
       ],
