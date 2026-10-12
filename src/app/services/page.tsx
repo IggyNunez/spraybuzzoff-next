@@ -126,7 +126,7 @@ export default function ServicesPage() {
         {/* ── Hero ── */}
         <section
           className="relative min-h-[70vh] flex items-end pb-24 pt-40"
-          style={{ background: "#1A5C32" }}
+          style={{ background: "#154734" }}
         >
           {/* Photo background */}
           <Image
@@ -138,15 +138,15 @@ export default function ServicesPage() {
             loading="eager"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.88) 0%, rgba(26,92,50,0.72) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.88) 0%, rgba(0,177,64,0.72) 100%)" }} />
           <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
             <FadeIn>
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#E05A2B" }}>
+              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
                 Our Services
               </p>
-              <h1 className="font-display text-[clamp(52px,8vw,100px)] leading-none uppercase text-white mb-4">
+              <h1 className="font-display text-[clamp(52px,8vw,100px)] leading-[1.05] text-white mb-4">
                 Plant-Based<br />
-                <span style={{ color: "#C8973A" }}>Protection.</span>
+                <span style={{ color: "#EFDF00" }}>Protection.</span>
               </h1>
               <p className="font-body text-[1.1rem] text-white/80 max-w-xl leading-relaxed">
                 Three services. Zero synthetic pesticides. Made for families who want pest control that aligns with the way they actually live.
@@ -156,7 +156,7 @@ export default function ServicesPage() {
         </section>
 
         {/* ── Gold divider ── */}
-        <div className="h-[3px] w-full" style={{ background: "#C8973A" }} />
+        <div className="h-[3px] w-full" style={{ background: "#FA4616" }} />
 
         {/* ── Services ── */}
         {SERVICES.map((svc, i) => (
@@ -180,7 +180,7 @@ export default function ServicesPage() {
                     {/* badge */}
                     <div
                       className="absolute bottom-4 left-4 font-body font-bold text-[0.7rem] tracking-[0.18em] uppercase text-white px-4 py-2 rounded-full"
-                      style={{ background: "#E05A2B" }}
+                      style={{ background: "#FA4616" }}
                     >
                       {svc.badge}
                     </div>
@@ -189,20 +189,20 @@ export default function ServicesPage() {
 
                 {/* Content */}
                 <FadeIn delay={0.2}>
-                  <p className="font-body font-bold text-[0.7rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#E05A2B" }}>
+                  <p className="font-body font-bold text-[0.7rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#FA4616" }}>
                     {svc.eyebrow}
                   </p>
-                  <h2 className="font-display text-[clamp(36px,4.5vw,60px)] leading-none uppercase mb-1" style={{ color: "#1A5C32" }}>
+                  <h2 className="font-display text-[clamp(36px,4.5vw,60px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
                     {svc.headline}
                   </h2>
-                  <div className="h-[2px] w-16 mb-5" style={{ background: "#C8973A" }} />
+                  <div className="h-[2px] w-16 mb-5" style={{ background: "#FA4616" }} />
                   <p className="font-body text-[1rem] leading-relaxed mb-6" style={{ color: "#1C2B1E" }}>
                     {svc.body}
                   </p>
                   <ul className="space-y-3 mb-8">
                     {svc.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3 font-body text-[0.92rem]" style={{ color: "#1C2B1E" }}>
-                        <span className="mt-0.5 font-bold shrink-0" style={{ color: "#1A5C32" }}>✓</span>
+                        <span className="mt-0.5 font-bold shrink-0" style={{ color: "#154734" }}>✓</span>
                         {b}
                       </li>
                     ))}
@@ -210,7 +210,7 @@ export default function ServicesPage() {
                   <button
                     onClick={openBooking}
                     className="group inline-flex items-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-8 py-4 rounded-full transition-all hover:opacity-90"
-                    style={{ background: "#1A5C32" }}
+                    style={{ background: "#154734" }}
                   >
                     {svc.cta}
                     <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
@@ -222,16 +222,16 @@ export default function ServicesPage() {
         ))}
 
         {/* ── What's In Our Formula ── */}
-        <section className="py-[clamp(64px,8vw,100px)]" style={{ background: "#1A5C32" }}>
+        <section className="py-[clamp(64px,8vw,100px)]" style={{ background: "#154734" }}>
           <div className="max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)]">
             <FadeIn className="text-center mb-12">
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#E05A2B" }}>
+              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
                 Ingredient Transparency
               </p>
-              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-none uppercase text-white mb-4">
+              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] text-white mb-4">
                 What's In Our Formula
               </h2>
-              <div className="h-[2px] w-16 mx-auto mb-5" style={{ background: "#C8973A" }} />
+              <div className="h-[2px] w-16 mx-auto mb-5" style={{ background: "#FA4616" }} />
               <p className="font-body text-white/75 text-[1rem] max-w-xl mx-auto leading-relaxed">
                 No synthetic pyrethroids. No organophosphates. No harsh chemicals. Just botanicals.
               </p>
@@ -251,7 +251,7 @@ export default function ServicesPage() {
               <FadeIn delay={INGREDIENTS.length * 0.06}>
                 <div
                   className="rounded-xl px-4 py-4 text-center font-body font-bold text-[0.75rem] tracking-widest uppercase"
-                  style={{ background: "rgba(200,151,58,0.15)", border: "1px solid rgba(200,151,58,0.3)", color: "#C8973A" }}
+                  style={{ background: "rgba(250,70,22,0.15)", border: "1px solid rgba(250,70,22,0.3)", color: "#FA4616" }}
                 >
                   100% Plant-Based
                 </div>
@@ -264,13 +264,13 @@ export default function ServicesPage() {
         <section className="py-[clamp(64px,8vw,100px)]" style={{ background: "#EDEADE" }}>
           <div className="max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)]">
             <FadeIn className="text-center mb-12">
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#E05A2B" }}>
+              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#FA4616" }}>
                 Full Coverage
               </p>
-              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-none uppercase mb-1" style={{ color: "#1A5C32" }}>
+              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
                 Pests We Treat
               </h2>
-              <div className="h-[2px] w-16 mx-auto" style={{ background: "#C8973A" }} />
+              <div className="h-[2px] w-16 mx-auto" style={{ background: "#FA4616" }} />
             </FadeIn>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -278,7 +278,7 @@ export default function ServicesPage() {
                 <FadeIn key={pest.name} delay={i * 0.07}>
                   <div
                     className="rounded-2xl p-6 text-center flex flex-col items-center"
-                    style={{ background: "#fff", border: "1px solid rgba(26,92,50,0.1)", boxShadow: "0 2px 20px rgba(0,0,0,0.05)" }}
+                    style={{ background: "#fff", border: "1px solid rgba(21,71,52,0.1)", boxShadow: "0 2px 20px rgba(0,0,0,0.05)" }}
                   >
                     <div className="w-16 h-16 mb-3 flex items-center justify-center">
                       {pest.SVG ? (
@@ -308,13 +308,13 @@ export default function ServicesPage() {
           {/* Green overlay */}
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.88), rgba(26,92,50,0.72))" }}
+            style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.88), rgba(0,177,64,0.72))" }}
           />
           <div className="relative z-10 max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
             <FadeIn>
-              <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-none uppercase text-white mb-4">
+              <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-[1.05] text-white mb-4">
                 Ready to Live<br />
-                <span style={{ color: "#C8973A" }}>Outside Again?</span>
+                <span style={{ color: "#EFDF00" }}>Outside Again?</span>
               </h2>
               <p className="font-body text-white/75 text-[1rem] mb-8 leading-relaxed">
                 Book your first service in minutes. No contracts. No harsh chemicals. Just safer pest control for your family.
@@ -323,7 +323,7 @@ export default function ServicesPage() {
                 <button
                   onClick={openBooking}
                   className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-10 py-4 rounded-full transition-all hover:opacity-90"
-                  style={{ background: "#E05A2B" }}
+                  style={{ background: "#FA4616" }}
                 >
                   Book Your First Service
                   <ArrowIcon className="group-hover:translate-x-1 transition-transform" />

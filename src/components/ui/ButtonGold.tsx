@@ -14,9 +14,9 @@ interface ButtonGoldProps {
 }
 
 const BASE =
-  "group inline-flex items-center justify-center gap-2 font-body text-[13px] font-bold tracking-[0.12em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] px-10 py-4 rounded-full transition-colors duration-200 cursor-pointer";
+  "group inline-flex items-center justify-center gap-2 font-body text-[13px] font-bold tracking-[0.12em] uppercase text-brand-deep bg-brand-yellow border-2 border-brand-deep hover:bg-gold-400 px-10 py-4 rounded-full transition-colors duration-200 cursor-pointer";
 
-const HOVER = { y: -3, boxShadow: "0 8px 32px rgba(26,92,50,0.35)" };
+const HOVER = { y: -3, boxShadow: "0 8px 32px rgba(21,71,52,0.35)" };
 const TRANSITION = { duration: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] };
 
 export function ButtonGold({

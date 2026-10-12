@@ -10,7 +10,7 @@ import { CITIES } from "@/lib/cities";
 export function Footer() {
   const { open: openBooking } = useBooking();
   return (
-    <footer className="relative text-white pt-16 pb-8 overflow-hidden bg-[#1A5C32]">
+    <footer className="relative text-white pt-16 pb-8 overflow-hidden bg-brand-deep">
       {/* Botanical leaf pattern overlay */}
       <div className="absolute inset-0 z-0 opacity-[0.06]">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@ export function Footer() {
       {/* Top gold divider */}
       <div
         className="absolute top-0 left-0 right-0 h-[2px] z-[1]"
-        style={{ background: "linear-gradient(90deg, transparent, #C8973A, transparent)" }}
+        style={{ background: "linear-gradient(90deg, transparent, #FA4616, transparent)" }}
       />
 
       <div className="relative z-10 max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)]">
@@ -143,14 +143,14 @@ export function Footer() {
         {/* Gold divider */}
         <div
           className="h-px mb-12"
-          style={{ background: "linear-gradient(90deg, transparent, rgba(200,151,58,0.4), transparent)" }}
+          style={{ background: "linear-gradient(90deg, transparent, rgba(250,70,22,0.4), transparent)" }}
         />
 
         {/* Links grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14">
           {/* Services */}
           <div>
-            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[1.05rem] mb-4 text-brand-yellow">
               Services
             </h3>
             <ul className="space-y-3">
@@ -171,7 +171,7 @@ export function Footer() {
 
           {/* Plans */}
           <div>
-            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[1.05rem] mb-4 text-brand-yellow">
               Plans
             </h3>
             <ul className="space-y-3">
@@ -192,7 +192,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[1.05rem] mb-4 text-brand-yellow">
               Company
             </h3>
             <ul className="space-y-3">
@@ -212,7 +212,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+            <h3 className="font-display text-[1.05rem] mb-4 text-brand-yellow">
               Get In Touch
             </h3>
             <div className="space-y-3">
@@ -239,7 +239,7 @@ export function Footer() {
               <div className="pt-2">
                 <button
                   onClick={openBooking}
-                  className="group inline-flex items-center gap-2 font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-[#1A5C32] bg-white hover:bg-white/90 px-5 py-2.5 rounded-full transition-all hover:scale-105"
+                  className="group inline-flex items-center gap-2 font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-brand-deep bg-white hover:bg-white/90 px-5 py-2.5 rounded-full transition-all hover:scale-105"
                 >
                   Book Now
                   <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
@@ -251,7 +251,7 @@ export function Footer() {
 
         {/* Service Areas */}
         <div className="mb-10">
-          <h3 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.18em] mb-5 text-[#C8973A]">
+          <h3 className="font-display text-[1.05rem] mb-4 text-brand-yellow">
             Service Areas
           </h3>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
@@ -259,7 +259,7 @@ export function Footer() {
               <li key={c.slug}>
                 <Link
                   href={`/pest-control/${c.slug}`}
-                  className="font-body text-[0.82rem] text-white/90 hover:text-[#F0C060] transition-colors"
+                  className="font-body text-[0.82rem] text-white/90 hover:text-brand-yellow transition-colors"
                 >
                   Pest Control in {c.name}
                 </Link>
@@ -268,7 +268,7 @@ export function Footer() {
             <li>
               <Link
                 href="/pest-control"
-                className="font-body text-[0.82rem] text-[#F0C060] hover:text-white transition-colors underline underline-offset-4"
+                className="font-body text-[0.82rem] text-brand-yellow hover:text-white transition-colors underline underline-offset-4"
               >
                 View all service areas →
               </Link>

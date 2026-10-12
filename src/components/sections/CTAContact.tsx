@@ -22,7 +22,7 @@ export function CTAContact() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(26,92,50,0.94) 0%, rgba(15,61,32,0.92) 100%)",
+            "linear-gradient(135deg, rgba(21,71,52,0.94) 0%, rgba(21,71,52,0.92) 100%)",
         }}
       />
 
@@ -33,8 +33,8 @@ export function CTAContact() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[1.1] tracking-wide text-white mb-6">
-            <span className="section-eyebrow !text-[#F0C060] block mb-3">Get Started</span>
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.1] text-white mb-6">
+            <span className="section-eyebrow !text-brand-yellow block mb-3">Get Started</span>
             Ready to Say Goodbye to Pests &amp; Harsh Chemicals?
           </h2>
           <p className="font-body text-[0.95rem] leading-relaxed text-white/80 mb-10">
@@ -46,7 +46,7 @@ export function CTAContact() {
           <div className="flex gap-8">
             {CTA_STATS.map((stat) => (
               <div key={stat.label}>
-                <strong className="font-display text-2xl font-bold text-[#C8973A] block">
+                <strong className="font-display text-2xl text-brand-yellow block">
                   {stat.value}
                 </strong>
                 <span className="font-body text-[0.82rem] text-white/80">

@@ -8,14 +8,14 @@ export function AreasMarquee() {
   const doubled = [...items, ...items];
 
   return (
-    <section className="bg-[#1A5C32] py-8 overflow-hidden" aria-label="Cities we serve">
+    <section className="bg-brand-green py-8 overflow-hidden" aria-label="Cities we serve">
       <div
         className="marquee-track flex items-center gap-0 whitespace-nowrap"
         style={{ "--marquee-duration": "40s", width: "max-content" } as React.CSSProperties}
       >
         {doubled.map((c, i) => {
           const label = (
-            <span className="font-display text-[clamp(24px,3vw,36px)] font-bold uppercase text-white tracking-[0.04em] px-6">
+            <span className="font-display text-[clamp(24px,3vw,36px)] text-brand-deep px-6">
               {c.name}
             </span>
           );
@@ -24,7 +24,7 @@ export function AreasMarquee() {
               {c.slug ? (
                 <Link
                   href={`/pest-control/${c.slug}`}
-                  className="hover:text-[#F0C060] transition-colors"
+                  className="[&>span]:hover:text-white [&>span]:transition-colors"
                   aria-label={`Pest control in ${c.name}, CA`}
                 >
                   {label}
@@ -32,7 +32,7 @@ export function AreasMarquee() {
               ) : (
                 label
               )}
-              <span className="w-2 h-2 rounded-full bg-[#F0C060] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-white shrink-0" />
             </span>
           );
         })}

@@ -53,7 +53,7 @@ function FeaturedCardDesktop({
       <div
         className="absolute inset-0 transition-opacity duration-500"
         style={{
-          background: "linear-gradient(to top, rgba(15,61,32,0.85) 0%, rgba(15,61,32,0.4) 40%, transparent 70%)",
+          background: "linear-gradient(to top, rgba(21,71,52,0.85) 0%, rgba(21,71,52,0.4) 40%, transparent 70%)",
         }}
       />
 
@@ -61,13 +61,13 @@ function FeaturedCardDesktop({
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          background: "linear-gradient(to top, rgba(15,61,32,0.95) 0%, rgba(15,61,32,0.75) 50%, rgba(15,61,32,0.5) 100%)",
+          background: "linear-gradient(to top, rgba(21,71,52,0.95) 0%, rgba(21,71,52,0.75) 50%, rgba(21,71,52,0.5) 100%)",
         }}
       />
 
       {/* Label badge - top left */}
       <div className="absolute top-5 left-5 z-10">
-        <span className="font-body text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white bg-[#1A5C32] px-3 py-1.5 rounded-full">
+        <span className="font-body text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white bg-brand-deep px-3 py-1.5 rounded-full">
           {service.label}
         </span>
       </div>
@@ -75,14 +75,14 @@ function FeaturedCardDesktop({
       {/* Content - slides up on hover */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-8">
         {/* Title - always visible */}
-        <h3 className="font-display text-[clamp(1.5rem,2.5vw,2rem)] uppercase text-white leading-tight mb-2 tracking-wide">
+        <h3 className="font-display text-[clamp(1.5rem,2.5vw,2rem)] text-white leading-tight mb-2">
           {service.title}
         </h3>
 
         {/* Slide-up content */}
         <div className="max-h-0 group-hover:max-h-[400px] overflow-hidden transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
           <div className="pt-2">
-            <div className="h-[2px] w-10 bg-[#C8973A] mb-4" />
+            <div className="h-[2px] w-10 bg-brand-orange mb-4" />
             <p className="font-body text-[0.9rem] leading-relaxed text-white/80 mb-4">
               {service.description}
             </p>
@@ -90,7 +90,7 @@ function FeaturedCardDesktop({
               <ul className="space-y-2 mb-5">
                 {service.bullets.map((b: string) => (
                   <li key={b} className="flex items-center gap-2 font-body text-[0.82rem] text-white/90">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C8973A] shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0" />
                     {b}
                   </li>
                 ))}
@@ -98,7 +98,7 @@ function FeaturedCardDesktop({
             )}
             <button
               onClick={openBooking}
-              className="inline-flex items-center gap-2 font-body text-[0.75rem] font-bold tracking-[0.1em] uppercase text-[#C8973A] hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 font-body text-[0.75rem] font-bold tracking-[0.1em] uppercase text-brand-yellow hover:text-white transition-colors"
             >
               Book Now
               <Arrow />
@@ -158,18 +158,18 @@ function FeaturedCardMobile({
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(to top, rgba(15,61,32,0.85) 0%, rgba(15,61,32,0.3) 50%, transparent 70%)",
+                background: "linear-gradient(to top, rgba(21,71,52,0.85) 0%, rgba(21,71,52,0.3) 50%, transparent 70%)",
               }}
             />
             {/* Label */}
             <div className="absolute top-4 left-4">
-              <span className="font-body text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white bg-[#1A5C32] px-3 py-1.5 rounded-full">
+              <span className="font-body text-[0.6rem] font-bold tracking-[0.2em] uppercase text-white bg-brand-deep px-3 py-1.5 rounded-full">
                 {service.label}
               </span>
             </div>
             {/* Title + tap hint */}
             <div className="absolute bottom-5 left-5 right-5">
-              <h3 className="font-display text-[1.6rem] uppercase text-white leading-tight mb-2">
+              <h3 className="font-display text-[1.6rem] text-white leading-tight mb-2">
                 {service.title}
               </h3>
               <p className="font-body text-[0.65rem] tracking-[0.15em] uppercase text-white/50">
@@ -185,16 +185,16 @@ function FeaturedCardMobile({
               backfaceVisibility: "hidden",
               WebkitBackfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
-              background: "#1A5C32",
+              background: "#154734",
             }}
           >
-            <span className="font-body text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#E05A2B] mb-2">
+            <span className="font-body text-[0.6rem] font-bold tracking-[0.2em] uppercase text-brand-yellow mb-2">
               {service.label}
             </span>
-            <h3 className="font-display text-[1.5rem] uppercase text-white leading-tight mb-3">
+            <h3 className="font-display text-[1.5rem] text-white leading-tight mb-3">
               {service.title}
             </h3>
-            <div className="h-[2px] w-10 bg-[#C8973A] mb-4" />
+            <div className="h-[2px] w-10 bg-brand-orange mb-4" />
             <p className="font-body text-[0.88rem] leading-relaxed text-white/80 mb-4">
               {service.description}
             </p>
@@ -202,7 +202,7 @@ function FeaturedCardMobile({
               <ul className="space-y-2 mb-5">
                 {service.bullets.map((b: string) => (
                   <li key={b} className="flex items-center gap-2 font-body text-[0.8rem] text-white/90">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C8973A] shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0" />
                     {b}
                   </li>
                 ))}
@@ -210,7 +210,7 @@ function FeaturedCardMobile({
             )}
             <button
               onClick={(e) => { e.stopPropagation(); openBooking(); }}
-              className="inline-flex items-center gap-2 font-body text-[0.75rem] font-bold tracking-[0.1em] uppercase text-[#C8973A]"
+              className="inline-flex items-center gap-2 font-body text-[0.75rem] font-bold tracking-[0.1em] uppercase text-brand-yellow"
             >
               Book Now <Arrow />
             </button>
@@ -255,16 +255,16 @@ function SmallCardDesktop({
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to top, rgba(15,61,32,0.85) 0%, rgba(15,61,32,0.3) 45%, transparent 70%)",
+          background: "linear-gradient(to top, rgba(21,71,52,0.85) 0%, rgba(21,71,52,0.3) 45%, transparent 70%)",
         }}
       />
 
       {/* Content - bottom */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-5">
-        <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-[#E05A2B] block mb-1">
+        <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-brand-yellow block mb-1">
           {service.label}
         </span>
-        <h4 className="font-display text-[1.2rem] uppercase text-white leading-tight">
+        <h4 className="font-display text-[1.2rem] text-white leading-tight">
           {service.title}
         </h4>
 
@@ -272,7 +272,7 @@ function SmallCardDesktop({
         <div className="max-h-0 group-hover:max-h-[60px] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
           <button
             onClick={openBooking}
-            className="inline-flex items-center gap-2 font-body text-[0.7rem] font-bold tracking-[0.1em] uppercase text-[#C8973A] hover:text-white transition-colors mt-3"
+            className="inline-flex items-center gap-2 font-body text-[0.7rem] font-bold tracking-[0.1em] uppercase text-brand-yellow hover:text-white transition-colors mt-3"
           >
             Book Now <Arrow />
           </button>
@@ -330,14 +330,14 @@ function SmallCardMobile({
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(to top, rgba(15,61,32,0.85) 0%, rgba(15,61,32,0.3) 50%, transparent 70%)",
+                background: "linear-gradient(to top, rgba(21,71,52,0.85) 0%, rgba(21,71,52,0.3) 50%, transparent 70%)",
               }}
             />
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-[#E05A2B] block mb-1">
+              <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-brand-yellow block mb-1">
                 {service.label}
               </span>
-              <h4 className="font-display text-[1.1rem] uppercase text-white leading-tight">
+              <h4 className="font-display text-[1.1rem] text-white leading-tight">
                 {service.title}
               </h4>
             </div>
@@ -350,19 +350,19 @@ function SmallCardMobile({
               backfaceVisibility: "hidden",
               WebkitBackfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
-              background: "#1A5C32",
+              background: "#154734",
             }}
           >
-            <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-[#E05A2B] mb-2">
+            <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-brand-yellow mb-2">
               {service.label}
             </span>
-            <h4 className="font-display text-[1.15rem] uppercase text-white leading-tight mb-3">
+            <h4 className="font-display text-[1.15rem] text-white leading-tight mb-3">
               {service.title}
             </h4>
-            <div className="h-[2px] w-8 bg-[#C8973A] mb-3" />
+            <div className="h-[2px] w-8 bg-brand-orange mb-3" />
             <button
               onClick={(e) => { e.stopPropagation(); openBooking(); }}
-              className="inline-flex items-center gap-2 font-body text-[0.7rem] font-bold tracking-[0.1em] uppercase text-[#C8973A]"
+              className="inline-flex items-center gap-2 font-body text-[0.7rem] font-bold tracking-[0.1em] uppercase text-brand-yellow"
             >
               Book Now <Arrow />
             </button>
@@ -412,7 +412,7 @@ export function Services() {
             transition={{ delay: 0.2, duration: 0.6 }}
           />
           <motion.p
-            className="font-body text-[1rem] text-[#1C2B1E]/60 max-w-[480px] mx-auto"
+            className="font-body text-[1rem] text-brand-dark/60 max-w-[480px] mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}

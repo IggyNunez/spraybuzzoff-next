@@ -40,7 +40,7 @@ export function Plans() {
             transition={{ delay: 0.2, duration: 0.6 }}
           />
           <motion.p
-            className="font-body text-[0.95rem] text-[#1C2B1E]/60 mt-2"
+            className="font-body text-[0.95rem] text-brand-dark/60 mt-2"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}
@@ -54,14 +54,14 @@ export function Plans() {
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.name}
-              className={`relative rounded-2xl overflow-hidden ${plan.featured ? "lg:-mt-4 lg:mb-4 shadow-[0_12px_40px_rgba(26,92,50,0.25)]" : "shadow-[0_4px_20px_rgba(0,0,0,0.06)]"}`}
+              className={`relative rounded-2xl overflow-hidden ${plan.featured ? "lg:-mt-4 lg:mb-4 shadow-[0_12px_40px_rgba(21,71,52,0.25)]" : "shadow-[0_4px_20px_rgba(0,0,0,0.06)]"}`}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.12, duration: 0.6 }}
             >
               {/* Urgency banner for featured */}
               {plan.featured && (
-                <div className="bg-[#E05A2B] text-white text-center py-2">
+                <div className="bg-brand-orange text-white text-center py-2">
                   <span className="font-body text-[0.7rem] font-bold tracking-[0.12em] uppercase">
                     Most Popular
                   </span>
@@ -69,18 +69,18 @@ export function Plans() {
               )}
 
               <div
-                className={`flex flex-col h-full p-8 ${plan.featured ? "bg-[#1A5C32] text-white" : "bg-white border-t-[3px] border-[#1A5C32]"}`}
+                className={`flex flex-col h-full p-8 ${plan.featured ? "bg-brand-deep text-white" : "bg-white border-t-[3px] border-brand-deep"}`}
               >
                 {/* Tier label */}
                 <p
-                  className={`font-body text-[0.65rem] font-bold tracking-[0.2em] uppercase mb-2 ${plan.featured ? "text-[#F0C060]" : "text-[#E05A2B]"}`}
+                  className={`font-body text-[0.65rem] font-bold tracking-[0.2em] uppercase mb-2 ${plan.featured ? "text-brand-yellow" : "text-brand-orange"}`}
                 >
                   {plan.tier}
                 </p>
 
                 {/* Plan name */}
                 <h3
-                  className={`font-display text-[clamp(1.35rem,2.2vw,1.6rem)] font-bold uppercase mb-5 leading-[1.15] tracking-[0.08em] ${plan.featured ? "text-white" : "text-[#1A5C32]"}`}
+                  className={`font-display text-[clamp(1.35rem,2.2vw,1.6rem)] mb-5 leading-[1.15] ${plan.featured ? "text-white" : "text-brand-deep"}`}
                 >
                   {plan.name}
                 </h3>
@@ -90,8 +90,8 @@ export function Plans() {
                   className="h-[1px] mb-7"
                   style={{
                     background: plan.featured
-                      ? "linear-gradient(90deg, #C8973A 0%, rgba(200,151,58,0.1) 100%)"
-                      : "rgba(26,92,50,0.1)",
+                      ? "linear-gradient(90deg, #FA4616 0%, rgba(250,70,22,0.1) 100%)"
+                      : "rgba(21,71,52,0.1)",
                   }}
                 />
 
@@ -101,8 +101,8 @@ export function Plans() {
                     <div key={feat.text} className="flex items-start gap-3">
                       {feat.included ? (
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5">
-                          <circle cx="8" cy="8" r="8" fill={plan.featured ? "#F0C060" : "#1A5C32"} />
-                          <path d="M5 8l2 2 4-4" stroke={plan.featured ? "#1A5C32" : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          <circle cx="8" cy="8" r="8" fill={plan.featured ? "#EFDF00" : "#154734"} />
+                          <path d="M5 8l2 2 4-4" stroke={plan.featured ? "#154734" : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       ) : (
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5 opacity-30">
@@ -111,7 +111,7 @@ export function Plans() {
                         </svg>
                       )}
                       <span
-                        className={`font-body text-[0.84rem] leading-snug ${feat.included ? (plan.featured ? "text-white/90" : "text-[#1C2B1E]") : (plan.featured ? "text-white/30" : "text-[#1C2B1E]/30")}`}
+                        className={`font-body text-[0.84rem] leading-snug ${feat.included ? (plan.featured ? "text-white/90" : "text-brand-dark") : (plan.featured ? "text-white/30" : "text-brand-dark/30")}`}
                       >
                         {feat.text}
                       </span>
@@ -125,8 +125,8 @@ export function Plans() {
                   onClick={() => trackContact()}
                   className={`group w-full inline-flex items-center justify-center gap-2 font-body text-[0.78rem] font-bold tracking-[0.1em] uppercase px-6 py-4 rounded-full transition-all duration-200 ${
                     plan.featured
-                      ? "bg-white text-[#1A5C32] hover:bg-white/90"
-                      : "border-2 border-[#1A5C32] text-[#1A5C32] hover:bg-[#1A5C32] hover:text-white"
+                      ? "bg-white text-brand-deep hover:bg-white/90"
+                      : "border-2 border-brand-deep text-brand-deep hover:bg-brand-deep hover:text-white"
                   }`}
                 >
                   {plan.ctaText}
@@ -144,13 +144,13 @@ export function Plans() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.6 }}
         >
-          <p className="font-body text-[0.9rem] text-[#1C2B1E]/50 mb-2">
+          <p className="font-body text-[0.9rem] text-brand-dark/50 mb-2">
             Not sure which plan is right for you?
           </p>
           <a
             href="tel:9098988955"
             onClick={() => trackContact()}
-            className="font-body text-[0.95rem] font-bold text-[#1A5C32] hover:text-[#0F3D20] transition-colors"
+            className="font-body text-[0.95rem] font-bold text-brand-deep hover:text-brand-deeper transition-colors"
           >
             Call the Team - 909.898.8955
           </a>

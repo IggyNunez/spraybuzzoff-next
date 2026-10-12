@@ -1,38 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors - from Buzz Off Web Designer Guidelines 2026 */
-  --color-brand-green: #1A5C32;       /* Primary - hero, nav, CTA, card borders */
-  --color-brand-dark-green: #0F3D20;  /* Dark - hero overlays, footer, deep contrast */
-  --color-brand-mid-green: #2D7A47;   /* Mid - secondary sections, hover states */
-  --color-brand-light-green: #EAF2EC; /* Light - FAQ hover, subtle card bg */
-  --color-brand-orange: #E05A2B;      /* Urgency banners, accent buttons, eyebrows */
-  --color-brand-gold: #C8973A;        /* Pricing, stars, dividers, highlights */
-  --color-brand-gold-light: #F0C060;  /* Gold on dark green backgrounds */
-  --color-brand-cream: #EDEADE;       /* Section backgrounds - use over pure white */
-  --color-brand-dark: #1C2B1E;        /* Body text, dark overlays */
+  /* Brand Colors - Buzz Off Visual Identity Direction (Oct 2026).
+     Pantone references in comments. 354 C is a proposed match pending a physical swatch. */
+  --color-brand-green: #00B140;       /* PANTONE 354 C - lead brand field: hero, marquees, accents */
+  --color-brand-green-dark: #009A38;  /* 354 C shaded - hover on bright green */
+  --color-brand-deep: #154734;        /* PANTONE 3435 C - contrast: headings, text, borders, dark sections */
+  --color-brand-deeper: #0F3224;      /* 3435 C shaded - hover on deep green, deepest sections */
+  --color-brand-yellow: #EFDF00;      /* PANTONE 3965 C - energy: primary CTA pills, highlights on dark */
+  --color-brand-orange: #FA4616;      /* PANTONE 172 C - punch: badges, stars, accents */
+  --color-brand-orange-dark: #DA3D13; /* 172 C shaded - hover on orange */
+  --color-brand-light-green: #E0F6E8; /* 354 C tint - subtle card bg, hover */
+  --color-brand-cream: #EDEADE;       /* Warm neutral - section backgrounds, use over pure white */
+  --color-brand-dark: #1C2B1E;        /* Body text */
 
-  /* Green scale */
-  --color-green-900: #0F3D20;
-  --color-green-800: #1A5C32;
-  --color-green-700: #2D7A47;
-  --color-green-600: #3A8F5A;
-  --color-green-500: #4CAF72;
-  --color-green-400: #6DC98E;
-  --color-green-300: #9ADDB3;
-  --color-green-200: #C2EDCF;
-  --color-green-100: #EAF2EC;
-  --color-green-50: #F4FAF6;
+  /* Green scale (354 C tints, 3435 C at the dark end) */
+  --color-green-900: #0F3224;
+  --color-green-800: #154734;
+  --color-green-700: #009A38;
+  --color-green-600: #00B140;
+  --color-green-500: #00B140;
+  --color-green-400: #40C470;
+  --color-green-300: #73D496;
+  --color-green-200: #A6E4BC;
+  --color-green-100: #E0F6E8;
+  --color-green-50: #F0FAF4;
 
-  /* Gold */
-  --color-gold-700: #9A6F25;
-  --color-gold-600: #C8973A;
-  --color-gold-500: #E0AA4A;
-  --color-gold-400: #F0C060;
+  /* Yellow (3965 C), kept under the gold-* names used by older components */
+  --color-gold-700: #D2C400;
+  --color-gold-600: #EFDF00;
+  --color-gold-500: #EFDF00;
+  --color-gold-400: #F5EA59;
 
-  /* Orange/Red */
-  --color-red-600: #C04820;
-  --color-red-500: #E05A2B;
+  /* Orange (172 C) */
+  --color-red-600: #DA3D13;
+  --color-red-500: #FA4616;
 
   /* Canvas */
   --color-canvas: #EDEADE;
@@ -49,12 +51,12 @@
   --color-gray-100: #F0F3F1;
 
   /* Fonts - Buzz Off brand typography */
-  --font-display: var(--font-bebas), sans-serif;   /* Bebas Neue - all headings, uppercase */
-  --font-body: var(--font-dm-sans), sans-serif;    /* DM Sans - body, UI, buttons */
-  --font-quote: var(--font-playfair), serif;       /* Playfair Display Italic - quotes only */
+  --font-display: var(--font-donut), Georgia, serif; /* Donut Shop Regular - headlines, badges, big brand moments */
+  --font-body: var(--font-dm-sans), sans-serif;      /* DM Sans - body, UI, buttons */
+  --font-quote: var(--font-playfair), serif;         /* Playfair Display Italic - quotes only */
 
   /* Keep legacy aliases */
-  --font-candal: var(--font-bebas), sans-serif;
+  --font-candal: var(--font-donut), Georgia, serif;
   --font-nunito: var(--font-dm-sans), sans-serif;
 }
 
@@ -87,6 +89,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Donut Shop ships one weight. Never let the browser fake a bold or italic. */
+.font-display,
+.section-title,
+.blog-prose h2,
+.blog-prose h3 {
+  font-synthesis: none;
+}
+
 /* Playfair italic utility */
 .font-quote {
   font-family: var(--font-quote);
@@ -95,12 +105,12 @@ body {
 
 /* ── Brand Utility Classes ── */
 
-/* Section eyebrow: DM Sans 700, small, orange, wide tracking - arched on SVG path */
+/* Section eyebrow: DM Sans 700, small, deep green, wide tracking - arched on SVG path */
 .section-eyebrow {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(0.6rem, 1.2vw, 0.68rem);
-  color: #E05A2B;
+  color: var(--color-brand-deep);
   text-transform: uppercase;
   letter-spacing: 0.25em;
 }
@@ -119,29 +129,27 @@ body {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 14px;
-  fill: #E05A2B;
+  fill: var(--color-brand-deep);
   text-transform: uppercase;
   letter-spacing: 4px;
 }
 .section-eyebrow-arch--light text {
-  fill: #F0C060;
+  fill: var(--color-brand-yellow);
 }
 
-/* Section title: Bebas Neue, responsive, green */
+/* Section title: Donut Shop, responsive, deep green. Mixed case, single weight. */
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(36px, 5vw, 64px);
-  color: #1A5C32;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  line-height: 1;
+  color: var(--color-brand-deep);
+  line-height: 1.05;
 }
 
-/* Gold divider bar */
+/* Divider bar (bright green). Class name kept for existing markup. */
 .gold-divider {
   width: 60px;
   height: 2px;
-  background: #C8973A;
+  background: var(--color-brand-green);
   border: none;
 }
 
@@ -194,7 +202,7 @@ body {
 }
 
 .frost-dark {
-  background: rgba(26, 92, 50, 0.6);
+  background: rgba(21,71,52,0.6);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -236,9 +244,7 @@ body {
 .blog-prose h2 {
   font-family: var(--font-display);
   font-size: clamp(24px, 3vw, 34px);
-  color: #1A5C32;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  color: var(--color-brand-deep);
   line-height: 1.1;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -247,9 +253,7 @@ body {
 .blog-prose h3 {
   font-family: var(--font-display);
   font-size: clamp(20px, 2.5vw, 26px);
-  color: #1A5C32;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  color: var(--color-brand-deep);
   line-height: 1.15;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
@@ -278,14 +282,14 @@ body {
 }
 
 .blog-prose a {
-  color: #1A5C32;
+  color: var(--color-brand-deep);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .blog-prose a:hover {
-  color: #2D7A47;
+  color: var(--color-brand-green-dark);
 }
 
 .blog-prose strong {

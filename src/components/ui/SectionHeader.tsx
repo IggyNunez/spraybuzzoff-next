@@ -41,7 +41,7 @@ export function SectionHeader({
         {eyebrow}
       </motion.p>
       <motion.h2
-        className={`font-display text-[clamp(2rem,5vw,3.2rem)] font-bold uppercase leading-[1.1] ${titleColor}`}
+        className={`font-display text-[clamp(2rem,5vw,3.2rem)] leading-[1.1] ${titleColor}`}
         variants={fadeUpDelayed(0.1)}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}

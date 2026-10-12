@@ -42,7 +42,7 @@ export function FAQ() {
         </div>
 
         {/* Accordion */}
-        <div className="divide-y divide-[#1A5C32]/10 border-t border-b border-[#1A5C32]/10">
+        <div className="divide-y divide-brand-deep/10 border-t border-b border-brand-deep/10">
           {FAQS.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
@@ -53,14 +53,14 @@ export function FAQ() {
                 transition={{ delay: 0.15 + i * 0.05, duration: 0.4 }}
               >
                 <button
-                  className="w-full flex items-center justify-between py-5 px-2 text-left cursor-pointer transition-colors hover:bg-[#EAF2EC] rounded-lg"
+                  className="w-full flex items-center justify-between py-5 px-2 text-left cursor-pointer transition-colors hover:bg-brand-light-green rounded-lg"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                 >
-                  <span className="font-body text-[0.9rem] font-bold text-[#1C2B1E] pr-4 leading-snug">
+                  <span className="font-body text-[0.9rem] font-bold text-brand-dark pr-4 leading-snug">
                     {faq.question}
                   </span>
                   <motion.span
-                    className="shrink-0 text-[1.2rem] font-light text-[#E05A2B]"
+                    className="shrink-0 text-[1.2rem] font-light text-brand-orange"
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -80,7 +80,7 @@ export function FAQ() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="font-body text-[0.85rem] leading-relaxed text-[#1C2B1E]/70 px-2 pb-5">
+                      <p className="font-body text-[0.85rem] leading-relaxed text-brand-dark/70 px-2 pb-5">
                         {faq.answer}
                       </p>
                     </motion.div>
@@ -98,13 +98,13 @@ export function FAQ() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.6 }}
         >
-          <p className="font-body text-[0.9rem] text-[#1C2B1E]/50 mb-2">
+          <p className="font-body text-[0.9rem] text-brand-dark/50 mb-2">
             Still have questions?
           </p>
           <a
             href="tel:9098988955"
             onClick={() => trackContact()}
-            className="font-body text-[0.95rem] font-bold text-[#1A5C32] hover:text-[#0F3D20] transition-colors"
+            className="font-body text-[0.95rem] font-bold text-brand-deep hover:text-brand-deeper transition-colors"
           >
             Call the Team - 909.898.8955
           </a>

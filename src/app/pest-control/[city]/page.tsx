@@ -117,7 +117,7 @@ export default async function CityPage({
 
       <main className="w-full min-w-full">
         {/* Hero */}
-        <section className="section-card mt-2 relative bg-[#1A5C32] text-white overflow-hidden">
+        <section className="section-card mt-2 relative bg-brand-deep text-white overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-15">
             <Image
               src="/assets/services-hero.jpg"
@@ -140,19 +140,19 @@ export default async function CityPage({
               </ol>
             </nav>
 
-            <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-[#F0C060] mb-3">
+            <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">
               Plant-Based Pest Control in {data.name}, CA
             </p>
-            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[0.95] tracking-[0.01em] uppercase mb-6">
+            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6">
               {data.name}'s Natural Pest Control.<br />
-              <span className="italic font-serif normal-case text-[#F0C060]">Safe for kids, pets, and the people you love.</span>
+              <span className="italic font-serif normal-case text-brand-yellow">Safe for kids, pets, and the people you love.</span>
             </h1>
             <p className="max-w-[720px] text-[clamp(16px,1.4vw,19px)] leading-[1.55] text-white/85 mb-8">
               {data.pestIntro} Every Buzz Off treatment is 100% plant-based, FIFRA 25(b) exempt, and built around
               {" "}{data.name} homes - no contracts, no synthetic chemicals, just botanical oils that work.
             </p>
             <div className="flex flex-wrap gap-3">
-              <BookNowButton className="bg-[#F0C060] text-[#1A5C32] hover:bg-[#E5B450] px-6 py-3 rounded-full font-body font-extrabold text-sm tracking-[0.1em] uppercase">
+              <BookNowButton className="bg-brand-yellow text-brand-deep hover:bg-[#E5B450] px-6 py-3 rounded-full font-body font-extrabold text-sm tracking-[0.1em] uppercase">
                 Book {data.name} Service
               </BookNowButton>
               <a
@@ -169,19 +169,19 @@ export default async function CityPage({
         <section className="section-card mt-2 bg-[#F7F3EA]">
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] py-20 grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-[#1A5C32] mb-3">Why {data.name} needs plant-based</p>
-              <h2 className="font-display text-[clamp(28px,3.6vw,48px)] uppercase leading-[1.05] text-[#1A5C32] mb-5">
+              <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-deep mb-3">Why {data.name} needs plant-based</p>
+              <h2 className="font-display text-[clamp(28px,3.6vw,48px)] leading-[1.05] text-brand-deep mb-5">
                 Pest pressure unique to {data.name}.
               </h2>
               <p className="text-[17px] leading-[1.6] text-neutral-700 mb-4">{data.climateNote}</p>
               <p className="text-[17px] leading-[1.6] text-neutral-700">{data.localAngle}</p>
             </div>
             <div>
-              <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-[#1A5C32] mb-3">Top {data.name} pests we treat</p>
+              <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-deep mb-3">Top {data.name} pests we treat</p>
               <ul className="space-y-3">
                 {data.topPests.map((p) => (
-                  <li key={p} className="flex items-center gap-3 text-[17px] text-neutral-800 border-b border-[#1A5C32]/10 pb-3">
-                    <span className="w-2 h-2 rounded-full bg-[#F0C060]" />
+                  <li key={p} className="flex items-center gap-3 text-[17px] text-neutral-800 border-b border-brand-deep/10 pb-3">
+                    <span className="w-2 h-2 rounded-full bg-brand-yellow" />
                     {p} in {data.name}, CA
                   </li>
                 ))}
@@ -193,8 +193,8 @@ export default async function CityPage({
         {/* Services for this city */}
         <section className="section-card mt-2 bg-white">
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] py-20">
-            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-[#1A5C32] mb-3">Services in {data.name}</p>
-            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] uppercase leading-[1.05] text-[#1A5C32] mb-10">
+            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-deep mb-3">Services in {data.name}</p>
+            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] leading-[1.05] text-brand-deep mb-10">
               Plant-based pest control for every {data.name} home.
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -206,14 +206,14 @@ export default async function CityPage({
                 { t: `One-Time Treatment in ${data.name}`, d: `Hosting a ${data.name} backyard event? Single-visit service, no contract required.` },
                 { t: `Whole Home Protection in ${data.name}`, d: `Interior + exterior plant-based coverage for complete ${data.name} home defense.` },
               ].map((s) => (
-                <div key={s.t} className="border border-[#1A5C32]/15 rounded-2xl p-6 hover:border-[#1A5C32]/40 transition-colors">
-                  <h3 className="font-display text-[22px] uppercase text-[#1A5C32] mb-2">{s.t}</h3>
+                <div key={s.t} className="border border-brand-deep/15 rounded-2xl p-6 hover:border-brand-deep/40 transition-colors">
+                  <h3 className="font-display text-[22px] text-brand-deep mb-2">{s.t}</h3>
                   <p className="text-[15px] leading-[1.55] text-neutral-700">{s.d}</p>
                 </div>
               ))}
             </div>
             <div className="mt-8">
-              <Link href="/services" className="font-body text-[0.8rem] tracking-[0.1em] uppercase text-[#1A5C32] underline underline-offset-4 hover:text-[#0F3D20]">
+              <Link href="/services" className="font-body text-[0.8rem] tracking-[0.1em] uppercase text-brand-deep underline underline-offset-4 hover:text-brand-deeper">
                 View full service details →
               </Link>
             </div>
@@ -221,15 +221,15 @@ export default async function CityPage({
         </section>
 
         {/* Neighborhoods + ZIPs */}
-        <section className="section-card mt-2 bg-[#1A5C32] text-white">
+        <section className="section-card mt-2 bg-brand-deep text-white">
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] py-20">
-            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-[#F0C060] mb-3">Neighborhoods we service</p>
-            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] uppercase leading-[1.05] mb-10">
+            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">Neighborhoods we service</p>
+            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] leading-[1.05] mb-10">
               Serving every corner of {data.name}.
             </h2>
             <div className="grid md:grid-cols-2 gap-10">
               <div>
-                <h3 className="font-body text-[0.8rem] tracking-[0.15em] uppercase text-[#F0C060] mb-4">Neighborhoods</h3>
+                <h3 className="font-body text-[0.8rem] tracking-[0.15em] uppercase text-brand-yellow mb-4">Neighborhoods</h3>
                 <ul className="grid grid-cols-2 gap-2 text-[16px]">
                   {data.neighborhoods.map((n) => (
                     <li key={n} className="text-white/90">{n}</li>
@@ -237,13 +237,13 @@ export default async function CityPage({
                 </ul>
               </div>
               <div>
-                <h3 className="font-body text-[0.8rem] tracking-[0.15em] uppercase text-[#F0C060] mb-4">ZIP codes</h3>
+                <h3 className="font-body text-[0.8rem] tracking-[0.15em] uppercase text-brand-yellow mb-4">ZIP codes</h3>
                 <ul className="flex flex-wrap gap-2">
                   {data.zips.map((z) => (
                     <li key={z} className="px-3 py-1.5 rounded-full border border-white/30 text-[14px] tracking-[0.05em]">{z}</li>
                   ))}
                 </ul>
-                <h3 className="font-body text-[0.8rem] tracking-[0.15em] uppercase text-[#F0C060] mt-8 mb-4">Local landmarks</h3>
+                <h3 className="font-body text-[0.8rem] tracking-[0.15em] uppercase text-brand-yellow mt-8 mb-4">Local landmarks</h3>
                 <ul className="text-[15px] text-white/85 space-y-1">
                   {data.landmarks.map((l) => (
                     <li key={l}>· {l}</li>
@@ -258,8 +258,8 @@ export default async function CityPage({
         {data.testimonial && (
           <section className="section-card mt-2 bg-[#F7F3EA]">
             <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,64px)] py-20 text-center">
-              <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-[#1A5C32] mb-4">From a {data.name} neighbor</p>
-              <p className="font-serif italic text-[clamp(20px,2.4vw,30px)] leading-[1.4] text-[#1A5C32] mb-6">
+              <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-deep mb-4">From a {data.name} neighbor</p>
+              <p className="font-serif italic text-[clamp(20px,2.4vw,30px)] leading-[1.4] text-brand-deep mb-6">
                 "{data.testimonial.text}"
               </p>
               <p className="font-body text-[14px] tracking-[0.05em] text-neutral-700">- {data.testimonial.name}, {data.testimonial.location}</p>
@@ -270,16 +270,16 @@ export default async function CityPage({
         {/* FAQ */}
         <section className="section-card mt-2 bg-white">
           <div className="max-w-[1000px] mx-auto px-[clamp(20px,4vw,64px)] py-20">
-            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-[#1A5C32] mb-3">{data.name} FAQs</p>
-            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] uppercase leading-[1.05] text-[#1A5C32] mb-10">
+            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-deep mb-3">{data.name} FAQs</p>
+            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] leading-[1.05] text-brand-deep mb-10">
               Pest control questions from {data.name} homeowners.
             </h2>
-            <div className="divide-y divide-[#1A5C32]/15">
+            <div className="divide-y divide-brand-deep/15">
               {faqs.map((f) => (
                 <details key={f.question} className="py-5 group">
-                  <summary className="font-display text-[20px] uppercase text-[#1A5C32] cursor-pointer list-none flex items-start justify-between gap-4">
+                  <summary className="font-display text-[20px] text-brand-deep cursor-pointer list-none flex items-start justify-between gap-4">
                     {f.question}
-                    <span className="text-[#F0C060] text-xl group-open:rotate-45 transition-transform">+</span>
+                    <span className="text-brand-yellow text-xl group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="mt-3 text-[16px] leading-[1.6] text-neutral-700">{f.answer}</p>
                 </details>
@@ -289,16 +289,16 @@ export default async function CityPage({
         </section>
 
         {/* CTA */}
-        <section className="section-card mt-2 bg-[#1A5C32] text-white text-center">
+        <section className="section-card mt-2 bg-brand-deep text-white text-center">
           <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,64px)] py-20">
-            <h2 className="font-display text-[clamp(32px,4.2vw,56px)] uppercase leading-[1] mb-6">
+            <h2 className="font-display text-[clamp(32px,4.2vw,56px)] leading-[1.05] mb-6">
               Ready for a bite-free {data.name} yard?
             </h2>
             <p className="text-[17px] text-white/85 mb-8 max-w-[620px] mx-auto">
               Join your {data.name} neighbors who've switched to plant-based. No contracts, no synthetics, no pressure.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <BookNowButton className="bg-[#F0C060] text-[#1A5C32] hover:bg-[#E5B450] px-8 py-4 rounded-full font-body font-extrabold text-sm tracking-[0.1em] uppercase">
+              <BookNowButton className="bg-brand-yellow text-brand-deep hover:bg-[#E5B450] px-8 py-4 rounded-full font-body font-extrabold text-sm tracking-[0.1em] uppercase">
                 Book {data.name} Service
               </BookNowButton>
               <a
@@ -314,8 +314,8 @@ export default async function CityPage({
         {/* Nearby cities */}
         <section className="section-card mt-2 bg-white">
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] py-16">
-            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-[#1A5C32] mb-3">Nearby service areas</p>
-            <h2 className="font-display text-[clamp(24px,2.8vw,36px)] uppercase leading-[1.05] text-[#1A5C32] mb-6">
+            <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-deep mb-3">Nearby service areas</p>
+            <h2 className="font-display text-[clamp(24px,2.8vw,36px)] leading-[1.05] text-brand-deep mb-6">
               Pest control near {data.name}.
             </h2>
             <ul className="flex flex-wrap gap-2">
@@ -323,7 +323,7 @@ export default async function CityPage({
                 <li key={c.slug}>
                   <Link
                     href={`/pest-control/${c.slug}`}
-                    className="inline-block px-4 py-2 rounded-full border border-[#1A5C32]/25 text-[14px] text-[#1A5C32] hover:bg-[#1A5C32] hover:text-white transition-colors"
+                    className="inline-block px-4 py-2 rounded-full border border-brand-deep/25 text-[14px] text-brand-deep hover:bg-brand-deep hover:text-white transition-colors"
                   >
                     Pest Control in {c.name}
                   </Link>

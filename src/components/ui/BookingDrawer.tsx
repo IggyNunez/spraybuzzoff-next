@@ -67,7 +67,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
             >
               {/* header */}
-              <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200 bg-[#1A5C32]">
+              <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200 bg-brand-deep">
                 <div className="flex items-center gap-3">
                   <Image
                     src="/assets/spraybuzzoffLogo.png"

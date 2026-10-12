@@ -13,7 +13,7 @@ export function Process() {
   const { open: openBooking } = useBooking();
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32 bg-[#EDEADE]">
+    <section ref={ref} className="relative py-24 md:py-32 bg-brand-cream">
       <div className="max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)]">
         {/* Header */}
         <div className="text-center mb-16">
@@ -39,7 +39,7 @@ export function Process() {
             transition={{ delay: 0.2, duration: 0.6 }}
           />
           <motion.p
-            className="font-body text-[1rem] text-[#1C2B1E]/60 max-w-[560px] mx-auto"
+            className="font-body text-[1rem] text-brand-dark/60 max-w-[560px] mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}
@@ -51,31 +51,31 @@ export function Process() {
         {/* Steps - desktop: single row with connecting line, mobile: 2x2 */}
         <div className="relative">
           {/* Connecting gold line - desktop only */}
-          <div className="hidden lg:block absolute top-[60px] left-[12%] right-[12%] h-[2px] bg-[#C8973A]/30 z-0" />
+          <div className="hidden lg:block absolute top-[60px] left-[12%] right-[12%] h-[2px] bg-brand-orange/30 z-0" />
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
             {PROCESS_STEPS.map((step, i) => (
               <motion.div
                 key={step.num}
-                className="bg-white rounded-2xl border-t-[3px] border-[#1A5C32] p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] transition-shadow duration-300"
+                className="bg-white rounded-2xl border-t-[3px] border-brand-deep p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] transition-shadow duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.15 + i * 0.1, duration: 0.5 }}
               >
                 {/* Step number circle */}
-                <div className="w-12 h-12 rounded-full bg-[#1A5C32] flex items-center justify-center mx-auto mb-4">
-                  <span className="font-display text-[1rem] font-bold text-white">
+                <div className="w-12 h-12 rounded-full bg-brand-deep flex items-center justify-center mx-auto mb-4">
+                  <span className="font-display text-[1rem] text-white">
                     {step.num}
                   </span>
                 </div>
 
-                <h3 className="font-display text-[1.2rem] font-[900] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h3 className="font-display text-[1.2rem] text-brand-deep mb-3">
                   {step.title}
                 </h3>
 
                 <div className="gold-divider mx-auto mb-3" />
 
-                <p className="font-body text-[0.85rem] leading-relaxed text-[#1C2B1E]/70">
+                <p className="font-body text-[0.85rem] leading-relaxed text-brand-dark/70">
                   {step.desc}
                 </p>
               </motion.div>

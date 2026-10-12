@@ -109,7 +109,7 @@ export function Nav() {
           {/* Pill - outer = green border frame, inner = white content */}
           <div
             style={{
-              background: "#1A5C32",
+              background: "#154734",
               borderRadius: 9999,
               padding: "3px",
               boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
@@ -176,7 +176,7 @@ export function Nav() {
 
               <button
                 onClick={openBooking}
-                className="font-body text-[0.68rem] font-extrabold tracking-[0.08em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] px-5 py-2 rounded-full transition-colors duration-200 ml-1 whitespace-nowrap"
+                className="font-body text-[0.68rem] font-extrabold tracking-[0.08em] uppercase text-brand-deep bg-brand-yellow border-2 border-brand-deep hover:bg-gold-400 px-5 py-[6px] rounded-full transition-colors duration-200 ml-1 whitespace-nowrap"
               >
                 Book Now
               </button>
@@ -215,7 +215,7 @@ export function Nav() {
         {/* Pill - right side */}
         <div
           style={{
-            background: "#1A5C32",
+            background: "#154734",
             borderRadius: 9999,
             padding: "3px",
             boxShadow: "0 4px 18px rgba(0,0,0,0.12)",
@@ -300,7 +300,7 @@ export function Nav() {
             <motion.div
               className="md:hidden fixed top-1/2 right-3 -translate-y-1/2 z-[201] w-[270px]"
               style={{
-                background: "#1A5C32",
+                background: "#154734",
                 clipPath: CARD_CLIP,
                 padding: "3px",
                 boxShadow: "0 8px 40px rgba(0,0,0,0.15)",
@@ -334,7 +334,7 @@ export function Nav() {
                     onClick={closeMobile}
                     aria-label="Close menu"
                   >
-                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#1A5C32" strokeWidth="1.5" strokeLinecap="round">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#154734" strokeWidth="1.5" strokeLinecap="round">
                       <line x1="1" y1="1" x2="11" y2="11" />
                       <line x1="11" y1="1" x2="1" y2="11" />
                     </svg>
@@ -370,7 +370,7 @@ export function Nav() {
                   {/* Book Now */}
                   <motion.button
                     onClick={() => { closeMobile(); openBooking(); }}
-                    className="block w-full font-body text-[0.7rem] font-extrabold tracking-[0.08em] uppercase text-white bg-[#1A5C32] hover:bg-[#0F3D20] py-2.5 rounded-full transition-colors text-center"
+                    className="block w-full font-body text-[0.7rem] font-extrabold tracking-[0.08em] uppercase text-brand-deep bg-brand-yellow border-2 border-brand-deep hover:bg-gold-400 py-2 rounded-full transition-colors text-center"
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, ease: EASE }}
