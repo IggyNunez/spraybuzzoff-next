@@ -89,7 +89,7 @@ export default async function BlogPostPage({
             </nav>
             {post.city && (
               <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">
-                {post.city}, Oklahoma
+                {post.city}, {post.region ?? "California"}
               </p>
             )}
             <h1 className="font-display text-[clamp(32px,5vw,62px)] leading-[0.98] mb-6">
@@ -150,13 +150,14 @@ export default async function BlogPostPage({
               Ready to take back your yard?
             </h2>
             <p className="text-[17px] text-white/85 mb-8 max-w-[560px] mx-auto">
-              Get a quote for professional mosquito treatment in Broken Arrow and
-              across the Tulsa metro - no contracts required.
+              Get a quote for plant-based pest control
+              {post.city ? ` in ${post.city}` : ""} and across the Inland Empire
+              and San Gabriel Valley. No contracts required.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/contact"
-                className="font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-brand-deep bg-brand-yellow hover:bg-[#E5B450] px-8 py-4 rounded-full transition-colors"
+                className="font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-brand-deep bg-brand-yellow hover:bg-gold-400 px-8 py-4 rounded-full transition-colors"
               >
                 Get a Free Quote
               </Link>

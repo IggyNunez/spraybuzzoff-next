@@ -9,7 +9,7 @@ const SITE = "https://spraybuzzoff.com";
 export const metadata: Metadata = {
   title: "Pest Control Tips & Guides | Spray Buzz Off Blog",
   description:
-    "Practical pest control tips and local advice for Oklahoma homeowners from the Spray Buzz Off team.",
+    "Practical pest control tips and local advice for Inland Empire and San Gabriel Valley homeowners from the Buzz Off team.",
   alternates: { canonical: `${SITE}/blog` },
   robots: { index: true, follow: true },
 };
@@ -29,7 +29,7 @@ export default function BlogIndex() {
               The Spray Buzz Off Blog
             </h1>
             <p className="max-w-[640px] text-[clamp(16px,1.4vw,19px)] leading-[1.55] text-white/85">
-              Practical pest control tips and local guides for Oklahoma homeowners.
+              Practical pest control tips and local guides for Inland Empire and San Gabriel Valley homeowners.
               Seasonal advice, treatment timing, and what to watch for in your yard.
             </p>
           </div>

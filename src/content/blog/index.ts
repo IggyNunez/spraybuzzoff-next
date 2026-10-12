@@ -7,9 +7,6 @@ import pestControlUplandPost from "./pest-control-upland-ca";
 import antControlUplandCa from "./ant-control-upland-ca";
 import spiderControlRanchoCucamongaPost from "./spider-control-rancho-cucamonga";
 import antControlRanchoCucamonga from "./ant-control-rancho-cucamonga";
-import waspControlTulsaOk from "./wasp-control-tulsa-ok";
-import mosquitoControlBrokenArrowOk from "./mosquito-control-broken-arrow-ok";
-import tickControlEdmondOk from "./tick-control-edmond-ok";
 import pestControlOntarioCa from "./pest-control-ontario-ca";
 import pestControlFontanaCa from "./pest-control-fontana-ca";
 import pestControlPomonaCa from "./pest-control-pomona-ca";
@@ -40,9 +37,6 @@ export const BLOG_POSTS: BlogPost[] = [
   pestControlPomonaCa,
   pestControlFontanaCa,
   pestControlOntarioCa,
-  tickControlEdmondOk,
-  mosquitoControlBrokenArrowOk,
-  waspControlTulsaOk,
   antControlRanchoCucamonga,
   spiderControlRanchoCucamongaPost,
   antControlUplandCa,
