@@ -107,7 +107,7 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,71,52,0.6) 0%, transparent 60%)" }} />
                   <div className="absolute bottom-6 left-6 right-6">
-                    <p className="font-display text-[1.6rem] text-white leading-tight">
+                    <p className="font-display title-caps text-[1.6rem] text-white leading-tight">
                       The Buzz Off Family
                     </p>
                   </div>
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#FA4616" }}>
                 What We Stand For
               </p>
-              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
+              <h2 className="font-display text-[clamp(34px,5vw,72px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
                 The Buzz Off Standard
               </h2>
               <div className="h-[2px] w-16 mx-auto" style={{ background: "#FA4616" }} />
@@ -178,7 +178,7 @@ export default function AboutPage() {
                     <div className="mb-5">
                       <StepBadge glyph={VALUE_GLYPH[v.num] ?? "check"} num={String(Number(v.num))} size={60} delay={0.15 + i * 0.12} />
                     </div>
-                    <p className="font-display text-[clamp(22px,2.5vw,30px)] leading-tight mb-3" style={{ color: "#EFDF00" }}>
+                    <p className="font-display title-caps text-[clamp(22px,2.5vw,30px)] leading-tight mb-3" style={{ color: "#EFDF00" }}>
                       {v.title}
                     </p>
                     <div className="h-[1px] mb-4" style={{ background: "rgba(255,255,255,0.12)" }} />
@@ -199,7 +199,7 @@ export default function AboutPage() {
               <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#FA4616" }}>
                 The Smarter Choice
               </p>
-              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] mb-1 flex items-center justify-center gap-4 flex-wrap" style={{ color: "#154734" }}>
+              <h2 className="font-display text-[clamp(34px,5vw,72px)] leading-[1.05] mb-1 flex items-center justify-center gap-4 flex-wrap" style={{ color: "#154734" }}>
                 <img
                   src="/assets/spraybuzzoffLogo.png"
                   alt="Buzz Off plant-based pest control"
@@ -261,7 +261,7 @@ export default function AboutPage() {
           />
           <div className="relative z-10 max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
             <FadeIn>
-              <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-[1.05] text-white mb-4">
+              <h2 className="font-display text-[clamp(36px,4.8vw,72px)] leading-[1.05] text-white mb-4">
                 Made for Families,<br />
                 <span style={{ color: "#EFDF00" }}>Built for Backyards.</span>
               </h2>

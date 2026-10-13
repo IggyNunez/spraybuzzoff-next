@@ -285,7 +285,7 @@ function SmallCardDesktop({
         <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-brand-yellow block mb-1">
           {service.label}
         </span>
-        <h4 className="font-display text-[1.2rem] text-white leading-tight">
+        <h4 className="font-display text-[1.05rem] text-white leading-tight">
           {service.title}
         </h4>
 
@@ -359,7 +359,7 @@ function SmallCardMobile({
               <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-brand-yellow block mb-1">
                 {service.label}
               </span>
-              <h4 className="font-display text-[1.1rem] text-white leading-tight">
+              <h4 className="font-display text-[0.82rem] sm:text-[1.1rem] text-white leading-tight">
                 {service.title}
               </h4>
             </div>
@@ -454,7 +454,7 @@ export function Services() {
         </div>
 
         {/* Small Cards - 4 grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {SERVICES_SMALL.map((service, i) => (
             <div key={service.title}>
               <SmallCardDesktop service={service} delay={0.2 + i * 0.08} isInView={isInView} />

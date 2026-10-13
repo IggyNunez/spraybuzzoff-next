@@ -66,9 +66,13 @@ Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next
 
 **Rules from the identity sheet:**
 
-- **Sentence or title case for longer lines.** Section titles are mixed case.
-- **All caps for short emphasis only.** The home hero headline is the main example. It is sized
-  with the viewport (`HERO_TYPE.homeTitle`) so the caps never run off the screen.
+- **Every title is in caps.** Any heading in the display face, section titles, card titles,
+  and blog article headings. (Client direction, Oct 2026. The rules first written from the sheet
+  had section titles mixed case; the client wants all titles in caps.) One CSS rule in
+  `globals.css` applies it; use `.title-caps` for a title that is not a heading element.
+- **Body copy, buttons, labels and the hero tagline keep their own case.**
+- **Caps run wide.** Long words like NEIGHBORHOOD'S need about 11 font-sizes of width, so title
+  sizes have floors measured to fit a 360px phone. Check new titles at 360px before shipping.
 - **Never stretch or fake-bold the type.** Donut Shop has one weight. Do not put `font-bold`,
   `font-[900]` or `tracking-*` on `font-display` elements. `globals.css` sets
   `font-synthesis: none` on display text so the browser cannot fake it.

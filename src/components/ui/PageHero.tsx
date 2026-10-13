@@ -19,10 +19,10 @@ const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 export const HERO_TYPE = {
   eyebrow:
     "font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase text-brand-yellow mb-4",
-  // 38px floor: measured so two-word accent lines ("Customers Say.") fit a
-  // 375px phone on one line instead of breaking word by word.
+  // 36px floor: titles are in caps, and "PROTECTION." has to fit a 360px
+  // phone on one line. Measured, not guessed.
   title:
-    "font-display text-[clamp(38px,6vw,88px)] leading-[1.04] text-white mb-5 [text-wrap:balance]",
+    "font-display text-[clamp(36px,6vw,88px)] leading-[1.04] text-white mb-5 [text-wrap:balance]",
   // Brand sheet: all caps is for short emphasis, and the home hero headline is
   // its main example. Caps run about 13x the font size on the longer line, so
   // the size scales with the viewport (6.6vw) to fit at every width; a fixed

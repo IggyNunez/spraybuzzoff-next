@@ -403,7 +403,7 @@ export default function ContactPage() {
         <section className="py-14" style={{ background: "#0F3224" }}>
           <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,48px)] flex flex-col md:flex-row items-center justify-between gap-6">
             <FadeIn>
-              <p className="font-display text-[clamp(22px,3vw,36px)] text-white leading-tight">
+              <p className="font-display title-caps text-[clamp(22px,3vw,36px)] text-white leading-tight">
                 Prefer to book online instantly?
               </p>
               <p className="font-body text-white/60 text-[0.88rem] mt-1">

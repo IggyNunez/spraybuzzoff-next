@@ -138,11 +138,19 @@ body {
 }
 
 /* Section title: Donut Shop, responsive, deep green. Mixed case, single weight. */
+/* In caps, long words like NEIGHBORHOOD'S need about 11 font-sizes of width,
+   so section titles scale with the screen below tablet size. Tablet and up
+   are unchanged. */
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(25px, 7vw, 36px);
   color: var(--color-brand-deep);
   line-height: 1.05;
+}
+@media (min-width: 768px) {
+  .section-title {
+    font-size: clamp(36px, 5vw, 64px);
+  }
 }
 
 /* Divider bar (bright green). Class name kept for existing markup. */
@@ -230,6 +238,22 @@ body {
     margin-right: 12px;
     border-radius: 32px;
   }
+}
+
+/* ── Titles in caps ── */
+/* Every title on the site is set in caps (client direction, Oct 2026): any
+   heading in the display face, section titles, and blog article headings.
+   Body copy, buttons, labels and the hero tagline keep their own case. Use
+   .title-caps for a title that is not a heading element. */
+h1.font-display,
+h2.font-display,
+h3.font-display,
+h4.font-display,
+.section-title,
+.blog-prose h2,
+.blog-prose h3,
+.title-caps {
+  text-transform: uppercase;
 }
 
 /* ── Hero gutter ── */
