@@ -29,9 +29,10 @@ export const HERO_TYPE = {
   // 84px ran off the screen below about 1280px.
   homeTitle:
     "font-display uppercase text-[clamp(34px,6.6vw,84px)] leading-[1.02] text-white mb-4 [text-wrap:balance] drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]",
-  // Brand sheet: Playfair Display Italic is for testimonials and the hero tagline.
+  // Tagline in the brand display face, upright. Donut Shop has no italic and
+  // a single weight, so never add italic or bold here.
   tagline:
-    "font-quote italic text-[clamp(1.3rem,2.6vw,2.4rem)] text-brand-yellow mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]",
+    "font-display text-[clamp(1.4rem,2.6vw,2.4rem)] leading-tight text-brand-yellow mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]",
   accent: "text-brand-yellow",
   body: "font-body text-[1.05rem] leading-relaxed text-white/85 max-w-[34rem]",
 } as const;
