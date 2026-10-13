@@ -92,7 +92,7 @@ export default async function BlogPostPage({
                 {post.city}, {post.region ?? "California"}
               </p>
             )}
-            <h1 className="font-display text-[clamp(32px,5vw,62px)] leading-[0.98] mb-6">
+            <h1 className="font-display text-[clamp(27px,5vw,62px)] leading-[0.98] mb-6">
               {post.title}
             </h1>
             <div className="flex items-center gap-4 text-white/70 text-[0.82rem] font-body">

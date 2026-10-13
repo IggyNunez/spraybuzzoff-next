@@ -206,7 +206,7 @@ export default function ServicesPage() {
               <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
                 Ingredient Transparency
               </p>
-              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] text-white mb-4">
+              <h2 className="font-display text-[clamp(34px,5vw,72px)] leading-[1.05] text-white mb-4">
                 What's In Our Formula
               </h2>
               <div className="h-[2px] w-16 mx-auto mb-5" style={{ background: "#FA4616" }} />
@@ -245,7 +245,7 @@ export default function ServicesPage() {
               <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#FA4616" }}>
                 Full Coverage
               </p>
-              <h2 className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
+              <h2 className="font-display text-[clamp(34px,5vw,72px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
                 Pests We Treat
               </h2>
               <div className="h-[2px] w-16 mx-auto" style={{ background: "#FA4616" }} />
@@ -290,7 +290,7 @@ export default function ServicesPage() {
           />
           <div className="relative z-10 max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
             <FadeIn>
-              <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-[1.05] text-white mb-4">
+              <h2 className="font-display text-[clamp(36px,4.8vw,72px)] leading-[1.05] text-white mb-4">
                 Ready to Live<br />
                 <span style={{ color: "#EFDF00" }}>Outside Again?</span>
               </h2>

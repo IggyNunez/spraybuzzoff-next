@@ -45,7 +45,7 @@ export default function ServiceAreasPage() {
             </nav>
 
             <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">Service Areas</p>
-            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6 [text-wrap:balance]">
+            <h1 className="font-display text-[clamp(30px,6vw,84px)] leading-[1.05] mb-6 [text-wrap:balance]">
               Plant-based pest control across the
               <span className="block mt-3 text-[0.58em] leading-[1.12] text-brand-yellow">Inland Empire, San Gabriel Valley & Orange County.</span>
             </h1>
@@ -57,7 +57,7 @@ export default function ServiceAreasPage() {
 
         <section className="section-card mt-2 bg-white">
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] py-20">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
               {CITIES.map((c) => (
                 <Link
                   key={c.slug}
@@ -65,7 +65,7 @@ export default function ServiceAreasPage() {
                   className="group border border-brand-deep/15 rounded-2xl p-6 hover:border-brand-deep hover:bg-brand-deep hover:text-white transition-colors"
                 >
                   <p className="font-body text-[0.7rem] tracking-[0.15em] uppercase text-brand-yellow mb-2">{c.county}</p>
-                  <h2 className="font-display text-[26px] text-brand-deep group-hover:text-white mb-2">{c.name}</h2>
+                  <h2 className="font-display text-[22px] text-brand-deep group-hover:text-white mb-2">{c.name}</h2>
                   <p className="text-[13px] text-neutral-600 group-hover:text-white/85">ZIPs: {c.zips.join(", ")}</p>
                   <p className="mt-3 text-[12px] font-body tracking-[0.08em] uppercase text-brand-deep group-hover:text-brand-yellow">
                     View {c.name} →

@@ -143,7 +143,7 @@ export default async function CityPage({
             <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">
               Plant-Based Pest Control in {data.name}, CA
             </p>
-            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6 [text-wrap:balance]">
+            <h1 className="font-display text-[clamp(30px,6vw,84px)] leading-[1.05] mb-6 [text-wrap:balance]">
               {data.name}'s Natural Pest Control.
               <span className="block mt-3 text-[0.58em] leading-[1.12] text-brand-yellow">Safe for kids, pets, and the people you love.</span>
             </h1>

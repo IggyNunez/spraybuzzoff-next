@@ -242,7 +242,7 @@ export default function ReviewsPage() {
           />
           <div className="relative z-10 max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
             <FadeIn>
-              <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-[1.05] text-white mb-4">
+              <h2 className="font-display text-[clamp(36px,4.8vw,72px)] leading-[1.05] text-white mb-4">
                 Join the<br />
                 <span style={{ color: "#EFDF00" }}>Buzz Off Family.</span>
               </h2>

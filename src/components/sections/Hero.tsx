@@ -112,7 +112,7 @@ export function Hero() {
           delay={0.2}
         />
 
-        {/* Hero tagline in Playfair italic, per the brand sheet. */}
+        {/* Hero tagline in the brand display face, upright. */}
         <motion.p
           className={HERO_TYPE.tagline}
           initial={{ opacity: 0, y: 12 }}
