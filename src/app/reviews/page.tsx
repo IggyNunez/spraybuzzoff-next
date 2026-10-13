@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import { PageHero, HERO_TYPE } from "@/components/ui/PageHero";
+import { BadgeStat } from "@/components/ui/BrandBadge";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -142,25 +143,13 @@ export default function ReviewsPage() {
         </PageHero>
 
         {/* ── Stats Bar ── */}
-        <section className="py-10" style={{ background: "#fff" }}>
+        <section className="py-12 bg-white">
           <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,48px)]">
             <FadeIn>
-              <div className="grid grid-cols-3 gap-6 text-center">
-                <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style={{ color: "#154734" }}>{AVERAGE_RATING.toFixed(1)}</p>
-                  <div className="flex justify-center my-1">
-                    <Stars />
-                  </div>
-                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-brand-dark/50">Average Rating</p>
-                </div>
-                <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style={{ color: "#154734" }}>{TOTAL_REVIEW_COUNT}</p>
-                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-brand-dark/50 mt-2">Verified Reviews</p>
-                </div>
-                <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style={{ color: "#154734" }}>{FIVE_STAR_PERCENT}%</p>
-                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-brand-dark/50 mt-2">5-Star Reviews</p>
-                </div>
+              <div className="grid grid-cols-3 gap-6">
+                <BadgeStat glyph="star" to={AVERAGE_RATING} decimals={1} label="Average Rating" />
+                <BadgeStat glyph="check" to={TOTAL_REVIEW_COUNT} label="Verified Reviews" delay={0.1} />
+                <BadgeStat glyph="home-heart" to={FIVE_STAR_PERCENT} suffix="%" label="5-Star Reviews" delay={0.2} />
               </div>
             </FadeIn>
           </div>

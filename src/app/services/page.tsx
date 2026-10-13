@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import { PageHero, HERO_TYPE } from "@/components/ui/PageHero";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 import Image from "next/image";
 import Link from "next/link";
 import { MosquitoSVG } from "@/components/ui/pests/MosquitoSVG";
@@ -177,11 +178,11 @@ export default function ServicesPage() {
                     {svc.body}
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {svc.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 font-body text-[0.92rem]" style={{ color: "#1C2B1E" }}>
-                        <span className="mt-0.5 font-bold shrink-0" style={{ color: "#154734" }}>✓</span>
+                    {svc.bullets.map((b, bi) => (
+                      <motion.li key={b} whileHover="hover" className="flex items-start gap-3 font-body text-[0.92rem]" style={{ color: "#1C2B1E" }}>
+                        <BrandBadge glyph="check" size={22} delay={0.1 + bi * 0.07} className="-mt-0.5" />
                         {b}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                   <button

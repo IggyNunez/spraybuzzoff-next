@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { REVIEWS, TOTAL_REVIEW_COUNT, AVERAGE_RATING, displayDate, type Review } from "@/lib/reviews";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
+import { BadgeStat } from "@/components/ui/BrandBadge";
 
 /** How many reviews the homepage shows. The full set lives on /reviews. */
 const HOMEPAGE_REVIEW_COUNT = 12;
@@ -202,26 +203,19 @@ export function Testimonials() {
 
         {/* Trust stats */}
         <motion.div
-          className="flex flex-wrap justify-center gap-8 mt-14"
+          className="flex flex-wrap justify-center gap-x-12 gap-y-10 mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6 }}
         >
           {[
-            { val: "500+", label: "Families Protected" },
-            { val: `${AVERAGE_RATING.toFixed(1)}★`, label: "Average Rating" },
-            { val: `${TOTAL_REVIEW_COUNT}`, label: "Verified Reviews" },
-            { val: "100%", label: "Plant-Based" },
-            { val: "0", label: "Synthetic Pesticides" },
-          ].map((b) => (
-            <div key={b.label} className="flex flex-col items-center gap-1">
-              <span className="font-display text-[1.6rem] text-brand-orange">
-                {b.val}
-              </span>
-              <span className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-brand-dark/50">
-                {b.label}
-              </span>
-            </div>
+            { glyph: "home-heart" as const, to: 500, suffix: "+", label: "Families Protected" },
+            { glyph: "star" as const, to: AVERAGE_RATING, decimals: 1, label: "Average Rating" },
+            { glyph: "check" as const, to: TOTAL_REVIEW_COUNT, label: "Verified Reviews" },
+            { glyph: "leaf" as const, to: 100, suffix: "%", label: "Plant-Based" },
+            { glyph: "shield" as const, to: 0, label: "Synthetic Pesticides" },
+          ].map((b, i) => (
+            <BadgeStat key={b.label} {...b} delay={0.1 + i * 0.1} />
           ))}
         </motion.div>
       </div>
