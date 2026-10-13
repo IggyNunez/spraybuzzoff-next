@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
-import localFont from "next/font/local";
+import { Caprasimo, DM_Sans, Playfair_Display } from "next/font/google";
 import { BookingProvider } from "@/components/ui/BookingDrawer";
 import { MotionProvider } from "@/components/ui/MotionProvider";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
 import "./globals.css";
 
-// Donut Shop (Prologue Studio) ships in a single weight. Never fake-bold it.
-const donutShop = localFont({
-  src: "./fonts/DonutShop-Regular.woff2",
+// Caprasimo: the brand display face, chosen by the client (Oct 2026) to replace
+// Donut Shop, which only existed here as an unlicensed personal-use copy.
+// SIL Open Font License, so commercial web use is covered. One weight: never
+// fake-bold it.
+const caprasimo = Caprasimo({
+  subsets: ["latin"],
   weight: "400",
-  style: "normal",
-  variable: "--font-donut",
+  variable: "--font-caprasimo",
   display: "swap",
 });
 
@@ -113,7 +114,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${donutShop.variable} ${dmSans.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${caprasimo.variable} ${dmSans.variable} ${playfair.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="geo.region" content="US-CA" />

@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-/** Shared type styles. Display font is Donut Shop, mixed case, single weight. */
+/** Shared type styles. Display font is Caprasimo, single weight. */
 export const HERO_TYPE = {
   eyebrow:
     "font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase text-brand-yellow mb-4",
@@ -29,7 +29,7 @@ export const HERO_TYPE = {
   // 84px ran off the screen below about 1280px.
   homeTitle:
     "font-display uppercase text-[clamp(34px,6.6vw,84px)] leading-[1.02] text-white mb-4 [text-wrap:balance] drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]",
-  // Tagline in the brand display face, upright. Donut Shop has no italic and
+  // Tagline in the brand display face, upright. Caprasimo has no italic and
   // a single weight, so never add italic or bold here.
   tagline:
     "font-display text-[clamp(1.4rem,2.6vw,2.4rem)] leading-tight text-brand-yellow mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]",
