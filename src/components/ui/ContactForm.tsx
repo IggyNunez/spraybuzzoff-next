@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 import { ButtonGold } from "./ButtonGold";
 import type { LeadApiResponse } from "@/types";
 import { ArrowIcon } from "./ArrowIcon";
@@ -91,7 +92,7 @@ export function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="text-5xl mb-4">✅</div>
+        <BrandBadge glyph="check" size={64} onMount className="mx-auto mb-4" />
         <p className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#FA4616" }}>
           Step 1 Complete
         </p>

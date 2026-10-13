@@ -6,6 +6,9 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { PageHero, HERO_TYPE } from "@/components/ui/PageHero";
+import { BrandBadge, BadgeStat, StepBadge, type GlyphName } from "@/components/ui/BrandBadge";
+import { AVERAGE_RATING } from "@/lib/reviews";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,6 +29,13 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
     </motion.div>
   );
 }
+
+const VALUE_GLYPH: Record<string, GlyphName> = {
+  "01": "leaf",
+  "02": "check",
+  "03": "search",
+  "04": "pin",
+};
 
 const VALUES = [
   {
@@ -65,46 +75,21 @@ export default function AboutPage() {
     <>
       <Nav />
       <main>
-        {/* ── Hero ── */}
-        <section
-          className="relative min-h-[72vh] flex items-end pb-24 pt-40 overflow-hidden"
-          style={{ background: "#0F3224" }}
+        <PageHero
+          eyebrow="Our Story"
+          lines={[<>Built Because</>, <span key="accent" className={HERO_TYPE.accent}>Families Deserve</span>, <>Better.</>]}
+          imageSrc="/assets/about-hero-new.jpg"
+          imageAlt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
         >
-          {/* Full background photo */}
-          <Image
-            src="/assets/about-hero-new.jpg"
-            alt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
-            fill
-            className="object-cover object-center"
-            fetchPriority="high"
-            loading="eager"
-          />
-          {/* Gradient overlay - heavier on left for text legibility */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(21,71,52,0.92) 0%, rgba(21,71,52,0.75) 55%, rgba(21,71,52,0.4) 100%)" }} />
-          <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
-            <FadeIn className="max-w-[560px]">
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
-                Our Story
-              </p>
-              <h1 className="font-display text-[clamp(52px,7vw,90px)] leading-[1.05] text-white mb-5">
-                Built Because<br />
-                <span style={{ color: "#EFDF00" }}>Families Deserve</span><br />
-                Better.
-              </h1>
-              <p className="font-body text-white/75 text-[1.05rem] leading-relaxed max-w-md">
-                Buzz Off started as a personal decision for our own families. We're in our non-toxic era, paying attention to what surrounds our kids.{" "}
-                <strong className="font-bold" style={{ color: "#EFDF00" }}>Peace of mind shouldn't be optional</strong>{" "}
-                when it comes to your home.
-              </p>
-              <p className="font-body font-semibold text-white mt-6 text-[0.95rem]">
-                - The Buzz Off Family
-              </p>
-            </FadeIn>
-          </div>
-        </section>
-
-        {/* ── Gold divider ── */}
-        <div className="h-[3px] w-full" style={{ background: "#FA4616" }} />
+          <p className={HERO_TYPE.body}>
+            Buzz Off started as a personal decision for our own families. We&apos;re in our non-toxic era, paying attention to what surrounds our kids.{" "}
+            <strong className="font-bold text-brand-yellow">Peace of mind shouldn&apos;t be optional</strong>{" "}
+            when it comes to your home.
+          </p>
+          <p className="font-body font-semibold text-white mt-6 text-[0.95rem]">
+            - The Buzz Off Family
+          </p>
+        </PageHero>
 
         {/* ── Origin Story ── */}
         <section className="py-[clamp(64px,8vw,120px)]" style={{ background: "#EDEADE" }}>
@@ -152,14 +137,14 @@ export default function AboutPage() {
 
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   {[
-                    { val: "500+", label: "Families Protected" },
-                    { val: "5.0★", label: "Average Rating" },
-                    { val: "0", label: "Synthetic Pesticides" },
-                    { val: "100%", label: "Plant-Based" },
-                  ].map((s) => (
-                    <div key={s.label} className="rounded-xl p-4 text-center" style={{ background: "#154734" }}>
-                      <p className="font-display text-[2rem] leading-[1.05]" style={{ color: "#EFDF00" }}>{s.val}</p>
-                      <p className="font-body font-bold text-[0.7rem] tracking-widest uppercase text-white/70 mt-1">{s.label}</p>
+                    { glyph: "home-heart" as const, to: 500, suffix: "+", label: "Families Protected" },
+                    // Rating comes from the review data, never typed in.
+                    { glyph: "star" as const, to: AVERAGE_RATING, decimals: 1, label: "Average Rating" },
+                    { glyph: "shield" as const, to: 0, label: "Synthetic Pesticides" },
+                    { glyph: "leaf" as const, to: 100, suffix: "%", label: "Plant-Based" },
+                  ].map((s, si) => (
+                    <div key={s.label} className="rounded-xl px-4 py-5 bg-brand-deep">
+                      <BadgeStat {...s} onDark delay={0.1 + si * 0.1} />
                     </div>
                   ))}
                 </div>
@@ -184,16 +169,15 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {VALUES.map((v, i) => (
                 <FadeIn key={v.num} delay={i * 0.1}>
-                  <div
-                    className="rounded-2xl p-8 relative overflow-hidden"
-                    style={{ background: "#154734" }}
+                  <motion.div
+                    className="rounded-2xl p-8 relative overflow-hidden bg-brand-deep h-full"
+                    variants={{ hover: { y: -6, transition: { type: "spring", stiffness: 320, damping: 22 } } }}
+                    whileHover="hover"
                   >
-                    <span
-                      className="absolute top-4 right-6 font-display text-[6rem] leading-[1.05] select-none pointer-events-none"
-                      style={{ color: "rgba(255,255,255,0.04)" }}
-                    >
-                      {v.num}
-                    </span>
+                    {/* The number lives on the badge chip now, like the home page steps. */}
+                    <div className="mb-5">
+                      <StepBadge glyph={VALUE_GLYPH[v.num] ?? "check"} num={String(Number(v.num))} size={60} delay={0.15 + i * 0.12} />
+                    </div>
                     <p className="font-display text-[clamp(22px,2.5vw,30px)] leading-tight mb-3" style={{ color: "#EFDF00" }}>
                       {v.title}
                     </p>
@@ -201,7 +185,7 @@ export default function AboutPage() {
                     <p className="font-body text-[0.95rem] leading-relaxed text-white/80">
                       {v.body}
                     </p>
-                  </div>
+                  </motion.div>
                 </FadeIn>
               ))}
             </div>
@@ -238,19 +222,23 @@ export default function AboutPage() {
                 </div>
                 {/* Data rows */}
                 {DIFF_ROWS.map((row, i) => (
-                  <div
+                  <motion.div
                     key={row.feature}
+                    whileHover="hover"
                     className="grid grid-cols-3 font-body text-[0.88rem]"
                     style={{ background: i % 2 === 0 ? "#fff" : "#E0F6E8", borderTop: "1px solid rgba(21,71,52,0.07)" }}
                   >
                     <div className="px-6 py-4 font-semibold" style={{ color: "#1C2B1E" }}>{row.feature}</div>
                     <div className="px-6 py-4 font-bold border-l" style={{ color: "#154734", borderColor: "rgba(21,71,52,0.1)" }}>
-                      ✓ {row.buzzOff}
+                      <span className="flex items-start gap-2.5">
+                        <BrandBadge glyph="check" size={22} delay={0.1 + i * 0.07} className="-mt-0.5" />
+                        {row.buzzOff}
+                      </span>
                     </div>
                     <div className="px-6 py-4 border-l" style={{ color: "#6B7B6E", borderColor: "rgba(21,71,52,0.1)" }}>
                       {row.traditional}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </FadeIn>

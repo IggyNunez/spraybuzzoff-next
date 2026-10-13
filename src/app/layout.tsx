@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import { BookingProvider } from "@/components/ui/BookingDrawer";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
 import "./globals.css";
@@ -121,9 +122,11 @@ export default function RootLayout({
       <body className="antialiased">
         <MetaPixel />
         <LocalBusinessJsonLd />
-        <BookingProvider>
-          {children}
-        </BookingProvider>
+        <MotionProvider>
+          <BookingProvider>
+            {children}
+          </BookingProvider>
+        </MotionProvider>
       </body>
     </html>
   );

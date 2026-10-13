@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { PLANS } from "@/lib/constants";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
@@ -58,6 +59,7 @@ export function Plans() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.12, duration: 0.6 }}
+              whileHover={{ y: -6, transition: { type: "spring", stiffness: 320, damping: 22 } }}
             >
               {/* Urgency banner for featured */}
               {plan.featured && (
@@ -97,25 +99,19 @@ export function Plans() {
 
                 {/* Features */}
                 <div className="space-y-3 mb-8 flex-1">
-                  {plan.features.map((feat) => (
-                    <div key={feat.text} className="flex items-start gap-3">
+                  {plan.features.map((feat, fi) => (
+                    <motion.div key={feat.text} whileHover="hover" className="flex items-start gap-3">
                       {feat.included ? (
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5">
-                          <circle cx="8" cy="8" r="8" fill={plan.featured ? "#EFDF00" : "#154734"} />
-                          <path d="M5 8l2 2 4-4" stroke={plan.featured ? "#154734" : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <BrandBadge glyph="check" size={22} delay={0.3 + i * 0.12 + fi * 0.06} className="-mt-0.5" />
                       ) : (
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-0.5 opacity-30">
-                          <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1" />
-                          <path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-                        </svg>
+                        <BrandBadge glyph="x" tone="muted" size={22} delay={0.3 + i * 0.12 + fi * 0.06} className={`-mt-0.5 ${plan.featured ? "opacity-40" : ""}`} />
                       )}
                       <span
                         className={`font-body text-[0.84rem] leading-snug ${feat.included ? (plan.featured ? "text-white/90" : "text-brand-dark") : (plan.featured ? "text-white/30" : "text-brand-dark/30")}`}
                       >
                         {feat.text}
                       </span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
 

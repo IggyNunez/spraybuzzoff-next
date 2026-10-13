@@ -8,8 +8,22 @@ import { SERVICES_FEATURED, SERVICES_SMALL } from "@/lib/constants";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
 import { trackViewContent } from "@/lib/fbpixel";
+import { BrandBadge, type GlyphName } from "@/components/ui/BrandBadge";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+// One hover label lifts the card and animates its badge glyph.
+const CARD_HOVER = { hover: { y: -6, transition: { type: "spring" as const, stiffness: 320, damping: 22 } } };
+
+/** Badge glyph for a service, matched on its title. */
+function serviceGlyph(title: string): GlyphName {
+  if (/mosquito/i.test(title)) return "mosquito";
+  if (/interior/i.test(title)) return "home";
+  if (/eave|entry/i.test(title)) return "door";
+  if (/yard|perimeter/i.test(title)) return "fence";
+  if (/one-time/i.test(title)) return "droplet";
+  return "shield";
+}
 
 /* ── Arrow icon ── */
 function Arrow({ className = "" }: { className?: string }) {
@@ -40,6 +54,8 @@ function FeaturedCardDesktop({
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay, duration: 0.6, ease: EASE }}
+      variants={CARD_HOVER}
+      whileHover="hover"
     >
       {/* Full image */}
       <Image
@@ -74,6 +90,7 @@ function FeaturedCardDesktop({
 
       {/* Content - slides up on hover */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-8">
+        <BrandBadge glyph={serviceGlyph(service.title)} size={56} delay={delay} className="mb-3" />
         {/* Title - always visible */}
         <h3 className="font-display text-[clamp(1.5rem,2.5vw,2rem)] text-white leading-tight mb-2">
           {service.title}
@@ -169,6 +186,7 @@ function FeaturedCardMobile({
             </div>
             {/* Title + tap hint */}
             <div className="absolute bottom-5 left-5 right-5">
+              <BrandBadge glyph={serviceGlyph(service.title)} size={48} delay={delay} className="mb-3" />
               <h3 className="font-display text-[1.6rem] text-white leading-tight mb-2">
                 {service.title}
               </h3>
@@ -244,6 +262,8 @@ function SmallCardDesktop({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay, duration: 0.5, ease: EASE }}
+      variants={CARD_HOVER}
+      whileHover="hover"
     >
       <Image
         src={service.image}
@@ -261,6 +281,7 @@ function SmallCardDesktop({
 
       {/* Content - bottom */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-5">
+        <BrandBadge glyph={serviceGlyph(service.title)} size={44} delay={delay} className="mb-2" />
         <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-brand-yellow block mb-1">
           {service.label}
         </span>
@@ -334,6 +355,7 @@ function SmallCardMobile({
               }}
             />
             <div className="absolute bottom-4 left-4 right-4">
+              <BrandBadge glyph={serviceGlyph(service.title)} size={38} delay={delay} className="mb-2" />
               <span className="font-body text-[0.55rem] font-bold tracking-[0.2em] uppercase text-brand-yellow block mb-1">
                 {service.label}
               </span>

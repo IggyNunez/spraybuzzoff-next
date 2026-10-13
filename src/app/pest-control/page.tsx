@@ -45,9 +45,9 @@ export default function ServiceAreasPage() {
             </nav>
 
             <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">Service Areas</p>
-            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6">
-              Plant-based pest control across the<br />
-              <span className="italic font-serif normal-case text-brand-yellow">Inland Empire, San Gabriel Valley & Orange County.</span>
+            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6 [text-wrap:balance]">
+              Plant-based pest control across the
+              <span className="block mt-3 text-[0.58em] leading-[1.12] text-brand-yellow">Inland Empire, San Gabriel Valley & Orange County.</span>
             </h1>
             <p className="max-w-[720px] text-[clamp(16px,1.4vw,19px)] leading-[1.55] text-white/85">
               Buzz Off is a family-owned pest prevention company serving {SERVICE_AREAS.length} cities across Southern California. Every treatment is 100% plant-based, FIFRA 25(b) exempt, and built for homes with kids, pets, and the people you love.

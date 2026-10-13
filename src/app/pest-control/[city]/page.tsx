@@ -143,9 +143,9 @@ export default async function CityPage({
             <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">
               Plant-Based Pest Control in {data.name}, CA
             </p>
-            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6">
-              {data.name}'s Natural Pest Control.<br />
-              <span className="italic font-serif normal-case text-brand-yellow">Safe for kids, pets, and the people you love.</span>
+            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6 [text-wrap:balance]">
+              {data.name}'s Natural Pest Control.
+              <span className="block mt-3 text-[0.58em] leading-[1.12] text-brand-yellow">Safe for kids, pets, and the people you love.</span>
             </h1>
             <p className="max-w-[720px] text-[clamp(16px,1.4vw,19px)] leading-[1.55] text-white/85 mb-8">
               {data.pestIntro} Every Buzz Off treatment is 100% plant-based, FIFRA 25(b) exempt, and built around
@@ -259,7 +259,7 @@ export default async function CityPage({
           <section className="section-card mt-2 bg-[#F7F3EA]">
             <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,64px)] py-20 text-center">
               <p className="font-body text-[0.75rem] tracking-[0.2em] uppercase text-brand-deep mb-4">From a {data.name} neighbor</p>
-              <p className="font-serif italic text-[clamp(20px,2.4vw,30px)] leading-[1.4] text-brand-deep mb-6">
+              <p className="font-quote italic text-[clamp(20px,2.4vw,30px)] leading-[1.4] text-brand-deep mb-6">
                 "{data.testimonial.text}"
               </p>
               <p className="font-body text-[14px] tracking-[0.05em] text-neutral-700">- {data.testimonial.name}, {data.testimonial.location}</p>

@@ -55,17 +55,34 @@ export function FAQ() {
                 <button
                   className="w-full flex items-center justify-between py-5 px-2 text-left cursor-pointer transition-colors hover:bg-brand-light-green rounded-lg"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
+                  aria-expanded={isOpen}
                 >
                   <span className="font-body text-[0.9rem] font-bold text-brand-dark pr-4 leading-snug">
                     {faq.question}
                   </span>
-                  <motion.span
-                    className="shrink-0 text-[1.2rem] font-light text-brand-orange"
+                  {/* Badge-style toggle: yellow disc and deep plus, springing into a
+                      deep disc with a yellow cross when open. */}
+                  <motion.svg
+                    viewBox="0 0 40 40"
+                    aria-hidden
+                    className="w-8 h-8 shrink-0"
                     animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 18 }}
                   >
-                    +
-                  </motion.span>
+                    <circle
+                      cx="20"
+                      cy="20"
+                      r="18"
+                      strokeWidth="2"
+                      className={`stroke-brand-deep transition-colors duration-300 ${isOpen ? "fill-brand-deep" : "fill-brand-yellow"}`}
+                    />
+                    <path
+                      d="M20 12.5 V27.5 M12.5 20 H27.5"
+                      strokeWidth="2.8"
+                      strokeLinecap="round"
+                      className={`transition-colors duration-300 ${isOpen ? "stroke-brand-yellow" : "stroke-brand-deep"}`}
+                    />
+                  </motion.svg>
                 </button>
 
                 <AnimatePresence initial={false}>

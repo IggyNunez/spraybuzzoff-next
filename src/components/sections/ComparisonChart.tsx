@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 import { COMPARISON_ROWS } from "@/lib/constants";
 import { ArchedEyebrow } from "@/components/ui/ArchedEyebrow";
 
@@ -64,28 +65,23 @@ export function ComparisonChart() {
 
           {/* Rows */}
           {COMPARISON_ROWS.map((row, i) => (
-            <div
+            <motion.div
               key={row.feature}
+              whileHover="hover"
               className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-white" : "bg-brand-cream/40"} ${i < COMPARISON_ROWS.length - 1 ? "border-b border-brand-deep/10" : ""}`}
             >
               <div className="p-4 font-body text-[0.82rem] font-bold text-brand-dark">
                 {row.feature}
               </div>
               <div className="p-4 font-body text-[0.82rem] text-brand-deep text-center flex items-center justify-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
-                  <circle cx="7" cy="7" r="7" fill="#154734" />
-                  <path d="M4 7l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <BrandBadge glyph="check" size={24} delay={0.15 + i * 0.08} />
                 <span className="text-left">{row.buzzoff}</span>
               </div>
               <div className="p-4 font-body text-[0.82rem] text-brand-dark/50 text-center flex items-center justify-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
-                  <circle cx="7" cy="7" r="6" stroke="#1C2B1E" strokeOpacity="0.2" strokeWidth="1" />
-                  <path d="M5 5l4 4M9 5l-4 4" stroke="#1C2B1E" strokeOpacity="0.3" strokeWidth="1.2" strokeLinecap="round" />
-                </svg>
+                <BrandBadge glyph="x" tone="muted" size={24} delay={0.2 + i * 0.08} />
                 <span className="text-left">{row.traditional}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

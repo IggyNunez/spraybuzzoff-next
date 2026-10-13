@@ -6,6 +6,8 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { PageHero, HERO_TYPE } from "@/components/ui/PageHero";
+import { BrandBadge } from "@/components/ui/BrandBadge";
 import Image from "next/image";
 import Link from "next/link";
 import { MosquitoSVG } from "@/components/ui/pests/MosquitoSVG";
@@ -123,40 +125,16 @@ export default function ServicesPage() {
     <>
       <Nav />
       <main>
-        {/* ── Hero ── */}
-        <section
-          className="relative min-h-[70vh] flex items-end pb-24 pt-40"
-          style={{ background: "#154734" }}
+        <PageHero
+          eyebrow="Our Services"
+          lines={[<>Plant-Based</>, <span key="accent" className={HERO_TYPE.accent}>Protection.</span>]}
+          imageSrc="/assets/services-hero.jpg"
+          imageAlt="Buzz Off plant-based pest control technician treating a residential yard in the Inland Empire"
         >
-          {/* Photo background */}
-          <Image
-            src="/assets/services-hero.jpg"
-            alt="Buzz Off plant-based pest control technician treating a residential yard in the Inland Empire"
-            fill
-            className="object-cover object-center"
-            fetchPriority="high"
-            loading="eager"
-          />
-          {/* Dark overlay */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.88) 0%, rgba(0,177,64,0.72) 100%)" }} />
-          <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
-            <FadeIn>
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
-                Our Services
-              </p>
-              <h1 className="font-display text-[clamp(52px,8vw,100px)] leading-[1.05] text-white mb-4">
-                Plant-Based<br />
-                <span style={{ color: "#EFDF00" }}>Protection.</span>
-              </h1>
-              <p className="font-body text-[1.1rem] text-white/80 max-w-xl leading-relaxed">
-                Three services. Zero synthetic pesticides. Made for families who want pest control that aligns with the way they actually live.
-              </p>
-            </FadeIn>
-          </div>
-        </section>
-
-        {/* ── Gold divider ── */}
-        <div className="h-[3px] w-full" style={{ background: "#FA4616" }} />
+          <p className={HERO_TYPE.body}>
+            Three services. Zero synthetic pesticides. Made for families who want pest control that aligns with the way they actually live.
+          </p>
+        </PageHero>
 
         {/* ── Services ── */}
         {SERVICES.map((svc, i) => (
@@ -200,11 +178,11 @@ export default function ServicesPage() {
                     {svc.body}
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {svc.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 font-body text-[0.92rem]" style={{ color: "#1C2B1E" }}>
-                        <span className="mt-0.5 font-bold shrink-0" style={{ color: "#154734" }}>✓</span>
+                    {svc.bullets.map((b, bi) => (
+                      <motion.li key={b} whileHover="hover" className="flex items-start gap-3 font-body text-[0.92rem]" style={{ color: "#1C2B1E" }}>
+                        <BrandBadge glyph="check" size={22} delay={0.1 + bi * 0.07} className="-mt-0.5" />
                         {b}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                   <button
