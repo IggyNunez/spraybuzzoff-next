@@ -23,47 +23,44 @@ export const HERO_TYPE = {
   // 375px phone on one line instead of breaking word by word.
   title:
     "font-display text-[clamp(38px,6vw,88px)] leading-[1.04] text-white mb-5 [text-wrap:balance]",
+  // Brand sheet: all caps is for short emphasis, and the home hero headline is
+  // its main example. Caps run about 13x the font size on the longer line, so
+  // the size scales with the viewport (6.6vw) to fit at every width; a fixed
+  // 84px ran off the screen below about 1280px.
+  homeTitle:
+    "font-display uppercase text-[clamp(34px,6.6vw,84px)] leading-[1.02] text-white mb-4 [text-wrap:balance] drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)]",
+  // Brand sheet: Playfair Display Italic is for testimonials and the hero tagline.
+  tagline:
+    "font-quote italic text-[clamp(1.3rem,2.6vw,2.4rem)] text-brand-yellow mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]",
   accent: "text-brand-yellow",
   body: "font-body text-[1.05rem] leading-relaxed text-white/85 max-w-[34rem]",
 } as const;
 
 /**
- * Readability overlay. Deep brand green (3435 C) behind the copy, fading out
- * across the image so the photo or video keeps its natural color. No blend
- * modes and no bright 354 C wash: multiplying bright green over footage turned
- * the whole home hero video green.
+ * Hero overlay. The brand sheet makes bright brand green (354 C) the lead
+ * field for heroes, so green carries every hero:
+ *
+ * - "video" (home): a 354 C multiply wash over the footage, deepened toward
+ *   the copy so the white headline stays legible.
+ * - "photo" (page heroes): a diagonal from deep green (3435 C) behind the copy
+ *   to bright 354 C.
  */
-export function HeroOverlay() {
+export function HeroOverlay({ variant = "photo" }: { variant?: "video" | "photo" }) {
+  if (variant === "video") {
+    return (
+      <>
+        <div aria-hidden className="absolute inset-0 z-[1] bg-brand-green mix-blend-multiply opacity-80" />
+        <div aria-hidden className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-deeper/70 via-brand-deep/25 to-transparent" />
+        <div aria-hidden className="absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+      </>
+    );
+  }
   return (
-    <>
-      {/* Mobile: copy spans the full width, so darken evenly */}
-      <div
-        aria-hidden
-        className="absolute inset-0 z-[1] md:hidden"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(15,50,36,0.55) 0%, rgba(15,50,36,0.70) 55%, rgba(15,50,36,0.88) 100%)",
-        }}
-      />
-      {/* Desktop: dark behind the copy on the left, clear on the right */}
-      <div
-        aria-hidden
-        className="absolute inset-0 z-[1] hidden md:block"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(15,50,36,0.88) 0%, rgba(15,50,36,0.66) 38%, rgba(15,50,36,0.22) 72%, rgba(15,50,36,0.08) 100%)",
-        }}
-      />
-      {/* Light top and bottom vignette so the nav pill and edges read cleanly */}
-      <div
-        aria-hidden
-        className="absolute inset-0 z-[1]"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(0,0,0,0.22) 0%, transparent 22%, transparent 70%, rgba(0,0,0,0.30) 100%)",
-        }}
-      />
-    </>
+    <div
+      aria-hidden
+      className="absolute inset-0 z-[1]"
+      style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.88) 0%, rgba(0,177,64,0.72) 100%)" }}
+    />
   );
 }
 
@@ -82,14 +79,17 @@ export function HeroTitle({
   lines,
   delay = 0.1,
   className = "",
+  variant = "page",
 }: {
   lines: React.ReactNode[];
   delay?: number;
   className?: string;
+  /** "home" is the all-caps home hero headline from the brand sheet. */
+  variant?: "page" | "home";
 }) {
   return (
     <motion.h1
-      className={`${HERO_TYPE.title} ${className}`}
+      className={`${variant === "home" ? HERO_TYPE.homeTitle : HERO_TYPE.title} ${className}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay }}
