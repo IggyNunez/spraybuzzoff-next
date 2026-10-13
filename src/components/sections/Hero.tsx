@@ -91,7 +91,7 @@ export function Hero() {
         </video>
       </motion.div>
 
-      <HeroOverlay />
+      <HeroOverlay variant="video" />
 
       {/* Content. Padding is tuned so the gap between the logo and the copy
           matches the gap between the buttons and the stats bar (measured at
@@ -100,25 +100,27 @@ export function Hero() {
         className="hero-gutter relative z-10 flex flex-col justify-center h-full max-w-[1920px] mx-auto pt-[110px] pb-[96px] md:pt-[clamp(120px,18.5svh,200px)] md:pb-[clamp(100px,11.5svh,140px)]"
         style={{ y: textY }}
       >
-        <motion.p
-          className={HERO_TYPE.eyebrow}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
-        >
-          Live Outside Again, Naturally.
-        </motion.p>
-
         <HeroTitle
+          variant="home"
           lines={[
             <>Pest Control for</>,
             // nowrap keeps "Non-Toxic" whole; on phones it split at the hyphen.
-            <span key="accent" className={HERO_TYPE.accent}>
+            <span key="accent">
               the <span className="whitespace-nowrap">Non-Toxic</span> Era.
             </span>,
           ]}
-          delay={0.25}
+          delay={0.2}
         />
+
+        {/* Hero tagline in Playfair italic, per the brand sheet. */}
+        <motion.p
+          className={HERO_TYPE.tagline}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.55, ease: EASE }}
+        >
+          Live Outside Again, Naturally.
+        </motion.p>
 
         <motion.p
           className={`${HERO_TYPE.body} mb-8`}

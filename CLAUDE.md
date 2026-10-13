@@ -5,10 +5,15 @@ Rancho Cucamonga, CA, serving the Inland Empire, San Gabriel Valley, and parts o
 Orange County. Built and maintained by **Plain Talk Developers** (Ignacio Nunez /
 John 155 LLC).
 
-**Hayley and Veronnica** founded it, two moms who wanted an alternative to synthetic
-pesticides. **Dorrin** is the day to day client contact and is not technical, so
-anything written for him, emails especially, goes in plain business English with no
-jargon. **Maurice ("Moe")** is the technician customers name most often in reviews.
+**Dorrin Turner** is Co-Founder & CEO (his own email signature) and the main client
+contact. He is not technical, so anything written for him, emails especially, goes in
+plain business English with no jargon. **Hayley and Veronnica** are named as founders in
+`CASE_STUDY_HANDOFF.md`.
+
+**The brand sheet is the authority on look.** Dorrin sent it Oct 12, 2026 as
+"Buzz Off Brand Template.png" (email "Buzz Off - Brand Changes"). `BRAND.md` records its
+rules. When the sheet and a design preference disagree, the sheet wins unless the client
+says otherwise. **Maurice ("Moe")** is the technician customers name most often in reviews.
 
 Next.js 16 App Router, React 19, Tailwind v4, framer-motion, TypeScript, on Vercel.
 Static marketing site: the only server route is `/api/lead`.
