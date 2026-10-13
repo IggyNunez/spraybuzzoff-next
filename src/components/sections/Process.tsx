@@ -61,6 +61,7 @@ export function Process() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.15 + i * 0.1, duration: 0.5 }}
+                whileHover={{ y: -6, transition: { type: "spring", stiffness: 320, damping: 22 } }}
               >
                 {/* Step number circle */}
                 <div className="w-12 h-12 rounded-full bg-brand-deep flex items-center justify-center mx-auto mb-4">

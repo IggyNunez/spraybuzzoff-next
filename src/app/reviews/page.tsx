@@ -6,6 +6,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { PageHero, HERO_TYPE } from "@/components/ui/PageHero";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -129,38 +130,16 @@ export default function ReviewsPage() {
     <>
       <Nav />
       <main>
-        {/* ── Hero ── */}
-        <section
-          className="relative min-h-[50vh] flex items-end pb-20 pt-40"
-          style={{ background: "#154734" }}
+        <PageHero
+          eyebrow="Real Families. Real Results."
+          lines={[<>What Our</>, <span key="accent" className={HERO_TYPE.accent}>Customers Say.</span>]}
+          imageSrc="/assets/services-hero.jpg"
+          imageAlt="Buzz Off plant-based pest control trusted by families across the Inland Empire"
         >
-          <Image
-            src="/assets/services-hero.jpg"
-            alt="Buzz Off plant-based pest control trusted by families across the Inland Empire"
-            fill
-            className="object-cover object-center"
-            fetchPriority="high"
-            loading="eager"
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.92) 0%, rgba(0,177,64,0.78) 100%)" }} />
-          <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
-            <FadeIn>
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
-                Real Families. Real Results.
-              </p>
-              <h1 className="font-display text-[clamp(48px,8vw,90px)] leading-[1.05] text-white mb-4">
-                What Our<br />
-                <span style={{ color: "#EFDF00" }}>Customers Say.</span>
-              </h1>
-              <p className="font-body text-[1.05rem] text-white/80 max-w-xl leading-relaxed">
-                Don&apos;t just take our word for it. Hear from the families who trust Buzz Off to protect their homes the natural way.
-              </p>
-            </FadeIn>
-          </div>
-        </section>
-
-        {/* ── Gold divider ── */}
-        <div className="h-[3px] w-full" style={{ background: "#FA4616" }} />
+          <p className={HERO_TYPE.body}>
+            Don&apos;t just take our word for it. Hear from the families who trust Buzz Off to protect their homes the natural way.
+          </p>
+        </PageHero>
 
         {/* ── Stats Bar ── */}
         <section className="py-10" style={{ background: "#fff" }}>

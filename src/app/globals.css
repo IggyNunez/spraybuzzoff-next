@@ -232,6 +232,22 @@ body {
   }
 }
 
+/* ── Hero gutter ── */
+/* Hero copy uses the nav's gutter so every headline sits directly under the
+   logo. Inside a section card the card's own margin is subtracted, otherwise
+   the home hero lands 8 to 12px right of the logo. */
+.hero-gutter {
+  padding-inline: clamp(16px, 4vw, 80px);
+}
+.section-card .hero-gutter {
+  padding-inline: calc(clamp(16px, 4vw, 80px) - 8px);
+}
+@media (min-width: 768px) {
+  .section-card .hero-gutter {
+    padding-inline: calc(clamp(16px, 4vw, 80px) - 12px);
+  }
+}
+
 /* Blog article prose styles */
 .blog-prose p {
   font-family: var(--font-body);

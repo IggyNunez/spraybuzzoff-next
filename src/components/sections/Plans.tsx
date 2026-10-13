@@ -58,6 +58,7 @@ export function Plans() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.12, duration: 0.6 }}
+              whileHover={{ y: -6, transition: { type: "spring", stiffness: 320, damping: 22 } }}
             >
               {/* Urgency banner for featured */}
               {plan.featured && (

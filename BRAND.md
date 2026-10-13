@@ -60,14 +60,16 @@ Bright green is light. White on `brand-green` is only **2.85:1**, so:
 |---|---|---|---|
 | Display | **Donut Shop Regular** (Prologue Studio) | `font-display` | Hero headlines, section titles, badges, big brand moments |
 | Body / UI | DM Sans | `font-body` | Body copy, service details, navigation, buttons |
-| Quotes | Playfair Display Italic | `font-quote` | Testimonials and the hero tagline only |
+| Quotes | Playfair Display Italic | `font-quote` | Testimonials and customer quotes only. Not for headlines or taglines. |
 
 Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next/font/local`.
 
 **Rules from the identity sheet:**
 
 - **Sentence or title case for longer lines.** Section titles are mixed case.
-- **All caps for short emphasis only.** The home hero headline is the main example.
+- **All caps for short emphasis only:** eyebrows, labels, buttons. Every headline is mixed case,
+  the home hero included. (Changed Oct 2026: the sheet asked for an all-caps home hero, but it
+  ran off the screen and did not match the other heroes. Confirm with the client if revisiting.)
 - **Never stretch or fake-bold the type.** Donut Shop has one weight. Do not put `font-bold`,
   `font-[900]` or `tracking-*` on `font-display` elements. `globals.css` sets
   `font-synthesis: none` on display text so the browser cannot fake it.
@@ -90,12 +92,21 @@ Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next
 
 | Section | Background |
 |---|---|
-| Home hero | Video with a `brand-green` multiply wash, deepened on the text side |
-| Interior page heroes | Photo with a deep to bright green diagonal overlay |
+| Home hero | Video under `HeroOverlay`: deep green behind the copy, fading out so the footage keeps its real color |
+| Interior page heroes | `PageHero` component: same overlay, type and gutter as the home hero |
 | Ticker strip | `brand-yellow`, deep green text, orange dots |
 | City marquee | `brand-green`, deep green display type |
 | Content sections | `brand-cream` / white |
 | Featured plan, CTA band, city heroes, footer | `brand-deep` |
+
+### Heroes
+
+Every photo or video hero uses the shared pieces in `src/components/ui/PageHero.tsx`. Do not hand-roll a hero.
+
+- **Type** (`HERO_TYPE`): yellow tracked-caps eyebrow, Donut Shop headline in white with the highlighted words in `brand-yellow`, DM Sans body.
+- **Headline** (`HeroTitle`): one array entry per line. Lines rise out of a mask on tablet and up. On phones they flow and the browser balances them.
+- **Overlay** (`HeroOverlay`): no blend modes and no bright `brand-green` wash. Multiplying 354 C over footage turned the whole home video green.
+- **Gutter** (`.hero-gutter`): matches the nav, so every headline sits directly under the logo.
 
 ---
 

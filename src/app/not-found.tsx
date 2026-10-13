@@ -61,9 +61,9 @@ export default function NotFound() {
               No Bugs Found · No Page Either
             </p>
 
-            <h1 className="font-display text-[clamp(36px,5.2vw,72px)] leading-[1.05] mb-6">
+            <h1 className="font-display text-[clamp(36px,5.2vw,72px)] leading-[1.05] mb-6 [text-wrap:balance]">
               Looks like this one<br />
-              <span className="italic font-serif normal-case text-brand-yellow">flew off somewhere.</span>
+              <span className="text-brand-yellow">flew off somewhere.</span>
             </h1>
 
             <p className="max-w-[620px] mx-auto text-[clamp(16px,1.3vw,18px)] leading-[1.6] text-white/85 mb-10">

@@ -40,6 +40,7 @@ function FeaturedCardDesktop({
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay, duration: 0.6, ease: EASE }}
+      whileHover={{ y: -6, transition: { type: "spring", stiffness: 320, damping: 22 } }}
     >
       {/* Full image */}
       <Image
@@ -244,6 +245,7 @@ function SmallCardDesktop({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay, duration: 0.5, ease: EASE }}
+      whileHover={{ y: -6, transition: { type: "spring", stiffness: 320, damping: 22 } }}
     >
       <Image
         src={service.image}

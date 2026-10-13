@@ -23,6 +23,8 @@ Static marketing site: the only server route is `/api/lead`.
 - `core.autocrlf` is **true**, so the working tree is CRLF and git stores LF. Multi-line
   string replacements in scripts must normalize `\r\n` to `\n` first or they will
   silently fail to match.
+- **Heroes go through `PageHero` / `HERO_TYPE` / `HeroOverlay`** in `src/components/ui/PageHero.tsx`.
+  Hand-rolled heroes drifted into five different styles once already. Rules are in `BRAND.md`.
 - Dev server runs on **port 3007** (`.claude/launch.json`, `start-dev.cmd`).
 
 ## Reviews pipeline

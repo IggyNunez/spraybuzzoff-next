@@ -6,6 +6,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { PageHero, HERO_TYPE } from "@/components/ui/PageHero";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -65,46 +66,21 @@ export default function AboutPage() {
     <>
       <Nav />
       <main>
-        {/* ── Hero ── */}
-        <section
-          className="relative min-h-[72vh] flex items-end pb-24 pt-40 overflow-hidden"
-          style={{ background: "#0F3224" }}
+        <PageHero
+          eyebrow="Our Story"
+          lines={[<>Built Because</>, <span key="accent" className={HERO_TYPE.accent}>Families Deserve</span>, <>Better.</>]}
+          imageSrc="/assets/about-hero-new.jpg"
+          imageAlt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
         >
-          {/* Full background photo */}
-          <Image
-            src="/assets/about-hero-new.jpg"
-            alt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
-            fill
-            className="object-cover object-center"
-            fetchPriority="high"
-            loading="eager"
-          />
-          {/* Gradient overlay - heavier on left for text legibility */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(21,71,52,0.92) 0%, rgba(21,71,52,0.75) 55%, rgba(21,71,52,0.4) 100%)" }} />
-          <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
-            <FadeIn className="max-w-[560px]">
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
-                Our Story
-              </p>
-              <h1 className="font-display text-[clamp(52px,7vw,90px)] leading-[1.05] text-white mb-5">
-                Built Because<br />
-                <span style={{ color: "#EFDF00" }}>Families Deserve</span><br />
-                Better.
-              </h1>
-              <p className="font-body text-white/75 text-[1.05rem] leading-relaxed max-w-md">
-                Buzz Off started as a personal decision for our own families. We're in our non-toxic era, paying attention to what surrounds our kids.{" "}
-                <strong className="font-bold" style={{ color: "#EFDF00" }}>Peace of mind shouldn't be optional</strong>{" "}
-                when it comes to your home.
-              </p>
-              <p className="font-body font-semibold text-white mt-6 text-[0.95rem]">
-                - The Buzz Off Family
-              </p>
-            </FadeIn>
-          </div>
-        </section>
-
-        {/* ── Gold divider ── */}
-        <div className="h-[3px] w-full" style={{ background: "#FA4616" }} />
+          <p className={HERO_TYPE.body}>
+            Buzz Off started as a personal decision for our own families. We&apos;re in our non-toxic era, paying attention to what surrounds our kids.{" "}
+            <strong className="font-bold text-brand-yellow">Peace of mind shouldn&apos;t be optional</strong>{" "}
+            when it comes to your home.
+          </p>
+          <p className="font-body font-semibold text-white mt-6 text-[0.95rem]">
+            - The Buzz Off Family
+          </p>
+        </PageHero>
 
         {/* ── Origin Story ── */}
         <section className="py-[clamp(64px,8vw,120px)]" style={{ background: "#EDEADE" }}>

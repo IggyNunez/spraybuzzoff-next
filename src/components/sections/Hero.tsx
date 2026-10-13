@@ -5,9 +5,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ButtonGold } from "@/components/ui/ButtonGold";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { useBooking } from "@/components/ui/BookingDrawer";
+import { HERO_TYPE, HeroOverlay, HeroTitle } from "@/components/ui/PageHero";
 import { trackContact } from "@/lib/fbpixel";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+/**
+ * The hero clip is only 5.4s long, so looping it back to back felt frantic.
+ * It now plays once, rests on its last frame, dips to dark, and starts over.
+ * The final ~0.4s of the file is never shown, same as before.
+ */
+const CLIP_END_S = 5;
+const HOLD_MS = 3500;
+const FADE_MS = 700;
 
 export function Hero() {
   const sectionRef = useRef(null);
@@ -25,17 +35,44 @@ export function Hero() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const onTimeUpdate = () => {
-      if (video.currentTime >= 5) video.currentTime = 0;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timers: number[] = [];
+    let resting = false;
+
+    const rest = () => {
+      if (resting || video.currentTime < CLIP_END_S) return;
+      resting = true;
+      video.pause();
+      // With reduced motion, play once and stay on the last frame.
+      if (reduceMotion) return;
+      timers.push(
+        window.setTimeout(() => {
+          video.style.opacity = "0";
+          timers.push(
+            window.setTimeout(() => {
+              video.currentTime = 0;
+              void video.play().catch(() => {});
+              video.style.opacity = "1";
+              resting = false;
+            }, FADE_MS),
+          );
+        }, HOLD_MS),
+      );
     };
-    video.addEventListener("timeupdate", onTimeUpdate);
-    return () => video.removeEventListener("timeupdate", onTimeUpdate);
+
+    video.addEventListener("timeupdate", rest);
+    video.addEventListener("ended", rest);
+    return () => {
+      video.removeEventListener("timeupdate", rest);
+      video.removeEventListener("ended", rest);
+      timers.forEach(clearTimeout);
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[70svh] md:h-[100svh] overflow-hidden bg-brand-green"
+      className="relative min-h-[70svh] md:h-[100svh] overflow-hidden bg-brand-deeper"
     >
       {/* Video Background */}
       <motion.div
@@ -47,74 +84,68 @@ export function Hero() {
           autoPlay
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-opacity duration-700 ease-out"
           aria-label="Buzz Off plant-based pest control technicians treating a family home in the Inland Empire"
         >
           <source src="/assets/hero-video.mp4" type="video/mp4" />
         </video>
       </motion.div>
 
-      {/* Overlays - bright brand green (354 C) wash over the video, deepened on the
-          text side so the white headline stays legible */}
-      <div className="absolute inset-0 bg-brand-green mix-blend-multiply opacity-80 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-deeper/70 via-brand-deep/25 to-transparent z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50 z-[1]" />
+      <HeroOverlay />
 
-      {/* Content */}
+      {/* Content. Padding is tuned so the gap between the logo and the copy
+          matches the gap between the buttons and the stats bar (measured at
+          about 138px each at 1440x900), instead of the old 250px over 160px. */}
       <motion.div
-        className="relative z-10 flex flex-col justify-center h-full max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)] pt-[110px] pb-[80px] md:pt-[clamp(100px,18svh,180px)] md:pb-[clamp(60px,10svh,120px)]"
+        className="hero-gutter relative z-10 flex flex-col justify-center h-full max-w-[1920px] mx-auto pt-[110px] pb-[96px] md:pt-[clamp(120px,18.5svh,200px)] md:pb-[clamp(100px,11.5svh,140px)]"
         style={{ y: textY }}
       >
-        <div className="max-w-[1200px]">
-          {/* Line 1: Welcome to the Non-Toxic Era. */}
-          <motion.h1
-            className="font-display uppercase text-[clamp(34px,6.2vw,84px)] md:text-[clamp(40px,8svh,84px)] leading-[1.02] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)] mb-4 md:mb-[clamp(12px,1.5svh,24px)]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
-          >
-            Pest Control for the<br />Non-Toxic Era.
-          </motion.h1>
+        <motion.p
+          className={HERO_TYPE.eyebrow}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
+        >
+          Live Outside Again, Naturally.
+        </motion.p>
 
-          {/* Line 2: Live Outside Again, Naturally. */}
-          <motion.p
-            className="font-quote italic text-[clamp(1.3rem,3.5vw,2.6rem)] md:text-[clamp(1.3rem,3.5svh,2.6rem)] text-brand-yellow mb-4 md:mb-[clamp(12px,2svh,32px)] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
-          >
-            Live Outside Again, Naturally.
-          </motion.p>
+        <HeroTitle
+          lines={[
+            <>Pest Control for</>,
+            // nowrap keeps "Non-Toxic" whole; on phones it split at the hyphen.
+            <span key="accent" className={HERO_TYPE.accent}>
+              the <span className="whitespace-nowrap">Non-Toxic</span> Era.
+            </span>,
+          ]}
+          delay={0.25}
+        />
 
-          {/* Line 3: Description */}
-          <motion.p
-            className="font-body text-[0.9rem] md:text-[clamp(0.85rem,1.5svh,1.15rem)] leading-[1.6] text-white/90 max-w-[560px] mb-6 md:mb-[clamp(16px,3svh,48px)]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
-          >
-            100% plant-based pest control. Safe for kids, pets, and the people you love.
-          </motion.p>
+        <motion.p
+          className={`${HERO_TYPE.body} mb-8`}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.75, ease: EASE }}
+        >
+          100% plant-based pest control. Safe for kids, pets, and the people you love.
+        </motion.p>
 
-          {/* CTA */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-3 md:gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: EASE }}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-3 md:gap-4"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.9, ease: EASE }}
+        >
+          <ButtonGold onClick={openBooking} className="w-full sm:w-auto justify-center">
+            Book Your First Service
+          </ButtonGold>
+          <a
+            href="tel:9098988955"
+            onClick={() => trackContact()}
+            className="inline-flex items-center justify-center font-body text-[13px] font-bold tracking-[0.12em] uppercase text-white border-2 border-white/40 bg-white/[0.08] backdrop-blur-md hover:bg-white/[0.16] hover:border-white/70 px-10 py-4 rounded-full transition-all duration-300"
           >
-            <ButtonGold onClick={openBooking} className="w-full sm:w-auto justify-center">
-              Book Your First Service
-            </ButtonGold>
-            <a
-              href="tel:9098988955"
-              onClick={() => trackContact()}
-              className="inline-flex items-center justify-center font-body text-[0.78rem] font-bold tracking-[0.08em] uppercase text-white border border-white/20 bg-white/[0.08] backdrop-blur-md hover:bg-white/[0.15] hover:border-white/40 px-8 py-4 rounded-full transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
-            >
-              Call the Team
-            </a>
-          </motion.div>
-        </div>
+            Call the Team
+          </a>
+        </motion.div>
       </motion.div>
 
       {/* Frosted stats bar overlaying bottom of hero video */}
