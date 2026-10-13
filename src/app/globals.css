@@ -51,12 +51,12 @@
   --color-gray-100: #F0F3F1;
 
   /* Fonts - Buzz Off brand typography */
-  --font-display: var(--font-donut), Georgia, serif; /* Donut Shop Regular - headlines, badges, big brand moments */
+  --font-display: var(--font-caprasimo), Georgia, serif; /* Caprasimo - headlines, badges, big brand moments */
   --font-body: var(--font-dm-sans), sans-serif;      /* DM Sans - body, UI, buttons */
   --font-quote: var(--font-playfair), serif;         /* Playfair Display Italic - quotes only */
 
   /* Keep legacy aliases */
-  --font-candal: var(--font-donut), Georgia, serif;
+  --font-candal: var(--font-caprasimo), Georgia, serif;
   --font-nunito: var(--font-dm-sans), sans-serif;
 }
 
@@ -89,7 +89,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Donut Shop ships one weight. Never let the browser fake a bold or italic. */
+/* Caprasimo ships one weight. Never let the browser fake a bold or italic. */
 .font-display,
 .section-title,
 .blog-prose h2,
@@ -137,7 +137,7 @@ body {
   fill: var(--color-brand-yellow);
 }
 
-/* Section title: Donut Shop, responsive, deep green. Mixed case, single weight. */
+/* Section title: Caprasimo, responsive, deep green, in caps, single weight. */
 /* In caps, long words like NEIGHBORHOOD'S need about 11 font-sizes of width,
    so section titles scale with the screen below tablet size. Tablet and up
    are unchanged. */

@@ -58,11 +58,13 @@ Bright green is light. White on `brand-green` is only **2.85:1**, so:
 
 | Role | Face | Token | Notes |
 |---|---|---|---|
-| Display | **Donut Shop Regular** (Prologue Studio) | `font-display` | Hero headlines, section titles, badges, big brand moments |
+| Display | **Caprasimo** (SIL Open Font License) | `font-display` | Hero headlines, section titles, badges, big brand moments |
 | Body / UI | DM Sans | `font-body` | Body copy, service details, navigation, buttons |
 | Quotes | Playfair Display Italic | `font-quote` | Testimonials only |
 
-Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next/font/local`.
+Caprasimo loads through `next/font/google` in `src/app/layout.tsx`. It replaced Donut Shop in Oct 2026:
+the sheet named Donut Shop, but the only copy available was personal-use, and the client chose
+Caprasimo as the closest licensed match. The Open Font License covers commercial web use.
 
 **Rules from the identity sheet:**
 
@@ -73,7 +75,7 @@ Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next
 - **Body copy, buttons, labels and the hero tagline keep their own case.**
 - **Caps run wide.** Long words like NEIGHBORHOOD'S need about 11 font-sizes of width, so title
   sizes have floors measured to fit a 360px phone. Check new titles at 360px before shipping.
-- **Never stretch or fake-bold the type.** Donut Shop has one weight. Do not put `font-bold`,
+- **Never stretch or fake-bold the type.** Caprasimo has one weight. Do not put `font-bold`,
   `font-[900]` or `tracking-*` on `font-display` elements. `globals.css` sets
   `font-synthesis: none` on display text so the browser cannot fake it.
 - Center stacked lines and balance widths by eye.
@@ -106,7 +108,7 @@ Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next
 
 Every photo or video hero uses the shared pieces in `src/components/ui/PageHero.tsx`. Do not hand-roll a hero.
 
-- **Type** (`HERO_TYPE`): page heroes have a yellow tracked-caps eyebrow, a mixed-case Donut Shop headline in white with highlighted words in `brand-yellow`, and DM Sans body. The home hero follows the sheet: all-caps white headline (`homeTitle`) with the tagline under it in Donut Shop, upright, in yellow (`tagline`).
+- **Type** (`HERO_TYPE`): page heroes have a yellow tracked-caps eyebrow, a Caprasimo headline in white with highlighted words in `brand-yellow`, and DM Sans body. The home hero follows the sheet: all-caps white headline (`homeTitle`) with the tagline under it in Caprasimo, upright, in yellow (`tagline`).
 - **Headline** (`HeroTitle`): one array entry per line. Lines rise out of a mask on tablet and up. On phones they flow and the browser balances them.
 - **Overlay** (`HeroOverlay`): brand green (354 C) is the lead field for heroes, per the sheet. The home video takes a 354 C multiply wash; photos take a deep to bright green diagonal. This tints the footage green by design.
 - **Gutter** (`.hero-gutter`): matches the nav, so every headline sits directly under the logo.
