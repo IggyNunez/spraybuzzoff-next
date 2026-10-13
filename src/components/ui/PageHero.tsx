@@ -41,7 +41,7 @@ export const HERO_TYPE = {
  * Hero overlay. The brand sheet makes bright brand green (354 C) the lead
  * field for heroes, so green carries every hero:
  *
- * - "video" (home): a 354 C multiply wash over the footage, deepened toward
+ * - "video" (home): a light 354 C multiply wash over the footage, deepened toward
  *   the copy so the white headline stays legible.
  * - "photo" (page heroes): a diagonal from deep green (3435 C) behind the copy
  *   to bright 354 C.
@@ -50,7 +50,11 @@ export function HeroOverlay({ variant = "photo" }: { variant?: "video" | "photo"
   if (variant === "video") {
     return (
       <>
-        <div aria-hidden className="absolute inset-0 z-[1] bg-brand-green mix-blend-multiply opacity-80" />
+        {/* 30%, down from 80% at the client's request (Oct 13): at 80% the whole
+            video went green. 30% keeps a brand-green cast while the house and
+            truck read in their own colors. The text-side gradient below is what
+            keeps the headline legible, so it is unchanged. */}
+        <div aria-hidden className="absolute inset-0 z-[1] bg-brand-green mix-blend-multiply opacity-30" />
         <div aria-hidden className="absolute inset-0 z-[1] bg-gradient-to-r from-brand-deeper/70 via-brand-deep/25 to-transparent" />
         <div aria-hidden className="absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-transparent to-black/50" />
       </>

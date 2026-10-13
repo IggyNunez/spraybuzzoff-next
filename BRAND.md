@@ -95,7 +95,7 @@ Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next
 
 | Section | Background |
 |---|---|
-| Home hero | Video under `HeroOverlay variant="video"`: `brand-green` multiply wash, deepened on the text side |
+| Home hero | Video under `HeroOverlay variant="video"`: light `brand-green` multiply wash (30%, client asked to bring it down Oct 13), deepened on the text side |
 | Interior page heroes | `PageHero`: photo under a deep to bright green diagonal (`HeroOverlay variant="photo"`) |
 | Ticker strip | `brand-yellow`, deep green text, orange dots |
 | City marquee | `brand-green`, deep green display type |
