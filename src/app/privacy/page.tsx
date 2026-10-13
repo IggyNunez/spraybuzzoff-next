@@ -9,28 +9,28 @@ export default function PrivacyPage() {
       <Nav />
       <main>
         {/* Hero */}
-        <section className="bg-[#1A5C32] pt-40 pb-16">
+        <section className="bg-brand-deep pt-40 pb-16">
           <div className="max-w-[800px] mx-auto px-[clamp(20px,4vw,48px)]">
             <p
               className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3"
-              style={{ color: "#E05A2B" }}
+              style={{ color: "#EFDF00" }}
             >
               Legal
             </p>
-            <h1 className="font-display text-[clamp(40px,6vw,72px)] leading-none uppercase text-white">
+            <h1 className="font-display text-[clamp(40px,6vw,72px)] leading-[1.05] text-white">
               Privacy Policy
             </h1>
-            <div className="h-[2px] w-16 mt-4" style={{ background: "#C8973A" }} />
+            <div className="h-[2px] w-16 mt-4" style={{ background: "#FA4616" }} />
           </div>
         </section>
 
         {/* Content */}
-        <section className="py-16 bg-[#EDEADE]">
+        <section className="py-16 bg-brand-cream">
           <div className="max-w-[800px] mx-auto px-[clamp(20px,4vw,48px)]">
-            <div className="space-y-10 font-body text-[0.95rem] leading-relaxed text-[#1C2B1E]">
+            <div className="space-y-10 font-body text-[0.95rem] leading-relaxed text-brand-dark">
 
               <div>
-                <p className="text-[#1C2B1E]/60 text-[0.85rem] mb-8">
+                <p className="text-brand-dark/60 text-[0.85rem] mb-8">
                   Last updated: March 5, 2026
                 </p>
                 <p>
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   1. Information We Collect
                 </h2>
                 <p className="mb-3">
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   2. How We Use Your Information
                 </h2>
                 <p className="mb-3">We use your information to:</p>
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   3. Information Sharing
                 </h2>
                 <p className="mb-3">
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   4. Cookies &amp; Website Analytics
                 </h2>
                 <p className="mb-3">
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   5. Data Security
                 </h2>
                 <p>
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   6. Your Rights
                 </h2>
                 <p className="mb-3">You have the right to:</p>
@@ -120,7 +120,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   7. Children&apos;s Privacy
                 </h2>
                 <p>
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   8. Changes to This Policy
                 </h2>
                 <p>
@@ -138,15 +138,15 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-[1.4rem] uppercase text-[#1A5C32] mb-3 tracking-wide">
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
                   9. Contact
                 </h2>
                 <p>
                   For privacy-related questions or requests:
                 </p>
                 <ul className="mt-3 space-y-1">
-                  <li><strong>Phone:</strong> <a href="tel:9098988955" className="text-[#1A5C32] underline">909.898.8955</a></li>
-                  <li><strong>Email:</strong> <a href="mailto:Buzz@spraybuzzoff.com" className="text-[#1A5C32] underline">Buzz@spraybuzzoff.com</a></li>
+                  <li><strong>Phone:</strong> <a href="tel:9098988955" className="text-brand-deep underline">909.898.8955</a></li>
+                  <li><strong>Email:</strong> <a href="mailto:Buzz@spraybuzzoff.com" className="text-brand-deep underline">Buzz@spraybuzzoff.com</a></li>
                   <li><strong>Service Area:</strong> Inland Empire, San Gabriel Valley &amp; Orange County, CA</li>
                   <li><strong>License:</strong> #PR 10014</li>
                 </ul>

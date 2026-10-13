@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Sans, Playfair_Display } from "next/font/google";
+import { DM_Sans, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import { BookingProvider } from "@/components/ui/BookingDrawer";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
 import "./globals.css";
 
-const bebasNeue = Bebas_Neue({
-  subsets: ["latin"],
+// Donut Shop (Prologue Studio) ships in a single weight. Never fake-bold it.
+const donutShop = localFont({
+  src: "./fonts/DonutShop-Regular.woff2",
   weight: "400",
-  variable: "--font-bebas",
+  style: "normal",
+  variable: "--font-donut",
   display: "swap",
 });
 
@@ -109,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${dmSans.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${donutShop.variable} ${dmSans.variable} ${playfair.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="geo.region" content="US-CA" />

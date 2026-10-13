@@ -35,7 +35,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[70svh] md:h-[100svh] overflow-hidden bg-[#1A5C32]"
+      className="relative min-h-[70svh] md:h-[100svh] overflow-hidden bg-brand-green"
     >
       {/* Video Background */}
       <motion.div
@@ -54,20 +54,21 @@ export function Hero() {
         </video>
       </motion.div>
 
-      {/* Dark overlays - rich green tint to kill the gray sky */}
-      <div className="absolute inset-0 bg-[#0F3D20]/40 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-[1]" />
+      {/* Overlays - bright brand green (354 C) wash over the video, deepened on the
+          text side so the white headline stays legible */}
+      <div className="absolute inset-0 bg-brand-green mix-blend-multiply opacity-80 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-deeper/70 via-brand-deep/25 to-transparent z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50 z-[1]" />
 
       {/* Content */}
       <motion.div
         className="relative z-10 flex flex-col justify-center h-full max-w-[1920px] mx-auto px-[clamp(20px,4vw,80px)] pt-[110px] pb-[80px] md:pt-[clamp(100px,18svh,180px)] md:pb-[clamp(60px,10svh,120px)]"
         style={{ y: textY }}
       >
-        <div className="max-w-[1000px]">
+        <div className="max-w-[1200px]">
           {/* Line 1: Welcome to the Non-Toxic Era. */}
           <motion.h1
-            className="font-display text-[clamp(42px,8vw,110px)] md:text-[clamp(48px,10svh,110px)] font-[900] uppercase leading-[0.95] text-white mb-4 md:mb-[clamp(12px,1.5svh,24px)] tracking-[0.03em]"
+            className="font-display uppercase text-[clamp(34px,6.2vw,84px)] md:text-[clamp(40px,8svh,84px)] leading-[1.02] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.35)] mb-4 md:mb-[clamp(12px,1.5svh,24px)]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
@@ -77,7 +78,7 @@ export function Hero() {
 
           {/* Line 2: Live Outside Again, Naturally. */}
           <motion.p
-            className="font-quote italic text-[clamp(1.3rem,3.5vw,2.6rem)] md:text-[clamp(1.3rem,3.5svh,2.6rem)] text-[#F0C060] mb-4 md:mb-[clamp(12px,2svh,32px)] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
+            className="font-quote italic text-[clamp(1.3rem,3.5vw,2.6rem)] md:text-[clamp(1.3rem,3.5svh,2.6rem)] text-brand-yellow mb-4 md:mb-[clamp(12px,2svh,32px)] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: EASE }}

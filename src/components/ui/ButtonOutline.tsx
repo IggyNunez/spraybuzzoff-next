@@ -12,7 +12,7 @@ interface ButtonOutlineProps {
 }
 
 const BASE =
-  "group inline-flex items-center justify-center gap-2 font-body text-[13px] font-bold tracking-[0.12em] uppercase text-[#1A5C32] rounded-full cursor-pointer border-2 border-[#1A5C32] bg-transparent hover:bg-[#1A5C32] hover:text-white px-10 py-4 transition-colors duration-200";
+  "group inline-flex items-center justify-center gap-2 font-body text-[13px] font-bold tracking-[0.12em] uppercase text-brand-deep rounded-full cursor-pointer border-2 border-brand-deep bg-transparent hover:bg-brand-deep hover:text-white px-10 py-4 transition-colors duration-200";
 
 const HOVER = { y: -2 };
 const TRANSITION = { duration: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] };

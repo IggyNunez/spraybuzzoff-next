@@ -63,7 +63,7 @@ export default async function BlogPostPage({
       <Nav />
       <main className="w-full min-w-full">
         {/* Hero */}
-        <section className="section-card mt-2 bg-[#1A5C32] text-white">
+        <section className="section-card mt-2 bg-brand-deep text-white">
           <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,64px)] pt-[200px] pb-20">
             <nav
               aria-label="Breadcrumb"
@@ -88,11 +88,11 @@ export default async function BlogPostPage({
               </ol>
             </nav>
             {post.city && (
-              <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-[#F0C060] mb-3">
-                {post.city}, Oklahoma
+              <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">
+                {post.city}, {post.region ?? "California"}
               </p>
             )}
-            <h1 className="font-display text-[clamp(32px,5vw,62px)] leading-[0.98] tracking-[0.01em] uppercase mb-6">
+            <h1 className="font-display text-[clamp(32px,5vw,62px)] leading-[0.98] mb-6">
               {post.title}
             </h1>
             <div className="flex items-center gap-4 text-white/70 text-[0.82rem] font-body">
@@ -130,7 +130,7 @@ export default async function BlogPostPage({
               dangerouslySetInnerHTML={{ __html: post.bodyHtml }}
             />
             {post.diagramImage && (
-              <div className="my-10 rounded-2xl overflow-hidden border border-[#1A5C32]/10">
+              <div className="my-10 rounded-2xl overflow-hidden border border-brand-deep/10">
                 <Image
                   src={post.diagramImage.path}
                   alt={post.diagramImage.alt}
@@ -144,19 +144,20 @@ export default async function BlogPostPage({
         </section>
 
         {/* CTA */}
-        <section className="section-card mt-2 bg-[#1A5C32] text-white text-center">
+        <section className="section-card mt-2 bg-brand-deep text-white text-center">
           <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,64px)] py-20">
-            <h2 className="font-display text-[clamp(32px,4.2vw,52px)] uppercase leading-[1] mb-6">
+            <h2 className="font-display text-[clamp(32px,4.2vw,52px)] leading-[1.05] mb-6">
               Ready to take back your yard?
             </h2>
             <p className="text-[17px] text-white/85 mb-8 max-w-[560px] mx-auto">
-              Get a quote for professional mosquito treatment in Broken Arrow and
-              across the Tulsa metro - no contracts required.
+              Get a quote for plant-based pest control
+              {post.city ? ` in ${post.city}` : ""} and across the Inland Empire
+              and San Gabriel Valley. No contracts required.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/contact"
-                className="font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-[#1A5C32] bg-[#F0C060] hover:bg-[#E5B450] px-8 py-4 rounded-full transition-colors"
+                className="font-body text-[0.78rem] font-extrabold tracking-[0.08em] uppercase text-brand-deep bg-brand-yellow hover:bg-gold-400 px-8 py-4 rounded-full transition-colors"
               >
                 Get a Free Quote
               </Link>

@@ -49,7 +49,7 @@ function Stars({ rating = 5 }: { rating?: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill={i < rating ? "#F0C060" : "#D8D3C4"} aria-hidden="true">
+        <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill={i < rating ? "#EFDF00" : "#D8D3C4"} aria-hidden="true">
           <path d="M10 1l2.47 5.01L18 6.94l-4 3.9.94 5.5L10 13.77l-4.94 2.57.94-5.5-4-3.9 5.53-.93L10 1z" />
         </svg>
       ))}
@@ -64,8 +64,8 @@ function ProfileLink({ source }: { source: "google" | "yelp" }) {
       href={PROFILE_URLS[source]}
       target="_blank"
       rel="noopener noreferrer"
-      className="group inline-flex items-center gap-2 font-body font-bold text-[0.72rem] tracking-[0.12em] uppercase px-5 py-3 rounded-full transition-all hover:bg-[#1A5C32]/[0.04]"
-      style={{ border: "1px solid rgba(26,92,50,0.2)", color: "#1C2B1E" }}
+      className="group inline-flex items-center gap-2 font-body font-bold text-[0.72rem] tracking-[0.12em] uppercase px-5 py-3 rounded-full transition-all hover:bg-brand-deep/[0.04]"
+      style={{ border: "1px solid rgba(21,71,52,0.2)", color: "#1C2B1E" }}
     >
       Read them on {isGoogle ? "Google" : "Yelp"}
       <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
@@ -89,7 +89,7 @@ function Avatar({ review }: { review: Review }) {
   return (
     <div
       className="w-9 h-9 rounded-full flex items-center justify-center font-body font-bold text-[0.75rem] text-white shrink-0"
-      style={{ background: "#1A5C32" }}
+      style={{ background: "#154734" }}
       aria-hidden="true"
     >
       {review.name.charAt(0)}
@@ -132,7 +132,7 @@ export default function ReviewsPage() {
         {/* ── Hero ── */}
         <section
           className="relative min-h-[50vh] flex items-end pb-20 pt-40"
-          style={{ background: "#1A5C32" }}
+          style={{ background: "#154734" }}
         >
           <Image
             src="/assets/services-hero.jpg"
@@ -142,15 +142,15 @@ export default function ReviewsPage() {
             fetchPriority="high"
             loading="eager"
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.92) 0%, rgba(26,92,50,0.78) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.92) 0%, rgba(0,177,64,0.78) 100%)" }} />
           <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
             <FadeIn>
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#E05A2B" }}>
+              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
                 Real Families. Real Results.
               </p>
-              <h1 className="font-display text-[clamp(48px,8vw,90px)] leading-none uppercase text-white mb-4">
+              <h1 className="font-display text-[clamp(48px,8vw,90px)] leading-[1.05] text-white mb-4">
                 What Our<br />
-                <span style={{ color: "#C8973A" }}>Customers Say.</span>
+                <span style={{ color: "#EFDF00" }}>Customers Say.</span>
               </h1>
               <p className="font-body text-[1.05rem] text-white/80 max-w-xl leading-relaxed">
                 Don&apos;t just take our word for it. Hear from the families who trust Buzz Off to protect their homes the natural way.
@@ -160,7 +160,7 @@ export default function ReviewsPage() {
         </section>
 
         {/* ── Gold divider ── */}
-        <div className="h-[3px] w-full" style={{ background: "#C8973A" }} />
+        <div className="h-[3px] w-full" style={{ background: "#FA4616" }} />
 
         {/* ── Stats Bar ── */}
         <section className="py-10" style={{ background: "#fff" }}>
@@ -168,19 +168,19 @@ export default function ReviewsPage() {
             <FadeIn>
               <div className="grid grid-cols-3 gap-6 text-center">
                 <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>{AVERAGE_RATING.toFixed(1)}</p>
+                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style={{ color: "#154734" }}>{AVERAGE_RATING.toFixed(1)}</p>
                   <div className="flex justify-center my-1">
                     <Stars />
                   </div>
-                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-[#1C2B1E]/50">Average Rating</p>
+                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-brand-dark/50">Average Rating</p>
                 </div>
                 <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>{TOTAL_REVIEW_COUNT}</p>
-                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-[#1C2B1E]/50 mt-2">Verified Reviews</p>
+                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style={{ color: "#154734" }}>{TOTAL_REVIEW_COUNT}</p>
+                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-brand-dark/50 mt-2">Verified Reviews</p>
                 </div>
                 <div>
-                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-none" style={{ color: "#1A5C32" }}>{FIVE_STAR_PERCENT}%</p>
-                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-[#1C2B1E]/50 mt-2">5-Star Reviews</p>
+                  <p className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05]" style={{ color: "#154734" }}>{FIVE_STAR_PERCENT}%</p>
+                  <p className="font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase text-brand-dark/50 mt-2">5-Star Reviews</p>
                 </div>
               </div>
             </FadeIn>
@@ -208,7 +208,7 @@ export default function ReviewsPage() {
                     className="break-inside-avoid rounded-2xl p-6 flex flex-col gap-3"
                     style={{
                       background: "#fff",
-                      border: "1px solid rgba(26,92,50,0.08)",
+                      border: "1px solid rgba(21,71,52,0.08)",
                       boxShadow: "0 2px 16px rgba(0,0,0,0.04)",
                     }}
                   >
@@ -248,7 +248,7 @@ export default function ReviewsPage() {
                         <p className="font-body text-[0.68rem]" style={{ color: "#1C2B1E99" }}>
                           {displayDate(review)}
                           {review.isLocalGuide && (
-                            <span style={{ color: "#1A5C32" }}> · Local Guide</span>
+                            <span style={{ color: "#154734" }}> · Local Guide</span>
                           )}
                         </p>
                       </div>
@@ -270,13 +270,13 @@ export default function ReviewsPage() {
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.88), rgba(26,92,50,0.72))" }}
+            style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.88), rgba(0,177,64,0.72))" }}
           />
           <div className="relative z-10 max-w-[700px] mx-auto px-[clamp(20px,4vw,48px)] text-center">
             <FadeIn>
-              <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-none uppercase text-white mb-4">
+              <h2 className="font-display text-[clamp(44px,6vw,80px)] leading-[1.05] text-white mb-4">
                 Join the<br />
-                <span style={{ color: "#C8973A" }}>Buzz Off Family.</span>
+                <span style={{ color: "#EFDF00" }}>Buzz Off Family.</span>
               </h2>
               <p className="font-body text-white/75 text-[1rem] mb-8 leading-relaxed">
                 See why families across the Inland Empire and San Gabriel Valley are making the switch to plant-based pest control.
@@ -285,7 +285,7 @@ export default function ReviewsPage() {
                 <button
                   onClick={openBooking}
                   className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-10 py-4 rounded-full transition-all hover:opacity-90"
-                  style={{ background: "#E05A2B" }}
+                  style={{ background: "#FA4616" }}
                 >
                   Book Your First Service
                   <ArrowIcon className="group-hover:translate-x-1 transition-transform" />

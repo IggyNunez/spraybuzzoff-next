@@ -23,11 +23,11 @@ export function TrustBadges({ items, className = "", theme = "light" }: TrustBad
           className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
             isLight
               ? "bg-white/[0.18] border-white/30 text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
-              : "bg-[#1A5C32]/10 border-[#1A5C32]/25 text-[#1C2B1E] shadow-[0_2px_8px_rgba(26,92,50,0.08)]"
+              : "bg-brand-deep/10 border-brand-deep/25 text-brand-dark shadow-[0_2px_8px_rgba(21,71,52,0.08)]"
           }`}
           style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
         >
-          <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${isLight ? "bg-[#F0C060]" : "bg-[#1A5C32]"}`} />
+          <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${isLight ? "bg-brand-yellow" : "bg-brand-deep"}`} />
           <span className="font-body text-[0.72rem] font-extrabold uppercase tracking-[0.08em] whitespace-nowrap">
             {item}
           </span>

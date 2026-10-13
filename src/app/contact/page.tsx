@@ -137,7 +137,7 @@ export default function ContactPage() {
         {/* ── Hero ── */}
         <section
           className="relative min-h-[68vh] flex items-end pb-24 pt-40 overflow-hidden"
-          style={{ background: "#1A5C32" }}
+          style={{ background: "#154734" }}
         >
           {/* Photo background */}
           <Image
@@ -149,15 +149,15 @@ export default function ContactPage() {
             loading="eager"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,61,32,0.90) 0%, rgba(26,92,50,0.70) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(21,71,52,0.90) 0%, rgba(0,177,64,0.70) 100%)" }} />
           <div className="relative max-w-[1920px] mx-auto px-[clamp(20px,4vw,48px)] w-full">
             <FadeIn>
-              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#E05A2B" }}>
+              <p className="font-body font-bold text-[0.72rem] tracking-[0.25em] uppercase mb-3" style={{ color: "#EFDF00" }}>
                 Get In Touch
               </p>
-              <h1 className="font-display text-[clamp(52px,8vw,100px)] leading-none uppercase text-white mb-4">
+              <h1 className="font-display text-[clamp(52px,8vw,100px)] leading-[1.05] text-white mb-4">
                 Book Your<br />
-                <span style={{ color: "#C8973A" }}>First Service.</span>
+                <span style={{ color: "#EFDF00" }}>First Service.</span>
               </h1>
               <p className="font-body text-white/75 text-[1.05rem] max-w-lg leading-relaxed">
                 No quote wall. Pricing is visible. Book in minutes - no contracts, no pressure. Just safer pest control for your family.
@@ -167,7 +167,7 @@ export default function ContactPage() {
         </section>
 
         {/* ── Gold divider ── */}
-        <div className="h-[3px] w-full" style={{ background: "#C8973A" }} />
+        <div className="h-[3px] w-full" style={{ background: "#FA4616" }} />
 
         {/* ── Main content ── */}
         <section className="py-[clamp(64px,8vw,120px)]" style={{ background: "#EDEADE" }}>
@@ -177,10 +177,10 @@ export default function ContactPage() {
               {/* Left - contact info + trust */}
               <div>
                 <FadeIn>
-                  <h2 className="font-display text-[clamp(30px,3.5vw,48px)] uppercase leading-none mb-1" style={{ color: "#1A5C32" }}>
+                  <h2 className="font-display text-[clamp(30px,3.5vw,48px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
                     Let's Talk
                   </h2>
-                  <div className="h-[2px] w-14 mb-6" style={{ background: "#C8973A" }} />
+                  <div className="h-[2px] w-14 mb-6" style={{ background: "#FA4616" }} />
                   <p className="font-body text-[0.97rem] leading-relaxed mb-8" style={{ color: "#1C2B1E" }}>
                     Call the team, email, or book directly through our online portal. We respond quickly and make it easy to get started.
                   </p>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                       <div key={c.label} className="flex items-start gap-4">
                         <div
                           className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                          style={{ background: "#1A5C32", color: "#C8973A" }}
+                          style={{ background: "#154734", color: "#EFDF00" }}
                         >
                           {c.icon}
                         </div>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                             {c.label}
                           </p>
                           {c.href ? (
-                            <a href={c.href} onClick={c.href.startsWith("tel:") ? () => trackContact() : undefined} className="font-body font-semibold text-[1rem] hover:underline" style={{ color: "#1A5C32" }}>
+                            <a href={c.href} onClick={c.href.startsWith("tel:") ? () => trackContact() : undefined} className="font-body font-semibold text-[1rem] hover:underline" style={{ color: "#154734" }}>
                               {c.value}
                             </a>
                           ) : (
@@ -221,7 +221,7 @@ export default function ContactPage() {
                       <div
                         key={t.label}
                         className="rounded-xl p-4"
-                        style={{ background: "#fff", border: "1px solid rgba(26,92,50,0.1)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}
+                        style={{ background: "#fff", border: "1px solid rgba(21,71,52,0.1)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}
                       >
                         <span className="text-2xl">{t.icon}</span>
                         <p className="font-body font-bold text-[0.82rem] mt-2 mb-0.5" style={{ color: "#1C2B1E" }}>{t.label}</p>
@@ -233,7 +233,7 @@ export default function ContactPage() {
 
                 {/* Service areas */}
                 <FadeIn delay={0.3} className="mt-10">
-                  <h3 className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-4" style={{ color: "#E05A2B" }}>
+                  <h3 className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-4" style={{ color: "#FA4616" }}>
                     Service Areas
                   </h3>
                   <div className="flex flex-col gap-5">
@@ -247,7 +247,7 @@ export default function ContactPage() {
                             <span
                               key={area}
                               className="font-body text-[0.78rem] font-semibold px-3 py-1.5 rounded-full"
-                              style={{ background: "#EAF2EC", color: "#1A5C32", border: "1px solid rgba(26,92,50,0.15)" }}
+                              style={{ background: "#E0F6E8", color: "#154734", border: "1px solid rgba(21,71,52,0.15)" }}
                             >
                               {area}
                             </span>
@@ -266,22 +266,22 @@ export default function ContactPage() {
               <FadeIn delay={0.15}>
                 <div
                   className="rounded-2xl p-8 lg:p-10"
-                  style={{ background: "#fff", boxShadow: "0 4px 40px rgba(26,92,50,0.08)", border: "1px solid rgba(26,92,50,0.08)" }}
+                  style={{ background: "#fff", boxShadow: "0 4px 40px rgba(21,71,52,0.08)", border: "1px solid rgba(21,71,52,0.08)" }}
                 >
                   {submitted ? (
                     <div className="flex flex-col items-center justify-center h-full py-12 text-center">
                       <div
                         className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
-                        style={{ background: "#EAF2EC" }}
+                        style={{ background: "#E0F6E8" }}
                       >
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A5C32" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#154734" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12"/>
                         </svg>
                       </div>
-                      <p className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#E05A2B" }}>
+                      <p className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#FA4616" }}>
                         Step 1 Complete
                       </p>
-                      <h3 className="font-display text-[2rem] uppercase leading-none mb-3" style={{ color: "#1A5C32" }}>
+                      <h3 className="font-display text-[2rem] leading-[1.05] mb-3" style={{ color: "#154734" }}>
                         You're In!
                       </h3>
                       <p className="font-body text-[0.95rem] leading-relaxed mb-6" style={{ color: "#6B7B6E" }}>
@@ -290,7 +290,7 @@ export default function ContactPage() {
                       <button
                         onClick={openBooking}
                         className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-white w-full px-8 py-4 rounded-full transition-all hover:opacity-90"
-                        style={{ background: "#E05A2B" }}
+                        style={{ background: "#FA4616" }}
                       >
                         Pick Your Date &amp; Time
                         <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
@@ -301,10 +301,10 @@ export default function ContactPage() {
                     </div>
                   ) : (
                     <>
-                      <h3 className="font-display text-[clamp(26px,3vw,40px)] uppercase leading-none mb-1" style={{ color: "#1A5C32" }}>
+                      <h3 className="font-display text-[clamp(26px,3vw,40px)] leading-[1.05] mb-1" style={{ color: "#154734" }}>
                         Book Your First Service
                       </h3>
-                      <div className="h-[2px] w-14 mb-6" style={{ background: "#C8973A" }} />
+                      <div className="h-[2px] w-14 mb-6" style={{ background: "#FA4616" }} />
 
                       <form onSubmit={handleSubmit} className="space-y-4">
                         {/* Name */}
@@ -322,11 +322,11 @@ export default function ContactPage() {
                             className="w-full font-body text-[0.92rem] rounded-xl px-4 py-3.5 outline-none transition-all"
                             style={{
                               background: "#F4FAF6",
-                              border: "1.5px solid rgba(26,92,50,0.15)",
+                              border: "1.5px solid rgba(21,71,52,0.15)",
                               color: "#1C2B1E",
                             }}
-                            onFocus={(e) => e.target.style.borderColor = "#1A5C32"}
-                            onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
+                            onFocus={(e) => e.target.style.borderColor = "#154734"}
+                            onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                           />
                         </div>
 
@@ -344,9 +344,9 @@ export default function ContactPage() {
                               onChange={handleChange}
                               placeholder="(909) 555-1234"
                               className="w-full font-body text-[0.92rem] rounded-xl px-4 py-3.5 outline-none transition-all"
-                              style={{ background: "#F4FAF6", border: "1.5px solid rgba(26,92,50,0.15)", color: "#1C2B1E" }}
-                              onFocus={(e) => e.target.style.borderColor = "#1A5C32"}
-                              onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
+                              style={{ background: "#F4FAF6", border: "1.5px solid rgba(21,71,52,0.15)", color: "#1C2B1E" }}
+                              onFocus={(e) => e.target.style.borderColor = "#154734"}
+                              onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                             />
                           </div>
                           <div>
@@ -361,9 +361,9 @@ export default function ContactPage() {
                               onChange={handleChange}
                               placeholder="jane@email.com"
                               className="w-full font-body text-[0.92rem] rounded-xl px-4 py-3.5 outline-none transition-all"
-                              style={{ background: "#F4FAF6", border: "1.5px solid rgba(26,92,50,0.15)", color: "#1C2B1E" }}
-                              onFocus={(e) => e.target.style.borderColor = "#1A5C32"}
-                              onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
+                              style={{ background: "#F4FAF6", border: "1.5px solid rgba(21,71,52,0.15)", color: "#1C2B1E" }}
+                              onFocus={(e) => e.target.style.borderColor = "#154734"}
+                              onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                             />
                           </div>
                         </div>
@@ -380,9 +380,9 @@ export default function ContactPage() {
                             onChange={handleChange}
                             placeholder="123 Maple St, Rancho Cucamonga, CA"
                             className="w-full font-body text-[0.92rem] rounded-xl px-4 py-3.5 outline-none transition-all"
-                            style={{ background: "#F4FAF6", border: "1.5px solid rgba(26,92,50,0.15)", color: "#1C2B1E" }}
-                            onFocus={(e) => e.target.style.borderColor = "#1A5C32"}
-                            onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
+                            style={{ background: "#F4FAF6", border: "1.5px solid rgba(21,71,52,0.15)", color: "#1C2B1E" }}
+                            onFocus={(e) => e.target.style.borderColor = "#154734"}
+                            onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                           />
                         </div>
 
@@ -398,9 +398,9 @@ export default function ContactPage() {
                             value={form.service}
                             onChange={handleChange}
                             className="w-full font-body text-[0.92rem] rounded-xl px-4 py-3.5 outline-none transition-all appearance-none cursor-pointer"
-                            style={{ background: "#F4FAF6", border: "1.5px solid rgba(26,92,50,0.15)", color: form.service ? "#1C2B1E" : "#9BA89D" }}
-                            onFocus={(e) => e.target.style.borderColor = "#1A5C32"}
-                            onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
+                            style={{ background: "#F4FAF6", border: "1.5px solid rgba(21,71,52,0.15)", color: form.service ? "#1C2B1E" : "#9BA89D" }}
+                            onFocus={(e) => e.target.style.borderColor = "#154734"}
+                            onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                           >
                             <option value="" disabled>Select a service...</option>
                             <option>The Perimeter</option>
@@ -424,9 +424,9 @@ export default function ContactPage() {
                             onChange={handleChange}
                             placeholder="Tell us about your pest situation, property size, or any concerns..."
                             className="w-full font-body text-[0.92rem] rounded-xl px-4 py-3.5 outline-none transition-all resize-none"
-                            style={{ background: "#F4FAF6", border: "1.5px solid rgba(26,92,50,0.15)", color: "#1C2B1E" }}
-                            onFocus={(e) => e.target.style.borderColor = "#1A5C32"}
-                            onBlur={(e) => e.target.style.borderColor = "rgba(26,92,50,0.15)"}
+                            style={{ background: "#F4FAF6", border: "1.5px solid rgba(21,71,52,0.15)", color: "#1C2B1E" }}
+                            onFocus={(e) => e.target.style.borderColor = "#154734"}
+                            onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                           />
                         </div>
 
@@ -442,7 +442,7 @@ export default function ContactPage() {
                           type="submit"
                           disabled={isSubmitting}
                           className={`group w-full inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-white px-8 py-4 rounded-full transition-all mt-2 ${isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"}`}
-                          style={{ background: "#E05A2B" }}
+                          style={{ background: "#FA4616" }}
                         >
                           {isSubmitting ? "Sending..." : "Book Now"}
                           {!isSubmitting && <ArrowIcon className="group-hover:translate-x-1 transition-transform" />}
@@ -461,10 +461,10 @@ export default function ContactPage() {
         </section>
 
         {/* ── Gorilladesk CTA ── */}
-        <section className="py-14" style={{ background: "#0F3D20" }}>
+        <section className="py-14" style={{ background: "#0F3224" }}>
           <div className="max-w-[900px] mx-auto px-[clamp(20px,4vw,48px)] flex flex-col md:flex-row items-center justify-between gap-6">
             <FadeIn>
-              <p className="font-display text-[clamp(22px,3vw,36px)] uppercase text-white leading-tight">
+              <p className="font-display text-[clamp(22px,3vw,36px)] text-white leading-tight">
                 Prefer to book online instantly?
               </p>
               <p className="font-body text-white/60 text-[0.88rem] mt-1">
@@ -475,7 +475,7 @@ export default function ContactPage() {
               <button
                 onClick={openBooking}
                 className="group inline-flex items-center gap-2 font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase text-white px-10 py-4 rounded-full transition-all hover:opacity-90 whitespace-nowrap"
-                style={{ background: "#E05A2B" }}
+                style={{ background: "#FA4616" }}
               >
                 Open Booking Portal
                 <ArrowIcon className="group-hover:translate-x-1 transition-transform" />

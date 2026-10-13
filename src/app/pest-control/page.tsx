@@ -34,7 +34,7 @@ export default function ServiceAreasPage() {
       <BreadcrumbJsonLd items={breadcrumbs} />
       <Nav />
       <main className="w-full min-w-full">
-        <section className="section-card mt-2 bg-[#1A5C32] text-white">
+        <section className="section-card mt-2 bg-brand-deep text-white">
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] pt-[220px] pb-20">
             <nav aria-label="Breadcrumb" className="mb-6 text-[0.75rem] font-body tracking-[0.08em] uppercase text-white/70">
               <ol className="flex flex-wrap items-center gap-2">
@@ -44,10 +44,10 @@ export default function ServiceAreasPage() {
               </ol>
             </nav>
 
-            <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-[#F0C060] mb-3">Service Areas</p>
-            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[0.95] uppercase mb-6">
+            <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-yellow mb-3">Service Areas</p>
+            <h1 className="font-display text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6">
               Plant-based pest control across the<br />
-              <span className="italic font-serif normal-case text-[#F0C060]">Inland Empire, San Gabriel Valley & Orange County.</span>
+              <span className="italic font-serif normal-case text-brand-yellow">Inland Empire, San Gabriel Valley & Orange County.</span>
             </h1>
             <p className="max-w-[720px] text-[clamp(16px,1.4vw,19px)] leading-[1.55] text-white/85">
               Buzz Off is a family-owned pest prevention company serving {SERVICE_AREAS.length} cities across Southern California. Every treatment is 100% plant-based, FIFRA 25(b) exempt, and built for homes with kids, pets, and the people you love.
@@ -62,12 +62,12 @@ export default function ServiceAreasPage() {
                 <Link
                   key={c.slug}
                   href={`/pest-control/${c.slug}`}
-                  className="group border border-[#1A5C32]/15 rounded-2xl p-6 hover:border-[#1A5C32] hover:bg-[#1A5C32] hover:text-white transition-colors"
+                  className="group border border-brand-deep/15 rounded-2xl p-6 hover:border-brand-deep hover:bg-brand-deep hover:text-white transition-colors"
                 >
-                  <p className="font-body text-[0.7rem] tracking-[0.15em] uppercase text-[#F0C060] mb-2">{c.county}</p>
-                  <h2 className="font-display text-[26px] uppercase text-[#1A5C32] group-hover:text-white mb-2">{c.name}</h2>
+                  <p className="font-body text-[0.7rem] tracking-[0.15em] uppercase text-brand-yellow mb-2">{c.county}</p>
+                  <h2 className="font-display text-[26px] text-brand-deep group-hover:text-white mb-2">{c.name}</h2>
                   <p className="text-[13px] text-neutral-600 group-hover:text-white/85">ZIPs: {c.zips.join(", ")}</p>
-                  <p className="mt-3 text-[12px] font-body tracking-[0.08em] uppercase text-[#1A5C32] group-hover:text-[#F0C060]">
+                  <p className="mt-3 text-[12px] font-body tracking-[0.08em] uppercase text-brand-deep group-hover:text-brand-yellow">
                     View {c.name} →
                   </p>
                 </Link>
@@ -78,8 +78,8 @@ export default function ServiceAreasPage() {
 
         <section className="section-card mt-2 bg-[#F7F5F0]">
           <div className="max-w-[1200px] mx-auto px-[clamp(20px,4vw,64px)] py-20">
-            <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-[#E05A2B] mb-3">Full Coverage Map</p>
-            <h2 className="font-display text-[clamp(30px,4vw,52px)] leading-[1] uppercase text-[#1A5C32] mb-4">
+            <p className="font-body text-[0.8rem] tracking-[0.2em] uppercase text-brand-orange mb-3">Full Coverage Map</p>
+            <h2 className="font-display text-[clamp(30px,4vw,52px)] leading-[1.05] text-brand-deep mb-4">
               Every city we service
             </h2>
             <p className="max-w-[720px] text-[15px] leading-[1.6] text-neutral-600 mb-10">
@@ -90,12 +90,12 @@ export default function ServiceAreasPage() {
             <div className="grid md:grid-cols-2 gap-10">
               {SERVICE_AREA_REGIONS.map((r) => (
                 <div key={r.region}>
-                  <h3 className="font-display text-[22px] uppercase text-[#1A5C32] mb-4">{r.region}</h3>
+                  <h3 className="font-display text-[22px] text-brand-deep mb-4">{r.region}</h3>
                   <ul className="flex flex-wrap gap-2">
                     {r.cities.map((city) => {
                       const match = CITIES.find((c) => c.name === city);
                       const pill = (
-                        <span className="inline-block font-body text-[0.82rem] font-semibold px-3 py-1.5 rounded-full bg-white border border-[#1A5C32]/15 text-[#1A5C32]">
+                        <span className="inline-block font-body text-[0.82rem] font-semibold px-3 py-1.5 rounded-full bg-white border border-brand-deep/15 text-brand-deep">
                           {city}
                         </span>
                       );

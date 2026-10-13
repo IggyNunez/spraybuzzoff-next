@@ -10,7 +10,7 @@ export function ComparisonChart() {
   const isInView = useInView(ref, { once: true, margin: "0px 0px -80px 0px" });
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32 bg-[#EDEADE]">
+    <section ref={ref} className="relative py-24 md:py-32 bg-brand-cream">
       <div className="max-w-[1000px] mx-auto px-[clamp(20px,4vw,80px)]">
         {/* Header */}
         <div className="text-center mb-14">
@@ -50,7 +50,7 @@ export function ComparisonChart() {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           {/* Table Header */}
-          <div className="grid grid-cols-3 bg-[#1A5C32] text-white">
+          <div className="grid grid-cols-3 bg-brand-deep text-white">
             <div className="p-4 font-body text-[0.7rem] font-bold tracking-[0.15em] uppercase">
               Feature
             </div>
@@ -66,19 +66,19 @@ export function ComparisonChart() {
           {COMPARISON_ROWS.map((row, i) => (
             <div
               key={row.feature}
-              className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-white" : "bg-[#EDEADE]/40"} ${i < COMPARISON_ROWS.length - 1 ? "border-b border-[#1A5C32]/10" : ""}`}
+              className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-white" : "bg-brand-cream/40"} ${i < COMPARISON_ROWS.length - 1 ? "border-b border-brand-deep/10" : ""}`}
             >
-              <div className="p-4 font-body text-[0.82rem] font-bold text-[#1C2B1E]">
+              <div className="p-4 font-body text-[0.82rem] font-bold text-brand-dark">
                 {row.feature}
               </div>
-              <div className="p-4 font-body text-[0.82rem] text-[#1A5C32] text-center flex items-center justify-center gap-2">
+              <div className="p-4 font-body text-[0.82rem] text-brand-deep text-center flex items-center justify-center gap-2">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
-                  <circle cx="7" cy="7" r="7" fill="#1A5C32" />
+                  <circle cx="7" cy="7" r="7" fill="#154734" />
                   <path d="M4 7l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span className="text-left">{row.buzzoff}</span>
               </div>
-              <div className="p-4 font-body text-[0.82rem] text-[#1C2B1E]/50 text-center flex items-center justify-center gap-2">
+              <div className="p-4 font-body text-[0.82rem] text-brand-dark/50 text-center flex items-center justify-center gap-2">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
                   <circle cx="7" cy="7" r="6" stroke="#1C2B1E" strokeOpacity="0.2" strokeWidth="1" />
                   <path d="M5 5l4 4M9 5l-4 4" stroke="#1C2B1E" strokeOpacity="0.3" strokeWidth="1.2" strokeLinecap="round" />

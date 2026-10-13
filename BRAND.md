@@ -1,140 +1,107 @@
-# Buzz Off Pest Prevention — Brand Guide
+# Buzz Off Pest Prevention · Brand Guide
 
-## Identity
+Source: **Buzz Off / Visual Identity Direction** (October 2026), supplied by the client.
+Positioning words from that sheet: **Bright · Human · Premium**.
 
 **Brand name:** Buzz Off Pest Prevention
-**Tagline:** Non-Toxic Pest Prevention. Finally.
+**Tagline:** Pest Control for the Non-Toxic Era.
 **Tone:** Confident, clean, family-focused. Not salesy. Not clinical.
+
+The logo is supplied art. Use it unaltered.
 
 ---
 
 ## Colors
 
-All tokens are defined in `src/app/globals.css` under `@theme {}`.
+All tokens live in `src/app/globals.css` under `@theme {}`. Use the token classes
+(`bg-brand-green`, `text-brand-deep`, ...) or `var(--color-brand-*)`. Do not invent hex values.
 
-### Primary Palette
+> Bright green leads. Yellow and orange add energy. Deep green gives definition.
 
-| Token | Hex | Usage |
-|---|---|---|
-| `gold-500` | `#F5CC05` | **Primary surface** — nav pill bg, highlight backgrounds |
-| `gold-400` | `#FADB5F` | Hover/lighter gold |
-| `gold-600` | `#D4A017` | Deeper gold for gradients |
-| `green-900` | `#016d30` | **Primary green** — nav links, borders, text on light surfaces |
-| `green-700` | `#068249` | Body text links, icon accents, mid green |
-| `red-500` | `#F12E04` | **CTA buttons**, badges, warnings |
-| `red-600` | `#D42803` | CTA hover state |
+| Token | Hex | Pantone | Role |
+|---|---|---|---|
+| `brand-green` | `#00B140` | 354 C* | **Lead brand field.** Hero, city marquee, dividers, accents |
+| `brand-deep` | `#154734` | 3435 C | **Contrast.** Headings, text and borders on light, content-heavy dark sections, footer |
+| `brand-yellow` | `#EFDF00` | 3965 C | **Energy.** Primary CTA pills, highlight text on green, ticker strip |
+| `brand-orange` | `#FA4616` | 172 C | **Punch.** Badges ("Most popular"), stars, thin accent bars |
+| `brand-cream` | `#EDEADE` | n/a | **Warm neutral.** Page and section background, use over pure white |
+| `brand-dark` | `#1C2B1E` | n/a | Body text |
 
-### Secondary Palette
+\* 354 C is a proposed match. Confirm against a physical swatch.
 
-| Token | Hex | Usage |
-|---|---|---|
-| `canvas` | `#FAFAF5` | Page/section background |
-| `canvas-warm` | `#F5F0E8` | Slightly warmer alternate section bg |
-| `gray-700` | `#404040` | Primary body text |
-| `gray-500` | `#737373` | Secondary / caption text |
-| `white` | `#FFFFFF` | Card surfaces, light text on dark |
+Derived shades (hover and tints only): `brand-green-dark` `#009A38`, `brand-deeper` `#0F3224`,
+`brand-orange-dark` `#DA3D13`, `brand-light-green` `#E0F6E8`. The `green-*`, `gold-*` (yellow)
+and `red-*` (orange) scales map onto the same palette for older components.
+
+### Contrast rules (WCAG)
+
+Bright green is light. White on `brand-green` is only **2.85:1**, so:
+
+1. **Bright green holds big type only.** Headlines, display-size marquee words. No paragraph
+   text on solid bright green. Content sections with paragraphs use `brand-deep`.
+2. **Text on bright green** is white (display sizes) or `brand-deep` (3.7:1, large text only).
+3. **Yellow carries deep green text** (7.7:1). Never white on yellow.
+4. **Highlights on deep green are yellow** (7.7:1), not orange (3.0:1).
+5. **Orange is not body text.** Badges, stars, bars, short uppercase labels.
+
+| Pair | Ratio |
+|---|---|
+| White on deep green | 10.6:1 |
+| Deep green on yellow | 7.7:1 |
+| Deep green on cream | 8.8:1 |
+| White on orange | 3.5:1 |
+| White on bright green | 2.85:1 |
 
 ---
 
 ## Typography
 
-Defined via `--font-display` (Lora, serif) and `--font-body` (Nunito, sans-serif).
+| Role | Face | Token | Notes |
+|---|---|---|---|
+| Display | **Donut Shop Regular** (Prologue Studio) | `font-display` | Hero headlines, section titles, badges, big brand moments |
+| Body / UI | DM Sans | `font-body` | Body copy, service details, navigation, buttons |
+| Quotes | Playfair Display Italic | `font-quote` | Testimonials and the hero tagline only |
 
-### Display / Headings — `font-display`
-- **H1 hero:** `clamp(2.8rem,7vw,5rem)` — `font-bold uppercase`
-- **H2 section:** `clamp(2rem,5vw,3.2rem)` — `font-bold uppercase`
-- **H3 card title:** `1.1rem` — `font-bold uppercase tracking-wide`
-- **Eyebrow:** `0.7rem` — `font-bold tracking-[0.2em] uppercase`
+Donut Shop is self-hosted from `src/app/fonts/DonutShop-Regular.woff2` via `next/font/local`.
 
-### Body — `font-body`
-- **Body large:** `1rem` — `font-light`
-- **Body default:** `0.88rem` — `leading-[1.75]`
-- **Body small / meta:** `0.82rem`
-- **Label / nav:** `0.7rem` — `font-bold tracking-[0.06em] uppercase`
-- **CTA button:** `0.68–0.7rem` — `font-extrabold tracking-[0.08em] uppercase`
+**Rules from the identity sheet:**
+
+- **Sentence or title case for longer lines.** Section titles are mixed case.
+- **All caps for short emphasis only.** The home hero headline is the main example.
+- **Never stretch or fake-bold the type.** Donut Shop has one weight. Do not put `font-bold`,
+  `font-[900]` or `tracking-*` on `font-display` elements. `globals.css` sets
+  `font-synthesis: none` on display text so the browser cannot fake it.
+- Center stacked lines and balance widths by eye.
+- The support sans is still "to be selected" on the sheet. DM Sans stays until the client picks one.
 
 ---
 
-## Component Tokens
-
-### Nav Pill
-The floating nav pill should always reflect the logo colors directly:
-
-| Element | Style |
-|---|---|
-| Pill background | `#FFFFFF` (white) |
-| Pill border | `3px solid #016d30` (matches drawer border weight) |
-| Nav links | `text-green-900` bold, `hover:text-green-700` |
-| Social icons | `text-green-900/50` → `text-green-900` on hover |
-| Hamburger bars (mobile) | `bg-green-900` |
-| CTA "Book Now" | `bg-red-500 text-white border-2 border-green-900` |
-| CTA hover | `bg-red-600` |
+## Components
 
 ### Buttons
 
 | Variant | Classes |
 |---|---|
-| **Primary CTA** | `bg-red-500 text-white border-2 border-green-900 rounded-full font-extrabold uppercase` |
-| **Primary hover** | `bg-red-600` |
-| **Secondary** | `bg-gold-500 text-green-900 border-2 border-green-900/20 rounded-full font-extrabold uppercase` |
-| **Ghost** | `border-2 border-green-900 text-green-900 bg-transparent rounded-full font-bold uppercase` |
+| **Primary CTA** (`ButtonGold`, nav "Book Now") | `bg-brand-yellow text-brand-deep border-2 border-brand-deep rounded-full font-bold uppercase`, hover `bg-gold-400` |
+| **Outline** (`ButtonOutline`) | `border-2 border-brand-deep text-brand-deep`, hover `bg-brand-deep text-white` |
+| **Ghost on dark** | `border border-white/20 bg-white/[0.08] text-white` |
 
-### Cards
+### Section patterns
 
-| Element | Style |
+| Section | Background |
 |---|---|
-| Background | `rgba(255,255,255,0.82)` frosted glass |
-| Backdrop blur | `blur(24px)` |
-| Border | `1px solid rgba(4,66,45,0.10)` |
-| Border radius | `rounded-2xl` |
-| Top accent strip | `3px solid [card accent color]` |
-| Title | `text-green-900 font-bold uppercase tracking-wide 1.1rem` |
-| Body text | `text-gray-700 text-[0.88rem] leading-[1.75]` |
-| Watermark number | Card accent color at `opacity: 0.07` |
-| Min height | `280px` |
-| Hover | `y: -7, scale: 1.02` + stronger shadow |
-
-### Drawer (Mobile)
-
-| Element | Style |
-|---|---|
-| Background | `rgba(255,255,255,0.97)` |
-| Border | `3px solid #016d30` |
-| Nav links | `text-green-900/75 hover:text-green-900` |
-| CTA | Same as Primary CTA above |
-| Social icons | `border-2 border-green-900/25 text-green-900/60` |
-
----
-
-## Section Patterns
-
-| Section | Background | Notes |
-|---|---|---|
-| Hero | Dark image overlay + gradient | Full height |
-| Intro | `bg-canvas` + animated backyard SVG | Frosted cards |
-| Services | White / canvas | Featured + small cards |
-| Process | `canvas-warm` | Step numbers |
-| Plans | `bg-canvas` | 3-column pricing |
-| FAQ | White | Accordion |
-| CTA / Footer | `green-900` | Dark section |
+| Home hero | Video with a `brand-green` multiply wash, deepened on the text side |
+| Interior page heroes | Photo with a deep to bright green diagonal overlay |
+| Ticker strip | `brand-yellow`, deep green text, orange dots |
+| City marquee | `brand-green`, deep green display type |
+| Content sections | `brand-cream` / white |
+| Featured plan, CTA band, city heroes, footer | `brand-deep` |
 
 ---
 
 ## Spacing & Shape
 
-- **Border radius — pill:** `rounded-full` (nav, buttons, tags)
-- **Border radius — card:** `rounded-2xl` (16px)
-- **Border radius — icon badge:** `rounded-2xl` (16px)
-- **Section padding:** `py-20 md:py-28`
+- **Border radius, pill:** `rounded-full` (nav, buttons, tags)
+- **Border radius, card:** `rounded-2xl` (16px)
+- **Section cards:** `.section-card` insets sections as rounded cards on the cream body
 - **Content max-width:** `max-w-[1200px] mx-auto px-[clamp(20px,4vw,48px)]`
-
----
-
-## Brand Rules
-
-1. **Gold is structure** — use it for pill backgrounds and highlights, not text
-2. **Green-900 is authority** — the primary text/border color on all light surfaces
-3. **Red is action** — reserve for CTA buttons and critical accent only
-4. **Never use red for body text** — only icons/badges/CTAs
-5. **Cards always frosted** — glass effect with subtle green border, never flat white
-6. **Typography never grey-on-grey** — body text must be `gray-700` or darker

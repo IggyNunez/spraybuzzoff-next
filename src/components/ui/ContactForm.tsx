@@ -92,10 +92,10 @@ export function ContactForm() {
         transition={{ duration: 0.5 }}
       >
         <div className="text-5xl mb-4">✅</div>
-        <p className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#C8973A" }}>
+        <p className="font-body font-bold text-[0.72rem] tracking-[0.22em] uppercase mb-2" style={{ color: "#FA4616" }}>
           Step 1 Complete
         </p>
-        <h3 className="font-display text-2xl font-bold text-white mb-3">
+        <h3 className="font-display text-2xl text-white mb-3">
           You&apos;re In!
         </h3>
         <p className="font-body text-[0.95rem] text-white/75 mb-6">
@@ -103,8 +103,8 @@ export function ContactForm() {
         </p>
         <button
           onClick={openBooking}
-          className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-[#1A5C32] px-8 py-3.5 rounded-full transition-colors duration-200 hover:opacity-90"
-          style={{ background: "#C8973A" }}
+          className="group inline-flex items-center justify-center gap-2 font-body font-bold text-[0.82rem] tracking-[0.12em] uppercase text-brand-deep px-8 py-3.5 rounded-full transition-colors duration-200 hover:opacity-90"
+          style={{ background: "#FA4616" }}
         >
           Pick Your Date &amp; Time
           <ArrowIcon className="group-hover:translate-x-1 transition-transform" />
@@ -118,7 +118,7 @@ export function ContactForm() {
 
   return (
     <div className="frost-dark rounded-[20px] p-10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
-      <h3 className="font-display text-xl font-bold text-white uppercase mb-6">
+      <h3 className="font-display text-xl text-white mb-6">
         Book Your First Service
       </h3>
       <form onSubmit={handleSubmit} className="space-y-4">
