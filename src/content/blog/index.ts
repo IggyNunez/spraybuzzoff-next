@@ -21,8 +21,10 @@ import pestControlLaVerneCa from "./pest-control-la-verne-ca";
 import pestControlArcadiaCa from "./pest-control-arcadia-ca";
 import pestControlMonroviaCa from "./pest-control-monrovia-ca";
 import pestControlAzusaCa from "./pest-control-azusa-ca";
+import fallPestControlRanchoCucamongaCa from "./fall-pest-control-rancho-cucamonga-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  fallPestControlRanchoCucamongaCa,
   pestControlAzusaCa,
   pestControlMonroviaCa,
   pestControlArcadiaCa,
