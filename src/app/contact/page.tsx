@@ -12,6 +12,7 @@ import { PageHero, HERO_TYPE } from "@/components/ui/PageHero";
 import { BrandBadge, type GlyphName } from "@/components/ui/BrandBadge";
 import { AVERAGE_RATING } from "@/lib/reviews";
 import { trackLead, trackContact } from "@/lib/fbpixel";
+import { TurnstileWidget, type TurnstileHandle } from "@/components/ui/TurnstileWidget";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -50,6 +51,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const { open: openBooking } = useBooking();
+  const turnstile = useRef<TurnstileHandle>(null);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -85,6 +87,7 @@ export default function ContactPage() {
           address: form.address,
           service: form.service,
           message: form.message,
+          turnstileToken: turnstile.current?.token() ?? "",
         }),
       });
 
@@ -101,6 +104,7 @@ export default function ContactPage() {
       setError("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
+      turnstile.current?.reset();
     }
   };
 
@@ -368,6 +372,8 @@ export default function ContactPage() {
                             onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                           />
                         </div>
+
+                        <TurnstileWidget theme="light" ref={turnstile} />
 
                         {/* Error message */}
                         {error && (

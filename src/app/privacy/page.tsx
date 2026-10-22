@@ -89,8 +89,11 @@ export default function PrivacyPage() {
                 <p className="mb-3">
                   Our website may use cookies and analytics tools to understand how visitors interact with spraybuzzoff.com. These tools help us improve site performance and user experience. Cookies do not collect personally identifiable information unless you voluntarily submit it through a form.
                 </p>
-                <p>
+                <p className="mb-3">
                   You can disable cookies through your browser settings at any time.
+                </p>
+                <p>
+                  Our forms use Cloudflare Turnstile to block automated spam. To run it, your browser contacts Cloudflare, which receives your IP address and technical details about your browser.
                 </p>
               </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { BrandBadge } from "@/components/ui/BrandBadge";
 import { ButtonGold } from "./ButtonGold";
@@ -8,6 +8,7 @@ import type { LeadApiResponse } from "@/types";
 import { ArrowIcon } from "./ArrowIcon";
 import { useBooking } from "./BookingDrawer";
 import { trackLead } from "@/lib/fbpixel";
+import { TurnstileWidget, type TurnstileHandle } from "./TurnstileWidget";
 
 const REFERRAL_OPTIONS = [
   "Google Search",
@@ -35,6 +36,7 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const { open: openBooking } = useBooking();
+  const turnstile = useRef<TurnstileHandle>(null);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -65,7 +67,7 @@ export function ContactForm() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, turnstileToken: turnstile.current?.token() ?? "" }),
       });
 
       const data: LeadApiResponse = await res.json();
@@ -81,6 +83,7 @@ export function ContactForm() {
       setError("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
+      turnstile.current?.reset();
     }
   };
 
@@ -246,6 +249,8 @@ export function ContactForm() {
             onChange={handleChange("message")}
           />
         </div>
+
+        <TurnstileWidget theme="dark" ref={turnstile} />
 
         {error && (
           <p className="font-body text-sm text-red-400 bg-red-400/10 rounded-lg px-4 py-2">

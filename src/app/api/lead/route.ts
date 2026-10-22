@@ -3,6 +3,7 @@ import { timingSafeEqual } from "node:crypto";
 import { getGorillaDesk, GorillaApiError } from "@/lib/gorilladesk";
 import { validateLeadForm } from "@/lib/validation";
 import { sendLeadRescueEmail } from "@/lib/lead-alert";
+import { verifyTurnstile } from "@/lib/turnstile";
 import type { LeadApiResponse, GDCustomerCreatePayload, LeadFormData } from "@/types";
 
 const PHONE_FALLBACK = "(909) 552-1718";
@@ -113,6 +114,18 @@ export async function POST(req: NextRequest) {
         message:
           "Health check OK — validation and GorillaDesk credentials verified. No customer created.",
       });
+    }
+
+    /* Turnstile bot check. After the health check so the weekly monitor still
+     * passes, and before anything reaches the CRM. */
+    if (!(await verifyTurnstile(body.turnstileToken, ip === "unknown" ? null : ip))) {
+      return NextResponse.json<LeadApiResponse>(
+        {
+          success: false,
+          message: `We couldn't verify your submission. Please try again, or call us at ${PHONE_FALLBACK}.`,
+        },
+        { status: 400 }
+      );
     }
 
     /* Build GorillaDesk customer payload */
