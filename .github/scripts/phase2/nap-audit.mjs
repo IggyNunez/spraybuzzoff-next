@@ -45,12 +45,15 @@ async function verifySourceOfTruth() {
     for (const m of jsonLdMatches) {
       try {
         const ld = JSON.parse(m[1]);
-        if (ld["@type"] === "ProfessionalService" || ld["@type"] === "LocalBusiness") {
+        // @type can be an array: this site emits ["LocalBusiness", "PestControlService"].
+        const types = [ld["@type"]].flat();
+        if (types.includes("ProfessionalService") || types.includes("LocalBusiness")) {
           return {
             found: true,
             name: ld.name,
             telephone: ld.telephone,
-            streetAddress: ld.address?.streetAddress,
+            // Service-area business: no street address is published, config holds "".
+            streetAddress: ld.address?.streetAddress || "",
             city: ld.address?.addressLocality,
             state: ld.address?.addressRegion,
             zip: ld.address?.postalCode,
