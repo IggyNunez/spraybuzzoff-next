@@ -143,6 +143,7 @@ async function fetchAllReviews(dataId) {
   const reviews = [];
   let nextPageToken = null;
   let page = 1;
+  let listed = 0;
   do {
     const params = new URLSearchParams({
       engine: "google_maps_reviews",
@@ -155,6 +156,7 @@ async function fetchAllReviews(dataId) {
     const res = await fetch(`https://serpapi.com/search.json?${params}`);
     const data = await res.json();
     if (data.error) throw new Error(`SerpAPI error: ${data.error}`);
+    if (page === 1) listed = data.place_info?.reviews || 0;
     const batch = data.reviews || [];
     reviews.push(...batch);
     console.log(`[reviews]   +${batch.length} (total ${reviews.length})`);
@@ -162,6 +164,16 @@ async function fetchAllReviews(dataId) {
     page++;
     if (nextPageToken) await new Promise((r) => setTimeout(r, 400));
   } while (nextPageToken);
+
+  // Since Oct 21, 2026 SerpApi returns 5 reviews and no next_page_token for
+  // every listing (serpapi/public-roadmap#4489). Saving that replaced the
+  // corpus and pruned 49 photos, so refuse a fetch well short of the listing's
+  // own count. Google hides a few (42 of 45 here), hence 80%, not 100%.
+  if (listed && reviews.length < listed * 0.8) {
+    throw new Error(
+      `got ${reviews.length} of the ${listed} reviews on the listing; keeping the existing corpus`,
+    );
+  }
   return reviews;
 }
 
