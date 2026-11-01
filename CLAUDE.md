@@ -59,6 +59,10 @@ Rules that are not obvious from reading the code:
 - **The fetch prunes orphans.** Google rotates the token inside its photo URLs, so the
   same picture hashes to a new filename on a later run. Without pruning, the repo gains
   a full photo set every month and never loses one.
+- **The fetch refuses to save fewer than 80% of the listing's review count.** On Nov 1,
+  2026 SerpApi returned 5 of 45 (a bug on their side since Oct 21) and the bot committed
+  that, wiping the corpus and its photos on the live site. A failed refresh run now means
+  "SerpApi came back short", not "the site is broken". Check the run log before forcing it.
 - Reviews render an **absolute month** derived from `isoDate`. Google's relative dates
   ("5 months ago") freeze at fetch time and drift wrong.
 - Two Google entries are star ratings with no text. They count toward the total but are
