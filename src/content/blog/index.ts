@@ -23,8 +23,10 @@ import pestControlMonroviaCa from "./pest-control-monrovia-ca";
 import pestControlAzusaCa from "./pest-control-azusa-ca";
 import spiderControlUplandCa from "./spider-control-upland-ca";
 import mosquitoControlUplandCa from "./mosquito-control-upland-ca";
+import mosquitoControlOntarioCa from "./mosquito-control-ontario-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  mosquitoControlOntarioCa,
   mosquitoControlUplandCa,
   spiderControlUplandCa,
   pestControlAzusaCa,
