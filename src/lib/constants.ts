@@ -200,12 +200,25 @@ export const MARQUEE_AREAS = [
   "Mission Viejo",
 ];
 
-/** Client copy sheet, Nov 6 2026. Blanket pricing only: no per-card prices. */
+/** Client copy sheet, Nov 6 2026. Blanket pricing only: no per-card prices.
+ *  Bundle is first and tagged Most Popular (Dorrin, Nov 7: most customers are on it). */
 export const SUBSCRIPTION_START_PRICE = "$109";
 
 export const SUBSCRIPTIONS: Subscription[] = [
   {
     num: "01",
+    name: "Buzz Natural Bundle",
+    plus: false,
+    popular: true,
+    summary: "Home + Mosquito. Inside, outside and the backyard, handled.",
+    note: "No rodent service \u00B7 see Plus",
+    features: [
+      { text: "Home general pest + Mosquito" },
+      { text: "Monthly visits + billing" },
+    ],
+  },
+  {
+    num: "02",
     name: "Buzz Natural Home",
     plus: false,
     summary: "Interior + exterior general pest care. Consistent protection, on repeat.",
@@ -217,7 +230,7 @@ export const SUBSCRIPTIONS: Subscription[] = [
     ],
   },
   {
-    num: "02",
+    num: "03",
     name: "Buzz Natural Home Plus",
     plus: true,
     summary: "Everything in Home, PLUS rodent station maintenance + monitoring.",
@@ -229,7 +242,7 @@ export const SUBSCRIPTIONS: Subscription[] = [
     ],
   },
   {
-    num: "03",
+    num: "04",
     name: "Buzz Natural Mosquito",
     plus: false,
     summary: "Take your backyard back. Ongoing mosquito protection for more time outside.",
@@ -237,17 +250,6 @@ export const SUBSCRIPTIONS: Subscription[] = [
       { text: "12 scheduled visits a year" },
       { text: "Monthly visits + billing" },
       { text: "No initial fee" },
-    ],
-  },
-  {
-    num: "04",
-    name: "Buzz Natural Bundle",
-    plus: false,
-    summary: "Home + Mosquito. Inside, outside and the backyard, handled.",
-    note: "No rodent service \u00B7 see Plus",
-    features: [
-      { text: "Home general pest + Mosquito" },
-      { text: "Monthly visits + billing" },
     ],
   },
   {
