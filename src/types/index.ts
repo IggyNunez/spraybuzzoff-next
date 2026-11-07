@@ -37,6 +37,8 @@ export interface Subscription {
   name: string;
   /** Plus subscriptions include rodent station maintenance and get the callout. */
   plus: boolean;
+  /** Shown first with a "Most Popular" tag. */
+  popular?: boolean;
   summary: string;
   /** Small muted line under the summary, used on non-Plus cards. */
   note?: string;

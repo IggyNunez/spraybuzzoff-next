@@ -18,7 +18,9 @@ const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
  * - Blanket pricing only. "Subscriptions start at $109/month", never a price per card.
  * - The Plus difference is rodent service and it has to be loud: yellow border,
  *   "Rodent included" tag and a yellow "+ Rodent Protection" band on Plus cards.
- * - Do not put "No contracts, cancel anytime" on these cards.
+ * - Do not put "No contracts, cancel anytime" on these cards. (The business
+ *   is still no-contract, confirmed Nov 7; the client just wants it off here.)
+ * - Bundle goes first with an orange "Most Popular" tag (Nov 7).
  */
 export function Subscriptions() {
   const ref = useRef(null);
@@ -151,14 +153,21 @@ function SubscriptionCard({
   return (
     <motion.article
       className={`relative flex flex-col rounded-2xl bg-brand-cream text-brand-dark ${
-        sub.plus
-          ? "border-[3px] border-brand-yellow shadow-[0_12px_40px_rgba(239,223,0,0.18)]"
-          : "border-[3px] border-transparent shadow-[0_4px_20px_rgba(0,0,0,0.18)]"
+        sub.popular
+          ? "border-[3px] border-brand-orange shadow-[0_12px_40px_rgba(250,70,22,0.25)]"
+          : sub.plus
+            ? "border-[3px] border-brand-yellow shadow-[0_12px_40px_rgba(239,223,0,0.18)]"
+            : "border-[3px] border-transparent shadow-[0_4px_20px_rgba(0,0,0,0.18)]"
       } ${className}`}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: 0.2 + index * 0.1, duration: 0.6, ease: EASE }}
     >
+      {sub.popular && (
+        <span className="absolute -top-3 left-4 z-10 font-body text-[0.68rem] font-bold tracking-[0.12em] uppercase text-white bg-brand-orange rounded-full px-3 py-1">
+          Most Popular
+        </span>
+      )}
       {sub.plus && (
         <span className="absolute -top-3 right-4 z-10 font-body text-[0.68rem] font-bold text-brand-yellow bg-brand-deeper rounded-full px-3 py-1">
           Rodent included
