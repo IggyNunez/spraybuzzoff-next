@@ -1,7 +1,10 @@
 import { TICKER_ITEMS } from "@/lib/constants";
 
 export function MarqueeTicker() {
-  const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS];
+  // Only two items now, so repeat them until one half of the track is wider
+  // than any screen, then double that for the seamless loop.
+  const half = Array.from({ length: 4 }, () => TICKER_ITEMS).flat();
+  const doubled = [...half, ...half];
 
   return (
     <section className="bg-brand-yellow py-4 overflow-hidden">

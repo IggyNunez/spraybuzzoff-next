@@ -158,7 +158,6 @@ export function Footer() {
                 { label: "Mosquito Prevention", href: "/#services" },
                 { label: "General Pest Prevention", href: "/#services" },
                 { label: "Interior Treatment", href: "/#services" },
-                { label: "One-Time Treatment", href: "/#contact" },
               ].map((s) => (
                 <li key={s.label}>
                   <a href={s.href} className="font-body text-[0.85rem] text-white hover:text-white/80 transition-colors">
@@ -169,17 +168,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Plans */}
+          {/* Subscriptions */}
           <div>
             <h3 className="font-display text-[1.05rem] mb-4 text-brand-yellow">
-              Plans
+              Subscriptions
             </h3>
             <ul className="space-y-3">
               {[
-                { label: "Natural Mosquito Shield", href: "/#plans" },
-                { label: "Natural Perimeter Protection", href: "/#plans" },
-                { label: "Natural Whole Home Protection", href: "/#plans" },
-                { label: "Book Your First Service", href: "/#contact" },
+                { label: "Buzz Natural Home", href: "/#subscriptions" },
+                { label: "Home Plus", href: "/#subscriptions" },
+                { label: "Mosquito", href: "/#subscriptions" },
+                { label: "Bundle", href: "/#subscriptions" },
+                { label: "Bundle Plus", href: "/#subscriptions" },
               ].map((p) => (
                 <li key={p.label}>
                   <a href={p.href} className="font-body text-[0.85rem] text-white hover:text-white/80 transition-colors">

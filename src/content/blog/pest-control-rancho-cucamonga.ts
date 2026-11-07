@@ -46,7 +46,7 @@ const post: BlogPost = {
 <p>Because pests stay active nearly all year in Rancho Cucamonga, a recurring schedule beats one-off spraying. Here is a simple seasonal rhythm that works well locally:</p>
 <ul>
 <li><strong>Late winter and early spring:</strong> Get ahead of ants and spiders before populations build with the first warm stretches.</li>
-<li><strong>Spring through fall:</strong> This is peak mosquito season, so bi-weekly mosquito service and an active exterior barrier matter most.</li>
+<li><strong>Spring through fall:</strong> This is peak mosquito season, so monthly mosquito service and an active exterior barrier matter most.</li>
 <li><strong>Summer heat and Santa Ana events:</strong> Dry, windy spells drive ants and spiders indoors looking for water, so maintaining the perimeter is key.</li>
 <li><strong>After rain:</strong> Moisture flushes pests out of the soil, so a follow-up helps re-establish coverage.</li>
 </ul>

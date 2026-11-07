@@ -32,20 +32,15 @@ export interface ProcessStep {
 }
 
 
-export interface PlanFeature {
-  text: string;
-  included: boolean;
-}
-
-export interface Plan {
-  tier: string;
+export interface Subscription {
+  num: string;
   name: string;
-  price: string;
-  freq: string;
-  featured: boolean;
-  ctaStyle: "gold" | "green";
-  ctaText: string;
-  features: PlanFeature[];
+  /** Plus subscriptions include rodent station maintenance and get the callout. */
+  plus: boolean;
+  summary: string;
+  /** Small muted line under the summary, used on non-Plus cards. */
+  note?: string;
+  features: { text: string; bold?: boolean }[];
 }
 
 

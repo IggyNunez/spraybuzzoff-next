@@ -346,11 +346,11 @@ export default function ContactPage() {
                             onBlur={(e) => e.target.style.borderColor = "rgba(21,71,52,0.15)"}
                           >
                             <option value="" disabled>Select a service...</option>
-                            <option>The Perimeter</option>
-                            <option>The Whole House</option>
-                            <option>Mosquito Shield</option>
-                            <option>Perimeter + Mosquito</option>
-                            <option>Whole House + Mosquito</option>
+                            <option>Buzz Natural Home</option>
+                            <option>Buzz Natural Home Plus</option>
+                            <option>Buzz Natural Mosquito</option>
+                            <option>Buzz Natural Bundle</option>
+                            <option>Buzz Natural Bundle Plus</option>
                             <option>Not sure - help me choose</option>
                           </select>
                         </div>

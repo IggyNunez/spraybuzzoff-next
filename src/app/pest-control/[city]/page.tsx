@@ -86,7 +86,7 @@ export default async function CityPage({
     },
     {
       question: `How much does pest control cost in ${data.name}?`,
-      answer: `Pricing in ${data.name} depends on home size and plan. We offer one-time treatments, bi-weekly mosquito shields (March–November), and monthly or quarterly perimeter plans. There are no contracts - cancel anytime. Call ${"909.898.8955"} or book online for a ${data.name} quote.`,
+      answer: `Subscriptions start at $109/month. Your exact price depends on the subscription you pick (Home, Home Plus, Mosquito or a Bundle) and how often we visit. Call ${"909.898.8955"} and we'll match your ${data.name} home to the right one.`,
     },
     {
       question: `How quickly can you service ${data.name}?`,
@@ -199,12 +199,11 @@ export default async function CityPage({
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { t: `Mosquito Prevention in ${data.name}`, d: `Bite-free backyards from March through November. Fogging, granular treatment, and bait stations - all plant-based.` },
+                { t: `Mosquito Prevention in ${data.name}`, d: `Bite-free backyards, with monthly visits and 12 scheduled visits a year. Fogging, granular treatment, and bait stations, all plant-based.` },
                 { t: `General Pest Prevention in ${data.name}`, d: `Botanical barrier for ${data.topPests.slice(0, 3).join(", ").toLowerCase()}, and other common ${data.name} pests.` },
                 { t: `Interior Treatment in ${data.name}`, d: `Plant-based interior care for homes with kids, pets, and sensitive family members.` },
                 { t: `Perimeter Protection in ${data.name}`, d: `Natural exterior barrier that keeps ${data.name} pests outside where they belong.` },
-                { t: `One-Time Treatment in ${data.name}`, d: `Hosting a ${data.name} backyard event? Single-visit service, no contract required.` },
-                { t: `Whole Home Protection in ${data.name}`, d: `Interior + exterior plant-based coverage for complete ${data.name} home defense.` },
+                { t: `Rodent Station Maintenance in ${data.name}`, d: `Our Plus subscriptions add rodent station maintenance and monitoring to interior + exterior pest care. Inspection required.` },
               ].map((s) => (
                 <div key={s.t} className="border border-brand-deep/15 rounded-2xl p-6 hover:border-brand-deep/40 transition-colors">
                   <h3 className="font-display text-[22px] text-brand-deep mb-2">{s.t}</h3>
