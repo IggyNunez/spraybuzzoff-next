@@ -89,6 +89,22 @@ body {
   overflow-x: hidden;
 }
 
+/* No orphans (client request, Nov 2026): never leave one word alone on the
+   last line. Titles and short UI text (links, list items, labels) balance
+   their lines. Paragraphs use "pretty", which pulls a word down so the last
+   line is never a lone word. Browsers without support wrap as before. */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.title-caps {
+  text-wrap: balance;
+}
+li, dd, dt, label, summary, figcaption, td, th, a, button, span {
+  text-wrap: balance;
+}
+p, blockquote {
+  text-wrap: pretty;
+}
+
 /* Caprasimo ships one weight. Never let the browser fake a bold or italic. */
 .font-display,
 .section-title,
