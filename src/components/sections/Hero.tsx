@@ -7,7 +7,6 @@ import { StatsBar } from "@/components/sections/StatsBar";
 import { useBooking } from "@/components/ui/BookingDrawer";
 import { HERO_TYPE, HeroOverlay, HeroTitle } from "@/components/ui/PageHero";
 import { trackContact } from "@/lib/fbpixel";
-import { SUBSCRIPTION_START_PRICE } from "@/lib/constants";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -112,16 +111,6 @@ export function Hero() {
           ]}
           delay={0.2}
         />
-
-        {/* Client copy sheet, Nov 6 2026: blanket price line under the H1. */}
-        <motion.p
-          className="font-body font-bold text-[clamp(1.05rem,1.6vw,1.35rem)] text-brand-yellow mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45, ease: EASE }}
-        >
-          Subscriptions start at {SUBSCRIPTION_START_PRICE}/mo.
-        </motion.p>
 
         {/* Hero tagline in the brand display face, upright. */}
         <motion.p
