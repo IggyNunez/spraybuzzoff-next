@@ -6,7 +6,7 @@ import { MarqueeTicker } from "@/components/sections/MarqueeTicker";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { ComparisonChart } from "@/components/sections/ComparisonChart";
-import { Plans } from "@/components/sections/Plans";
+import { Subscriptions } from "@/components/sections/Subscriptions";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { AreasMarquee } from "@/components/sections/AreasMarquee";
@@ -49,9 +49,9 @@ export default function Home() {
           <ComparisonChart />
         </div>
 
-        {/* Plans */}
+        {/* Subscriptions */}
         <div className="section-card mt-2">
-          <Plans />
+          <Subscriptions />
         </div>
 
         {/* Testimonials */}

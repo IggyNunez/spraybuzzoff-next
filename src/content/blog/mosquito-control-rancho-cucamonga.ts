@@ -42,7 +42,7 @@ const post: BlogPost = {
 <p>Because the warm season is long here and Aedes mosquitoes mature quickly, a single spray in June will not carry you to fall. A recurring rhythm works far better:</p>
 <ul>
 <li><strong>Early spring:</strong> Start treating resting areas before the first generation builds, and clear breeding sites while populations are still low.</li>
-<li><strong>Spring through early fall:</strong> Bi-weekly service through peak season keeps the resting areas treated and the adult numbers down.</li>
+<li><strong>Spring through early fall:</strong> Monthly service through peak season keeps the resting areas treated and the adult numbers down.</li>
 <li><strong>After rain or heavy irrigation:</strong> Fresh standing water restarts the cycle, so a follow-up keeps coverage intact.</li>
 <li><strong>Late fall:</strong> Continue until the nights cool off, since biting often lasts into November in the Inland Empire.</li>
 </ul>

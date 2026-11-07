@@ -4,7 +4,7 @@ import type {
   ServiceFeatured,
   ServiceSmall,
   ProcessStep,
-  Plan,
+  Subscription,
   Testimonial,
   FAQ,
   CTAStat,
@@ -16,7 +16,7 @@ export const BOOKING_URL =
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "/services" },
-  { label: "Plans", href: "/#plans" },
+  { label: "Subscriptions", href: "/#subscriptions" },
   { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about-us" },
   { label: "FAQ", href: "/#faq" },
@@ -83,12 +83,6 @@ export const SERVICES_SMALL: ServiceSmall[] = [
     title: "Yard Perimeter",
     image: "/assets/yard-perimeter-new.jpg",
     imageAlt: "Buzz Off technician preparing botanical perimeter spray for family-safe yard pest control",
-  },
-  {
-    label: "Flexible",
-    title: "One-Time Treatment",
-    image: "/assets/one-time-v2.jpg",
-    imageAlt: "Buzz Off pest control service truck ready for one-time natural pest treatment in Southern California",
   },
 ];
 
@@ -206,53 +200,65 @@ export const MARQUEE_AREAS = [
   "Mission Viejo",
 ];
 
-export const PLANS: Plan[] = [
+/** Client copy sheet, Nov 6 2026. Blanket pricing only: no per-card prices. */
+export const SUBSCRIPTION_START_PRICE = "$109";
+
+export const SUBSCRIPTIONS: Subscription[] = [
   {
-    tier: "Perimeter Control",
-    name: "Natural Perimeter Protection",
-    price: "",
-    freq: "",
-    featured: false,
-    ctaStyle: "green",
-    ctaText: "Call the Team",
+    num: "01",
+    name: "Buzz Natural Home",
+    plus: false,
+    summary: "Interior + exterior general pest care. Consistent protection, on repeat.",
+    note: "No rodent service \u00B7 see Plus",
     features: [
-      { text: "Full exterior de-webbing of eaves, windows & doorways", included: true },
-      { text: "Targeted crack & crevice dust application", included: true },
-      { text: "Exterior foundation & entry-point treatment", included: true },
-      { text: "Plant-based formulas only", included: true },
-      { text: "No contracts - cancel anytime", included: true },
+      { text: "Interior + exterior general pest" },
+      { text: "Monthly or every-2-months visits" },
+      { text: "Billing matches your visit frequency" },
     ],
   },
   {
-    tier: "Most Popular",
-    name: "Natural Mosquito Shield",
-    price: "",
-    freq: "",
-    featured: true,
-    ctaStyle: "gold",
-    ctaText: "Call the Team",
+    num: "02",
+    name: "Buzz Natural Home Plus",
+    plus: true,
+    summary: "Everything in Home, PLUS rodent station maintenance + monitoring.",
     features: [
-      { text: "Mosquito fogging of foliage & harborage areas", included: true },
-      { text: "Granular treatment in turf, planter beds & shrubs", included: true },
-      { text: "Mosquito bait stations for continuous control", included: true },
-      { text: "Standing water & breeding zone inspection", included: true },
-      { text: "Recurring bi-weekly service (March–November)", included: true },
+      { text: "Rodent station maintenance + monitoring", bold: true },
+      { text: "Interior + exterior general pest" },
+      { text: "Monthly or every-2-months visits" },
+      { text: "Inspection required; initial rodent setup quoted" },
     ],
   },
   {
-    tier: "Complete Protection",
-    name: "Natural Whole Home Protection",
-    price: "",
-    freq: "",
-    featured: false,
-    ctaStyle: "green",
-    ctaText: "Call the Team",
+    num: "03",
+    name: "Buzz Natural Mosquito",
+    plus: false,
+    summary: "Take your backyard back. Ongoing mosquito protection for more time outside.",
     features: [
-      { text: "Everything in Natural Perimeter Protection", included: true },
-      { text: "Interior treatment as needed", included: true },
-      { text: "Interior crack & crevice dust for long-term prevention", included: true },
-      { text: "Plant-based formulas only", included: true },
-      { text: "No contracts - cancel anytime", included: true },
+      { text: "12 scheduled visits a year" },
+      { text: "Monthly visits + billing" },
+      { text: "No initial fee" },
+    ],
+  },
+  {
+    num: "04",
+    name: "Buzz Natural Bundle",
+    plus: false,
+    summary: "Home + Mosquito. Inside, outside and the backyard, handled.",
+    note: "No rodent service \u00B7 see Plus",
+    features: [
+      { text: "Home general pest + Mosquito" },
+      { text: "Monthly visits + billing" },
+    ],
+  },
+  {
+    num: "05",
+    name: "Buzz Natural Bundle Plus",
+    plus: true,
+    summary: "Home Plus + Mosquito, PLUS rodent station maintenance + monitoring.",
+    features: [
+      { text: "Rodent station maintenance included", bold: true },
+      { text: "Home Plus general pest + Mosquito" },
+      { text: "Monthly visits + billing" },
     ],
   },
 ];
@@ -287,6 +293,11 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const FAQS: FAQ[] = [
   {
+    question: "How much is a subscription?",
+    answer:
+      "Subscriptions start at $109/month. Your exact price depends on the subscription you pick (Home, Home Plus, Mosquito or a Bundle) and how often we visit. Call the team at 909.898.8955 and we'll match you to the right one.",
+  },
+  {
     question: "What's actually in your treatments?",
     answer:
       "Active ingredients include cedarwood oil, cinnamon oil, thyme oil, rosemary oil, clove oil, citronella oil, lemongrass oil, cornmint oil, and geraniol. Every product used is FIFRA 25(b) exempt. No synthetic pyrethroids, no organophosphates, no harsh chemicals.",
@@ -304,7 +315,7 @@ export const FAQS: FAQ[] = [
   {
     question: "How often do you treat?",
     answer:
-      "Bi-weekly during mosquito season, which runs March through November in Southern California. Perimeter and whole home plans are on monthly or quarterly schedules depending on your plan.",
+      "Buzz Natural Mosquito is monthly, with 12 scheduled visits a year. Home and Home Plus are monthly or every two months, your choice. The Bundles are monthly.",
   },
   {
     question: "Do I have to sign a contract?",
@@ -319,7 +330,7 @@ export const FAQS: FAQ[] = [
   {
     question: "What pests do you treat for?",
     answer:
-      "Natural Mosquito Shield is for mosquitoes. Perimeter and Whole Home plans address ants, spiders, roaches, earwigs, fleas, ticks, silverfish, and other common household invaders.",
+      "Buzz Natural Mosquito is for mosquitoes. Home and the Bundles cover ants, spiders, roaches, earwigs, fleas, ticks, silverfish, and other common household invaders. The Plus subscriptions add rodent station maintenance and monitoring.",
   },
   {
     question: "Will rain affect my treatment?",
@@ -360,15 +371,10 @@ export const STATS_BAR = [
   { icon: "star", label: "5\u2605 Average" },
 ];
 
+// Copy sheet, Nov 6 2026: "ZERO synthetic pesticides · Subscriptions from $109".
 export const TICKER_ITEMS = [
-  "FIFRA 25(b) Exempt",
-  "Zero Synthetics",
-  "Family First",
-  "Safe for Kids & Pets",
-  "No Contracts",
-  "100% Plant-Based",
-  "Family Owned",
-  "Inland Empire Local",
+  "Zero Synthetic Pesticides",
+  `Subscriptions from ${SUBSCRIPTION_START_PRICE}`,
 ];
 
 export const COMPARISON_ROWS: ComparisonRow[] = [

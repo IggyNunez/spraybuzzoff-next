@@ -21,7 +21,6 @@ function serviceGlyph(title: string): GlyphName {
   if (/interior/i.test(title)) return "home";
   if (/eave|entry/i.test(title)) return "door";
   if (/yard|perimeter/i.test(title)) return "fence";
-  if (/one-time/i.test(title)) return "droplet";
   return "shield";
 }
 
@@ -310,10 +309,12 @@ function SmallCardMobile({
   service,
   delay,
   isInView,
+  wide = false,
 }: {
   service: (typeof SERVICES_SMALL)[number];
   delay: number;
   isInView: boolean;
+  wide?: boolean;
 }) {
   const { open: openBooking } = useBooking();
   const [flipped, setFlipped] = useState(false);
@@ -328,7 +329,7 @@ function SmallCardMobile({
     >
       <div
         className="relative w-full cursor-pointer"
-        style={{ aspectRatio: "3/4" }}
+        style={{ aspectRatio: wide ? "16/9" : "3/4" }}
         onClick={() => setFlipped(!flipped)}
       >
         <motion.div
@@ -453,14 +454,17 @@ export function Services() {
           ))}
         </div>
 
-        {/* Small Cards - 4 grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {SERVICES_SMALL.map((service, i) => (
-            <div key={service.title}>
+        {/* Small Cards - 3 across; on phones 2 across with the odd one out full width */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          {SERVICES_SMALL.map((service, i) => {
+            const wide = SERVICES_SMALL.length % 2 === 1 && i === SERVICES_SMALL.length - 1;
+            return (
+            <div key={service.title} className={wide ? "col-span-2 md:col-span-1" : ""}>
               <SmallCardDesktop service={service} delay={0.2 + i * 0.08} isInView={isInView} />
-              <SmallCardMobile service={service} delay={0.2 + i * 0.08} isInView={isInView} />
+              <SmallCardMobile service={service} delay={0.2 + i * 0.08} isInView={isInView} wide={wide} />
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

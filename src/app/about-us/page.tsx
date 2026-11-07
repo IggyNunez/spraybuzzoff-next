@@ -77,7 +77,7 @@ export default function AboutPage() {
       <main>
         <PageHero
           eyebrow="Our Story"
-          lines={[<>Built Because</>, <span key="accent" className={HERO_TYPE.accent}>Families Deserve</span>, <>Better.</>]}
+          lines={[<>Built Because</>, <span key="accent" className={HERO_TYPE.accent}>Families</span>, <><span className={HERO_TYPE.accent}>Deserve</span> Better.</>]}
           imageSrc="/assets/about-hero-new.jpg"
           imageAlt="Buzz Off family-owned natural pest control team treating a residential yard in Rancho Cucamonga"
         >

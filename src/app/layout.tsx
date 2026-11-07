@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Caprasimo, DM_Sans, Playfair_Display } from "next/font/google";
 import { BookingProvider } from "@/components/ui/BookingDrawer";
 import { MotionProvider } from "@/components/ui/MotionProvider";
+import { OrphanGuard } from "@/components/ui/OrphanGuard";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
 import "./globals.css";
@@ -128,6 +129,7 @@ export default function RootLayout({
             {children}
           </BookingProvider>
         </MotionProvider>
+        <OrphanGuard />
       </body>
     </html>
   );

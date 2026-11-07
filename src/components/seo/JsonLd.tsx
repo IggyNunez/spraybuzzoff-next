@@ -1,4 +1,4 @@
-import { SERVICE_AREAS } from "@/lib/constants";
+import { SERVICE_AREAS, SUBSCRIPTIONS } from "@/lib/constants";
 import { REVIEWS, TOTAL_REVIEW_COUNT, AVERAGE_RATING } from "@/lib/reviews";
 
 /** Rating and count come straight from the fetched review data, never typed in. */
@@ -130,33 +130,14 @@ export function LocalBusinessJsonLd() {
               "Safe, plant-based interior pest treatment for homes with kids and pets.",
           },
         },
-        {
+        ...SUBSCRIPTIONS.map((s) => ({
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "One-Time Treatment",
-            description:
-              "Single-visit pest treatment with no contract required. 100% plant-based.",
+            name: s.name,
+            description: s.summary,
           },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Perimeter Protection",
-            description:
-              "Plant-based perimeter spray that creates a natural barrier around your home.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Whole Home Protection",
-            description:
-              "Complete interior and exterior plant-based pest protection for your entire home.",
-          },
-        },
+        })),
       ],
     },
     aggregateRating: AGGREGATE_RATING,
@@ -278,9 +259,7 @@ export function CityServiceJsonLd({
             "Mosquito Prevention",
             "General Pest Prevention",
             "Interior Treatment",
-            "Perimeter Protection",
-            "One-Time Treatment",
-            "Whole Home Protection",
+            ...SUBSCRIPTIONS.map((s) => s.name),
           ].map((n) => ({
             "@type": "Offer",
             itemOffered: { "@type": "Service", name: `${n} in ${cityName}` },

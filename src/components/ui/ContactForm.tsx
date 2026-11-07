@@ -20,11 +20,11 @@ const REFERRAL_OPTIONS = [
 ];
 
 const SERVICE_OPTIONS = [
-  "The Perimeter",
-  "The Whole House",
-  "Mosquito Shield",
-  "Perimeter + Mosquito",
-  "Whole House + Mosquito",
+  "Buzz Natural Home",
+  "Buzz Natural Home Plus",
+  "Buzz Natural Mosquito",
+  "Buzz Natural Bundle",
+  "Buzz Natural Bundle Plus",
   "Not sure - help me choose",
 ];
 
