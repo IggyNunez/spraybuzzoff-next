@@ -10,6 +10,7 @@
     "fetch-reviews": "node scripts/fetch-reviews.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.7.0",
     "framer-motion": "^12.34.3",
     "next": "16.1.6",
     "react": "19.2.3",

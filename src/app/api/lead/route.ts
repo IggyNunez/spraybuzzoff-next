@@ -4,6 +4,7 @@ import { getGorillaDesk, GorillaApiError } from "@/lib/gorilladesk";
 import { validateLeadForm } from "@/lib/validation";
 import { sendLeadRescueEmail } from "@/lib/lead-alert";
 import { verifyTurnstile } from "@/lib/turnstile";
+import { screenLead } from "@/lib/screen-lead";
 import type { LeadApiResponse, GDCustomerCreatePayload, LeadFormData } from "@/types";
 
 const PHONE_FALLBACK = "(909) 552-1718";
@@ -126,6 +127,19 @@ export async function POST(req: NextRequest) {
         },
         { status: 400 }
       );
+    }
+
+    /* AI screening for sales pitches. After Turnstile so bots never spend an
+     * API call. A pitch gets the normal success so the sender learns nothing,
+     * and only a dev copy is mailed. */
+    const pitchReason = await screenLead({ email: sanitized.email, message: sanitized.message });
+    if (pitchReason) {
+      console.log("[/api/lead] screened out as a solicitation:", pitchReason);
+      await sendLeadRescueEmail(sanitized, pitchReason, true);
+      return NextResponse.json<LeadApiResponse>({
+        success: true,
+        message: "Your info has been received! We'll be in touch shortly.",
+      });
     }
 
     /* Build GorillaDesk customer payload */

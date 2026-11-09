@@ -21,6 +21,8 @@ const FROM = process.env.LEAD_ALERT_FROM || "Buzz Off Ops <ops@email.plaintalk.d
 const TO = process.env.LEAD_ALERT_TO || "dev@ignacionunez.dev";
 // Same env name the SEO digest uses for an optional client-facing copy.
 const CC = process.env.LEAD_INBOX_CC || null;
+// A screened-out pitch goes to dev only, never the client.
+const FILTERED_TO = "dev@ignacionunez.dev";
 
 function esc(value: string): string {
   return value
@@ -38,11 +40,15 @@ function row(label: string, value: string | undefined): string {
   </tr>`;
 }
 
-function buildHtml(lead: LeadFormData, reason: string, submittedAt: string): string {
+function buildHtml(lead: LeadFormData, reason: string, submittedAt: string, filtered: boolean): string {
+  const banner = filtered
+    ? `<p style="margin:0;font-weight:700;font-size:15px">Screened out as a sales pitch, not sent to GorillaDesk</p>
+    <p style="margin:4px 0 0;font-size:13px;opacity:.9">AI reason: ${esc(reason)}. If this is a real customer, add them manually.</p>`
+    : `<p style="margin:0;font-weight:700;font-size:15px">Lead did NOT reach GorillaDesk</p>
+    <p style="margin:4px 0 0;font-size:13px;opacity:.9">This email is the only copy. Add the customer manually.</p>`;
   return `<div style="max-width:620px;margin:0 auto;font-family:system-ui,sans-serif">
-  <div style="background:#B3261E;color:#fff;padding:16px 20px;border-radius:10px 10px 0 0">
-    <p style="margin:0;font-weight:700;font-size:15px">Lead did NOT reach GorillaDesk</p>
-    <p style="margin:4px 0 0;font-size:13px;opacity:.9">This email is the only copy. Add the customer manually.</p>
+  <div style="background:${filtered ? "#6B7B6E" : "#B3261E"};color:#fff;padding:16px 20px;border-radius:10px 10px 0 0">
+    ${banner}
   </div>
   <div style="border:1px solid #E3E7E4;border-top:none;border-radius:0 0 10px 10px;padding:20px">
     <table style="border-collapse:collapse;width:100%">
@@ -62,9 +68,11 @@ function buildHtml(lead: LeadFormData, reason: string, submittedAt: string): str
 </div>`;
 }
 
-function buildText(lead: LeadFormData, reason: string, submittedAt: string): string {
+function buildText(lead: LeadFormData, reason: string, submittedAt: string, filtered: boolean): string {
   const lines = [
-    "LEAD DID NOT REACH GORILLADESK - this email is the only copy.",
+    filtered
+      ? `SCREENED OUT AS A SALES PITCH, not sent to GorillaDesk. AI reason: ${reason}`
+      : "LEAD DID NOT REACH GORILLADESK - this email is the only copy.",
     "",
     `Name: ${lead.firstName} ${lead.lastName}`.trim(),
     `Email: ${lead.email}`,
@@ -82,10 +90,12 @@ function buildText(lead: LeadFormData, reason: string, submittedAt: string): str
  * Mails a lead that failed to reach the CRM.
  * Returns true only if Resend accepted the message, so the caller can tell the
  * visitor we have their details instead of asking them to call.
+ * With `filtered`, it is instead the dev-only copy of a screened-out pitch.
  */
 export async function sendLeadRescueEmail(
   lead: LeadFormData,
-  reason: string
+  reason: string,
+  filtered = false
 ): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
@@ -110,12 +120,14 @@ export async function sendLeadRescueEmail(
       },
       body: JSON.stringify({
         from: FROM,
-        to: [TO],
-        ...(CC ? { cc: [CC] } : {}),
+        to: [filtered ? FILTERED_TO : TO],
+        ...(CC && !filtered ? { cc: [CC] } : {}),
         reply_to: lead.email,
-        subject: `Lead not saved to CRM - ${lead.firstName} ${lead.lastName}`.trim(),
-        html: buildHtml(lead, reason, submittedAt),
-        text: buildText(lead, reason, submittedAt),
+        subject: filtered
+          ? `[FILTERED] Sales pitch screened out - ${lead.firstName} ${lead.lastName}`.trim()
+          : `Lead not saved to CRM - ${lead.firstName} ${lead.lastName}`.trim(),
+        html: buildHtml(lead, reason, submittedAt, filtered),
+        text: buildText(lead, reason, submittedAt, filtered),
       }),
       signal: AbortSignal.timeout(SEND_TIMEOUT_MS),
     });
@@ -131,7 +143,7 @@ export async function sendLeadRescueEmail(
       return false;
     }
 
-    console.warn("[/api/lead] CRM write failed; lead rescued by email.", reason);
+    if (!filtered) console.warn("[/api/lead] CRM write failed; lead rescued by email.", reason);
     return true;
   } catch (err) {
     console.error(

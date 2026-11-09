@@ -78,6 +78,7 @@ export default function PrivacyPage() {
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
                   <li><strong>Service Providers:</strong> Trusted third-party tools used for scheduling, payment processing, and communication (e.g., booking platforms, payment processors)</li>
+                  <li><strong>Spam Screening:</strong> An AI service (Anthropic) reads the message you type in our forms, along with your email&apos;s domain, to screen out sales pitches and spam. It does not receive your name, phone number or address.</li>
                   <li><strong>Legal Requirements:</strong> When required by law, court order, or to protect the safety and rights of Buzz Off Pest Prevention or others</li>
                 </ul>
               </div>
