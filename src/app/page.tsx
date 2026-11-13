@@ -4,6 +4,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { MarqueeTicker } from "@/components/sections/MarqueeTicker";
 import { Services } from "@/components/sections/Services";
+import { BrandStory } from "@/components/sections/BrandStory";
 import { Process } from "@/components/sections/Process";
 import { ComparisonChart } from "@/components/sections/ComparisonChart";
 import { Subscriptions } from "@/components/sections/Subscriptions";
@@ -37,6 +38,11 @@ export default function Home() {
         {/* Services */}
         <div className="section-card mt-2">
           <Services />
+        </div>
+
+        {/* Brand Story: owners' note, footer "About Us" target */}
+        <div className="section-card mt-2">
+          <BrandStory />
         </div>
 
         {/* Process */}
