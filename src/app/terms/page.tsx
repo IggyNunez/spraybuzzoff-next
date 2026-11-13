@@ -31,7 +31,7 @@ export default function TermsPage() {
 
               <div>
                 <p className="text-brand-dark/60 text-[0.85rem] mb-8">
-                  Last updated: March 5, 2026
+                  Last updated: November 13, 2026
                 </p>
                 <p>
                   Welcome to Buzz Off Pest Prevention. By using our services or accessing our website at spraybuzzoff.com, you agree to the following terms and conditions. Please read them carefully.
@@ -112,7 +112,16 @@ export default function TermsPage() {
 
               <div>
                 <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
-                  8. Changes to Terms
+                  8. Website Analytics &amp; Cookies
+                </h2>
+                <p>
+                  spraybuzzoff.com uses cookies and analytics tools, including Google Analytics and the Meta Pixel, to measure how the site is used and how our ads perform. Our <a href="/privacy" className="text-brand-deep underline">Privacy Policy</a> explains what is collected and how to turn cookies off.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
+                  9. Changes to Terms
                 </h2>
                 <p>
                   We reserve the right to update these terms at any time. Changes will be posted on this page with an updated revision date. Continued use of our services after changes are posted constitutes acceptance of the revised terms.
@@ -121,7 +130,7 @@ export default function TermsPage() {
 
               <div>
                 <h2 className="font-display text-[1.4rem] text-brand-deep mb-3">
-                  9. Contact
+                  10. Contact
                 </h2>
                 <p>
                   If you have questions about these terms, reach out to us:

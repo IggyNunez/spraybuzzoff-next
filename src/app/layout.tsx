@@ -5,6 +5,7 @@ import { MotionProvider } from "@/components/ui/MotionProvider";
 import { OrphanGuard } from "@/components/ui/OrphanGuard";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import MetaPixel from "@/components/tracking/MetaPixel";
+import GoogleTagManager from "@/components/tracking/GoogleTagManager";
 import "./globals.css";
 
 // Caprasimo: the brand display face, chosen by the client (Oct 2026) to replace
@@ -122,6 +123,7 @@ export default function RootLayout({
         <meta name="geo.placename" content="Rancho Cucamonga" />
       </head>
       <body className="antialiased">
+        <GoogleTagManager />
         <MetaPixel />
         <LocalBusinessJsonLd />
         <MotionProvider>
