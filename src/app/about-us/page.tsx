@@ -66,7 +66,7 @@ const DIFF_ROWS = [
   { feature: "Contract required?", buzzOff: "Never", traditional: "Usually 12-month minimum" },
   { feature: "Scent after treatment", buzzOff: "Light botanical - dissipates in 1 hr", traditional: "Strong chemical smell" },
   { feature: "FIFRA 25(b) exempt?", buzzOff: "Yes - every product", traditional: "No" },
-  { feature: "Founded by families?", buzzOff: "Yes - Hayley & Veronnica", traditional: "National chain" },
+  { feature: "Founded by families?", buzzOff: "Yes - Dorrin & Maurice", traditional: "National chain" },
 ];
 
 export default function AboutPage() {
