@@ -15,9 +15,10 @@ Veronnica are their wives, not founders, whatever `CASE_STUDY_HANDOFF.md` says.
 rules. When the sheet and a design preference disagree, the sheet wins unless the client
 says otherwise. **Maurice ("Moe")** is also the technician customers name most often in reviews.
 
-**Analytics:** Google Tag Manager `GTM-W9QP9FM7` and GA4 `G-P0Y6WVTXLY` are owned by Buzz Off
+**Analytics:** Google Tag Manager container `GTM-PHWC2983` and GA4 `G-P0Y6WVTXLY` are owned by Buzz Off
 (dorrin@spraybuzzoff.com). `GoogleTagManager.tsx` loads the container on spraybuzzoff.com only.
 The site pushes `generate_lead`, `phone_click` and `book_click`; the GA4 tags live in the container.
+Not `GTM-W9QP9FM7`: that is the Google tag ID shown in GA4, not the container. Loading it gave page views only.
 
 Next.js 16 App Router, React 19, Tailwind v4, framer-motion, TypeScript, on Vercel.
 Static marketing site: the only server route is `/api/lead`.
