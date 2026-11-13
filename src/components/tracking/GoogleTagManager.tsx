@@ -11,7 +11,7 @@ import Script from "next/script";
  *   rendered ones (city pages, privacy, terms) that can't take an onClick.
  * • `generate_lead` and `book_click` are pushed from src/lib/fbpixel.ts.
  */
-export const GTM_ID = "GTM-W9QP9FM7";
+export const GTM_ID = "GTM-PHWC2983";
 
 export default function GoogleTagManager() {
   return (
