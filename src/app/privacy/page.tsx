@@ -31,7 +31,7 @@ export default function PrivacyPage() {
 
               <div>
                 <p className="text-brand-dark/60 text-[0.85rem] mb-8">
-                  Last updated: March 5, 2026
+                  Last updated: November 13, 2026
                 </p>
                 <p>
                   At Buzz Off Pest Prevention, we respect your privacy and are committed to protecting the personal information you share with us. This policy explains what information we collect, how we use it, and your rights regarding that information.
@@ -88,7 +88,10 @@ export default function PrivacyPage() {
                   4. Cookies &amp; Website Analytics
                 </h2>
                 <p className="mb-3">
-                  Our website may use cookies and analytics tools to understand how visitors interact with spraybuzzoff.com. These tools help us improve site performance and user experience. Cookies do not collect personally identifiable information unless you voluntarily submit it through a form.
+                  Our website uses cookies and analytics tools to understand how visitors interact with spraybuzzoff.com. These tools help us improve site performance and user experience. Cookies do not collect personally identifiable information unless you voluntarily submit it through a form.
+                </p>
+                <p className="mb-3">
+                  We use Google Analytics, loaded through Google Tag Manager, to measure visits, the pages people view, and actions such as submitting a quote request or tapping our phone number. We use the Meta Pixel to measure the results of our Facebook and Instagram ads. These services set cookies and receive your IP address and technical details about your browser. Google and Meta handle that data under their own privacy policies.
                 </p>
                 <p className="mb-3">
                   You can disable cookies through your browser settings at any time.

@@ -7,13 +7,17 @@ John 155 LLC).
 
 **Dorrin Turner** is Co-Founder & CEO (his own email signature) and the main client
 contact. He is not technical, so anything written for him, emails especially, goes in
-plain business English with no jargon. **Hayley and Veronnica** are named as founders in
-`CASE_STUDY_HANDOFF.md`.
+plain business English with no jargon. **Dorrin and Maurice are the owners.** Hayley and
+Veronnica are their wives, not founders, whatever `CASE_STUDY_HANDOFF.md` says.
 
 **The brand sheet is the authority on look.** Dorrin sent it Oct 12, 2026 as
 "Buzz Off Brand Template.png" (email "Buzz Off - Brand Changes"). `BRAND.md` records its
 rules. When the sheet and a design preference disagree, the sheet wins unless the client
-says otherwise. **Maurice ("Moe")** is the technician customers name most often in reviews.
+says otherwise. **Maurice ("Moe")** is also the technician customers name most often in reviews.
+
+**Analytics:** Google Tag Manager `GTM-W9QP9FM7` and GA4 `G-P0Y6WVTXLY` are owned by Buzz Off
+(dorrin@spraybuzzoff.com). `GoogleTagManager.tsx` loads the container on spraybuzzoff.com only.
+The site pushes `generate_lead`, `phone_click` and `book_click`; the GA4 tags live in the container.
 
 Next.js 16 App Router, React 19, Tailwind v4, framer-motion, TypeScript, on Vercel.
 Static marketing site: the only server route is `/api/lead`.

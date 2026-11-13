@@ -7,6 +7,14 @@ declare global {
   interface Window {
     fbq: (...args: unknown[]) => void;
     _fbq: (...args: unknown[]) => void;
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
+/** Google Tag Manager events. dataLayer only exists on spraybuzzoff.com (see GoogleTagManager.tsx). */
+function pushGtm(event: string, data?: Record<string, unknown>) {
+  if (typeof window !== "undefined" && window.dataLayer) {
+    window.dataLayer.push({ event, ...data });
   }
 }
 
@@ -15,6 +23,7 @@ declare global {
 
 /** Fires when someone opens the booking drawer (any "Book Now" CTA). */
 export function trackSchedule() {
+  pushGtm("book_click");
   if (typeof window !== "undefined" && window.fbq) {
     window.fbq("track", "Schedule");
   }
@@ -22,6 +31,7 @@ export function trackSchedule() {
 
 /** Fires when a lead form is submitted successfully. */
 export function trackLead(data?: { content_name?: string }) {
+  pushGtm("generate_lead", { form_name: data?.content_name });
   if (typeof window !== "undefined" && window.fbq) {
     window.fbq("track", "Lead", data);
   }
