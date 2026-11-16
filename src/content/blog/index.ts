@@ -26,8 +26,10 @@ import mosquitoControlUplandCa from "./mosquito-control-upland-ca";
 import mosquitoControlOntarioCa from "./mosquito-control-ontario-ca";
 import spiderControlOntarioCa from "./spider-control-ontario-ca";
 import antControlOntarioCa from "./ant-control-ontario-ca";
+import scorpionControlGlendoraCa from "./scorpion-control-glendora-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  scorpionControlGlendoraCa,
   antControlOntarioCa,
   spiderControlOntarioCa,
   mosquitoControlOntarioCa,
