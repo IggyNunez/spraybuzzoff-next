@@ -27,8 +27,10 @@ import mosquitoControlOntarioCa from "./mosquito-control-ontario-ca";
 import spiderControlOntarioCa from "./spider-control-ontario-ca";
 import antControlOntarioCa from "./ant-control-ontario-ca";
 import antControlFontanaCa from "./ant-control-fontana-ca";
+import waspControlChinoHillsCa from "./wasp-control-chino-hills-ca";
 
 export const BLOG_POSTS: BlogPost[] = [
+  waspControlChinoHillsCa,
   antControlFontanaCa,
   antControlOntarioCa,
   spiderControlOntarioCa,
